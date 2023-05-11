@@ -8,7 +8,6 @@ import streamlit as st
 import config
 import re
 from streamlit_chat import message
-from time import time
 
 st.set_page_config("Physician Medical Chatbot")
 # while ("OPENAI_API_KEY" not in os.environ.keys()) or (not os.environ["OPENAI_API_KEY"]):
@@ -52,17 +51,14 @@ def get_text():
     return input_text
     
 datastore_type = "FAISS"
-llm_models = [
-    "gpt-3.5-turbo",
-    "gpt-4",
-]
+llm_models = ["gpt-4", "gpt-3.5-turbo"]
 
-embedding_models = [
-    "text-embedding-ada-002"
-]
+embedding_models = ["text-embedding-ada-002"]
+temperature = 0.0
+top_p = 1.0
+max_tokens = 800
 
 with st.sidebar:
-    # os.environ["OPENAI_API_KEY"] = "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"
     while ("OPENAI_API_KEY" not in os.environ.keys()) or (not os.environ["OPENAI_API_KEY"]):
         api_key = st.text_input(
         "Please input your OpenAI API Key here:",
@@ -81,13 +77,12 @@ with st.sidebar:
     llm_type = st.radio("LLM", llm_models)
     emb_type = st.radio("Embedding Model", embedding_models)
     
-    with st.expander("Advanced Settings"):
-        temperature = st.slider("Temperature", min_value=0.0, max_value=2.0, step=0.1, value=0.0)
-        top_p = st.slider("Top p", min_value=0.0, max_value=1.0, step=0.01, value=1.00)
-        max_tokens = st.slider("Maximum Tokens", min_value=64, max_value=960, step = 8, value=512)
+    # with st.expander("Advanced Settings"):
+    #     temperature = st.slider("Temperature", min_value=0.0, max_value=2.0, step=0.1, value=0.0)
+    #     top_p = st.slider("Top p", min_value=0.0, max_value=1.0, step=0.01, value=1.00)
+    #     max_tokens = st.slider("Maximum Tokens", min_value=64, max_value=960, step = 8, value=512)
     
 llm, embedder, docsearch = initialize_model(llm_type, emb_type, temperature, top_p, max_tokens)
-    
     
 system_template="""
 Make reference to the context given to assess the scenario. If you don't know the answer, just say that "I don't know", don't try to make up an answer.
@@ -121,8 +116,9 @@ if 'past' not in st.session_state:
     st.session_state['past'] = []
 
 welcome_msg = """
-Hello. I am a friendly AI assistant with expertise on advising a patient on colorectal cancer (CRC).\n
-Can you briefly give me the profile of your patient?
+This is an AI chatbot that advises on time to next colonoscopy based on guidelines from the USA. Please enter your patient case scenario below, for example:
+
+A 45 year old Chinese woman with no family history of colon cancer and otherwise well. There is no previous colonoscopy.
 """
 message(welcome_msg)
 convo = st.empty()
