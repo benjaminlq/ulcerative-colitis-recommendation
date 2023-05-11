@@ -1,143 +1,119 @@
-from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.vectorstores import FAISS
-from langchain.chat_models import ChatOpenAI
-from langchain.prompts.chat import ChatPromptTemplate, SystemMessagePromptTemplate, HumanMessagePromptTemplate
-from langchain.chains import RetrievalQAWithSourcesChain
-import os
+import app_ui
 import streamlit as st
 import config
-import re
+import logging
+import prompts
 from streamlit_chat import message
+from inference import ChatOpenAIRetrieval
+from typing import Literal
+from openai import Model
 
-st.set_page_config("Physician Medical Chatbot")
-# while ("OPENAI_API_KEY" not in os.environ.keys()) or (not os.environ["OPENAI_API_KEY"]):
-#     message("PLease enter your OpenAI API Key for me to proceed.")
-#     api_key = st.text_input(
-#     "Please input your OpenAI API Key here:",
-#     type = "password"
-#     ) 
-#     os.environ["OPENAI_API_KEY"] = api_key
-#     emb_model = OpenAIEmbeddings(openai_api_key=api_key)
-#     try:
-#         emb_model.embed_query("test")
-#         message("Successfully registered API Key")
-#     except:
-#         os.environ["OPENAI_API_KEY"] = None
-#         continue
-    
 @st.cache_resource()
-def initialize_model(
+def initialize_retriever(
+    system_template: str,
+    user_template: str,
     llm_type: str = "gpt-3.5-turbo",
     emb_type: str = "text-embedding-ada-002",
-    temperature: float = 0.0,
-    top_p: float = 1.0,
-    max_tokens: int = 512
+    embedding_store: Literal["faiss"] = "faiss",
 ):
     
-    embedder = OpenAIEmbeddings(model = emb_type)
-    llm = ChatOpenAI(model_name = llm_type, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
-
-    if datastore_type == "FAISS":
-        docsearch = FAISS.load_local(
-            os.path.join(config.EMBSTORE_DIR, "faiss"),
-            embedder,
-        )
-        print("FAISS Datastore successfully loaded")
+    retriever = ChatOpenAIRetrieval(
+        system_template=system_template,
+        user_template=user_template,
+        emb_path=config.EMBSTORE_DICT[embedding_store],
+        openai_api_key=st.session_state.oai_api_key,
+        llm_type=llm_type,
+        embedding_type=emb_type,
+        embedding_store=embedding_store
+    )
     
-    return llm, embedder, docsearch
+    return retriever
 
 def get_text():
     input_text = st.text_input("You: ")
     return input_text
     
-datastore_type = "FAISS"
-llm_models = ["gpt-4", "gpt-3.5-turbo"]
+def handler_verify_key():
+    """Handle OpenAI key verification"""
+    oai_api_key = st.session_state.open_ai_key_input
+    try: 
+        # make a call to get available models 
+        st.session_state.model_list = Model.list(api_key=oai_api_key)
 
+        # store OpenAI API key in session states 
+        st.session_state.oai_api_key = oai_api_key
+        
+        # enable the test
+        st.session_state.test_disabled = False 
+
+    except Exception as e: 
+        with openai_key_container: 
+            st.error(f"{e}")
+        logging.error(f"{e}")
+    
 embedding_models = ["text-embedding-ada-002"]
-temperature = 0.0
-top_p = 1.0
-max_tokens = 800
 
-with st.sidebar:
-    while ("OPENAI_API_KEY" not in os.environ.keys()) or (not os.environ["OPENAI_API_KEY"]):
-        api_key = st.text_input(
-        "Please input your OpenAI API Key here:",
-        type = "password"
-        ) 
-        os.environ["OPENAI_API_KEY"] = api_key
-        emb_model = OpenAIEmbeddings(openai_api_key=api_key)
-        try:
-            emb_model.embed_query("test")
-            message("Successfully registered API Key")
-        except:
-            os.environ["OPENAI_API_KEY"] = None
-            continue
+st.set_page_config("Physician Medical Assistant", layout="wide")
+
+openai_key_container = st.container()
+
+if "oai_api_key" not in st.session_state:
+    st.write(app_ui.need_api_key_msg)
+    col1, col2 = st.columns([6,4])
+    col1.text_input(
+        label="Enter OpenAI API Key",
+        key="open_ai_key_input",
+        type="password",
+        autocomplete="current-password",
+        on_change=handler_verify_key,
+        placeholder=app_ui.helper_api_key_placeholder,
+        help=app_ui.helper_api_key_prompt)
+    with openai_key_container:
+        st.empty()
+        st.write("---")
+    print("Debug: No API Key")
+else:
+    print("Debug: With API Key")
+    if "gpt-4" in st.session_state.model_list:
+        llm_models = ["gpt-4", "gpt-3.5-turbo"]
+    else:
+        llm_models = ["gpt-3.5-turbo"]
         
-    st.header("OpenAI Settings")
-    llm_type = st.radio("LLM", llm_models)
-    emb_type = st.radio("Embedding Model", embedding_models)
-    
-    # with st.expander("Advanced Settings"):
-    #     temperature = st.slider("Temperature", min_value=0.0, max_value=2.0, step=0.1, value=0.0)
-    #     top_p = st.slider("Top p", min_value=0.0, max_value=1.0, step=0.01, value=1.00)
-    #     max_tokens = st.slider("Maximum Tokens", min_value=64, max_value=960, step = 8, value=512)
-    
-llm, embedder, docsearch = initialize_model(llm_type, emb_type, temperature, top_p, max_tokens)
-    
-system_template="""
-Make reference to the context given to assess the scenario. If you don't know the answer, just say that "I don't know", don't try to make up an answer.
-You are a physician asssitant advising a patient on their next colonoscopy to detect colorectal cancer (CRC). 
-Analyse the colonoscopy results if any and list all high risk features. 
-Analyse the patient profile and list all risk factors. 
-Finally, provide the number of years to the next colonoscopy. If there is more than one reason to do a colonoscopy, pick the shortest time span. 
-----------------
-{summaries}
-"""
-
-messages = [
-    SystemMessagePromptTemplate.from_template(system_template),
-    HumanMessagePromptTemplate.from_template("{question}")
-]
-prompt = ChatPromptTemplate.from_messages(messages)
- 
-chain = RetrievalQAWithSourcesChain.from_chain_type(
-    llm=llm,
-    chain_type="stuff",
-    retriever=docsearch.as_retriever(),
-    return_source_documents=True,
-    chain_type_kwargs={"prompt": prompt},
-    reduce_k_below_max_tokens=True
-)
-
-if 'generated' not in st.session_state:
-    st.session_state['generated'] = []
-
-if 'past' not in st.session_state:
-    st.session_state['past'] = []
-
-welcome_msg = """
-This is an AI chatbot that advises on time to next colonoscopy based on guidelines from the USA. Please enter your patient case scenario below, for example:
-
-A 45 year old Chinese woman with no family history of colon cancer and otherwise well. There is no previous colonoscopy.
-"""
-message(welcome_msg)
-convo = st.empty()
-query = st.empty()
-
+    with st.sidebar:
+        st.header("OpenAI Settings")
+        llm_type = st.radio("LLM", llm_models)
+        emb_type = st.radio("Embedding Model", embedding_models)
         
-with convo.container():
-    with query:
-        user_query = get_text()
-    if user_query:
-        result = chain(user_query)
-        sources = [str(re.findall( r'[ \w-]+?(?=\.)', name)[0]) for name in (list(set([doc.metadata['source'] for doc in result['source_documents']])))]
-        response = f"""{result['answer']}
-        \nRelevant sources: {', '.join(sources)}
-        """
-        st.session_state["past"].append(user_query)
-        st.session_state["generated"].append(response)
-    if st.session_state["generated"]:
-        for i in range(len(st.session_state["generated"])):
-            message(st.session_state["past"][i], is_user=True)
-            message(st.session_state["generated"][i])
-        
+    prompt = prompts.colonoscopy1
+
+    retriever = initialize_retriever(
+        system_template=prompt["system_template"],
+        user_template=prompt["user_template"],
+        llm_type=llm_type,
+        emb_type=emb_type
+    )
+
+    if 'generated' not in st.session_state:
+        st.session_state['generated'] = []
+        print("generated")
+
+    if 'past' not in st.session_state:
+        st.session_state['past'] = []
+        print("past")
+
+    message(app_ui.welcome_msg)
+    convo = st.empty()
+    query = st.empty()
+
+    with convo.container():
+        with query:
+            user_query = get_text()
+        if user_query:
+            response = retriever(user_query)
+            st.session_state["past"].append(user_query)
+            st.session_state["generated"].append(response)
+        if st.session_state["generated"]:
+            for i in range(len(st.session_state["generated"])):
+                message(st.session_state["past"][i], is_user=True)
+                message(st.session_state["generated"][i])
+            
