@@ -30,21 +30,20 @@ def initialize_retriever(
     return retriever
 
 def get_text():
-    input_text = st.text_input("You: ")
-    return input_text
+    st.text_input("Enter patient case scenario below: ", key="query", on_change=clear_text)
+    return st.session_state["temp"]
+
+def clear_text():
+    st.session_state["temp"] = st.session_state["query"]
+    st.session_state["query"] = ""
     
 def handler_verify_key():
     """Handle OpenAI key verification"""
     oai_api_key = st.session_state.open_ai_key_input
     try: 
-        # make a call to get available models 
-        st.session_state.model_list = Model.list(api_key=oai_api_key)
-
-        # store OpenAI API key in session states 
+        model_list = [model_info["id"] for model_info in Model.list(api_key=oai_api_key)["data"]]
+        st.session_state.model_list = model_list
         st.session_state.oai_api_key = oai_api_key
-        
-        # enable the test
-        st.session_state.test_disabled = False 
 
     except Exception as e: 
         with openai_key_container: 
@@ -54,6 +53,7 @@ def handler_verify_key():
 embedding_models = ["text-embedding-ada-002"]
 
 st.set_page_config("Physician Medical Assistant", layout="wide")
+st.title("AI physician assistant on colorectal cancer (CRC)")
 
 openai_key_container = st.container()
 
@@ -71,9 +71,7 @@ if "oai_api_key" not in st.session_state:
     with openai_key_container:
         st.empty()
         st.write("---")
-    print("Debug: No API Key")
 else:
-    print("Debug: With API Key")
     if "gpt-4" in st.session_state.model_list:
         llm_models = ["gpt-4", "gpt-3.5-turbo"]
     else:
@@ -93,27 +91,41 @@ else:
         emb_type=emb_type
     )
 
-    if 'generated' not in st.session_state:
-        st.session_state['generated'] = []
-        print("generated")
-
-    if 'past' not in st.session_state:
-        st.session_state['past'] = []
-        print("past")
+    # if 'generated' not in st.session_state:
+    #     st.session_state['generated'] = []
+    # if 'past' not in st.session_state:
+    #     st.session_state['past'] = []
 
     message(app_ui.welcome_msg)
+    
     convo = st.empty()
     query = st.empty()
+    spinner = st.empty()
 
+    ### with conversation history
+    # with convo.container():
+    #     with query:
+    #         user_query = get_text()
+    #     if user_query:
+    #         response = retriever(user_query)
+    #         st.session_state["past"].append(user_query)
+    #         st.session_state["generated"].append(response)
+    #     if st.session_state["generated"]:
+    #         for i in range(len(st.session_state["generated"])):
+    #             message(st.session_state["past"][i], is_user=True)
+    #             message(st.session_state["generated"][i])
+    
+    if "temp" not in st.session_state:
+        st.session_state["temp"] = ""
+    
+    with query.container():
+        user_query = get_text()
+    
     with convo.container():
-        with query:
-            user_query = get_text()
         if user_query:
-            response = retriever(user_query)
-            st.session_state["past"].append(user_query)
-            st.session_state["generated"].append(response)
-        if st.session_state["generated"]:
-            for i in range(len(st.session_state["generated"])):
-                message(st.session_state["past"][i], is_user=True)
-                message(st.session_state["generated"][i])
+            message(user_query, is_user=True)
+            with spinner.container():
+                with st.spinner(text = "Generating guidelines for this patient. Please wait."):
+                    response = retriever(user_query)
+            message(response)
             
