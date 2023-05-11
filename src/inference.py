@@ -149,7 +149,4 @@ class ChatOpenAIRetrieval(Retrieval_Interface):
             llm = self.llm,
             docsearch = self.docsearch,
             prompt_template = self.prompt_template
-        )
-        
-    def _check_model(self):
-        
+        )        
