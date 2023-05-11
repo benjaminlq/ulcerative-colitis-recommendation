@@ -53,7 +53,7 @@ def handler_verify_key():
 embedding_models = ["text-embedding-ada-002"]
 
 st.set_page_config("Physician Medical Assistant", layout="wide")
-st.title("AI physician assistant on colorectal cancer (CRC)")
+st.title("AI physician assistant for colonoscopy interval recommendation")
 
 openai_key_container = st.container()
 
