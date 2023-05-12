@@ -4,6 +4,7 @@ import logging
 from typing import Literal
 
 import streamlit as st
+from langchain.callbacks import get_openai_callback
 from openai import Model
 from streamlit_chat import message
 
@@ -25,9 +26,11 @@ def initialize_retriever(
 
     Args:
         system_template (str): System Template sets the context and expected behaviour of the LLM.
-        user_template (str): Specific User Input which requires user to enter a query for RetrievalQA chain to extract relevant information related to sources.
+        user_template (str): Specific User Input which requires user to enter a query for RetrievalQA
+            chain to extract relevant information related to sources.
         llm_type (str, optional): Type of LLM model to be used for extraction. Defaults to "gpt-3.5-turbo".
-        emb_type (str, optional): Type of Embedding model to be used. Convert the query into embedding and find the most relevant text chunk from document store based
+        emb_type (str, optional): Type of Embedding model to be used. Convert the query into embedding
+            and find the most relevant text chunk from document store based
         on similarity (e.g. cosine distance). Defaults to "text-embedding-ada-002".
         embedding_store (Literal[faiss], optional): Type of document store to use. Defaults to "faiss".
 
@@ -61,9 +64,29 @@ def get_text():
 
 
 def clear_text():
-    """This function helps to clear the previous text input from the input field. Temporary assign the input value to "temp" and clear "query" from session_state."""
+    """This function helps to clear the previous text input from the input field.
+    Temporary assign the input value to "temp" and clear "query" from session_state."""
     st.session_state["temp"] = st.session_state["query"]
     st.session_state["query"] = ""
+
+
+def update_cost(callback):
+    st.session_state["token_counter"]["total"] += callback.total_tokens
+    st.session_state["token_counter"]["prompt"] += callback.prompt_tokens
+    st.session_state["token_counter"]["completion"] += callback.completion_tokens
+    st.session_state["total_cost"] += callback.total_cost
+
+
+def print_cost(cost_container):
+    with cost_container:
+        st.write(
+            "Total Cost: {:.2f} USD\n\nTotal Tokens: {}\n\nCompletion Tokens: {}\n\nPrompt Tokens: {}".format(
+                st.session_state["total_cost"],
+                st.session_state["token_counter"]["total"],
+                st.session_state["token_counter"]["completion"],
+                st.session_state["token_counter"]["prompt"],
+            )
+        )
 
 
 def handler_verify_key():
@@ -88,6 +111,15 @@ st.set_page_config("Physician Medical Assistant", layout="wide")
 st.title("AI physician assistant for colonoscopy interval recommendation")
 
 openai_key_container = st.container()
+if "token_counter" not in st.session_state:
+    st.session_state["token_counter"] = {
+        "total": 0,
+        "prompt": 0,
+        "completion": 0,
+    }
+
+if "total_cost" not in st.session_state:
+    st.session_state["total_cost"] = 0.0
 
 if "oai_api_key" not in st.session_state:
     st.write(app_ui.need_api_key_msg)
@@ -111,9 +143,12 @@ else:
         llm_models = ["gpt-3.5-turbo"]
 
     with st.sidebar:
-        st.header("OpenAI Settings")
+        st.title("OpenAI Settings")
         llm_type = st.radio("LLM", llm_models)
         emb_type = st.radio("Embedding Model", embedding_models)
+        # st.title("API Cost")
+        # cost_container = st.empty()
+        # print_cost(cost_container)
 
     prompt = prompts.colonoscopy1
 
@@ -161,5 +196,9 @@ else:
                 with st.spinner(
                     text="Generating guidelines for this patient. Please wait."
                 ):
-                    response = retriever(user_query)
+                    with get_openai_callback() as cb:
+                        response = retriever(user_query)
+                        update_cost(cb)
+                        # cost_container.empty()
+                        # print_cost(cost_container)
             message(response)

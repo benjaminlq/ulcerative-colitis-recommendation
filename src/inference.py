@@ -37,9 +37,9 @@ class Retrieval_Interface:
             llm_type (str): Type of LLM model to be used for extraction
             emb_path (str): Path to embedding datastore.
             openai_api_key (str): OpenAI API Key
-            embedding_type (str, optional): Type of Embedding model to be used.Convert the query into embedding
-                and find the most relevant text chunk from document store based
-            on similarity (e.g. cosine distance). Defaults to "text-embedding-ada-002".
+            embedding_type (str, optional): Type of Embedding model to be used.
+                Convert the query into embedding and find the most relevant text chunk from document
+                store based on similarity (e.g. cosine distance). Defaults to "text-embedding-ada-002".
             embedding_store (Literal[faiss], optional): Type of document store to use. Defaults to "faiss".
         """
         self.prompt_template = None
@@ -145,7 +145,8 @@ class Retrieval_Interface:
 
         Args:
             llm (Callable): LLM to use for extracting information from text chunks
-            docsearch (Callable): Retrieval Object to search for relevant text chunks based on embeddings similarity.
+            docsearch (Callable): Retrieval Object to search for relevant text chunks
+                based on embeddings similarity.
             prompt_template (BasePromptTemplate): Prompt Template
 
         Returns:
@@ -208,15 +209,19 @@ class ChatOpenAIRetrieval(Retrieval_Interface):
 
         Args:
             system_template (str): System Template sets the context and expected behaviour of the LLM.
-            user_template (str): Specific User Input which requires user to enter a query for RetrievalQA chain to extract relevant information related to sources.
+            user_template (str): Specific User Input which requires user to enter a query for RetrievalQA
+                chain to extract relevant information related to sources.
             emb_path (Callable): Path to embedding datastore.
             openai_api_key (str): OpenAI API Key
             llm_type (str, optional): Type of LLM model to be used for extraction. Defaults to "gpt-3.5-turbo".
             embedding_type (str, optional): Type of Embedding model to be used. Defaults to "text-embedding-ada-002".
             embedding_store (Literal[faiss], optional): Type of document store to use. Defaults to "faiss".
-            temperature (float, optional): Temperature to use in Softmax function during decoding. 0 means deterministic and higher (max=2) means more random. Defaults to config.TEMPERATURE.
-            top_p (float, optional): Pick the minimum number of tokens with highest probability with cumulative probability greater than top_p. Between 0 and 1. Defaults to config.TOP_P.
-            max_tokens (int, optional): Maximum number of output tokens to ADD to input tokens. Defaults to config.MAX_TOKENS.
+            temperature (float, optional): Temperature to use in Softmax function during decoding.
+                0 means deterministic and higher (max=2) means more random. Defaults to config.TEMPERATURE.
+            top_p (float, optional): Pick the minimum number of tokens with highest probability with cumulative
+                probability greater than top_p. Between 0 and 1. Defaults to config.TOP_P.
+            max_tokens (int, optional): Maximum number of output tokens to ADD to input tokens.
+                Defaults to config.MAX_TOKENS.
         """
         super(ChatOpenAIRetrieval, self).__init__(
             llm_type, emb_path, openai_api_key, embedding_type, embedding_store
