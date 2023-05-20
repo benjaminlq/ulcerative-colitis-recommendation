@@ -9,12 +9,21 @@ EMBSTORE_DIR = os.path.join(MAIN_DIR, "data", "emb_store")
 EMBSTORE_DICT = {
     "faiss": os.path.join(EMBSTORE_DIR, "faiss"),
     "pinecone": os.path.join(EMBSTORE_DIR, "pinecone"),
+    "chroma": os.path.join(EMBSTORE_DIR, "chroma"),
 }
+MODEL_DIR = os.path.join(MAIN_DIR, "models")
 PROMPT_DIR = os.path.join(MAIN_DIR, "prompt")
+DOCUMENT_SOURCE = os.path.join(MAIN_DIR, "data", "document_store", "polyp")
 
 TEMPERATURE = 0.0
 TOP_P = 1.0
 MAX_TOKENS = 512
+
+# Private-GPT Settings
+PGPT_MODEL_TYPE = "GPT4All"
+PGPT_MODEL = os.path.join(MODEL_DIR, "ggml-gpt4all-j-v1.3-groovy.bin")
+PGPT_EMBEDDINGS_MODEL = os.path.join(MODEL_DIR, "multi-qa-mpnet-base-dot-v1")
+PGPT_MODEL_N_CTX = 1000
 
 LOGGER = logging.getLogger(__name__)
 
