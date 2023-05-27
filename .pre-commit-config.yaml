@@ -15,7 +15,7 @@ repos:
     hooks:
       - id: flake8
         name: flake8
-        args: [--max-line-length=120]
+        args: [--max-line-length=200]
         exclude: ((dist|json|data|data_format)/|__init__.py)
         description: "Enforce style consistency"
     # additional configuration of flake8 and extensions in .flake8

@@ -3,18 +3,14 @@
 import random
 import re
 import time
-from typing import Callable, Dict, Literal
+from typing import Callable, Dict, Literal, Optional
 
 import openai
 from langchain.chains import RetrievalQAWithSourcesChain
 from langchain.chat_models import ChatOpenAI
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.prompts.base import BasePromptTemplate
-from langchain.prompts.chat import (
-    ChatPromptTemplate,
-    HumanMessagePromptTemplate,
-    SystemMessagePromptTemplate,
-)
+from langchain.prompts.chat import ChatPromptTemplate
 from langchain.vectorstores import FAISS
 
 import config
@@ -139,7 +135,11 @@ class Retrieval_Interface:
 
     @classmethod
     def _get_chain(
-        cls, llm: Callable, docsearch: Callable, prompt_template: BasePromptTemplate
+        cls,
+        llm: Callable,
+        docsearch: Callable,
+        prompt_template: BasePromptTemplate,
+        verbose: Optional[bool] = None,
     ):
         """Generate the QA Chain
 
@@ -148,6 +148,7 @@ class Retrieval_Interface:
             docsearch (Callable): Retrieval Object to search for relevant text chunks
                 based on embeddings similarity.
             prompt_template (BasePromptTemplate): Prompt Template
+            verbose (Optional[bool]): Whether chain query returns prompt and COT from LLM. Default to None.
 
         Returns:
             RetrievalQAWithSourcesChain: Chain Object Instance
@@ -157,6 +158,7 @@ class Retrieval_Interface:
             retriever=docsearch.as_retriever(),
             chain_type="stuff",
             return_source_documents=True,
+            verbose=verbose,
             chain_type_kwargs={"prompt": prompt_template},
             reduce_k_below_max_tokens=True,
         )
@@ -194,8 +196,7 @@ class ChatOpenAIRetrieval(Retrieval_Interface):
 
     def __init__(
         self,
-        system_template: str,
-        user_template: str,
+        prompt_template: ChatPromptTemplate,
         emb_path: Callable,
         openai_api_key: str,
         llm_type: str = "gpt-3.5-turbo",
@@ -204,6 +205,7 @@ class ChatOpenAIRetrieval(Retrieval_Interface):
         temperature: float = config.TEMPERATURE,
         top_p: float = config.TOP_P,
         max_tokens: int = config.MAX_TOKENS,
+        verbose: Optional[bool] = None,
     ):
         """AI QARetrievalFromSource Module
 
@@ -222,6 +224,7 @@ class ChatOpenAIRetrieval(Retrieval_Interface):
                 probability greater than top_p. Between 0 and 1. Defaults to config.TOP_P.
             max_tokens (int, optional): Maximum number of output tokens to ADD to input tokens.
                 Defaults to config.MAX_TOKENS.
+            verbose (Optional[bool]): Whether chain query returns prompt and COT from LLM. Default to None.
         """
         super(ChatOpenAIRetrieval, self).__init__(
             llm_type, emb_path, openai_api_key, embedding_type, embedding_store
@@ -237,11 +240,10 @@ class ChatOpenAIRetrieval(Retrieval_Interface):
             max_tokens=max_tokens,
             openai_api_key=openai_api_key,
         )
-        messages = [
-            SystemMessagePromptTemplate.from_template(system_template),
-            HumanMessagePromptTemplate.from_template(user_template),
-        ]
-        self.prompt_template = ChatPromptTemplate.from_messages(messages)
+        self.prompt_template = prompt_template
         self.chain = ChatOpenAIRetrieval._get_chain(
-            llm=self.llm, docsearch=self.docsearch, prompt_template=self.prompt_template
+            llm=self.llm,
+            docsearch=self.docsearch,
+            prompt_template=self.prompt_template,
+            verbose=verbose,
         )

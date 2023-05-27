@@ -1,26 +1,27 @@
 """Streamlit App File
 """
 import logging
-from typing import Literal
+from typing import Literal, Optional
 
 import streamlit as st
 from langchain.callbacks import get_openai_callback
+from langchain.prompts.chat import ChatPromptTemplate
 from openai import Model
 from streamlit_chat import message
 
 import app_ui
 import config
-import prompts
 from inference import ChatOpenAIRetrieval
+from prompts import polyp
 
 
 @st.cache_resource()
 def initialize_retriever(
-    system_template: str,
-    user_template: str,
+    _prompt_template: ChatPromptTemplate,
     llm_type: str = "gpt-3.5-turbo",
     emb_type: str = "text-embedding-ada-002",
     embedding_store: Literal["faiss"] = "faiss",
+    verbose: Optional[bool] = None,
 ):
     """Initialize QA Retriever Chain for inference
 
@@ -33,19 +34,19 @@ def initialize_retriever(
             and find the most relevant text chunk from document store based
         on similarity (e.g. cosine distance). Defaults to "text-embedding-ada-002".
         embedding_store (Literal[faiss], optional): Type of document store to use. Defaults to "faiss".
-
+        verbose (Optional[bool]): Whether chain query returns prompt and COT from LLM. Default to None.
     Returns:
         ChatOpenAIRetrieval: Retrieval Instance for extracting answer from source documents to queries.
     """
 
     retriever = ChatOpenAIRetrieval(
-        system_template=system_template,
-        user_template=user_template,
+        prompt_template=_prompt_template,
         emb_path=config.EMBSTORE_DICT[embedding_store],
         openai_api_key=st.session_state.oai_api_key,
         llm_type=llm_type,
         embedding_type=emb_type,
         embedding_store=embedding_store,
+        verbose=verbose,
     )
 
     return retriever
@@ -150,11 +151,10 @@ else:
         # cost_container = st.empty()
         # print_cost(cost_container)
 
-    prompt = prompts.colonoscopy1
+    prompt = polyp.CHAT_PROMPT_TEMPLATE
 
     retriever = initialize_retriever(
-        system_template=prompt["system_template"],
-        user_template=prompt["user_template"],
+        _prompt_template=prompt,
         llm_type=llm_type,
         emb_type=emb_type,
     )
@@ -202,3 +202,5 @@ else:
                         # cost_container.empty()
                         # print_cost(cost_container)
             message(response)
+
+# streamlit run src/app.py

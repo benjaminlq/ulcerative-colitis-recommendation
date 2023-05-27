@@ -46,7 +46,7 @@ def get_argument_parser():
         "--chunk_size",
         "-s",
         type=int,
-        default=1000,
+        default=500,
         help="chunk size to split documents",
     )
     parser.add_argument(
@@ -61,7 +61,7 @@ def get_argument_parser():
 
 
 def main():
-    """Execution Function"""
+    """Main Function"""
     # Load environment variables
     args = get_argument_parser()
     emb_store_type = args.embed_store.lower()
