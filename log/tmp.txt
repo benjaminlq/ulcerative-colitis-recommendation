@@ -1,0 +1,34 @@
+OUTCOME: Same day = 1 count
+1. Outcome AMI
+- Number of AMI
+- Yes/No
+
+2. CAGB
+- Yes/No
+
+3. HHF
+- Number of AMI
+- Yes/No
+
+4. PCI
+- Number of AMI
+- Yes/No
+
+5. Surgery Biartric:
+- Number
+- Pivot into subgroup
+
+6. SURGERY angioplasty
+- Lower Limp: YES/NO
+- Left/Right Lower Limp: YES/NO
+
+7. AMPUTATION
+- Lower Limp: YES/NO
+- Left/Right
+- Level: Toe/Meta tarsal, ray/midfoot/bka/aka
+
+8. VISITS
+
+9. EMERGENCIES
+
+10. OUTPATIENT

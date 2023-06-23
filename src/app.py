@@ -10,7 +10,7 @@ from openai import Model
 from streamlit_chat import message
 
 import app_ui
-import config
+from config import EMBSTORE_DICT
 from inference import ChatOpenAIRetrieval
 from prompts import polyp
 
@@ -41,7 +41,7 @@ def initialize_retriever(
 
     retriever = ChatOpenAIRetrieval(
         prompt_template=_prompt_template,
-        emb_path=config.EMBSTORE_DICT[embedding_store],
+        emb_path=EMBSTORE_DICT["polyp"][embedding_store],
         openai_api_key=st.session_state.oai_api_key,
         llm_type=llm_type,
         embedding_type=emb_type,

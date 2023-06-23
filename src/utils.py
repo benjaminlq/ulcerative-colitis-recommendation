@@ -2,13 +2,13 @@
 """
 import glob
 import os
-from typing import List
+from typing import Dict, List
 
 from langchain.docstore.document import Document
 from langchain.document_loaders import (
     CSVLoader,
     EverNoteLoader,
-    PDFMinerLoader,
+    PyMuPDFLoader,
     TextLoader,
     UnstructuredEmailLoader,
     UnstructuredEPubLoader,
@@ -54,11 +54,10 @@ LOADER_MAPPING = {
     ".html": (UnstructuredHTMLLoader, {}),
     ".md": (UnstructuredMarkdownLoader, {}),
     ".odt": (UnstructuredODTLoader, {}),
-    ".pdf": (PDFMinerLoader, {}),
+    ".pdf": (PyMuPDFLoader, {}),
     ".ppt": (UnstructuredPowerPointLoader, {}),
     ".pptx": (UnstructuredPowerPointLoader, {}),
     ".txt": (TextLoader, {"encoding": "utf8"}),
-    # Add more mappings for other file extensions and loaders as needed
 }
 
 
@@ -68,9 +67,6 @@ def load_single_document(file_path: str) -> Document:
     Args:
         file_path (str): path to document
 
-    Raises:
-        ValueError: Unsupported file extension
-
     Returns:
         Document: Document file
     """
@@ -78,12 +74,12 @@ def load_single_document(file_path: str) -> Document:
     if ext in LOADER_MAPPING:
         loader_class, loader_args = LOADER_MAPPING[ext]
         loader = loader_class(file_path, **loader_args)
-        return loader.load()[0]
+        return loader.load()
 
     raise ValueError(f"Unsupported file extension '{ext}'")
 
 
-def load_documents(source_dir: str) -> List[Document]:
+def load_documents(source_dir: str, exclude_pages: Dict) -> List[Document]:
     """Load all documents inside a directory
 
     Args:
@@ -92,10 +88,22 @@ def load_documents(source_dir: str) -> List[Document]:
     Returns:
         List[Document]: List of document files
     """
-    # Loads all documents from source documents directory
     all_files = []
     for ext in LOADER_MAPPING:
         all_files.extend(
             glob.glob(os.path.join(source_dir, f"**/*{ext}"), recursive=True)
         )
-    return [load_single_document(file_path) for file_path in all_files]
+
+    all_documents = []
+
+    for file_path in all_files:
+        filename = file_path.split("/")[-1]
+        exclude_page_idx = exclude_pages[filename] if filename in exclude_pages else []
+        pages = load_single_document(file_path)
+        for page in pages:
+            if page.metadata["page"] in exclude_page_idx:
+                continue
+            page.metadata["modal"] = "text"
+            all_documents.append(page)
+
+    return all_documents

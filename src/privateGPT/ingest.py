@@ -19,7 +19,7 @@ def get_argument_parser():
     """
     parser = argparse.ArgumentParser("Embedding Store Creation")
     parser.add_argument(
-        "--embed_store", "-e", type=str, default="chroma", help="chroma|faiss|pinecone"
+        "--embed_store", "-e", type=str, default="chroma", help="chroma|faiss"
     )
     parser.add_argument(
         "--inputs",

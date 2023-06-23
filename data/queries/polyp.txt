@@ -1,0 +1,62 @@
+A 45 year old Chinese woman with no family history of colon cancer and otherwise well. There is no previous colonoscopy.
+A 45 year old African American man with no family history of colon cancer and otherwise well. There is no previous colonoscopy.
+A 51 year old man with no family history and well. There is no previous colonoscopy.
+A 86 year old woman with history of hypertension and hyperlipidemia. He is independent and able to take care of himself. There is no previous colonoscopy.
+70 year old man with decompensated heart failure and poorly controlled chronic obstructive pulmonary disease. There is no previous colonoscopy.
+A 77 year old man who is bedbound with many medical conditions. There is no previous colonoscopy.
+A 56 year old man with end stage cancer and a life expectancy of 1 year. There is no previous colonoscopy.
+A 40-year-old man whose uncle was diagnosed with rectal cancer at 75 years of age but has no other family members with CRC. He has an older brother who recently underwent a screening colonoscopy that showed 2 small adenomatous polyps.
+A 34 year old male with Peutz-Jeghers syndrome but no other symptoms
+A 32 year old man with FAP diagnosed by colonoscopy 1 year ago
+A 32-year-old woman whose Colonoscopy demonstrates over 200 sessile and pedunculated polyps scattered throughout the colon including a few larger than 10 mm that were biopsied and found to be tubular adenoma
+A 25-year-old woman with familial adenomatous polyposis (FAP) presents to your office. She underwent colectomy last year due to the presence of advanced adenomas
+A 40 year old man with ulcerative colitis diagnosed 5 years before on colonoscopy
+A 40 year old man with ulcerative colitis diagnosed 15 years before on colonoscopy
+A 40 year old man with ulcerative colitis diagnosed 1 year ago with newly diagnosed PSC
+A 35 year old woman with ulcerative colitis with invisible low grade dysplasia noted on colonoscopy 1 month
+A 30 year old male with crohn's disease and normal colonoscopy 2 years ago and whose father has colon cancer when he was 35 years old
+A 30 year old woman with crohn's disease and colonoscopy 2 years ago that shows no dysplasia but with pseudopolyps
+A 30 year old man with crohn's disease and colonoscopy 2 years ago that shows no dysplasia but with extensive colitis
+A 40 year old woman with crohn's disease with a 5mm high grade dysplasia polyp resected noted on colonoscopy 1 month ago
+A 40 year old male with crohn's disease with 15mm low grade dysplasia polyp resected noted on colonoscopy 1 month ago
+A 40 year old woman with crohn's disease with 5mm low grade dysplasia polyp resected noted on colonoscopy 1 month ago
+A 35 year old male with crohn's disease with last colonoscopy that was normal 1 year ago and the previous colonoscopy that was normal 4 years ago
+A 20 year old man with PSC and no previous colonoscopy
+A 36 year old woman with PSC and a normal colonoscopy 2 years ago
+A 36 year old man with PSC and a normal colonoscopy 1 year ago with new symptoms of bloody diarrhea
+A 30 year old woman whose father has lynch syndrome but is otherwise healthy
+A 40 year old man whose father had colon cancer at 50 years old but is otherwise healthy
+A 40 year old man whose grandfather had colon cancer at 50 years old but is otherwise healthy
+A 45 year old woman whose father has a history of adenoma with high grade dysplasia at the age of 55 years old
+A 37 year old man whose mother has a history of 15mm sessile serrated polyp at the age of 48 years old
+A 37 year old man whose mother has endometrial cancer, grandfather had colon cancer, and uncle has ureteric cancer
+A 45 year old woman whose father has a history of adenoma with low grade dysplasia at the age of 55 years old
+A 36 year old man whose father has a history of stomach cancer
+A 40 year old woman whose mother had cervix cancer
+55 year old woman with colonoscopy last year which had 2 5mm adenomas with low grade dysplasia that were removed
+A 66 year old man with colonoscopy this year. He had five 3-5mm hyperplastic polyps in the sigmoid colon, five 3-5mm hyperplastic polyps in the descending colon, and one 4mm hyperplastic polyp in the transverse colon that were removed
+A 65 year old man with colonoscopy this year and 10 3-5mm hyperplastic polyps in the descending colon that were removed
+A 67 year old man with colonoscopy 3 years ago with 6 adenomas of low grade dysplasia less than 10mm that were removed
+A 83 year old man who has no medical history who has more than 10 adenomas removed on a colonoscopy last year
+A 53 year old man with a tubular villous adenoma removed during colonoscopy last year
+A 64 year old man with a 15mm hyperplastic polyp that was removed during a colonoscopy last year
+A 55 year old man with a 5mm sessile serrated polyp that was removed during colonoscopy 2 years ago
+A 67 year old man with a 15mm polyp with high grade dysplasia removed during colonoscopy 1 year ago
+A 65-year-old woman undergoes surveillance colonoscopy, which identified a tubular adenoma with low grade dysplasia 3-mm lesion, located in the transverse colon. The lesion was completely removed using a cold snare. Her previous colonoscopy 5 years ago identified 1 to 2 diminutive polyps in the rectosigmoid colon that were read as hyperplastic.
+A 55-year-old woman undergoes her colonoscopy. She is asymptomatic, and she has no family history of colorectal cancer. Her colonoscopy reveals 5 large flat polyps throughout her colon including two 30-mm lesions in the ascending and transverse colon and several smaller sessile polyps that were removed
+45 year old male with obstructive sigmoid cancer and underwent left hemi-colectomy 2 months ago. Only had incomplete colonoscopy before
+50 year old female who had curative right hemi colectomy for ceacal cancer and normal colonoscopy 1 year after surgery
+50 year old male who had curative right hemi colectomy for ceacal cancer 2 months ago
+60 year old male who had curative abdominal perineal resection for rectosigmoid cancer 2 months ago
+70 year old female who had curative anterior resection for rectal cancer 1 year ago
+50 year old man who had a total colectomy for colerectal cancer 2 years ago
+55 year old woman with colonoscopy this year with 10 5mm hyperplastic polyps with incomplete removal
+60 year old man with colonoscopy this year with poor bowel preparation
+A 85 year old lady with colonoscopy this year that had 3 adenomas each 6mm with low grade dysplasia, 2 of which was removed
+70 year old lady with an incomplete colonoscopy this year due to poor tolerance of bowel insufflation
+30 year old female with persistent loss of weight of 20kg over the past 2 years
+35 year old male with persistent diarrhoea over 6 months
+35 year old female with persistent intermittent abdominal pain over 1 year
+25 year old male with persistent per-rectal bleeding
+35 year old woman with iron deficiency anemia. There is no previous colonoscopy.
+A 40 year old man with iron deficiency anemia. There is no previous colonoscopy.

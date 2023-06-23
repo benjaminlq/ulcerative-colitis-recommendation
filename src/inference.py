@@ -13,7 +13,7 @@ from langchain.prompts.base import BasePromptTemplate
 from langchain.prompts.chat import ChatPromptTemplate
 from langchain.vectorstores import FAISS
 
-import config
+from config import MAX_TOKENS, TEMPERATURE, TOP_P
 
 
 class Retrieval_Interface:
@@ -202,9 +202,9 @@ class ChatOpenAIRetrieval(Retrieval_Interface):
         llm_type: str = "gpt-3.5-turbo",
         embedding_type: str = "text-embedding-ada-002",
         embedding_store: Literal["faiss"] = "faiss",
-        temperature: float = config.TEMPERATURE,
-        top_p: float = config.TOP_P,
-        max_tokens: int = config.MAX_TOKENS,
+        temperature: float = TEMPERATURE,
+        top_p: float = TOP_P,
+        max_tokens: int = MAX_TOKENS,
         verbose: Optional[bool] = None,
     ):
         """AI QARetrievalFromSource Module

@@ -5,15 +5,12 @@ import os
 import sys
 
 MAIN_DIR = os.path.dirname(os.path.dirname(__file__))
-EMBSTORE_DIR = os.path.join(MAIN_DIR, "data", "emb_store")
-EMBSTORE_DICT = {
-    "faiss": os.path.join(EMBSTORE_DIR, "faiss"),
-    "pinecone": os.path.join(EMBSTORE_DIR, "pinecone"),
-    "chroma": os.path.join(EMBSTORE_DIR, "chroma"),
-}
+DATA_DIR = os.path.join(MAIN_DIR, "data")
+EMBSTORE_DIR = os.path.join(DATA_DIR, "emb_store")
+
 MODEL_DIR = os.path.join(MAIN_DIR, "models")
 PROMPT_DIR = os.path.join(MAIN_DIR, "prompt")
-DOCUMENT_SOURCE = os.path.join(MAIN_DIR, "data", "document_store", "polyp")
+DOCUMENT_SOURCE = os.path.join(DATA_DIR, "document_store")
 
 TEMPERATURE = 0.0
 TOP_P = 1.0
@@ -41,3 +38,39 @@ stream_handler.setFormatter(formatter)
 LOGGER.setLevel(logging.INFO)
 LOGGER.addHandler(stream_handler)
 LOGGER.addHandler(file_handler)
+
+
+# Path to Embeddings Store
+EMBSTORE_DICT = {
+    "polyp": {"faiss": os.path.join(EMBSTORE_DIR, "polyp", "faiss", "v1")},
+    "uc": {"faiss": os.path.join(EMBSTORE_DIR, "uc", "faiss")},
+}
+
+# Exclude Pages
+EXCLUDE_DICT = {
+    "agrawal.pdf": [13, 14, 15, 16, 17, 18],
+    "PIIS1542356520300446.pdf": [12, 13, 14, 15, 16, 17, 18],
+    "gutjnl-2021-326390R2 CLEAN.pdf": [
+        0,
+        2,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+    ]
+    + list(range(3, 31)),
+    "otad009.pdf": [15, 16],
+    "1-s2.0-S2468125321003770-main.pdf": [9],
+    "juillerat 2022.pdf": [6, 7, 8],
+}
