@@ -115,8 +115,9 @@ def main():
         chunk_size=chunk_size,
         chunk_overlap=chunk_overlap,
         exclude_pages=EXCLUDE_DICT,
-        pinecone_idx_name=pinecone_idx_name
+        pinecone_idx_name=pinecone_idx_name,
     )
+
 
 if __name__ == "__main__":
     main()

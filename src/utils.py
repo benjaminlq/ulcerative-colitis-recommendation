@@ -1,12 +1,14 @@
 """Utility Helper Functions
 """
 import glob
-import os
-import pinecone
 import json
-
+import os
+from datetime import datetime
+from shutil import rmtree
 from typing import Dict, List, Optional
 
+import pinecone
+from chromadb.config import Settings
 from langchain.docstore.document import Document
 from langchain.document_loaders import (
     CSVLoader,
@@ -21,14 +23,11 @@ from langchain.document_loaders import (
     UnstructuredPowerPointLoader,
     UnstructuredWordDocumentLoader,
 )
-
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.vectorstores import Chroma, FAISS, Pinecone
-from chromadb.config import Settings
+from langchain.vectorstores import FAISS, Chroma, Pinecone
 
 from config import LOGGER, MAIN_DIR
-from shutil import rmtree
-from datetime import datetime
+
 
 class MyElmLoader(UnstructuredEmailLoader):
     """Wrapper to fallback to text/plain when default does not work"""
@@ -118,21 +117,22 @@ def load_documents(source_dir: str, exclude_pages: Dict) -> List[Document]:
 
     return all_documents
 
+
 def generate_vectorstore(
     source_directory: str,
     embeddings,
     output_directory: str = "./vectorstore",
     emb_store_type: str = "chroma",
-    chunk_size: int=1000,
-    chunk_overlap: int=250,
+    chunk_size: int = 1000,
+    chunk_overlap: int = 250,
     exclude_pages: Optional[Dict] = None,
     pinecone_idx_name: Optional[str] = None,
-    key_path: Optional[str] = os.path.join(MAIN_DIR, "auth", "api_keys.json")
-    ):
-    
+    key_path: Optional[str] = os.path.join(MAIN_DIR, "auth", "api_keys.json"),
+):
+
     if os.path.exists(output_directory):
         rmtree(output_directory)
-    os.makedirs(output_directory, exist_ok = True)
+    os.makedirs(output_directory, exist_ok=True)
 
     LOGGER.info(f"Loading documents from {source_directory}")
 
@@ -164,7 +164,9 @@ def generate_vectorstore(
     elif emb_store_type == "faiss":
         db = FAISS.from_documents(texts, embedding=embeddings)
         db.save_local(output_directory)
-        assert "index.faiss" in os.listdir(output_directory) and "index.pkl" in os.listdir(output_directory)
+        assert "index.faiss" in os.listdir(
+            output_directory
+        ) and "index.pkl" in os.listdir(output_directory)
 
     elif emb_store_type == "pinecone":
         with open(key_path, "r") as f:
@@ -190,7 +192,9 @@ def generate_vectorstore(
         else:
             db = Pinecone.from_existing_index(pinecone_idx_name, embeddings)
             db.add_documents(texts)
-    
-    LOGGER.info(f"Successfully created {emb_store_type} vectorstore at {output_directory}")
+
+    LOGGER.info(
+        f"Successfully created {emb_store_type} vectorstore at {output_directory}"
+    )
 
     return db

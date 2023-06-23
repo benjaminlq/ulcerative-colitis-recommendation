@@ -1,7 +1,8 @@
 import argparse
-from exp import Experiment
 
 from config import LOGGER
+from exp import Experiment
+
 
 def get_argument_parser():
     parser = argparse.ArgumentParser("Run Experiment")
@@ -10,15 +11,15 @@ def get_argument_parser():
     parser.add_argument("--vectorstore", "-v", type=str, help="path to Vectorstore")
     args = parser.parse_args()
     return args
-    
+
+
 def main():
     args = get_argument_parser()
-    
-    experiment = Experiment(
-        
-    )
+
+    experiment = Experiment()
+
 
 if __name__ == "__main__":
     main()
-    
+
 # python3 ./src/scripts/experiment.py
