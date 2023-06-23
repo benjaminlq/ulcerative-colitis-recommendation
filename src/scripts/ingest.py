@@ -13,7 +13,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import FAISS, Chroma, Pinecone
 
 from config import EMBSTORE_DIR, EXCLUDE_DICT, LOGGER, MAIN_DIR, PGPT_EMBEDDINGS_MODEL
-from utils import load_documents
+from utils import generate_vectorstore
 
 
 def get_argument_parser():
@@ -107,72 +107,18 @@ def main():
             parent_folder, f"v{len(os.listdir(parent_folder)) + 1}"
         )
 
-    # Load documents and split in chunks
-    LOGGER.info(f"Loading documents from {source_directory}")
-
-    documents = load_documents(source_directory, exclude_pages=EXCLUDE_DICT)
-    text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=chunk_size, chunk_overlap=chunk_overlap
+    generate_vectorstore(
+        source_directory=source_directory,
+        embeddings=embeddings,
+        output_directory=emb_directory,
+        emb_store_type=emb_store_type,
+        chunk_size=chunk_size,
+        chunk_overlap=chunk_overlap,
+        exclude_pages=EXCLUDE_DICT,
+        pinecone_idx_name=pinecone_idx_name
     )
-    texts = text_splitter.split_documents(documents)
-
-    LOGGER.info(f"Loaded {len(documents)} documents from {source_directory}")
-    LOGGER.info(
-        f"Split into {len(texts)} chunks of text (max. {chunk_size} characters each)"
-    )
-
-    # Create embeddings
-
-    # Create and store locally vectorstore
-    if emb_store_type == "chroma":
-        chroma_settings = Settings(
-            chroma_db_impl="duckdb+parquet",
-            persist_directory=emb_directory,
-            anonymized_telemetry=False,
-        )
-        db = Chroma.from_documents(
-            texts,
-            embeddings,
-            persist_directory=emb_directory,
-            client_settings=chroma_settings,
-        )
-        db.persist()
-
-    elif emb_store_type == "faiss":
-        db = FAISS.from_documents(texts=texts, embedding=embeddings)
-        db.save_local(emb_directory)
-
-    elif emb_store_type == "pinecone":
-        PINECONE_API_KEY = keys["PINECONE_API"]["KEY"]
-        PINECONE_ENV = keys["PINECONE_API"]["ENV"]
-
-        pinecone.init(
-            api_key=PINECONE_API_KEY,
-            environment=PINECONE_ENV,
-        )
-
-        if not pinecone_idx_name:
-            pinecone_idx_name = "index_{}".format(
-                datetime.now().strftime("%d-%m-%Y-%H:%M:%S")
-            )
-
-        if pinecone_idx_name not in pinecone.list_indexes():
-            db = Pinecone.from_documents(
-                texts, embedding=embeddings, index_name=pinecone_idx_name
-            )
-
-        else:
-            db = Pinecone.from_existing_index(pinecone_idx_name, embeddings)
-            db.add_documents(texts)
-
-    else:
-        raise ValueError("Invalid Type of vectorstore")
-
-    db = None
-    LOGGER.info(f"Completed creating {emb_store_type} embedding store.")
-
 
 if __name__ == "__main__":
     main()
 
-# python3 ./src/ingest.py -i data/document_store/uc -p uc -m openai
+# python3 ./src/ingest.py -e faiss -i data/document_store/uc -p uc -m openai
