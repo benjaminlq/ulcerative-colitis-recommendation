@@ -12,7 +12,7 @@ from streamlit_chat import message
 import app_ui
 from config import EMBSTORE_DICT
 from inference import ChatOpenAIRetrieval
-from prompts import polyp
+from src.prompts.polyp import polyp
 
 
 @st.cache_resource()

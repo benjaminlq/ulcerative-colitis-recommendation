@@ -1,0 +1,11 @@
+Question,Recommendation 1,Recommendation 2,Recommendation 3,Drug Avoid,Reasoning
+40 year old male with newly diagnosed moderate UC and articular extraintestinal manifestations,Infliximab,Tofacitinib,,vedolizumab,IFX is ideal choice as biologically naïve with EIM.
+70 year old female with newly diagnosed severe UC,Ustekinumab,Vedolizumab,,Infliximab,"Given advanced age, IFX not preferred as first choice"
+35 year old male with known moderate UC with prior exposure to infliximab but has worsening colitis on endoscopy despite compliance,Tofacitinib,Ustekinumab,,,Testing 2nd line treatment to patients previously exposed to anti-TNFa
+60 year old female with newly diagnosed moderate UC with a background of congestive cardiac failure,Ustekinumab,Vedolizumab,,Tofacitinib,Testing contraindications to first line IFX. TFC not recommended because of increased LDL-C and MACE risk
+38 year old female with newly diagnosed moderate UC and psoriasis,Ustekinumab,,,,Test treatment of specific EIM and IBD
+25 year old pregnant woman with severe distal ulcerative colitis.,Infliximab,Vedolizumab,Ustekinumab,,Infliximab has best safety data in pregnancy (due to experience)
+56 year old man with moderatie to severe ulcerative colitis and ankylosing spondylitis,Infliximab,Adalimumab,,,Dual indications
+38 year old man with severe ulcerative colitis and has lost response to vedolizumab,Tofacitinib or ,Ustekinumab,,,Biologic failure
+28 year old woman who has severe extensive ulcerative colitis and has a history of lymphoma which was treated 4 years ago,Vedolizumab,Ustekinumab,,,Anti-TNFs and JAK inhs have associations/concerns with malignancies
+36 year old woman with moderate ulcerative colitis and multiple sclerosis.,Ozanimod,Etrasimod,,,Dual indications

@@ -46,6 +46,12 @@ EMBSTORE_DICT = {
     "uc": {"faiss": os.path.join(EMBSTORE_DIR, "uc", "faiss")},
 }
 
+VALIDATION_SET = {
+    "polyp": {"queries": os.path.join(DATA_DIR, "queries", "polyp.txt")},
+    "uc": {"queries": os.path.join(DATA_DIR, "queries", "uc.txt"),
+           "ground_truth": os.path.join(DATA_DIR, "queries", "uc_gt.csv")}    
+}
+
 # Exclude Pages
 EXCLUDE_DICT = {
     "agrawal.pdf": [13, 14, 15, 16, 17, 18],

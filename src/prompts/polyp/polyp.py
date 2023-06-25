@@ -1,11 +1,8 @@
 """Prompts used for LLM
 """
 
-from langchain.prompts.chat import (
-    ChatPromptTemplate,
-    HumanMessagePromptTemplate,
-    SystemMessagePromptTemplate,
-)
+from langchain.prompts.chat import ChatPromptTemplate, HumanMessagePromptTemplate, SystemMessagePromptTemplate
+
 from langchain.prompts.prompt import PromptTemplate
 
 prompt_template = """

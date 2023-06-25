@@ -9,7 +9,7 @@ from langchain.chat_models import ChatOpenAI
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.llms import OpenAI
 from langchain.output_parsers import PydanticOutputParser
-from langchain.prompts import ChatPromptTemplate, PromptTemplate
+from langchain.prompts import ChatPromptTemplate, PromptTemplate, load_prompt
 from langchain.vectorstores import FAISS
 
 from config import LOGGER, MAIN_DIR
@@ -75,6 +75,32 @@ class Experiment:
         self.drug_parser = PydanticOutputParser(pydantic_object=DrugOutput)
         self.chain = None
         self.verbose = verbose
+
+    @classmethod
+    def from_yaml(
+        cls,
+        prompt_path: str,
+        vector_store: str,
+        llm_type: str = "gpt-3.5-turbo",
+        emb: str = "text-embedding-ada-002",
+        keys_json: str = osp.join(MAIN_DIR, "auth", "api_keys.json"),
+        temperature: float = 0,
+        max_tokens: int = 512,
+        gt: Optional[str] = None,
+        verbose: bool = False,
+    ):
+        prompt = load_prompt(prompt_path)
+        return cls(
+            prompt_template = prompt,
+            vector_store = vector_store,
+            llm_type = llm_type,
+            emb = emb,
+            keys_json = keys_json,
+            temperature = temperature,
+            max_tokens = max_tokens,
+            gt = gt,
+            verbose = verbose,
+        )
 
     def load_vectorstore(self, vectorstore_path):
         assert "index.faiss" in os.listdir(
