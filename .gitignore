@@ -8,7 +8,6 @@ __pycache__/
 
 # Artifacts
 models/
-data/document_store/
 auth/
 
 # Distribution / packaging
