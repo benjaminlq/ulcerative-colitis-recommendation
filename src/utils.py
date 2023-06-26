@@ -5,7 +5,7 @@ import json
 import os
 from datetime import datetime
 from shutil import rmtree
-from typing import Dict, List, Optional
+from typing import Callable, Dict, List, Optional
 
 import pinecone
 from chromadb.config import Settings
@@ -24,7 +24,7 @@ from langchain.document_loaders import (
     UnstructuredWordDocumentLoader,
 )
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.vectorstores import FAISS, Chroma, Pinecone
+from langchain.vectorstores import FAISS, Chroma, Pinecone, VectorStore
 
 from config import LOGGER, MAIN_DIR
 
@@ -120,15 +120,34 @@ def load_documents(source_dir: str, exclude_pages: Dict) -> List[Document]:
 
 def generate_vectorstore(
     source_directory: str,
-    embeddings,
+    embeddings: Callable,
     output_directory: str = "./vectorstore",
-    emb_store_type: str = "chroma",
+    emb_store_type: str = "faiss",
     chunk_size: int = 1000,
     chunk_overlap: int = 250,
     exclude_pages: Optional[Dict] = None,
     pinecone_idx_name: Optional[str] = None,
+    additional_docs: Optional[str] = None,
     key_path: Optional[str] = os.path.join(MAIN_DIR, "auth", "api_keys.json"),
-):
+) -> VectorStore:
+    """Generate New Vector Index Database
+
+    Args:
+        source_directory (str): Directory contains source documents
+        embeddings (Callable): Function to convert text to vector embeddings
+        output_directory (str, optional): Output directory of vector index database. Defaults to "./vectorstore".
+        emb_store_type (str, optional): Type of vector index database. Defaults to "faiss".
+        chunk_size (int, optional): Maximum size of text chunks (characters) after split. Defaults to 1000.
+        chunk_overlap (int, optional): Maximum overlapping window between text chunks. Defaults to 250.
+        exclude_pages (Optional[Dict], optional): Dictionary of pages to be excluded from documents. Defaults to None.
+        pinecone_idx_name (Optional[str], optional): Name of pinecone index to be created or loaded. Defaults to None.
+        additional_docs (Optional[str], optional): Additional Tables, Images or Json to be added to doc list. Defaults to None.
+        key_path (Optional[str], optional): Path to file containing API info.
+            Defaults to os.path.join(MAIN_DIR, "auth", "api_keys.json").
+
+    Returns:
+        Vectorstore: Vector Database
+    """
 
     if os.path.exists(output_directory):
         rmtree(output_directory)
@@ -146,6 +165,19 @@ def generate_vectorstore(
     LOGGER.info(
         f"Split into {len(texts)} chunks of text (max. {chunk_size} characters each)"
     )
+
+    if additional_docs:
+        with open(additional_docs, "r") as f:
+            add_doc_infos = json.load(f)
+        for add_doc_info in add_doc_infos:
+            if add_doc_info["mode"] == "table":
+                texts.extend(convert_csv_to_documents(add_doc_info))
+            elif add_doc_info["mode"] == "json":
+                texts.extend(convert_json_to_documents(add_doc_info))
+            else:
+                LOGGER.warning(
+                    "Invalid document type. No texts added to documents list"
+                )
 
     if emb_store_type == "chroma":
         chroma_settings = Settings(
@@ -198,3 +230,38 @@ def generate_vectorstore(
     )
 
     return db
+
+
+def convert_csv_to_documents(table_info: Dict) -> List[Document]:
+    """Convert a dictionary containing table information into list of Documents
+
+    Args:
+        table_info (Dict): Dictionary containing .csv table information
+
+    Returns:
+        List[Document]: List of rows inside the table
+    """
+    assert table_info["mode"] == "table" and table_info["filename"].endswith(".csv")
+    documents = []
+    rows = load_single_document(table_info["filename"])
+    for row in rows:
+        row_no = row.metadata["row"]
+        metadata = {k: v for k, v in table_info["metadata"].items()}
+        metadata["row"] = row_no
+        row.page_content = table_info["description"] + ":" + row.page_content
+        row.metadata = metadata
+        documents.append(row)
+
+    return documents
+
+
+def convert_json_to_documents(json_info: Dict) -> List[Document]:
+    """Convert a dictionary containing json information into list of Documents
+
+    Args:
+        table_info (Dict): Dictionary containing .json table information
+
+    Returns:
+        List[Document]: List of Documents
+    """
+    return []

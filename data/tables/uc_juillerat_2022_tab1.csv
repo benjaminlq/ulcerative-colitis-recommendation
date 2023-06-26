@@ -1,0 +1,10 @@
+Patient Profile,Best,2nd Best,3rd Best,4th Best,5th Best
+Fresh No previous treatment,Infliximab (IFX*),Vedoluzimab (VEDO),Ustekinumab (USTE),Golimumab (GOL),Adalimumab (ADA)
+Currently under maintenance,Vedoluzimab (VEDO),Infliximab (IFX),"Ustekinumab (USTE), Golimumab (GOL)",Adalimumab (ADA),
+Prior response to Infliximab,Golimumab (GOL),Adalimumab (ADA),"Ustekinumab (USTE), Vedoluzimab (VEDO)",,
+Prior failure to Anti-TNF agents (1-2x) (PNR),Ustekinumab (USTE),Vedoluzimab (VEDO),,,
+Prior failure to Vedolizumab,Infliximab (IFX),"Ustekinumab (USTE), Golimumab (GOL)",Adalimumab (ADA),,
+Age > 65 & comorbidities (safety aspects data),"Ustekinumab (USTE), Vedoluzimab (VEDO)","Golimumab (GOL), Infliximab (IFX), Adalimumab (ADA)",,,
+Pregnancy,Infliximab (IFX),"Golimumab (GOL), Adalimumab (ADA)","Ustekinumab (USTE), Vedoluzimab (VEDO)",,
+Extraintestinale manifestation,Infliximab (IFX),Golimumab (GOL),Adalimumab (ADA),Ustekinumab (USTE),Vedoluzimab (VEDO)
+Pouchitis,Vedoluzimab (VEDO),Adalimumab (ADA),Infliximab (IFX),Ustekinumab (USTE),Golimumab (GOL)

@@ -1,0 +1,19 @@
+# General Settings
+project: polyp
+test_case: data/queries/polyp.txt
+prompt: polyp.py
+ground_truth:
+description: Text_Only
+verbose: True
+additional_docs:
+
+# Embedding Settings
+emb_type: text-embedding-ada-002
+vectorstore: faiss/text-embedding-ada-002/v1
+chunk_size: 1000
+chunk_overlap: 50
+
+# LLM Settings
+llm_type: gpt-3.5-turbo
+temperature: 0
+max_tokens: 512s

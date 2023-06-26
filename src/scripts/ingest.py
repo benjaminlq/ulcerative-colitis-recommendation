@@ -3,14 +3,9 @@
 import argparse
 import json
 import os
-from datetime import datetime
 
 import openai
-import pinecone
-from chromadb.config import Settings
 from langchain.embeddings import HuggingFaceEmbeddings, OpenAIEmbeddings
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.vectorstores import FAISS, Chroma, Pinecone
 
 from config import EMBSTORE_DIR, EXCLUDE_DICT, LOGGER, MAIN_DIR, PGPT_EMBEDDINGS_MODEL
 from utils import generate_vectorstore
@@ -32,6 +27,7 @@ def get_argument_parser():
         type=str,
         help="path to document source folder",
     )
+    parser.add_argument("--project", "-j", type=str, default=None, help="project")
     parser.add_argument(
         "--outputs",
         "-o",
@@ -39,7 +35,6 @@ def get_argument_parser():
         type=str,
         help="output directory to store embeddings",
     )
-    parser.add_argument("--project", "-p", type=str, help="project")
     parser.add_argument(
         "--model",
         "-m",
@@ -63,10 +58,17 @@ def get_argument_parser():
     )
     parser.add_argument(
         "--pinecone_index_name",
-        "--p",
+        "-p",
         type=str,
         default=None,
         help="Name of pinecone index",
+    )
+    parser.add_argument(
+        "--additional_docs",
+        "-a",
+        type=str,
+        default=None,
+        help="Path to additional documents",
     )
     args = parser.parse_args()
     return args
@@ -84,6 +86,7 @@ def main():
     chunk_overlap = args.chunk_overlap
     pinecone_idx_name = args.pinecone_index_name
     project = args.project
+    additional_docs = args.additional_docs
 
     if embeddings_model.lower() == "openai":
         emb_model_name = "text-embedding-ada-002"
@@ -116,10 +119,11 @@ def main():
         chunk_overlap=chunk_overlap,
         exclude_pages=EXCLUDE_DICT,
         pinecone_idx_name=pinecone_idx_name,
+        additional_docs=additional_docs,
     )
 
 
 if __name__ == "__main__":
     main()
 
-# python3 ./src/ingest.py -e faiss -i data/document_store/uc -p uc -m openai
+# python3 ./src/scripts/ingest.py -e faiss -i data/document_store/uc -o data/emb_store/uc/faiss/text-embedding-ada-002/v2-add -p uc -m openai -s 1000 -v 200 -a data/additional_docs.json

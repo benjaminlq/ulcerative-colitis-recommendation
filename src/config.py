@@ -7,6 +7,7 @@ import sys
 MAIN_DIR = os.path.dirname(os.path.dirname(__file__))
 DATA_DIR = os.path.join(MAIN_DIR, "data")
 EMBSTORE_DIR = os.path.join(DATA_DIR, "emb_store")
+ARTIFACT_DIR = os.path.join(MAIN_DIR, "artifacts")
 
 MODEL_DIR = os.path.join(MAIN_DIR, "models")
 PROMPT_DIR = os.path.join(MAIN_DIR, "prompt")
@@ -48,8 +49,10 @@ EMBSTORE_DICT = {
 
 VALIDATION_SET = {
     "polyp": {"queries": os.path.join(DATA_DIR, "queries", "polyp.txt")},
-    "uc": {"queries": os.path.join(DATA_DIR, "queries", "uc.txt"),
-           "ground_truth": os.path.join(DATA_DIR, "queries", "uc_gt.csv")}    
+    "uc": {
+        "queries": os.path.join(DATA_DIR, "queries", "uc.txt"),
+        "ground_truth": os.path.join(DATA_DIR, "queries", "uc_gt.csv"),
+    },
 }
 
 # Exclude Pages

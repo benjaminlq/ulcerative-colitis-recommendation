@@ -1,6 +1,9 @@
+"""Experiment Module
+"""
 import json
 import os
 import os.path as osp
+import re
 from typing import Dict, List, Optional, Union
 
 import pandas as pd
@@ -9,7 +12,7 @@ from langchain.chat_models import ChatOpenAI
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.llms import OpenAI
 from langchain.output_parsers import PydanticOutputParser
-from langchain.prompts import ChatPromptTemplate, PromptTemplate, load_prompt
+from langchain.prompts import ChatPromptTemplate, PromptTemplate
 from langchain.vectorstores import FAISS
 
 from config import LOGGER, MAIN_DIR
@@ -18,6 +21,8 @@ from utils import generate_vectorstore
 
 
 class Experiment:
+    """Experiment Module"""
+
     def __init__(
         self,
         prompt_template: Union[PromptTemplate, ChatPromptTemplate],
@@ -30,6 +35,20 @@ class Experiment:
         gt: Optional[str] = None,
         verbose: bool = False,
     ):
+        """Initiate Instance for an experiment run
+
+        Args:
+            prompt_template (Union[PromptTemplate, ChatPromptTemplate]): Prompt to be feed to LLM
+            vector_store (str): Path to Vector Index Database
+            llm_type (str, optional): Type of LLM Model. Defaults to "gpt-3.5-turbo".
+            emb (str, optional): Type of Embedding Model. Defaults to "text-embedding-ada-002".
+            keys_json (str, optional): Path to API Keys. Defaults to osp.join(MAIN_DIR, "auth", "api_keys.json").
+            temperature (float, optional): Temperature Settings for LLM model. Lower temperature makes LLM more deterministic
+                while higher temperature makes LLM more random. Defaults to 0.
+            max_tokens (int, optional): Max_Tokens Settings for LLM model. Defaults to 512.
+            gt (Optional[str], optional): Path to Ground Truth file. Defaults to None.
+            verbose (bool, optional): Verbose Setting. Defaults to False.
+        """
 
         self.llm_type = llm_type.lower()
         self.temperature = temperature
@@ -61,48 +80,26 @@ class Experiment:
         self.embedder = OpenAIEmbeddings(model=emb, openai_api_key=self.openai_key)
         try:
             self.load_vectorstore(vector_store)
-        except:
+        except ValueError:
             print(
                 "Vectorstore invalid. Please load valid vectorstore or create new vectorstore."
             )
-            self.docsearch = None
 
         self.prompt_template = prompt_template
         self.questions = []
         self.answers = []
         self.sources = []
-        self.ground_truth = pd.read_csv(gt, encoding="ISO-8859-1") if gt else None
+        self.ground_truth = self.load_groundtruth(gt) if gt else None
         self.drug_parser = PydanticOutputParser(pydantic_object=DrugOutput)
         self.chain = None
         self.verbose = verbose
 
-    @classmethod
-    def from_yaml(
-        cls,
-        prompt_path: str,
-        vector_store: str,
-        llm_type: str = "gpt-3.5-turbo",
-        emb: str = "text-embedding-ada-002",
-        keys_json: str = osp.join(MAIN_DIR, "auth", "api_keys.json"),
-        temperature: float = 0,
-        max_tokens: int = 512,
-        gt: Optional[str] = None,
-        verbose: bool = False,
-    ):
-        prompt = load_prompt(prompt_path)
-        return cls(
-            prompt_template = prompt,
-            vector_store = vector_store,
-            llm_type = llm_type,
-            emb = emb,
-            keys_json = keys_json,
-            temperature = temperature,
-            max_tokens = max_tokens,
-            gt = gt,
-            verbose = verbose,
-        )
+    def load_vectorstore(self, vectorstore_path: str):
+        """Load Vectorstore from path
 
-    def load_vectorstore(self, vectorstore_path):
+        Args:
+            vectorstore_path (str): Path to vector database folder.
+        """
         assert "index.faiss" in os.listdir(
             vectorstore_path
         ) and "index.pkl" in os.listdir(vectorstore_path), "Invalid Vectorstore"
@@ -113,20 +110,47 @@ class Experiment:
         self,
         data_directory: str,
         output_directory: str = "./vectorstore",
+        emb_store_type: str = "faiss",
         chunk_size: int = 1000,
         chunk_overlap: int = 250,
-        relevant_pages: Optional[Dict] = None,
+        exclude_pages: Optional[Dict] = None,
+        pinecone_idx_name: Optional[str] = None,
+        additional_docs: Optional[str] = None,
+        key_path: Optional[str] = os.path.join(MAIN_DIR, "auth", "api_keys.json"),
     ):
+        """Generate New vectorstore
+
+        Args:
+            data_directory (str): Directory contains source documents
+            output_directory (str, optional): Output directory of vector index database. Defaults to "./vectorstore".
+            emb_store_type (str, optional): Type of vector index database. Defaults to "faiss".
+            chunk_size (int, optional): Maximum size of text chunks (characters) after split. Defaults to 1000.
+            chunk_overlap (int, optional): Maximum overlapping window between text chunks. Defaults to 250.
+            exclude_pages (Optional[Dict], optional): Dictionary of pages to be excluded from documents. Defaults to None.
+            pinecone_idx_name (Optional[str], optional): Name of pinecone index to be created or loaded. Defaults to None.
+            additional_docs (Optional[str], optional): Additional Tables, Images or Json to be added to doc list. Defaults to None.
+            key_path (Optional[str], optional): Path to file containing API info.
+                Defaults to os.path.join(MAIN_DIR, "auth", "api_keys.json").
+        """
         self.docsearch = generate_vectorstore(
             data_directory=data_directory,
             embedder=self.embedder,
             output_directory=output_directory,
+            emb_store_type=emb_store_type,
             chunk_size=chunk_size,
             chunk_overlap=chunk_overlap,
-            relevant_pages=relevant_pages,
+            exclude_pages=exclude_pages,
+            pinecone_idx_name=pinecone_idx_name,
+            additional_docs=additional_docs,
+            key_path=key_path,
         )
 
     def run_test_cases(self, test_cases: Union[List[str], str]):
+        """Run and save test cases to memory
+
+        Args:
+            test_cases (Union[List[str], str]): List of test queries.
+        """
         if isinstance(test_cases, str):
             with open(test_cases, "r", encoding="utf-8-sig") as f:
                 test_cases = f.readlines()
@@ -155,14 +179,37 @@ class Experiment:
             self.sources.append(sources)
 
     @staticmethod
-    def convert_prompt_to_string(prompt):
+    def convert_prompt_to_string(
+        prompt: Union[PromptTemplate, ChatPromptTemplate]
+    ) -> str:
+        """Convert Prompt Object to string format
+
+        Args:
+            prompt (Union[PromptTemplate, ChatPromptTemplate]): Prompt Template
+
+        Returns:
+            str: Prompt String Template
+        """
         return prompt.format(**{v: v for v in prompt.input_variables})
 
     @staticmethod
-    def process_source(source):
+    def process_source(source: Dict) -> str:
+        """_summary_
+
+        Args:
+            source (Dict): Source Document Information
+
+        Returns:
+            str: Source Document Information in string
+        """
         return "\n\n".join([f"{k}: {v}" for k, v in source.items()])
 
-    def save_json(self, output_path):
+    def save_json(self, output_path: str):
+        """Save Output of test case runs to json file
+
+        Args:
+            output_path (str): Output Path to json file.
+        """
         output_dict = {}
         output_dict["prompt"] = Experiment.convert_prompt_to_string(
             self.prompt_template
@@ -177,16 +224,31 @@ class Experiment:
         with open(output_path, "w") as f:
             json.dump(output_dict, f)
 
-    def load_groundtruth(self, gt_path):
-        self.groundtruth = pd.read_csv(gt_path)
+    def load_groundtruth(self, gt_path: str) -> pd.DataFrame:
+        """Load Ground Truth information from .csv file
+
+        Args:
+            gt_path (str): Path to Ground Truth file
+
+        Returns:
+            pd.DataFrame: DataFrame containing Ground Truth data.
+        """
+        return pd.read_csv(gt_path, encoding="ISO-8859-1")
 
     def reset(self):
+        """Reset queries and answers"""
         self.questions = []
         self.answers = []
         self.sources = []
         self.ground_truth = None
 
-    def load_json(self, json_path, reset=False):
+    def load_json(self, json_path: str, reset: bool = False):
+        """Load Queries and Answers from Json file
+
+        Args:
+            json_path (str): Path to json output file to load into instance
+            reset (bool, optional): If reset, clear queries and answers from memory before loading. Defaults to False.
+        """
         if reset:
             self.reset()
         with open(json_path, "r") as f:
@@ -197,6 +259,11 @@ class Experiment:
             self.sources.append(test_case["sources"])
 
     def write_csv(self, output_csv: str):
+        """Write questions and answers to .csv files
+
+        Args:
+            output_csv (str): Path to output csv file
+        """
 
         pd_answers = [[], []]
         pd_pros = [[], []]
@@ -255,9 +322,16 @@ class Experiment:
     def _create_retriever_chain(
         self,
         chain_type: str = "stuff",
-        return_source_documents=True,
-        reduce_k_below_max_tokens=True,
+        return_source_documents: bool = True,
+        reduce_k_below_max_tokens: bool = True,
     ):
+        """Initiate QA from Source Chain
+
+        Args:
+            chain_type (str, optional): Chain Type. Can be stuff|map_reduce|refine|map_rerank. Defaults to "stuff".
+            return_source_documents (bool, optional): Whether to return source documents along side answers. Defaults to True.
+            reduce_k_below_max_tokens (bool, optional): _description_. Defaults to True.
+        """
         self.chain = RetrievalQAWithSourcesChain.from_chain_type(
             llm=self.llm,
             chain_type=chain_type,

@@ -1,0 +1,18 @@
+[
+    {
+        "filename": "data/tables/uc_juillerat_2022_tab1.csv",
+        "mode": "table",
+        "description": "Efficacy of biological treatments according to the line of treatment, earlier exposure, disease phenotype and patient characteristics. ",
+        "metadata": {
+            "author": "Pascal Juillerat",
+            "creator": "Elsevier",
+            "file_path": "/mnt/c/Users/QUAN/Desktop/medical-chatbot/data/document_store/uc/juillerat 2022.pdf",
+            "keywords": "",
+            "page": 3,
+            "source": "/mnt/c/Users/QUAN/Desktop/medical-chatbot/data/document_store/uc/juillerat 2022.pdf",
+            "subject": "Current Research in Pharmacology and Drug Discovery, 3 (2022) 100104. doi:10.1016/j.crphar.2022.100104",
+            "title": "Positioning biologics in the treatment of IBD: A practical guide - Which mechanism of action for whom?",
+            "total_pages": 9
+            }
+    }
+]
