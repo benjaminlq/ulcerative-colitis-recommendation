@@ -92,6 +92,12 @@ def get_argument_parser():
         default=None,
         help="Path to additional documents",
     )
+    parser.add_argument(
+        "--only_return_source",
+        action="store_true",
+        default=False,
+        help="Only return source documents from semantic search",
+    )
     args = parser.parse_args()
     return args
 
@@ -185,7 +191,7 @@ def main():
         emb=emb_type,
         temperature=temperature,
         max_tokens=max_tokens,
-        gt=os.path.join(DATA_DIR, "queries", ground_truth),
+        gt=os.path.join(DATA_DIR, "queries", ground_truth) if ground_truth else None,
         verbose=verbose,
     )
 
@@ -198,7 +204,7 @@ def main():
     with open(test_case_path, "r") as f:
         test_cases = f.readlines()
 
-    experiment.run_test_cases(test_cases)
+    experiment.run_test_cases(test_cases, only_return_source=args.only_return_source)
     LOGGER.info("Completed running all test cases.")
 
     save_path = os.path.join(
@@ -214,4 +220,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-# python3 ./src/scripts/run_experiment.py --yaml_cfg exps/uc_1.yaml
+# python3 ./src/scripts/qa_experiment.py --yaml_cfg exps/uc_1.yaml

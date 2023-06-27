@@ -108,7 +108,7 @@ class Experiment:
 
     def generate_vectorstore(
         self,
-        data_directory: str,
+        data_directory: Optional[str] = None,
         output_directory: str = "./vectorstore",
         emb_store_type: str = "faiss",
         chunk_size: int = 1000,
@@ -145,7 +145,9 @@ class Experiment:
             key_path=key_path,
         )
 
-    def run_test_cases(self, test_cases: Union[List[str], str]):
+    def run_test_cases(
+        self, test_cases: Union[List[str], str], only_return_source: bool = False
+    ):
         """Run and save test cases to memory
 
         Args:
@@ -159,13 +161,25 @@ class Experiment:
         if not self.chain:
             self._create_retriever_chain()
 
+        if only_return_source:
+            LOGGER.info("Perform Semantic Search for Source Documents only (No QA).")
+
         for test_case in test_cases:
             print("Query: {}".format(test_case))
-            output = self.chain(test_case)
-            self.questions.append(output["question"])
-            self.answers.append(output["answer"])
-            sources = []
-            for document in output["source_documents"]:
+            sources = []  # All sources for 1 single query
+            if only_return_source:
+                self.questions.append(test_case)
+                self.answers.append(None)
+                inputs = {"question": test_case}
+                source_documents = self.chain._get_docs(inputs)
+
+            else:
+                output = self.chain(test_case)
+                self.questions.append(output["question"])
+                self.answers.append(output["answer"])
+                source_documents = output["source_documents"]
+
+            for document in source_documents:
                 sources.append(
                     {
                         "title": document.metadata["title"],
@@ -271,10 +285,14 @@ class Experiment:
         pd_sources = [[], [], [], [], [], []]
 
         for answer, sources in zip(self.answers, self.sources):
-            drugs = [
-                self.drug_parser.parse(drug)
-                for drug in re.findall(re.compile(r"{[^{}]+}"), answer)
-            ]
+            drugs = (
+                [
+                    self.drug_parser.parse(drug)
+                    for drug in re.findall(re.compile(r"{[^{}]+}"), answer)
+                ]
+                if answer
+                else []
+            )
             pd_answers[0].append(drugs[0].drug_name if len(drugs) > 0 else None)
             pd_answers[1].append(drugs[1].drug_name if len(drugs) > 1 else None)
             pd_pros[0].append(drugs[0].advantages if len(drugs) > 0 else None)

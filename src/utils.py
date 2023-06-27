@@ -119,8 +119,8 @@ def load_documents(source_dir: str, exclude_pages: Dict) -> List[Document]:
 
 
 def generate_vectorstore(
-    source_directory: str,
     embeddings: Callable,
+    source_directory: Optional[str] = None,
     output_directory: str = "./vectorstore",
     emb_store_type: str = "faiss",
     chunk_size: int = 1000,
@@ -153,18 +153,21 @@ def generate_vectorstore(
         rmtree(output_directory)
     os.makedirs(output_directory, exist_ok=True)
 
-    LOGGER.info(f"Loading documents from {source_directory}")
+    if source_directory:
+        LOGGER.info(f"Loading documents from {source_directory}")
 
-    documents = load_documents(source_directory, exclude_pages=exclude_pages)
-    text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=chunk_size, chunk_overlap=chunk_overlap
-    )
-    texts = text_splitter.split_documents(documents)
+        documents = load_documents(source_directory, exclude_pages=exclude_pages)
+        text_splitter = RecursiveCharacterTextSplitter(
+            chunk_size=chunk_size, chunk_overlap=chunk_overlap
+        )
+        texts = text_splitter.split_documents(documents)
 
-    LOGGER.info(f"Loaded {len(documents)} documents from {source_directory}")
-    LOGGER.info(
-        f"Split into {len(texts)} chunks of text (max. {chunk_size} characters each)"
-    )
+        LOGGER.info(f"Loaded {len(documents)} documents from {source_directory}")
+        LOGGER.info(
+            f"Split into {len(texts)} chunks of text (max. {chunk_size} characters each)"
+        )
+    else:
+        texts = []
 
     if additional_docs:
         with open(additional_docs, "r") as f:
@@ -178,6 +181,10 @@ def generate_vectorstore(
                 LOGGER.warning(
                     "Invalid document type. No texts added to documents list"
                 )
+
+    LOGGER.info(
+        f"Total number of text chunks to create vector index store: {len(texts)}"
+    )
 
     if emb_store_type == "chroma":
         chroma_settings = Settings(
@@ -248,6 +255,7 @@ def convert_csv_to_documents(table_info: Dict) -> List[Document]:
         row_no = row.metadata["row"]
         metadata = {k: v for k, v in table_info["metadata"].items()}
         metadata["row"] = row_no
+        metadata["modal"] = table_info["mode"]
         row.page_content = table_info["description"] + ":" + row.page_content
         row.metadata = metadata
         documents.append(row)

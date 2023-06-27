@@ -24,6 +24,7 @@ def get_argument_parser():
     parser.add_argument(
         "--inputs",
         "-i",
+        default=None,
         type=str,
         help="path to document source folder",
     )
@@ -110,6 +111,8 @@ def main():
             parent_folder, f"v{len(os.listdir(parent_folder)) + 1}"
         )
 
+    emb_directory = emb_directory + f"_{chunk_size}_{chunk_overlap}"
+
     generate_vectorstore(
         source_directory=source_directory,
         embeddings=embeddings,
@@ -127,3 +130,4 @@ if __name__ == "__main__":
     main()
 
 # python3 ./src/scripts/ingest.py -e faiss -i data/document_store/uc -o data/emb_store/uc/faiss/text-embedding-ada-002/v2-add -p uc -m openai -s 1000 -v 200 -a data/additional_docs.json
+# python3 ./src/scripts/ingest.py -e faiss -o data/emb_store/uc/faiss/text-embedding-ada-002/v3-table-only -p uc -m openai -a data/additional_docs.json

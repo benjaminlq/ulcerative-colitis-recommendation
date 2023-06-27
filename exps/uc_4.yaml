@@ -3,13 +3,13 @@ project: uc
 test_case: data/queries/uc.txt
 prompt: uc_qa_source.py
 ground_truth: uc_gt.csv
-description: Text_with_juillerat_table
+description: Text_with_juillerat_table_only
 verbose: True
 additional_docs: data/additional_docs.json
 
 # Embedding Settings
 emb_type: text-embedding-ada-002
-vectorstore: faiss/text-embedding-ada-002/v2-add
+vectorstore: faiss/text-embedding-ada-002/v3-table-only
 chunk_size: 1000
 chunk_overlap: 200
 pinecone_index_name:

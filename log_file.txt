@@ -1,2 +1,0 @@
-2023-06-26 16:17:27,085:INFO: Loading faiss with AVX2 support.
-2023-06-26 16:17:27,231:INFO: Successfully loaded faiss with AVX2 support.

@@ -11,7 +11,7 @@ drug_parser = PydanticOutputParser(pydantic_object=DrugOutput)
 prompt_template = """Make reference to the context given to assess the scenario. If you do not know the answer. just say that "I don't know", don't try to make up an answer.
 You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC). Perform the following step
 
-ANALYSE the given patient profile based on given query based on one of the following criteria:
+ANALYSE the given patient profile based on given query based on the following criteria:
 - Freshly treated patient or patient under maintenance
 - Prior response to Infliximab
 - Prior failure to Anti-TNF agents

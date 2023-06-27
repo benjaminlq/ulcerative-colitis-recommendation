@@ -1,7 +1,7 @@
 # General Settings
 project: uc
 test_case: data/queries/uc.txt
-prompt: uc_text_1.py
+prompt: uc_qa_source.py
 ground_truth: uc_gt.csv
 description: Text_Only
 verbose: True
