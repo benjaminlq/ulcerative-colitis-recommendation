@@ -71,6 +71,9 @@ def get_argument_parser():
         default=None,
         help="Path to additional documents",
     )
+    parser.add_argument(
+        "--disable_concatenate_rows", "-d", action="store_false", default=True
+    )
     args = parser.parse_args()
     return args
 
@@ -88,6 +91,7 @@ def main():
     pinecone_idx_name = args.pinecone_index_name
     project = args.project
     additional_docs = args.additional_docs
+    concatenate_rows = args.disable_concatenate_rows
 
     if embeddings_model.lower() == "openai":
         emb_model_name = "text-embedding-ada-002"
@@ -102,6 +106,10 @@ def main():
         LOGGER.info("Creating Vectorstore with Sentence Transformer Embeddings")
 
     if not emb_directory:
+        print(EMBSTORE_DIR)
+        print(project)
+        print(emb_store_type)
+        print(emb_model_name)
         parent_folder = os.path.join(
             EMBSTORE_DIR, project, emb_store_type, emb_model_name
         )
@@ -123,11 +131,14 @@ def main():
         exclude_pages=EXCLUDE_DICT,
         pinecone_idx_name=pinecone_idx_name,
         additional_docs=additional_docs,
+        concatenate_rows=concatenate_rows,
     )
 
 
 if __name__ == "__main__":
     main()
 
-# python3 ./src/scripts/ingest.py -e faiss -i data/document_store/uc -o data/emb_store/uc/faiss/text-embedding-ada-002/v2-add -p uc -m openai -s 1000 -v 200 -a data/additional_docs.json
-# python3 ./src/scripts/ingest.py -e faiss -o data/emb_store/uc/faiss/text-embedding-ada-002/v3-table-only -p uc -m openai -a data/additional_docs.json
+# Text & Tables: python3 ./src/scripts/ingest.py -e faiss -i data/document_store/uc -o data/emb_store/uc/faiss/text-embedding-ada-002/v2-add -j uc -m openai -s 1000 -v 200 -a data/additional_docs.json
+# Text & Rows: python3 ./src/scripts/ingest.py -e faiss -i data/document_store/uc -o data/emb_store/uc/faiss/text-embedding-ada-002/v2-add -j uc
+#               -m openai -s 1000 -v 200 -a data/additional_docs.json --disable_concatenate_rows
+# Table only: python3 ./src/scripts/ingest.py -e faiss -o data/emb_store/uc/faiss/text-embedding-ada-002/v3-table-only -j uc -m openai -a data/additional_docs.json

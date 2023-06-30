@@ -185,7 +185,6 @@ class Experiment:
                         "title": document.metadata["title"],
                         "filename": document.metadata["source"].split("/")[-1],
                         "page": document.metadata["page"],
-                        "modal": document.metadata["modal"],
                         "text": document.page_content,
                     }
                 )
@@ -348,7 +347,8 @@ class Experiment:
         Args:
             chain_type (str, optional): Chain Type. Can be stuff|map_reduce|refine|map_rerank. Defaults to "stuff".
             return_source_documents (bool, optional): Whether to return source documents along side answers. Defaults to True.
-            reduce_k_below_max_tokens (bool, optional): _description_. Defaults to True.
+            reduce_k_below_max_tokens (bool, optional): If True, automatically reduce the number of source documents to
+                ensure that total tokens below max_tokens limit. Defaults to True.
         """
         self.chain = RetrievalQAWithSourcesChain.from_chain_type(
             llm=self.llm,

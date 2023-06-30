@@ -17,4 +17,6 @@ pandoc==2.3
 pinecone-client
 pypandoc==1.11
 pymupdf==1.22.5
+pdf2image
+pytesseract
 .

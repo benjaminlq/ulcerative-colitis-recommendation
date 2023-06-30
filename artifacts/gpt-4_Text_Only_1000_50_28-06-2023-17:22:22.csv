@@ -1,0 +1,1196 @@
+,question,gt_rec1,gt_rec2,gt_rec3,gt_avoid,gt_reason,prompt,raw_answer,answer1,pro1,cons1,answer2,pro2,cons2,source1,source2,source3,source4,source5,source6
+0,"40 year old male with newly diagnosed moderate UC and articular extraintestinal manifestations
+",Infliximab,Tofacitinib,,vedolizumab,IFX is ideal choice as biologically naïve with EIM.,"Make reference to the context given to assess the scenario. If you do not know the answer. just say that ""I don't know"", don't try to make up an answer.
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC). Perform the following step
+
+ANALYSE the given patient profile based on given query based on the following criteria:
+- Freshly treated patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile. Explain the PROS and CONS of the 2 choices.
+
+summaries
+
+The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {""properties"": {""foo"": {""title"": ""Foo"", ""description"": ""a list of strings"", ""type"": ""array"", ""items"": {""type"": ""string""}}}, ""required"": [""foo""]}}
+the object {""foo"": [""bar"", ""baz""]} is a well-formatted instance of the schema. The object {""properties"": {""foo"": [""bar"", ""baz""]}} is not well-formatted.
+
+Here is the output schema:
+```
+{""properties"": {""drug_name"": {""title"": ""Drug Name"", ""description"": ""Name of the drug"", ""type"": ""string""}, ""advantages"": {""title"": ""Advantages"", ""description"": ""Advantages of the drug "", ""type"": ""string""}, ""disadvantages"": {""title"": ""Disadvantages"", ""description"": ""Disadvantages of the drug"", ""type"": ""string""}}, ""required"": [""drug_name"", ""advantages"", ""disadvantages""]}
+```
+
+Question: question
+Answer:
+",I don't know.,,,,,,,"title:
+
+filename: otad009.pdf
+
+page: 0
+
+text: advanced therapies.
+Key Words: ulcerative colitis, clinical trials, advanced therapies, network meta-analysis
+Introduction
+Ulcerative colitis (UC) is a chronic inflammatory bowel dis-
+ease that affects the colorectum and is clinically characterized
+by bloody diarrhea, urgency, tenesmus, abdominal pain, ma-
+laise, weight loss, and fever. Disease onset commonly occurs
+between the ages of 15 and 30 years and the annual global
+© The Author(s) 2023. Published by Oxford University Press on behalf of Crohn's & Colitis Foundation.
+This is an Open Access article distributed under the terms of the Creative Commons Attribution License (https://creativecommons.org/licenses/by/4.0/),
+which permits unrestricted reuse, distribution, and reproduction in any medium, provided the original work is properly cited.
+Received for publication: September 21, 2022. Editorial Decision: January 25, 2023","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 5
+
+text: Trial and patient characteristics are summarized in
+Table 1. Overall, the median average age of patients was
+41 years (interquartile range, 40–42 y), and 60%
+(interquartile range, 56%–63%) were men. The median
+disease duration was 6.7 years (interquartile range,
+6.0–7.8 y), and 49% (interquartile range, 46%–55%) of
+patients had extensive colitis. A median of 40% (inter-
+quartile range, 30%–50%) of patients were treated with
+concomitant immunomodulators, and 51% (interquartile
+range, 45%–57%) were on corticosteroids at baseline.
+Patients across all trials and treatment arms were com-
+parable in terms of baseline prognostic variables, inclu-
+sion/exclusion
+criteria,
+and
+co-interventions.
+All
+outcomes were assessed uniformly based on the stan-
+dard deﬁnition of the Mayo Clinic score, between weeks
+6 and 10 for induction therapy (inﬂiximab, adalimumab,
+tofacitinib, ustekinumab, 8 weeks; golimumab, 6 weeks;
+vedolizumab, 6 weeks, 10 weeks, and 14 weeks in","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 4
+
+text: jIncludes patients with prior exposure to TNF antagonist with or without vedolizumab (13%–18% had prior exposure to vedolizumab).
+September 2020
+Management of Moderate–Severe UC 2183","title:
+
+filename: otad009.pdf
+
+page: 1
+
+text: 2
+Efficacy and Safety of Advanced Therapies
+incidence ranges from 9 to 20 cases per 100 000 per year with
+higher incidence in North America and Northern Europe.1
+The advanced therapeutic armamentarium for adults
+with moderately to severely active UC is rapidly evolving.
+For over 20 years, biologics targeting specific inflamma-
+tory pathways have been the mainstay, beginning with those
+targeting tumor necrosis alpha (TNFi; eg, infliximab [INF],
+adalimumab [ADA], and golimumab [GOL]) followed by
+biologics with other modes of action (eg, vedolizumab [VED]
+and ustekinumab [UST]). However, treatment limitations for
+moderately to severely active UC remain, including primary
+nonresponse, secondary loss of response, immunogenicity, and
+parenteral administration.2 To overcome these limitations,
+there has been increasing interest in small molecule drugs
+(SMDs), which can be orally administered and lack immu-
+nogenicity.3 Of particular interest are SMDs that inhibit the",,
+1,"70 year old female with newly diagnosed severe UC
+",Ustekinumab,Vedolizumab,,Infliximab,"Given advanced age, IFX not preferred as first choice","Make reference to the context given to assess the scenario. If you do not know the answer. just say that ""I don't know"", don't try to make up an answer.
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC). Perform the following step
+
+ANALYSE the given patient profile based on given query based on the following criteria:
+- Freshly treated patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile. Explain the PROS and CONS of the 2 choices.
+
+summaries
+
+The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {""properties"": {""foo"": {""title"": ""Foo"", ""description"": ""a list of strings"", ""type"": ""array"", ""items"": {""type"": ""string""}}}, ""required"": [""foo""]}}
+the object {""foo"": [""bar"", ""baz""]} is a well-formatted instance of the schema. The object {""properties"": {""foo"": [""bar"", ""baz""]}} is not well-formatted.
+
+Here is the output schema:
+```
+{""properties"": {""drug_name"": {""title"": ""Drug Name"", ""description"": ""Name of the drug"", ""type"": ""string""}, ""advantages"": {""title"": ""Advantages"", ""description"": ""Advantages of the drug "", ""type"": ""string""}, ""disadvantages"": {""title"": ""Disadvantages"", ""description"": ""Disadvantages of the drug"", ""type"": ""string""}}, ""required"": [""drug_name"", ""advantages"", ""disadvantages""]}
+```
+
+Question: question
+Answer:
+",I don't know.,,,,,,,"title:
+
+filename: otad009.pdf
+
+page: 0
+
+text: advanced therapies.
+Key Words: ulcerative colitis, clinical trials, advanced therapies, network meta-analysis
+Introduction
+Ulcerative colitis (UC) is a chronic inflammatory bowel dis-
+ease that affects the colorectum and is clinically characterized
+by bloody diarrhea, urgency, tenesmus, abdominal pain, ma-
+laise, weight loss, and fever. Disease onset commonly occurs
+between the ages of 15 and 30 years and the annual global
+© The Author(s) 2023. Published by Oxford University Press on behalf of Crohn's & Colitis Foundation.
+This is an Open Access article distributed under the terms of the Creative Commons Attribution License (https://creativecommons.org/licenses/by/4.0/),
+which permits unrestricted reuse, distribution, and reproduction in any medium, provided the original work is properly cited.
+Received for publication: September 21, 2022. Editorial Decision: January 25, 2023","title: Approach to the Management of Recently Diagnosed Inflammatory Bowel Disease Patients: A User's Guide for Adult and Pediatric Gastroenterologists
+
+filename: agrawal.pdf
+
+page: 2
+
+text: actually have high severity (due to disease history or
+behavior) increasing the risk for disease progression, and
+should be managed more proactively and aggressively. We
+will review predictors of IBD severity and activity.
+Age of Inﬂammatory Bowel Disease Diagnosis
+Numerous studies suggest that younger age at diagnosis
+is tied to adverse outcomes in both CD and UC.41 In CD,
+being diagnosed before the age of 40 years is associated
+with an increased risk (odds ratio [OR], 2.1; 95% CI, 1.3–
+3.6) of disabling disease 5 years after diagnosis, including
+higher rates of surgery, hospitalization, steroid dependence,
+and disease recurrence.42,43 In UC, younger age at diagnosis
+is linked to more frequent relapses, colectomy, and colo-
+rectal cancer.44,45 There are conﬂicting data on the disease
+course in the very-early-onset IBD population of patients
+diagnosed before age 6 years, with studies reporting both
+similar
+and
+worse
+outcomes
+in
+very-early-onset
+IBD","title:
+
+filename: otad009.pdf
+
+page: 1
+
+text: 2
+Efficacy and Safety of Advanced Therapies
+incidence ranges from 9 to 20 cases per 100 000 per year with
+higher incidence in North America and Northern Europe.1
+The advanced therapeutic armamentarium for adults
+with moderately to severely active UC is rapidly evolving.
+For over 20 years, biologics targeting specific inflamma-
+tory pathways have been the mainstay, beginning with those
+targeting tumor necrosis alpha (TNFi; eg, infliximab [INF],
+adalimumab [ADA], and golimumab [GOL]) followed by
+biologics with other modes of action (eg, vedolizumab [VED]
+and ustekinumab [UST]). However, treatment limitations for
+moderately to severely active UC remain, including primary
+nonresponse, secondary loss of response, immunogenicity, and
+parenteral administration.2 To overcome these limitations,
+there has been increasing interest in small molecule drugs
+(SMDs), which can be orally administered and lack immu-
+nogenicity.3 Of particular interest are SMDs that inhibit the","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 4
+
+text: jIncludes patients with prior exposure to TNF antagonist with or without vedolizumab (13%–18% had prior exposure to vedolizumab).
+September 2020
+Management of Moderate–Severe UC 2183",,
+2,"35 year old male with known moderate UC with prior exposure to infliximab but has worsening colitis on endoscopy despite compliance
+",Tofacitinib,Ustekinumab,,,Testing 2nd line treatment to patients previously exposed to anti-TNFa,"Make reference to the context given to assess the scenario. If you do not know the answer. just say that ""I don't know"", don't try to make up an answer.
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC). Perform the following step
+
+ANALYSE the given patient profile based on given query based on the following criteria:
+- Freshly treated patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile. Explain the PROS and CONS of the 2 choices.
+
+summaries
+
+The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {""properties"": {""foo"": {""title"": ""Foo"", ""description"": ""a list of strings"", ""type"": ""array"", ""items"": {""type"": ""string""}}}, ""required"": [""foo""]}}
+the object {""foo"": [""bar"", ""baz""]} is a well-formatted instance of the schema. The object {""properties"": {""foo"": [""bar"", ""baz""]}} is not well-formatted.
+
+Here is the output schema:
+```
+{""properties"": {""drug_name"": {""title"": ""Drug Name"", ""description"": ""Name of the drug"", ""type"": ""string""}, ""advantages"": {""title"": ""Advantages"", ""description"": ""Advantages of the drug "", ""type"": ""string""}, ""disadvantages"": {""title"": ""Disadvantages"", ""description"": ""Disadvantages of the drug"", ""type"": ""string""}}, ""required"": [""drug_name"", ""advantages"", ""disadvantages""]}
+```
+
+Question: question
+Answer:
+","[
+{
+""drug_name"": ""Vedolizumab"",
+""advantages"": ""Vedolizumab is a good option for patients who have had prior exposure to TNF antagonists like infliximab. It is specifically designed to treat inflammation in the gut, which makes it a suitable choice for ulcerative colitis. It has been shown to be effective in inducing and maintaining remission in moderate to severe ulcerative colitis."",
+""disadvantages"": ""The main disadvantage of vedolizumab is that it may take longer to work compared to other biologics. It also requires intravenous administration, which can be inconvenient. Side effects can include headache, joint pain, nausea, and fever. There is also a risk of serious infections.""
+},
+{
+""drug_name"": ""Ustekinumab"",
+""advantages"": ""Ustekinumab can be a good option for patients who have not responded to or cannot tolerate other biologics. It works by blocking a specific protein that causes inflammation, and can be used in patients with moderate to severe ulcerative colitis. It is administered via injection."",
+""disadvantages"": ""Potential side effects of ustekinumab include upper respiratory infections, headache, and fatigue. There is also a risk of serious infections, and it may not be as effective in patients who have previously failed other biologic therapies.""
+}
+]",Vedolizumab,"Vedolizumab is a good option for patients who have had prior exposure to TNF antagonists like infliximab. It is specifically designed to treat inflammation in the gut, which makes it a suitable choice for ulcerative colitis. It has been shown to be effective in inducing and maintaining remission in moderate to severe ulcerative colitis.","The main disadvantage of vedolizumab is that it may take longer to work compared to other biologics. It also requires intravenous administration, which can be inconvenient. Side effects can include headache, joint pain, nausea, and fever. There is also a risk of serious infections.",Ustekinumab,"Ustekinumab can be a good option for patients who have not responded to or cannot tolerate other biologics. It works by blocking a specific protein that causes inflammation, and can be used in patients with moderate to severe ulcerative colitis. It is administered via injection.","Potential side effects of ustekinumab include upper respiratory infections, headache, and fatigue. There is also a risk of serious infections, and it may not be as effective in patients who have previously failed other biologic therapies.","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 1
+
+text: ulcerative
+colitis.
+Studies
+included
+in
+these
+meta-
+analyses were phase II or III randomized controlled
+trials (RCTs) that met the following inclusion criteria:
+(1) patients: adults (age, >18 y) with moderate to
+severe ulcerative colitis (Mayo Clinic score of 6–12,
+with an endoscopic subscore of 2 or 3) who were
+either
+treatment-naïve
+(ﬁrst-line)
+or
+previously
+exposed to TNFa antagonists (second-line); (2) inter-
+vention: biologic therapy with inﬂiximab, adalimumab,
+golimumab, vedolizumab, tofacitinib, or ustekinumab,
+with a minimum duration of therapy of 14 days; (3)
+comparator: another active intervention or placebo;
+and (4) outcome: induction of clinical remission (Mayo
+Clinic score of �2 with no individual subscore of >1)
+and endoscopic improvement (Mayo endoscopy sub-
+score of 0 or 1).
+Because trials of maintenance therapy of biologic
+agents had different designs (treat straight-through
+design vs rerandomizing responders to induction ther-","title: Approach to the Management of Recently Diagnosed Inflammatory Bowel Disease Patients: A User's Guide for Adult and Pediatric Gastroenterologists
+
+filename: agrawal.pdf
+
+page: 8
+
+text: requiring hospitalization, IFX is the preferred biologic for
+induction and maintenance of remission, with or without
+IMM. Combination therapy in the SUCCESS trial was asso-
+ciated with improved clinical, but not endoscopic, outcomes
+compared to IFX monotherapy.108 When using IFX as a
+monotherapy in moderate to severe UC, given the potential
+for the colon to act as a “sink” for drugs, we advocate for
+checking early drug concentrations to ensure proper dosing
+and detecting immunogenicity early along with other
+pharmacokinetic and safety-related variables.109 There is no
+clear beneﬁt of concomitant mesalamine with biologic
+therapy in UC and it can be stopped in patients escalating to
+biologics.110 Some patients may present with acute severe
+UC
+where
+TNFi,
+cyclosporine,
+or
+subtotal
+colectomy
+followed by ileal pouch anal anastomosis can be a good
+initial strategy; discussion of management of acute severe
+UC is beyond the scope of this article.
+Taking Extraintestinal Manifestation Into","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 6
+
+text: Figure 2. (A) Relative efﬁ-
+cacy
+of
+different
+in-
+terventions for induction of
+clinical
+remission
+and
+endoscopic
+improvement
+in biologic-naïve patients
+with moderate to severely
+active ulcerative colitis. (B)
+Relative
+efﬁcacy
+of
+different interventions for
+induction of clinical remis-
+sion
+and
+endoscopic
+improvement
+in
+patients
+with moderate to severely
+active
+ulcerative
+colitis
+with prior exposure to tu-
+mor necrosis factor (TNF)⍺
+antagonists. SUCRA, sur-
+face under the cumulative
+ranking.
+September 2020
+Management of Moderate–Severe UC 2185","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 0
+
+text: METHODS:
+We searched publication databases through September 30, 2019, for randomized trials of
+adults with moderate to severe ulcerative colitis treated with TNF antagonists, vedolizumab,
+tofacitinib, or ustekinumab, as ﬁrst-line or second-line agents, compared with placebo or
+another active agent. Efﬁcacy outcomes were induction and maintenance of remission and
+endoscopic improvement; safety outcomes were serious adverse events and infections. We
+performed a ﬁxed-effects network meta-analysis using the frequentist approach, and calculated
+odds ratios (ORs) and 95% CI values. Agents were ranked using surface under the cumulative
+ranking (SUCRA) probabilities. Overall quality of evidence was rated using GRADE (Grading of
+Recommendations, Assessment, Development and Evaluation).
+RESULTS:
+In biologic-naïve patients, inﬂiximab was ranked highest for induction of clinical remission (OR
+vs placebo, 4.07; 95% CI, 2.67–6.21; SUCRA, 0.95) and endoscopic improvement (SUCRA, 0.95)",,
+3,"60 year old female with newly diagnosed moderate UC with a background of congestive cardiac failure
+",Ustekinumab,Vedolizumab,,Tofacitinib,Testing contraindications to first line IFX. TFC not recommended because of increased LDL-C and MACE risk,"Make reference to the context given to assess the scenario. If you do not know the answer. just say that ""I don't know"", don't try to make up an answer.
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC). Perform the following step
+
+ANALYSE the given patient profile based on given query based on the following criteria:
+- Freshly treated patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile. Explain the PROS and CONS of the 2 choices.
+
+summaries
+
+The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {""properties"": {""foo"": {""title"": ""Foo"", ""description"": ""a list of strings"", ""type"": ""array"", ""items"": {""type"": ""string""}}}, ""required"": [""foo""]}}
+the object {""foo"": [""bar"", ""baz""]} is a well-formatted instance of the schema. The object {""properties"": {""foo"": [""bar"", ""baz""]}} is not well-formatted.
+
+Here is the output schema:
+```
+{""properties"": {""drug_name"": {""title"": ""Drug Name"", ""description"": ""Name of the drug"", ""type"": ""string""}, ""advantages"": {""title"": ""Advantages"", ""description"": ""Advantages of the drug "", ""type"": ""string""}, ""disadvantages"": {""title"": ""Disadvantages"", ""description"": ""Disadvantages of the drug"", ""type"": ""string""}}, ""required"": [""drug_name"", ""advantages"", ""disadvantages""]}
+```
+
+Question: question
+Answer:
+","""I don't know""",,,,,,,"title:
+
+filename: otad009.pdf
+
+page: 0
+
+text: advanced therapies.
+Key Words: ulcerative colitis, clinical trials, advanced therapies, network meta-analysis
+Introduction
+Ulcerative colitis (UC) is a chronic inflammatory bowel dis-
+ease that affects the colorectum and is clinically characterized
+by bloody diarrhea, urgency, tenesmus, abdominal pain, ma-
+laise, weight loss, and fever. Disease onset commonly occurs
+between the ages of 15 and 30 years and the annual global
+© The Author(s) 2023. Published by Oxford University Press on behalf of Crohn's & Colitis Foundation.
+This is an Open Access article distributed under the terms of the Creative Commons Attribution License (https://creativecommons.org/licenses/by/4.0/),
+which permits unrestricted reuse, distribution, and reproduction in any medium, provided the original work is properly cited.
+Received for publication: September 21, 2022. Editorial Decision: January 25, 2023","title: Approach to the Management of Recently Diagnosed Inflammatory Bowel Disease Patients: A User's Guide for Adult and Pediatric Gastroenterologists
+
+filename: agrawal.pdf
+
+page: 2
+
+text: actually have high severity (due to disease history or
+behavior) increasing the risk for disease progression, and
+should be managed more proactively and aggressively. We
+will review predictors of IBD severity and activity.
+Age of Inﬂammatory Bowel Disease Diagnosis
+Numerous studies suggest that younger age at diagnosis
+is tied to adverse outcomes in both CD and UC.41 In CD,
+being diagnosed before the age of 40 years is associated
+with an increased risk (odds ratio [OR], 2.1; 95% CI, 1.3–
+3.6) of disabling disease 5 years after diagnosis, including
+higher rates of surgery, hospitalization, steroid dependence,
+and disease recurrence.42,43 In UC, younger age at diagnosis
+is linked to more frequent relapses, colectomy, and colo-
+rectal cancer.44,45 There are conﬂicting data on the disease
+course in the very-early-onset IBD population of patients
+diagnosed before age 6 years, with studies reporting both
+similar
+and
+worse
+outcomes
+in
+very-early-onset
+IBD","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 4
+
+text: jIncludes patients with prior exposure to TNF antagonist with or without vedolizumab (13%–18% had prior exposure to vedolizumab).
+September 2020
+Management of Moderate–Severe UC 2183","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 6
+
+text: Figure 2. (A) Relative efﬁ-
+cacy
+of
+different
+in-
+terventions for induction of
+clinical
+remission
+and
+endoscopic
+improvement
+in biologic-naïve patients
+with moderate to severely
+active ulcerative colitis. (B)
+Relative
+efﬁcacy
+of
+different interventions for
+induction of clinical remis-
+sion
+and
+endoscopic
+improvement
+in
+patients
+with moderate to severely
+active
+ulcerative
+colitis
+with prior exposure to tu-
+mor necrosis factor (TNF)⍺
+antagonists. SUCRA, sur-
+face under the cumulative
+ranking.
+September 2020
+Management of Moderate–Severe UC 2185",,
+4,"38 year old female with newly diagnosed moderate UC and psoriasis
+",Ustekinumab,,,,Test treatment of specific EIM and IBD,"Make reference to the context given to assess the scenario. If you do not know the answer. just say that ""I don't know"", don't try to make up an answer.
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC). Perform the following step
+
+ANALYSE the given patient profile based on given query based on the following criteria:
+- Freshly treated patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile. Explain the PROS and CONS of the 2 choices.
+
+summaries
+
+The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {""properties"": {""foo"": {""title"": ""Foo"", ""description"": ""a list of strings"", ""type"": ""array"", ""items"": {""type"": ""string""}}}, ""required"": [""foo""]}}
+the object {""foo"": [""bar"", ""baz""]} is a well-formatted instance of the schema. The object {""properties"": {""foo"": [""bar"", ""baz""]}} is not well-formatted.
+
+Here is the output schema:
+```
+{""properties"": {""drug_name"": {""title"": ""Drug Name"", ""description"": ""Name of the drug"", ""type"": ""string""}, ""advantages"": {""title"": ""Advantages"", ""description"": ""Advantages of the drug "", ""type"": ""string""}, ""disadvantages"": {""title"": ""Disadvantages"", ""description"": ""Disadvantages of the drug"", ""type"": ""string""}}, ""required"": [""drug_name"", ""advantages"", ""disadvantages""]}
+```
+
+Question: question
+Answer:
+","[
+  {
+    ""drug_name"": ""Infliximab"",
+    ""advantages"": ""Infliximab is effective for induction therapy in moderate to severe UC. It is also beneficial in treating extraintestinal manifestations like psoriasis."",
+    ""disadvantages"": ""Infliximab may not be effective in all patients and some may develop resistance or intolerance over time. Side effects can include infections, allergic reactions, and potential complications in pregnancy.""
+  },
+  {
+    ""drug_name"": ""Ustekinumab"",
+    ""advantages"": ""Ustekinumab is effective in treating both UC and psoriasis. It is a newer drug and may be beneficial for patients who have not responded to or cannot tolerate other treatments."",
+    ""disadvantages"": ""Ustekinumab may not be as effective as other drugs in severe cases of UC. Side effects can include infections, allergic reactions, and potential complications in pregnancy.""
+  }
+]",Infliximab,Infliximab is effective for induction therapy in moderate to severe UC. It is also beneficial in treating extraintestinal manifestations like psoriasis.,"Infliximab may not be effective in all patients and some may develop resistance or intolerance over time. Side effects can include infections, allergic reactions, and potential complications in pregnancy.",Ustekinumab,Ustekinumab is effective in treating both UC and psoriasis. It is a newer drug and may be beneficial for patients who have not responded to or cannot tolerate other treatments.,"Ustekinumab may not be as effective as other drugs in severe cases of UC. Side effects can include infections, allergic reactions, and potential complications in pregnancy.","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 5
+
+text: Trial and patient characteristics are summarized in
+Table 1. Overall, the median average age of patients was
+41 years (interquartile range, 40–42 y), and 60%
+(interquartile range, 56%–63%) were men. The median
+disease duration was 6.7 years (interquartile range,
+6.0–7.8 y), and 49% (interquartile range, 46%–55%) of
+patients had extensive colitis. A median of 40% (inter-
+quartile range, 30%–50%) of patients were treated with
+concomitant immunomodulators, and 51% (interquartile
+range, 45%–57%) were on corticosteroids at baseline.
+Patients across all trials and treatment arms were com-
+parable in terms of baseline prognostic variables, inclu-
+sion/exclusion
+criteria,
+and
+co-interventions.
+All
+outcomes were assessed uniformly based on the stan-
+dard deﬁnition of the Mayo Clinic score, between weeks
+6 and 10 for induction therapy (inﬂiximab, adalimumab,
+tofacitinib, ustekinumab, 8 weeks; golimumab, 6 weeks;
+vedolizumab, 6 weeks, 10 weeks, and 14 weeks in","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 4
+
+text: jIncludes patients with prior exposure to TNF antagonist with or without vedolizumab (13%–18% had prior exposure to vedolizumab).
+September 2020
+Management of Moderate–Severe UC 2183","title: Positioning biologics in the treatment of IBD: A practical guide - Which mechanism of action for whom?
+
+filename: juillerat 2022.pdf
+
+page: 4
+
+text: manifestations occur in up to 15% of IBD patients (Vavricka et al., 2011).
+The most common, erythema nodosum, depends on the underlying dis-
+ease activity, whereas pyoderma gangrenosum may be associated with
+active or inactive intestinal disease and requires rapid management, most
+commonly with systemic medication. Treatment includes oral cortico-
+steroids, cyclosporine, tacrolimus and anti-TNF therapy (inﬂiximab or
+adalimumab), drugs that have good efﬁcacy in several cases reports and
+small case series (Juillerat et al., 2007). Cases reports and a recent
+semi-systematic review suggest that IBD cutaneous lesions may respond
+to the newer IBD drugs. This is the case for ustekinumab and less
+frequently for vedolizumab (Phillips et al., 2020; Ben Abdallah et al.,
+2021). Uveitis also appears to respond to anti-TNF agents (Leal et al.,
+2019), whereas no biological agents, despite high expectations for
+vedolizumab, has shown efﬁcacy in primary sclerosing cholangitis","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 8
+
+text: severely active ulcerative colitis: results from the phase 3
+U-ACHIEVE study. J Crohn’s Colitis 2021; 15 (suppl 1): S022–24.
+8
+Vermeire S, Danese S, Zhou W, et al. OP23 efficacy and safety of
+upadacitinib as induction therapy in patients with moderately to
+severely active ulcerative colitis: results from phase 3
+U-ACCOMPLISH study. J Crohn’s Colitis 2021; 15 (suppl 1): S021–22.
+9
+Thorlund K, Druyts E, Mills EJ, Fedorak RN, Marshall JK.
+Adalimumab versus infliximab for the treatment of moderate to
+severe ulcerative colitis in adult patients naïve to anti-TNF therapy:
+an indirect treatment comparison meta-analysis. J Crohn’s Colitis
+2014; 8: 571–81.
+10
+Danese S, Fiorino G, Peyrin-Biroulet L, et al. Biological agents for
+moderately to severely active ulcerative colitis: a systematic review
+and network meta-analysis. Ann Intern Med 2014; 160: 704–11.
+11
+Singh S, Fumery M, Sandborn WJ, Murad MH. Systematic review",,
+5,"25 year old pregnant woman with severe distal ulcerative colitis
+",Infliximab,Vedolizumab,Ustekinumab,,Infliximab has best safety data in pregnancy (due to experience),"Make reference to the context given to assess the scenario. If you do not know the answer. just say that ""I don't know"", don't try to make up an answer.
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC). Perform the following step
+
+ANALYSE the given patient profile based on given query based on the following criteria:
+- Freshly treated patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile. Explain the PROS and CONS of the 2 choices.
+
+summaries
+
+The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {""properties"": {""foo"": {""title"": ""Foo"", ""description"": ""a list of strings"", ""type"": ""array"", ""items"": {""type"": ""string""}}}, ""required"": [""foo""]}}
+the object {""foo"": [""bar"", ""baz""]} is a well-formatted instance of the schema. The object {""properties"": {""foo"": [""bar"", ""baz""]}} is not well-formatted.
+
+Here is the output schema:
+```
+{""properties"": {""drug_name"": {""title"": ""Drug Name"", ""description"": ""Name of the drug"", ""type"": ""string""}, ""advantages"": {""title"": ""Advantages"", ""description"": ""Advantages of the drug "", ""type"": ""string""}, ""disadvantages"": {""title"": ""Disadvantages"", ""description"": ""Disadvantages of the drug"", ""type"": ""string""}}, ""required"": [""drug_name"", ""advantages"", ""disadvantages""]}
+```
+
+Question: question
+Answer:
+","""I don't know""",,,,,,,"title:
+
+filename: otad009.pdf
+
+page: 0
+
+text: advanced therapies.
+Key Words: ulcerative colitis, clinical trials, advanced therapies, network meta-analysis
+Introduction
+Ulcerative colitis (UC) is a chronic inflammatory bowel dis-
+ease that affects the colorectum and is clinically characterized
+by bloody diarrhea, urgency, tenesmus, abdominal pain, ma-
+laise, weight loss, and fever. Disease onset commonly occurs
+between the ages of 15 and 30 years and the annual global
+© The Author(s) 2023. Published by Oxford University Press on behalf of Crohn's & Colitis Foundation.
+This is an Open Access article distributed under the terms of the Creative Commons Attribution License (https://creativecommons.org/licenses/by/4.0/),
+which permits unrestricted reuse, distribution, and reproduction in any medium, provided the original work is properly cited.
+Received for publication: September 21, 2022. Editorial Decision: January 25, 2023","title:
+
+filename: otad009.pdf
+
+page: 0
+
+text: Downloaded from https://academic.oup.com/crohnscolitis360/article/5/2/otad009/7066911 by National University of Singapore user on 23 May 2023","title: Approach to the Management of Recently Diagnosed Inflammatory Bowel Disease Patients: A User's Guide for Adult and Pediatric Gastroenterologists
+
+filename: agrawal.pdf
+
+page: 3
+
+text: Disease Phenotype and Clinical Characteristics
+The International Organization for the Study of Inﬂam-
+matory Bowel Disease and the American Gastroenterological
+Association (AGA) provide a framework for categorization of
+CD and UC severity into mild-, moderate-, and high-risk
+groups based on phenotype and other characteristics.59,60
+In CD, the presence of large or deep mucosal lesions on
+endoscopy or magnetic resonance imaging (MRI), history of
+a ﬁstula, abscess, or intestinal resection are predictors of
+worse outcomes.59,60 In a prospective population-based
+inception cohort of 213 patients with CD, penetrating
+behavior was associated with a higher risk of progression to
+perianal disease (HR, 5.65; 95% CI, 2.65–12.03) and was a
+risk factor for resection (HR, 3.92; 95% CI, 1.86–8.67) and
+hospitalization (HR, 1.01; 95% CI, 1.00–1.01).16 Ileal and
+upper gastrointestinal disease location and extensive dis-
+ease are also markers of severe disease.61 Cigarette smoking","title: Approach to the Management of Recently Diagnosed Inflammatory Bowel Disease Patients: A User's Guide for Adult and Pediatric Gastroenterologists
+
+filename: agrawal.pdf
+
+page: 2
+
+text: actually have high severity (due to disease history or
+behavior) increasing the risk for disease progression, and
+should be managed more proactively and aggressively. We
+will review predictors of IBD severity and activity.
+Age of Inﬂammatory Bowel Disease Diagnosis
+Numerous studies suggest that younger age at diagnosis
+is tied to adverse outcomes in both CD and UC.41 In CD,
+being diagnosed before the age of 40 years is associated
+with an increased risk (odds ratio [OR], 2.1; 95% CI, 1.3–
+3.6) of disabling disease 5 years after diagnosis, including
+higher rates of surgery, hospitalization, steroid dependence,
+and disease recurrence.42,43 In UC, younger age at diagnosis
+is linked to more frequent relapses, colectomy, and colo-
+rectal cancer.44,45 There are conﬂicting data on the disease
+course in the very-early-onset IBD population of patients
+diagnosed before age 6 years, with studies reporting both
+similar
+and
+worse
+outcomes
+in
+very-early-onset
+IBD",,
+6,"56 year old man with moderate to severe ulcerative colitis and ankylosing spondylitis
+",Infliximab,Adalimumab,,,Dual indications,"Make reference to the context given to assess the scenario. If you do not know the answer. just say that ""I don't know"", don't try to make up an answer.
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC). Perform the following step
+
+ANALYSE the given patient profile based on given query based on the following criteria:
+- Freshly treated patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile. Explain the PROS and CONS of the 2 choices.
+
+summaries
+
+The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {""properties"": {""foo"": {""title"": ""Foo"", ""description"": ""a list of strings"", ""type"": ""array"", ""items"": {""type"": ""string""}}}, ""required"": [""foo""]}}
+the object {""foo"": [""bar"", ""baz""]} is a well-formatted instance of the schema. The object {""properties"": {""foo"": [""bar"", ""baz""]}} is not well-formatted.
+
+Here is the output schema:
+```
+{""properties"": {""drug_name"": {""title"": ""Drug Name"", ""description"": ""Name of the drug"", ""type"": ""string""}, ""advantages"": {""title"": ""Advantages"", ""description"": ""Advantages of the drug "", ""type"": ""string""}, ""disadvantages"": {""title"": ""Disadvantages"", ""description"": ""Disadvantages of the drug"", ""type"": ""string""}}, ""required"": [""drug_name"", ""advantages"", ""disadvantages""]}
+```
+
+Question: question
+Answer:
+",I don't know.,,,,,,,"title:
+
+filename: otad009.pdf
+
+page: 0
+
+text: advanced therapies.
+Key Words: ulcerative colitis, clinical trials, advanced therapies, network meta-analysis
+Introduction
+Ulcerative colitis (UC) is a chronic inflammatory bowel dis-
+ease that affects the colorectum and is clinically characterized
+by bloody diarrhea, urgency, tenesmus, abdominal pain, ma-
+laise, weight loss, and fever. Disease onset commonly occurs
+between the ages of 15 and 30 years and the annual global
+© The Author(s) 2023. Published by Oxford University Press on behalf of Crohn's & Colitis Foundation.
+This is an Open Access article distributed under the terms of the Creative Commons Attribution License (https://creativecommons.org/licenses/by/4.0/),
+which permits unrestricted reuse, distribution, and reproduction in any medium, provided the original work is properly cited.
+Received for publication: September 21, 2022. Editorial Decision: January 25, 2023","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 8
+
+text: severely active ulcerative colitis: results from the phase 3
+U-ACHIEVE study. J Crohn’s Colitis 2021; 15 (suppl 1): S022–24.
+8
+Vermeire S, Danese S, Zhou W, et al. OP23 efficacy and safety of
+upadacitinib as induction therapy in patients with moderately to
+severely active ulcerative colitis: results from phase 3
+U-ACCOMPLISH study. J Crohn’s Colitis 2021; 15 (suppl 1): S021–22.
+9
+Thorlund K, Druyts E, Mills EJ, Fedorak RN, Marshall JK.
+Adalimumab versus infliximab for the treatment of moderate to
+severe ulcerative colitis in adult patients naïve to anti-TNF therapy:
+an indirect treatment comparison meta-analysis. J Crohn’s Colitis
+2014; 8: 571–81.
+10
+Danese S, Fiorino G, Peyrin-Biroulet L, et al. Biological agents for
+moderately to severely active ulcerative colitis: a systematic review
+and network meta-analysis. Ann Intern Med 2014; 160: 704–11.
+11
+Singh S, Fumery M, Sandborn WJ, Murad MH. Systematic review","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 0
+
+text: moderate-to-severe ulcerative colitis.
+Methods In this systematic review and network meta-analysis, we searched MEDLINE, Embase, and the Cochrane
+Central Register of Controlled Trials without language restrictions for articles published between Jan 1, 1990, and
+July 1, 2021. Major congresses’ databases from Jan 1, 2018, to July 3, 2021, were reviewed manually. Phase 3, placebo-
+controlled or head-to-head randomised controlled trials (RCTs) assessing the efficacy and safety of biologics or small
+molecule drugs as induction or maintenance therapies for patients with moderate-to-severe ulcerative colitis were
+included. Phase 2 RCTs were excluded because of their small sample sizes and inclusion of doses not further explored
+in phase 3 RCTs. Summary data from intention-to-treat analyses were extracted from included reports by JSL and PAO.
+The primary outcome was the induction of clinical remission. A network meta-analysis was done under the frequentist","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 8
+
+text: Aliment Pharmacol Ther 2010; 31: 693–707.
+3
+Paschos P, Katsoula A, Salanti G, Giouleme O, Athanasiadou E,
+Tsapas A. Systematic review with network meta-analysis: the impact
+of medical interventions for moderate-to-severe ulcerative colitis on
+health-related quality of life. Aliment Pharmacol Ther 2018;
+48: 1174–85.
+4
+Olivera P, Danese S, Peyrin-Biroulet L. Next generation of small
+molecules in inflammatory bowel disease. Gut 2017; 66: 199–209.
+5
+Olivera P, Danese S, Peyrin-Biroulet L. JAK inhibition in
+inflammatory bowel disease. Expert Rev Clin Immunol 2017;
+13: 693–703.
+6
+Feagan BG, Danese S, Loftus EV Jr, et al. Filgotinib as induction
+and maintenance therapy for ulcerative colitis (SELECTION):
+a phase 2b/3 double-blind, randomised, placebo-controlled trial.
+Lancet 2021; 397: 2372–84.
+7
+Danese S, Vermeire S, Zhou W, et al. OP24 efficacy and safety of
+upadacitinib induction therapy in patients with moderately to",,
+7,"38 year old man with severe ulcerative colitis and has lost response to vedolizumab
+",Tofacitinib or ,Ustekinumab,,,Biologic failure,"Make reference to the context given to assess the scenario. If you do not know the answer. just say that ""I don't know"", don't try to make up an answer.
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC). Perform the following step
+
+ANALYSE the given patient profile based on given query based on the following criteria:
+- Freshly treated patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile. Explain the PROS and CONS of the 2 choices.
+
+summaries
+
+The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {""properties"": {""foo"": {""title"": ""Foo"", ""description"": ""a list of strings"", ""type"": ""array"", ""items"": {""type"": ""string""}}}, ""required"": [""foo""]}}
+the object {""foo"": [""bar"", ""baz""]} is a well-formatted instance of the schema. The object {""properties"": {""foo"": [""bar"", ""baz""]}} is not well-formatted.
+
+Here is the output schema:
+```
+{""properties"": {""drug_name"": {""title"": ""Drug Name"", ""description"": ""Name of the drug"", ""type"": ""string""}, ""advantages"": {""title"": ""Advantages"", ""description"": ""Advantages of the drug "", ""type"": ""string""}, ""disadvantages"": {""title"": ""Disadvantages"", ""description"": ""Disadvantages of the drug"", ""type"": ""string""}}, ""required"": [""drug_name"", ""advantages"", ""disadvantages""]}
+```
+
+Question: question
+Answer:
+","[
+{
+""drug_name"": ""Infliximab"",
+""advantages"": ""Infliximab is an anti-tumour necrosis factor biologic that has revolutionised therapeutics for ulcerative colitis, enabling better disease control in terms of increasing the rates of mucosal healing, deep remission, and corticosteroid-free remission, and improving quality of life."",
+""disadvantages"": ""Infliximab has several limitations, including limited efficacy, primary non-response, secondary loss of response, and immunogenicity.""
+},
+{
+""drug_name"": ""Ustekinumab"",
+""advantages"": ""Ustekinumab has been shown to be superior to placebo for inducing clinical remission in patients with moderate to severe ulcerative colitis who have had prior exposure to both vedolizumab and TNFa antagonists."",
+""disadvantages"": ""The exact efficacy of Ustekinumab in patients who have lost response to vedolizumab is not clearly stated in the provided literature.""
+}
+]",Infliximab,"Infliximab is an anti-tumour necrosis factor biologic that has revolutionised therapeutics for ulcerative colitis, enabling better disease control in terms of increasing the rates of mucosal healing, deep remission, and corticosteroid-free remission, and improving quality of life.","Infliximab has several limitations, including limited efficacy, primary non-response, secondary loss of response, and immunogenicity.",Ustekinumab,Ustekinumab has been shown to be superior to placebo for inducing clinical remission in patients with moderate to severe ulcerative colitis who have had prior exposure to both vedolizumab and TNFa antagonists.,The exact efficacy of Ustekinumab in patients who have lost response to vedolizumab is not clearly stated in the provided literature.,"title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 0
+
+text: colitis. Vedolizumab was the best performing agent for safety outcomes. With the paucity of direct comparisons in the
+published literature, our results might help clinicians to position drugs in treatment algorithms.
+Funding None.
+Copyright © 2021 Elsevier Ltd. All rights reserved.
+Introduction
+Ulcerative colitis is a chronic, idiopathic, potentially
+disabling condition that is clinically characterised
+by bloody diarrhoea, abdominal pain, and tenesmus.1
+Ulcerative colitis most commonly presents during the
+third and fifth decades of life, and is associated with an
+impaired health-related quality of life and considerable
+economic burden.2,3
+Nearly 20 years ago, the advent of anti-tumour necrosis
+factor biologics (eg, infliximab, adalimumab, and
+golimumab) revolutionised therapeutics for ulcerative
+colitis, enabling better disease control in terms of
+increasing the rates of mucosal healing, deep remission,
+and corticosteroid-free remission, and improving quality","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 0
+
+text: of life. Biologics with other targets were later approved
+for the treatment of moderate-to-severe ulcerative colitis,
+namely vedolizumab and, more recently, usteki numab.
+However,
+treatment
+with
+biologics
+has
+several
+limit ations, including limited efficacy, primary non-
+response, secondary loss of response, immunogenicity,","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 7
+
+text: Second-line
+pharmacotherapy
+for
+moderate–severe
+ulcerative colitis. Overall, 7 RCTs including 1580 pa-
+tients with moderate–severe ulcerative colitis with prior
+exposure to TNFa antagonists were identiﬁed. These
+included subgroup analyses of trials of adalimumab,21
+vedolizumab,24,25
+tofacitinib,26
+and
+ustekinumab.7
+There were no trials of inﬂiximab or golimumab in
+patients with prior exposure to TNFa antagonists who
+met inclusion criteria. In trials of adalimumab, only pa-
+tients with loss of response or intolerance to a prior
+TNFa antagonist were included. In contrast, in trials of
+vedolizumab, 48% to 58% of patients had inadequate
+response to a TNFa antagonist, and in trials of usteki-
+numab, 13% to 18% patients had prior exposure to both
+vedolizumab and TNFa antagonists. These data were not
+available for tofacitinib.
+Induction
+of
+clinical
+remission. On
+direct
+meta-
+analysis, tofacitinib and ustekinumab, but not adalimu-
+mab or vedolizumab, were superior to placebo for induc-","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 4
+
+text: jIncludes patients with prior exposure to TNF antagonist with or without vedolizumab (13%–18% had prior exposure to vedolizumab).
+September 2020
+Management of Moderate–Severe UC 2183",,
+8,"28 year old woman who has severe extensive ulcerative colitis and has a history of lymphoma which was treated 4 years ago
+",Vedolizumab,Ustekinumab,,,Anti-TNFs and JAK inhs have associations/concerns with malignancies,"Make reference to the context given to assess the scenario. If you do not know the answer. just say that ""I don't know"", don't try to make up an answer.
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC). Perform the following step
+
+ANALYSE the given patient profile based on given query based on the following criteria:
+- Freshly treated patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile. Explain the PROS and CONS of the 2 choices.
+
+summaries
+
+The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {""properties"": {""foo"": {""title"": ""Foo"", ""description"": ""a list of strings"", ""type"": ""array"", ""items"": {""type"": ""string""}}}, ""required"": [""foo""]}}
+the object {""foo"": [""bar"", ""baz""]} is a well-formatted instance of the schema. The object {""properties"": {""foo"": [""bar"", ""baz""]}} is not well-formatted.
+
+Here is the output schema:
+```
+{""properties"": {""drug_name"": {""title"": ""Drug Name"", ""description"": ""Name of the drug"", ""type"": ""string""}, ""advantages"": {""title"": ""Advantages"", ""description"": ""Advantages of the drug "", ""type"": ""string""}, ""disadvantages"": {""title"": ""Disadvantages"", ""description"": ""Disadvantages of the drug"", ""type"": ""string""}}, ""required"": [""drug_name"", ""advantages"", ""disadvantages""]}
+```
+
+Question: question
+Answer:
+","""I don't know""",,,,,,,"title:
+
+filename: otad009.pdf
+
+page: 0
+
+text: advanced therapies.
+Key Words: ulcerative colitis, clinical trials, advanced therapies, network meta-analysis
+Introduction
+Ulcerative colitis (UC) is a chronic inflammatory bowel dis-
+ease that affects the colorectum and is clinically characterized
+by bloody diarrhea, urgency, tenesmus, abdominal pain, ma-
+laise, weight loss, and fever. Disease onset commonly occurs
+between the ages of 15 and 30 years and the annual global
+© The Author(s) 2023. Published by Oxford University Press on behalf of Crohn's & Colitis Foundation.
+This is an Open Access article distributed under the terms of the Creative Commons Attribution License (https://creativecommons.org/licenses/by/4.0/),
+which permits unrestricted reuse, distribution, and reproduction in any medium, provided the original work is properly cited.
+Received for publication: September 21, 2022. Editorial Decision: January 25, 2023","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 0
+
+text: moderate-to-severe ulcerative colitis.
+Methods In this systematic review and network meta-analysis, we searched MEDLINE, Embase, and the Cochrane
+Central Register of Controlled Trials without language restrictions for articles published between Jan 1, 1990, and
+July 1, 2021. Major congresses’ databases from Jan 1, 2018, to July 3, 2021, were reviewed manually. Phase 3, placebo-
+controlled or head-to-head randomised controlled trials (RCTs) assessing the efficacy and safety of biologics or small
+molecule drugs as induction or maintenance therapies for patients with moderate-to-severe ulcerative colitis were
+included. Phase 2 RCTs were excluded because of their small sample sizes and inclusion of doses not further explored
+in phase 3 RCTs. Summary data from intention-to-treat analyses were extracted from included reports by JSL and PAO.
+The primary outcome was the induction of clinical remission. A network meta-analysis was done under the frequentist","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 8
+
+text: severely active ulcerative colitis: results from the phase 3
+U-ACHIEVE study. J Crohn’s Colitis 2021; 15 (suppl 1): S022–24.
+8
+Vermeire S, Danese S, Zhou W, et al. OP23 efficacy and safety of
+upadacitinib as induction therapy in patients with moderately to
+severely active ulcerative colitis: results from phase 3
+U-ACCOMPLISH study. J Crohn’s Colitis 2021; 15 (suppl 1): S021–22.
+9
+Thorlund K, Druyts E, Mills EJ, Fedorak RN, Marshall JK.
+Adalimumab versus infliximab for the treatment of moderate to
+severe ulcerative colitis in adult patients naïve to anti-TNF therapy:
+an indirect treatment comparison meta-analysis. J Crohn’s Colitis
+2014; 8: 571–81.
+10
+Danese S, Fiorino G, Peyrin-Biroulet L, et al. Biological agents for
+moderately to severely active ulcerative colitis: a systematic review
+and network meta-analysis. Ann Intern Med 2014; 160: 704–11.
+11
+Singh S, Fumery M, Sandborn WJ, Murad MH. Systematic review","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 0
+
+text: NGERE and Department of
+Hepatogastroenterology,
+Nancy University Hospital,
+Lorraine University,
+Vandoeuvre-lés-Nancy, France
+(Prof L Peyrin-Biroulet MD)
+Correspondence to:
+Prof Laurent Peyrin-Biroulet,
+INSERM NGERE and Department
+of Hepatogastroenterology,
+Nancy University Hospital,
+Lorraine University, Vandoeuvre-
+lès-Nancy F-54511, France
+peyrinbiroulet@gmail.com
+Efficacy and safety of biologics and small molecule drugs for
+patients with moderate-to-severe ulcerative colitis:
+a systematic review and network meta-analysis
+Juan S Lasa*, Pablo A Olivera*, Silvio Danese, Laurent Peyrin-Biroulet
+Summary
+Background There is a growing armamentarium for the treatment of moderate-to-severe ulcerative colitis. We aimed
+to compare the relative efficacy and safety of biologics and small molecule drugs for the treatment of patients with
+moderate-to-severe ulcerative colitis.",,
+9,36 year old woman with moderate ulcerative colitis and multiple sclerosis,Ozanimod,Etrasimod,,,Dual indications,"Make reference to the context given to assess the scenario. If you do not know the answer. just say that ""I don't know"", don't try to make up an answer.
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC). Perform the following step
+
+ANALYSE the given patient profile based on given query based on the following criteria:
+- Freshly treated patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile. Explain the PROS and CONS of the 2 choices.
+
+summaries
+
+The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {""properties"": {""foo"": {""title"": ""Foo"", ""description"": ""a list of strings"", ""type"": ""array"", ""items"": {""type"": ""string""}}}, ""required"": [""foo""]}}
+the object {""foo"": [""bar"", ""baz""]} is a well-formatted instance of the schema. The object {""properties"": {""foo"": [""bar"", ""baz""]}} is not well-formatted.
+
+Here is the output schema:
+```
+{""properties"": {""drug_name"": {""title"": ""Drug Name"", ""description"": ""Name of the drug"", ""type"": ""string""}, ""advantages"": {""title"": ""Advantages"", ""description"": ""Advantages of the drug "", ""type"": ""string""}, ""disadvantages"": {""title"": ""Disadvantages"", ""description"": ""Disadvantages of the drug"", ""type"": ""string""}}, ""required"": [""drug_name"", ""advantages"", ""disadvantages""]}
+```
+
+Question: question
+Answer:
+","""I don't know""",,,,,,,"title:
+
+filename: otad009.pdf
+
+page: 0
+
+text: advanced therapies.
+Key Words: ulcerative colitis, clinical trials, advanced therapies, network meta-analysis
+Introduction
+Ulcerative colitis (UC) is a chronic inflammatory bowel dis-
+ease that affects the colorectum and is clinically characterized
+by bloody diarrhea, urgency, tenesmus, abdominal pain, ma-
+laise, weight loss, and fever. Disease onset commonly occurs
+between the ages of 15 and 30 years and the annual global
+© The Author(s) 2023. Published by Oxford University Press on behalf of Crohn's & Colitis Foundation.
+This is an Open Access article distributed under the terms of the Creative Commons Attribution License (https://creativecommons.org/licenses/by/4.0/),
+which permits unrestricted reuse, distribution, and reproduction in any medium, provided the original work is properly cited.
+Received for publication: September 21, 2022. Editorial Decision: January 25, 2023","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 0
+
+text: moderate-to-severe ulcerative colitis.
+Methods In this systematic review and network meta-analysis, we searched MEDLINE, Embase, and the Cochrane
+Central Register of Controlled Trials without language restrictions for articles published between Jan 1, 1990, and
+July 1, 2021. Major congresses’ databases from Jan 1, 2018, to July 3, 2021, were reviewed manually. Phase 3, placebo-
+controlled or head-to-head randomised controlled trials (RCTs) assessing the efficacy and safety of biologics or small
+molecule drugs as induction or maintenance therapies for patients with moderate-to-severe ulcerative colitis were
+included. Phase 2 RCTs were excluded because of their small sample sizes and inclusion of doses not further explored
+in phase 3 RCTs. Summary data from intention-to-treat analyses were extracted from included reports by JSL and PAO.
+The primary outcome was the induction of clinical remission. A network meta-analysis was done under the frequentist","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 0
+
+text: NGERE and Department of
+Hepatogastroenterology,
+Nancy University Hospital,
+Lorraine University,
+Vandoeuvre-lés-Nancy, France
+(Prof L Peyrin-Biroulet MD)
+Correspondence to:
+Prof Laurent Peyrin-Biroulet,
+INSERM NGERE and Department
+of Hepatogastroenterology,
+Nancy University Hospital,
+Lorraine University, Vandoeuvre-
+lès-Nancy F-54511, France
+peyrinbiroulet@gmail.com
+Efficacy and safety of biologics and small molecule drugs for
+patients with moderate-to-severe ulcerative colitis:
+a systematic review and network meta-analysis
+Juan S Lasa*, Pablo A Olivera*, Silvio Danese, Laurent Peyrin-Biroulet
+Summary
+Background There is a growing armamentarium for the treatment of moderate-to-severe ulcerative colitis. We aimed
+to compare the relative efficacy and safety of biologics and small molecule drugs for the treatment of patients with
+moderate-to-severe ulcerative colitis.","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 0
+
+text: patients with moderate to severe ulcerative colitis. More trials of direct comparisons are
+needed to inform clinical decision making with greater conﬁdence.
+Keywords: GRADE; Pharmacotherapy; Inﬂammatory Bowel Disease; UC; Comparative Efﬁcacy.
+U
+lcerative colitis affects 1 in 200 to 1 in 400 people
+in Western nations, and its global incidence and
+prevalence is increasing.1 Although the majority of
+patients have a mild–moderate course, approximately
+10% to 15% of patients experience a severe disease
+course with signiﬁcant morbidity, with frequent ﬂares
+and
+hospitalizations
+requiring
+immunosuppressive
+therapies and corticosteroids, and impose a signiﬁcant
+direct and indirect economic burden in population-
+based cohorts.2,3 Several treatment options now are
+available
+for
+the
+management
+of
+moderate–severe
+ulcerative colitis, with variable efﬁcacy and safety pro-
+ﬁles, and positioning different agents in the treatment
+course as ﬁrst-line (in biologic-naïve patients) and",,

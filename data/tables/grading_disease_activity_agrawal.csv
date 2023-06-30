@@ -1,0 +1,5 @@
+,Stools (no./d),Blood in stools,Urgency,Hemoglobin,ESR,CRP (mg/L),FC (ug/g),Endoscopy (Mayo subscore),UCEIS
+Remission,Formed stool,None,None,Normal,30,Normal,< 150-200,O—1,O—1
+Mild,< 4,Intermittent,"Mild, occasional",Normal,30,Elevated,> 150-200,1,2—4
+Moderate,> 6,Frequent,Often,75% of normal,30,Elevated,150-200,2—3,5—8
+Severe,> 10,Continuous,Continuous,Transfusions required,30,Elevated,> 150—200,3,7—8

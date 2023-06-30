@@ -7,12 +7,41 @@
             "author": "Pascal Juillerat",
             "creator": "Elsevier",
             "file_path": "/mnt/c/Users/QUAN/Desktop/medical-chatbot/data/document_store/uc/juillerat 2022.pdf",
-            "keywords": "",
             "page": 3,
             "source": "/mnt/c/Users/QUAN/Desktop/medical-chatbot/data/document_store/uc/juillerat 2022.pdf",
             "subject": "Current Research in Pharmacology and Drug Discovery, 3 (2022) 100104. doi:10.1016/j.crphar.2022.100104",
             "title": "Positioning biologics in the treatment of IBD: A practical guide - Which mechanism of action for whom?",
             "total_pages": 9
+            }
+    },
+    {
+        "filename": "data/tables/grading_disease_activity_agrawal.csv",
+        "mode": "table",
+        "description": "Stratification of inflammatory bowel disease risk of progression based on disease severity and activity. BMI, body mass index; CDAI, Crohns Disease Activity Index; ESR, erythrocyte sedimentation rate; UCEIS, Ulcerative Colitis Endoscopic Index of Severity.",
+        "metadata": {
+            "author": "Manasi Agrawal",
+            "creator": "Elsevier",
+            "file_path": "/mnt/c/Users/QUAN/Desktop/medical-chatbot/data/document_store/uc/agrawal.pdf",
+            "page": 5,
+            "source": "/mnt/c/Users/QUAN/Desktop/medical-chatbot/data/document_store/uc/agrawal.pdf",
+            "subject": "Gastroenterology, 161 (2021) 47-65. doi:10.1053/j.gastro.2021.04.063",
+            "title": "Approach to the Management of Recently Diagnosed Inflammatory Bowel Disease Patients: A Users Guide for Adult and Pediatric Gastroenterologists",
+            "total_pages": 19
+            }
+    },
+    {
+        "filename": "data/tables/recently_diagnosed_uc_agrawal.csv",
+        "mode": "table",
+        "description": "Therapeutic strategies for the management of recentlydiagnosedulcerative colitis. IMMs include thiopurines and methotrexate. 5-ASA, 5-amino salicylic acid; ASUC, acute severe ulcerative colitis; IPAA, ileal pouch anal anastomosis.",
+        "metadata": {
+            "author": "Manasi Agrawal",
+            "creator": "Elsevier",
+            "file_path": "/mnt/c/Users/QUAN/Desktop/medical-chatbot/data/document_store/uc/agrawal.pdf",
+            "page": 7,
+            "source": "/mnt/c/Users/QUAN/Desktop/medical-chatbot/data/document_store/uc/agrawal.pdf",
+            "subject": "Gastroenterology, 161 (2021) 47-65. doi:10.1053/j.gastro.2021.04.063",
+            "title": "Approach to the Management of Recently Diagnosed Inflammatory Bowel Disease Patients: A Users Guide for Adult and Pediatric Gastroenterologists",
+            "total_pages": 19
             }
     }
 ]

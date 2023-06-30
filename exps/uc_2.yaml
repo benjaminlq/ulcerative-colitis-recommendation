@@ -1,20 +1,20 @@
 # General Settings
 project: uc
 test_case: data/queries/uc.txt
-prompt: uc_qa_source_chat.py
+prompt: uc_qa_source_1.py
 ground_truth: uc_gt.csv
-description: Text_Only
+description: Texts and Tables
 verbose: True
-additional_docs:
 
 # Embedding Settings
 emb_type: text-embedding-ada-002
-vectorstore: faiss/text-embedding-ada-002/v1
+vectorstore: faiss/text-embedding-ada-002/v2-add
 chunk_size: 1000
-chunk_overlap: 50
+chunk_overlap: 200
+additional_docs: data/additional_docs.json
 pinecone_index_name:
 
 # LLM Settings
-llm_type: gpt-3.5-turbo
+llm_type: gpt-4
 temperature: 0
-max_tokens: 512
+max_tokens: 1024

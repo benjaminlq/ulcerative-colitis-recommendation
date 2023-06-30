@@ -1,7 +1,7 @@
 # General Settings
 project: uc
 test_case: data/queries/uc.txt
-prompt: uc_qa_source.py
+prompt: uc_qa_source_1.py
 ground_truth:
 description: Only Semantic Searching
 verbose: True

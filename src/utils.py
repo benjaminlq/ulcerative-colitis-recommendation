@@ -53,7 +53,7 @@ class MyElmLoader(UnstructuredEmailLoader):
 
 # Map file extensions to document loaders and their arguments
 LOADER_MAPPING = {
-    ".csv": (CSVLoader, {}),
+    ".csv": (CSVLoader, {"encoding": "ISO-8859-1"}),
     # ".docx": (Docx2txtLoader, {}),
     ".doc": (UnstructuredWordDocumentLoader, {}),
     ".docx": (UnstructuredWordDocumentLoader, {}),
@@ -128,6 +128,7 @@ def generate_vectorstore(
     exclude_pages: Optional[Dict] = None,
     pinecone_idx_name: Optional[str] = None,
     additional_docs: Optional[str] = None,
+    concatenate_rows: bool = True,
     key_path: Optional[str] = os.path.join(MAIN_DIR, "auth", "api_keys.json"),
 ) -> VectorStore:
     """Generate New Vector Index Database
@@ -174,7 +175,11 @@ def generate_vectorstore(
             add_doc_infos = json.load(f)
         for add_doc_info in add_doc_infos:
             if add_doc_info["mode"] == "table":
-                texts.extend(convert_csv_to_documents(add_doc_info))
+                texts.extend(
+                    convert_csv_to_documents(
+                        add_doc_info, concatenate_rows=concatenate_rows
+                    )
+                )
             elif add_doc_info["mode"] == "json":
                 texts.extend(convert_json_to_documents(add_doc_info))
             else:
@@ -239,7 +244,9 @@ def generate_vectorstore(
     return db
 
 
-def convert_csv_to_documents(table_info: Dict) -> List[Document]:
+def convert_csv_to_documents(
+    table_info: Dict, concatenate_rows: bool = True
+) -> List[Document]:
     """Convert a dictionary containing table information into list of Documents
 
     Args:
@@ -249,16 +256,26 @@ def convert_csv_to_documents(table_info: Dict) -> List[Document]:
         List[Document]: List of rows inside the table
     """
     assert table_info["mode"] == "table" and table_info["filename"].endswith(".csv")
-    documents = []
     rows = load_single_document(table_info["filename"])
+    documents = []
+    table_content = table_info["description"] + "\n\n"
     for row in rows:
-        row_no = row.metadata["row"]
-        metadata = {k: v for k, v in table_info["metadata"].items()}
-        metadata["row"] = row_no
-        metadata["modal"] = table_info["mode"]
-        row.page_content = table_info["description"] + ":" + row.page_content
-        row.metadata = metadata
-        documents.append(row)
+        if concatenate_rows:
+            table_content += row.page_content + "\n\n"
+            table_doc = Document(
+                page_content=table_content, metadata=table_info["metadata"]
+            )
+        else:
+            row_no = row.metadata["row"]
+            metadata = {k: v for k, v in table_info["metadata"].items()}
+            metadata["row"] = row_no
+            metadata["modal"] = table_info["mode"]
+            row.page_content = table_info["description"] + ":" + row.page_content
+            row.metadata = metadata
+            documents.append(row)
+
+    if concatenate_rows:
+        documents.append(table_doc)
 
     return documents
 

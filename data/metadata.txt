@@ -1,0 +1,101 @@
+{'author': 'Juan S Lasa MD',
+ 'creationDate': "D:20211223225432+05'30'",
+ 'creator': 'Elsevier',
+ 'file_path': '/mnt/c/Users/QUAN/Desktop/medical-chatbot/data/document_store/uc/1-s2.0-S2468125321003770-main.pdf',
+ 'format': 'PDF 1.7',
+ 'keywords': '',
+ 'modDate': "D:20220108175830+05'30'",
+ 'page': 0,
+ 'producer': 'Acrobat Distiller 6.0 for Windows',
+ 'source': '/mnt/c/Users/QUAN/Desktop/medical-chatbot/data/document_store/uc/1-s2.0-S2468125321003770-main.pdf',
+ 'subject': 'The Lancet Gastroenterology & Hepatology, 7 (2022) 161-170. '
+            'doi:10.1016/S2468-1253(21)00377-0',
+ 'title': 'Efficacy and safety of biologics and small molecule drugs for '
+          'patients with moderate-to-severe ulcerative colitis: a systematic '
+          'review and network meta-analysis',
+ 'total_pages': 10,
+ 'trapped': ''}
+{'author': 'Manasi Agrawal',
+ 'creationDate': "D:20210619033246+05'30'",
+ 'creator': 'Elsevier',
+ 'file_path': '/mnt/c/Users/QUAN/Desktop/medical-chatbot/data/document_store/uc/agrawal.pdf',
+ 'format': 'PDF 1.7',
+ 'keywords': '',
+ 'modDate': "D:20210619033336+05'30'",
+ 'page': 0,
+ 'producer': 'Acrobat Distiller 8.1.0 (Windows)',
+ 'source': '/mnt/c/Users/QUAN/Desktop/medical-chatbot/data/document_store/uc/agrawal.pdf',
+ 'subject': 'Gastroenterology, 161 (2021) 47-65. '
+            'doi:10.1053/j.gastro.2021.04.063',
+ 'title': 'Approach to the Management of Recently Diagnosed Inflammatory Bowel '
+          "Disease Patients: A User's Guide for Adult and Pediatric "
+          'Gastroenterologists',
+ 'total_pages': 19,
+ 'trapped': ''}
+{'author': 'Burr, NE, Gracie, DJ, Black, CJ and Ford, AC',
+ 'creationDate': "D:20230106151148Z00'00'",
+ 'creator': 'Microsoft® Word for Microsoft 365',
+ 'file_path': '/mnt/c/Users/QUAN/Desktop/medical-chatbot/data/document_store/uc/gutjnl-2021-326390R2 '
+              'CLEAN.pdf',
+ 'format': 'PDF 1.7',
+ 'keywords': 'meta-analysis; ulcerative colitis',
+ 'modDate': "D:20230106151148Z00'00'",
+ 'page': 0,
+ 'producer': 'GPL Ghostscript 9.25',
+ 'source': '/mnt/c/Users/QUAN/Desktop/medical-chatbot/data/document_store/uc/gutjnl-2021-326390R2 '
+           'CLEAN.pdf',
+ 'subject': '',
+ 'title': 'Efficacy of biological therapies and small molecules in moderate to '
+          'severe ulcerative colitis: systematic review and network '
+          'meta-analysis',
+ 'total_pages': 46,
+ 'trapped': ''}
+{'author': 'Pascal Juillerat',
+ 'creationDate': "D:20221210111351+05'30'",
+ 'creator': 'Elsevier',
+ 'file_path': '/mnt/c/Users/QUAN/Desktop/medical-chatbot/data/document_store/uc/juillerat '
+              '2022.pdf',
+ 'format': 'PDF 1.7',
+ 'keywords': '',
+ 'modDate': "D:20221210111432+05'30'",
+ 'page': 0,
+ 'producer': 'Acrobat Distiller 8.1.0 (Windows)',
+ 'source': '/mnt/c/Users/QUAN/Desktop/medical-chatbot/data/document_store/uc/juillerat '
+           '2022.pdf',
+ 'subject': 'Current Research in Pharmacology and Drug Discovery, 3 (2022) '
+            '100104. doi:10.1016/j.crphar.2022.100104',
+ 'title': 'Positioning biologics in the treatment of IBD: A practical guide - '
+          'Which mechanism of action for whom?',
+ 'total_pages': 9,
+ 'trapped': ''}
+{'author': '',
+ 'creationDate': "D:20230328133539+05'30'",
+ 'creator': 'Adobe InDesign 15.1 (Windows)',
+ 'file_path': '/mnt/c/Users/QUAN/Desktop/medical-chatbot/data/document_store/uc/otad009.pdf',
+ 'format': 'PDF 1.4',
+ 'keywords': '',
+ 'modDate': "D:20230523091651+00'00'",
+ 'page': 0,
+ 'producer': 'Adobe PDF Library 15.0; modified using iTextSharp 4.1.6 by 1T3XT',
+ 'source': '/mnt/c/Users/QUAN/Desktop/medical-chatbot/data/document_store/uc/otad009.pdf',
+ 'subject': '',
+ 'title': '',
+ 'total_pages': 17,
+ 'trapped': ''}
+{'author': 'Siddharth Singh',
+ 'creationDate': "D:20200816062640+05'30'",
+ 'creator': 'Elsevier',
+ 'file_path': '/mnt/c/Users/QUAN/Desktop/medical-chatbot/data/document_store/uc/PIIS1542356520300446.pdf',
+ 'format': 'PDF 1.7',
+ 'keywords': '',
+ 'modDate': "D:20200816062734+05'30'",
+ 'page': 0,
+ 'producer': 'Acrobat Distiller 8.1.0 (Windows)',
+ 'source': '/mnt/c/Users/QUAN/Desktop/medical-chatbot/data/document_store/uc/PIIS1542356520300446.pdf',
+ 'subject': 'Clinical Gastroenterology and Hepatology, 18 (2020) 2179-2197. '
+            'doi:10.1016/j.cgh.2020.01.008',
+ 'title': 'First- and Second-Line Pharmacotherapies for Patients With Moderate '
+          'to Severely Active Ulcerative Colitis: An Updated Network '
+          'Meta-Analysis',
+ 'total_pages': 19,
+ 'trapped': ''}
