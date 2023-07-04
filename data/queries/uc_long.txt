@@ -1,0 +1,10 @@
+Recommend biological drugs for treatment of moderate to severe ulcerative colitis given the following patient profile:\n 40 year old male with newly diagnosed moderate UC and articular extraintestinal manifestations
+Recommend biological drugs for treatment of moderate to severe ulcerative colitis given the following patient profile:\n 70 year old female with newly diagnosed severe UC
+Recommend biological drugs for treatment of moderate to severe ulcerative colitis given the following patient profile:\n 35 year old male with known moderate UC with prior exposure to infliximab but has worsening colitis on endoscopy despite compliance
+Recommend biological drugs for treatment of moderate to severe ulcerative colitis given the following patient profile:\n 60 year old female with newly diagnosed moderate UC with a background of congestive cardiac failure
+Recommend biological drugs for treatment of moderate to severe ulcerative colitis given the following patient profile:\n 38 year old female with newly diagnosed moderate UC and psoriasis
+Recommend biological drugs for treatment of moderate to severe ulcerative colitis given the following patient profile:\n 25 year old pregnant woman with severe distal ulcerative colitis
+Recommend biological drugs for treatment of moderate to severe ulcerative colitis given the following patient profile:\n 56 year old man with moderate to severe ulcerative colitis and ankylosing spondylitis
+Recommend biological drugs for treatment of moderate to severe ulcerative colitis given the following patient profile:\n 38 year old man with severe ulcerative colitis and has lost response to vedolizumab
+Recommend biological drugs for treatment of moderate to severe ulcerative colitis given the following patient profile:\n 28 year old woman who has severe extensive ulcerative colitis and has a history of lymphoma which was treated 4 years ago
+Recommend biological drugs for treatment of moderate to severe ulcerative colitis given the following patient profile:\n 36 year old woman with moderate ulcerative colitis and multiple sclerosis

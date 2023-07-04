@@ -284,14 +284,18 @@ class Experiment:
         pd_sources = [[], [], [], [], [], []]
 
         for answer, sources in zip(self.answers, self.sources):
-            drugs = (
-                [
-                    self.drug_parser.parse(drug)
-                    for drug in re.findall(re.compile(r"{[^{}]+}"), answer)
-                ]
-                if answer
-                else []
-            )
+            if answer:
+                drugs_info = re.findall(re.compile(r"{[^{}]+}"), answer)
+                drugs = []
+                for drug in drugs_info:
+                    try:
+                        drug = self.drug_parser.parse(drug)
+                        drugs.append(drug)
+                    except Exception:
+                        pass
+            else:
+                drugs = []
+
             pd_answers[0].append(drugs[0].drug_name if len(drugs) > 0 else None)
             pd_answers[1].append(drugs[1].drug_name if len(drugs) > 1 else None)
             pd_pros[0].append(drugs[0].advantages if len(drugs) > 0 else None)

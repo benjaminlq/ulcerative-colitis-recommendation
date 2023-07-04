@@ -1,0 +1,15 @@
+additional_docs: null
+chunk_overlap: 500
+chunk_size: 2500
+description: Pregnancy Only
+emb_type: text-embedding-ada-002
+ground_truth: uc_gt.csv
+llm_type: gpt-4
+max_tokens: 1024
+pinecone_index_name: null
+project: uc
+prompt: individual_prompts.py
+temperature: 0
+test_case: /mnt/c/Users/QUAN/Desktop/medical-chatbot/data/queries/uc.txt
+vectorstore: faiss/text-embedding-ada-002/v5-add-tables_2500_500
+verbose: true

@@ -17,7 +17,7 @@ REFERENCE TEXT:
 
 =========
 QUESTION:
-Analyse the given patient profile based on given query based on the following criteria:
+Analyse the given patient profile based on the following criteria:
 {question}
 
 Return up to 2 TOP choices of biological drugs given patient profile. Explain the PROS and CONS of the 2 choices.

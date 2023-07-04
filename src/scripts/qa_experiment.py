@@ -5,6 +5,7 @@ import os
 import subprocess
 from datetime import datetime
 from importlib import import_module
+from shutil import copyfile
 
 import yaml
 
@@ -210,11 +211,34 @@ def main():
     save_path = os.path.join(
         ARTIFACT_DIR,
         "{}_{}_{}".format(
-            llm_type, description, datetime.now().strftime("%d-%m-%Y-%H:%M:%S")
+            llm_type, description, datetime.now().strftime("%d-%m-%Y-%H-%M-%S")
         ),
     )
-    experiment.save_json(save_path + ".json")
-    experiment.write_csv(save_path + ".csv")
+    os.makedirs(save_path, exist_ok=True)
+    experiment.save_json(os.path.join(save_path, "result.json"))
+    experiment.write_csv(os.path.join(save_path, "result.csv"))
+    if args.yaml_cfg:
+        copyfile(args.yaml_cfg, os.path.join(save_path, "settings.yaml"))
+    else:
+        settings = {
+            "project": project,
+            "test_case": test_case_path,
+            "prompt": prompt,
+            "ground_truth": ground_truth,
+            "description": description,
+            "verbose": verbose,
+            "emb_type": emb_type,
+            "vectorstore": vectorstore,
+            "chunk_size": chunk_size,
+            "chunk_overlap": chunk_overlap,
+            "additional_docs": additional_docs,
+            "pinecone_index_name": pinecone_index_name,
+            "llm_type": llm_type,
+            "temperature": temperature,
+            "max_tokens": max_tokens,
+        }
+        with open(os.path.join(save_path, "settings.yaml"), "w") as f:
+            yaml.dump(settings, f)
 
 
 if __name__ == "__main__":

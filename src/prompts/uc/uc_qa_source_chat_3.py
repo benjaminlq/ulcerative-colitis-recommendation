@@ -22,7 +22,7 @@ REFERENCE TEXT:
 
 human_prompt = """
 =========
-PATIENT PROFILE:
+QUESTION:
 {question}
 =========
 """

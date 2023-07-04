@@ -77,8 +77,7 @@ EXCLUDE_DICT = {
         43,
         44,
         45,
-    ]
-    + list(range(3, 31)),
+    ],
     "otad009.pdf": [15, 16],
     "1-s2.0-S2468125321003770-main.pdf": [9],
     "juillerat 2022.pdf": [6, 7, 8],
