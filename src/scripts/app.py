@@ -12,7 +12,7 @@ from streamlit_chat import message
 import app_ui
 from config import EMBSTORE_DICT
 from inference import ChatOpenAIRetrieval
-from src.prompts.polyp import polyp
+from prompts.polyp import polyp
 
 
 @st.cache_resource()
@@ -72,6 +72,11 @@ def clear_text():
 
 
 def update_cost(callback):
+    """Update Current Cost Counter
+
+    Args:
+        callback (function): OpenAI Callback
+    """
     st.session_state["token_counter"]["total"] += callback.total_tokens
     st.session_state["token_counter"]["prompt"] += callback.prompt_tokens
     st.session_state["token_counter"]["completion"] += callback.completion_tokens
@@ -79,6 +84,11 @@ def update_cost(callback):
 
 
 def print_cost(cost_container):
+    """Print Cost to App
+
+    Args:
+        cost_container: Streamlit Cost Container Placeholder
+    """
     with cost_container:
         st.write(
             "Total Cost: {:.2f} USD\n\nTotal Tokens: {}\n\nCompletion Tokens: {}\n\nPrompt Tokens: {}".format(

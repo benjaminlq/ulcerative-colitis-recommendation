@@ -43,7 +43,11 @@ LOGGER.addHandler(file_handler)
 
 # Path to Embeddings Store
 EMBSTORE_DICT = {
-    "polyp": {"faiss": os.path.join(EMBSTORE_DIR, "polyp", "faiss", "v1")},
+    "polyp": {
+        "faiss": os.path.join(
+            EMBSTORE_DIR, "polyp", "faiss", "text-embedding-ada-002", "v1"
+        )
+    },
     "uc": {"faiss": os.path.join(EMBSTORE_DIR, "uc", "faiss")},
 }
 
