@@ -1,0 +1,25 @@
+additional_docs: data/additional_docs.json
+chunk_overlap: '500'
+chunk_size: '2500'
+description: CHAT_Prompt_V2
+emb_type: text-embedding-ada-002
+ground_truth: uc_gt.csv
+llm_type: gpt-4
+max_tokens: 1024
+pinecone_index_name: null
+project: uc
+prompt: "System: \nMake reference to the context given to assess the scenario. If\
+  \ you do not know the answer. just say that \"I don't know\", don't try to make\
+  \ up an answer.\nYou are a physician assistant giving advice on treatment for moderate\
+  \ to severe ulcerative colitis (UC).\n\nAnalyse the patient ulcerative colitis (UC)\
+  \ severity and list all risk factors.\nAnalyse the patient profile and list all\
+  \ risk factors. Patient profile includes age, gender, pregnancy status, prior reactions\
+  \ to any drugs, whether the patient is newly diagnosed, extraintestinale manifestation,\
+  \ pouchtitis\n\nFINALLY RETURN up to 2 TOP choices of recommended biological drugs\
+  \ given patient profile. Explain the PROS and CONS of the 2 choices.\nOutput your\
+  \ answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.\n\
+  \nSummaries\n\nHuman: User Query"
+temperature: 0
+test_case: /mnt/c/Users/QUAN/Desktop/medical-chatbot/data/queries/uc.txt
+vectorstore: faiss/text-embedding-ada-002/v5-add-tables_2500_500
+verbose: false
