@@ -1,0 +1,349 @@
+,question,gt_rec1,gt_rec2,gt_rec3,gt_avoid,gt_reason,map_prompt,combine_prompt,collapse_prompt,raw_answer,answer1,pro1,cons1,answer2,pro2,cons2
+0,40 year old male with newly diagnosed moderate UC and articular extraintestinal manifestations,Infliximab,Tofacitinib,,vedolizumab,IFX is ideal choice as biologically naïve with EIM.,"System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+Use the following portion of a long document to see if any of the text is relevant to treatment of given patient profile using biological drugs.
+Return any relevant text verbatim.
+______________________
+context
+Human: Patient Profile: question","System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Given the following extracted information of a long document, return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+______________________
+summaries
+Human: question","System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Given the following extracted information of a long document, return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+______________________
+summaries
+Human: question","Based on the given patient profile of a 40-year-old male with newly diagnosed moderate UC and articular extraintestinal manifestations, the following are the top 2 choices of biological drugs for treatment:
+
+1. Inﬂiximab:
+   - Advantages:
+     - Inﬂiximab has been shown to be effective in inducing clinical remission in biologic-naïve patients with moderate-severe UC.
+     - It is a well-established and widely used biological drug for the treatment of UC.
+     - Inﬂiximab has also been shown to be effective in treating articular extraintestinal manifestations associated with UC.
+   - Disadvantages:
+     - Inﬂiximab is administered intravenously, which may be less convenient for some patients compared to other routes of administration.
+     - There is a risk of infusion reactions and other adverse events associated with inﬂiximab treatment.
+     - In some cases, patients may develop antibodies to inﬂiximab, leading to loss of response over time.
+
+2. Vedolizumab:
+   - Advantages:
+     - Vedolizumab has been shown to be effective in inducing clinical remission in biologic-naïve patients with moderate-severe UC.
+     - It is a gut-selective biological drug, which may result in fewer systemic side effects compared to other biologics.
+     - Vedolizumab has a good safety profile and is generally well-tolerated.
+   - Disadvantages:
+     - Vedolizumab may have a lower response rate in patients who have been previously exposed to TNF antagonists.
+     - It may not be as effective in treating articular extraintestinal manifestations associated with UC compared to other biologics.
+     - Vedolizumab is administered via intravenous infusion, which may be less convenient for some patients.
+
+It is important to note that the choice of biological drug should be individualized based on the patient's specific needs, preferences, and response to treatment. The decision should be made in consultation with a healthcare provider who can assess the patient's overall health, disease severity, and potential risks and benefits of each treatment option.",Inﬂiximab,Inﬂiximab has been shown to be effective in inducing clinical remission in biologic-naïve patients with moderate-severe UC. It is a well-established and widely used biological drug for the treatment of UC. Inﬂiximab has also been shown to be effective in treating articular extraintestinal manifestations associated with UC.,"Inﬂiximab is administered intravenously, which may be less convenient for some patients compared to other routes of administration. There is a risk of infusion reactions and other adverse events associated with inﬂiximab treatment. In some cases, patients may develop antibodies to inﬂiximab, leading to loss of response over time.",Vedolizumab,"Vedolizumab has been shown to be effective in inducing clinical remission in biologic-naïve patients with moderate-severe UC. It is a gut-selective biological drug, which may result in fewer systemic side effects compared to other biologics. Vedolizumab has a good safety profile and is generally well-tolerated.","Vedolizumab may have a lower response rate in patients who have been previously exposed to TNF antagonists. It may not be as effective in treating articular extraintestinal manifestations associated with UC compared to other biologics. Vedolizumab is administered via intravenous infusion, which may be less convenient for some patients."
+1,70 year old female with newly diagnosed severe UC,Ustekinumab,Vedolizumab,,Infliximab,"Given advanced age, IFX not preferred as first choice","System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+Use the following portion of a long document to see if any of the text is relevant to treatment of given patient profile using biological drugs.
+Return any relevant text verbatim.
+______________________
+context
+Human: Patient Profile: question","System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Given the following extracted information of a long document, return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+______________________
+summaries
+Human: question","System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Given the following extracted information of a long document, return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+______________________
+summaries
+Human: question","Based on the given patient profile of a 70-year-old female with newly diagnosed severe ulcerative colitis (UC), the top 2 choices of biological drugs for treatment are:
+
+1. Inﬂiximab:
+   - Advantages:
+     - Ranked highest for inducing clinical remission and endoscopic improvement in biologic-naïve patients with moderate-severe UC.
+     - Well-studied and widely used in the treatment of UC.
+     - Can be administered intravenously, allowing for precise dosing and monitoring.
+   - Disadvantages:
+     - Requires intravenous administration, which may be inconvenient for some patients.
+     - May be associated with infusion reactions or other adverse events.
+     - Costly compared to other treatment options.
+
+2. Vedolizumab:
+   - Advantages:
+     - Ranked second highest for inducing endoscopic improvement in biologic-naïve patients with moderate-severe UC.
+     - Considered safe, with the lowest rate of infections among active interventions.
+     - Can be administered intravenously or subcutaneously, providing flexibility in administration.
+   - Disadvantages:
+     - May take longer to achieve clinical remission compared to other biological drugs.
+     - Requires regular administration, either intravenously or subcutaneously.
+     - Costly compared to other treatment options.
+
+It is important to note that the choice of biological drug should be made in consultation with a gastroenterologist or healthcare provider, taking into consideration the patient's individual characteristics, medical history, comorbidities, and preferences. The decision should also consider the specific findings and recommendations from the full article or additional sources, as the given text provides limited information on the treatment of severe UC using biological drugs for a 70-year-old female patient.",Inﬂiximab,"Ranked highest for inducing clinical remission and endoscopic improvement in biologic-naïve patients with moderate-severe UC. Well-studied and widely used in the treatment of UC. Can be administered intravenously, allowing for precise dosing and monitoring.","Requires intravenous administration, which may be inconvenient for some patients. May be associated with infusion reactions or other adverse events. Costly compared to other treatment options.",Vedolizumab,"Ranked second highest for inducing endoscopic improvement in biologic-naïve patients with moderate-severe UC. Considered safe, with the lowest rate of infections among active interventions. Can be administered intravenously or subcutaneously, providing flexibility in administration.","May take longer to achieve clinical remission compared to other biological drugs. Requires regular administration, either intravenously or subcutaneously. Costly compared to other treatment options."
+2,35 year old male with known moderate UC with prior exposure to infliximab but has worsening colitis on endoscopy despite compliance,Tofacitinib,Ustekinumab,,,Testing 2nd line treatment to patients previously exposed to anti-TNFa,"System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+Use the following portion of a long document to see if any of the text is relevant to treatment of given patient profile using biological drugs.
+Return any relevant text verbatim.
+______________________
+context
+Human: Patient Profile: question","System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Given the following extracted information of a long document, return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+______________________
+summaries
+Human: question","System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Given the following extracted information of a long document, return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+______________________
+summaries
+Human: question","Based on the available information, two potential treatment options for this patient with worsening colitis despite prior exposure to infliximab are:
+
+1. Upadacitinib: Upadacitinib has shown superior efficacy compared to other interventions for the induction of clinical remission in patients with moderate UC. It has been ranked highest for the induction of clinical remission and endoscopic improvement. The advantages of upadacitinib include its high efficacy in inducing remission and endoscopic improvement. However, it is important to note that upadacitinib may come with a higher risk of adverse events compared to other interventions.
+
+2. Ustekinumab: Ustekinumab has also shown efficacy in the treatment of moderate to severe UC. It has been ranked highest for the induction of clinical remission in biologic-exposed patients. The advantages of ustekinumab include its efficacy in inducing remission and its lower risk of serious adverse events and infections compared to other interventions.
+
+Advantages of upadacitinib:
+- Superior efficacy compared to other interventions for the induction of clinical remission
+- Ranked highest for the induction of clinical remission and endoscopic improvement
+- Potential for high rates of remission and endoscopic improvement
+
+Disadvantages of upadacitinib:
+- Higher risk of adverse events compared to other interventions
+- Limited long-term safety data
+
+Advantages of ustekinumab:
+- Ranked highest for the induction of clinical remission in biologic-exposed patients
+- Lower risk of serious adverse events and infections compared to other interventions
+- Potential for high rates of remission
+
+Disadvantages of ustekinumab:
+- Limited long-term safety data
+- May not be as effective as upadacitinib in inducing remission and endoscopic improvement
+
+It is important to note that the choice between upadacitinib and ustekinumab should be made in consultation with a gastroenterologist or specialist in inflammatory bowel disease. The decision should take into consideration the patient's individual characteristics, preferences, and potential risks and benefits of each treatment option.",Upadacitinib,"Superior efficacy compared to other interventions for the induction of clinical remission, ranked highest for the induction of clinical remission and endoscopic improvement, potential for high rates of remission and endoscopic improvement","Higher risk of adverse events compared to other interventions, limited long-term safety data",Ustekinumab,"Ranked highest for the induction of clinical remission in biologic-exposed patients, lower risk of serious adverse events and infections compared to other interventions, potential for high rates of remission","Limited long-term safety data, may not be as effective as upadacitinib in inducing remission and endoscopic improvement"
+3,60 year old female with newly diagnosed moderate UC with a background of congestive cardiac failure,Ustekinumab,Vedolizumab,,Tofacitinib,Testing contraindications to first line IFX. TFC not recommended because of increased LDL-C and MACE risk,"System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+Use the following portion of a long document to see if any of the text is relevant to treatment of given patient profile using biological drugs.
+Return any relevant text verbatim.
+______________________
+context
+Human: Patient Profile: question","System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Given the following extracted information of a long document, return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+______________________
+summaries
+Human: question","System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Given the following extracted information of a long document, return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+______________________
+summaries
+Human: question","Based on the information provided, there is no specific information in the given text regarding the treatment of moderate to severe ulcerative colitis (UC) using biological drugs for a patient with a background of congestive cardiac failure. It is important to consult with a gastroenterologist or specialist in inflammatory bowel disease (IBD) to determine the most appropriate treatment approach for this patient, taking into consideration their specific characteristics, safety profile, and comorbidities such as congestive cardiac failure.",,,,,,
+4,38 year old female with newly diagnosed moderate UC and psoriasis,Ustekinumab,,,,Test treatment of specific EIM and IBD,"System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+Use the following portion of a long document to see if any of the text is relevant to treatment of given patient profile using biological drugs.
+Return any relevant text verbatim.
+______________________
+context
+Human: Patient Profile: question","System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Given the following extracted information of a long document, return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+______________________
+summaries
+Human: question","System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Given the following extracted information of a long document, return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+______________________
+summaries
+Human: question","Based on the given patient profile, the top 2 choices of biological drugs for the treatment of moderate UC and psoriasis are:
+
+1. Infliximab:
+- Advantages: Infliximab has shown efficacy in inducing clinical remission and endoscopic improvement in patients with moderate-to-severe UC. It is administered intravenously, allowing for precise dosing and monitoring. Infliximab has also been used successfully in the treatment of psoriasis, which may provide additional benefit for the patient.
+- Disadvantages: Infliximab requires intravenous administration, which may be inconvenient for some patients. It is associated with potential side effects, including infusion reactions, increased risk of infections, and rare cases of serious adverse events.
+
+2. Vedolizumab:
+- Advantages: Vedolizumab has demonstrated efficacy in inducing clinical remission and endoscopic improvement in patients with moderate-to-severe UC. It is administered intravenously, allowing for precise dosing and monitoring. Vedolizumab has a favorable safety profile, with lower rates of serious adverse events compared to other biologics.
+- Disadvantages: Vedolizumab may have a lower response rate in patients who have been previously exposed to TNF inhibitors. It may also take longer to achieve a response compared to other biologics. Additionally, vedolizumab is not approved for the treatment of psoriasis, so its effectiveness in managing both conditions may be uncertain.
+
+It is important to note that the choice of biological drug should be made in consultation with a healthcare provider, taking into consideration the patient's individual characteristics, preferences, and potential contraindications.",Infliximab,"Infliximab has shown efficacy in inducing clinical remission and endoscopic improvement in patients with moderate-to-severe UC. It is administered intravenously, allowing for precise dosing and monitoring. Infliximab has also been used successfully in the treatment of psoriasis, which may provide additional benefit for the patient.","Infliximab requires intravenous administration, which may be inconvenient for some patients. It is associated with potential side effects, including infusion reactions, increased risk of infections, and rare cases of serious adverse events.",Vedolizumab,"Vedolizumab has demonstrated efficacy in inducing clinical remission and endoscopic improvement in patients with moderate-to-severe UC. It is administered intravenously, allowing for precise dosing and monitoring. Vedolizumab has a favorable safety profile, with lower rates of serious adverse events compared to other biologics.","Vedolizumab may have a lower response rate in patients who have been previously exposed to TNF inhibitors. It may also take longer to achieve a response compared to other biologics. Additionally, vedolizumab is not approved for the treatment of psoriasis, so its effectiveness in managing both conditions may be uncertain."
+5,25 year old pregnant woman with severe distal ulcerative colitis,Infliximab,Vedolizumab,Ustekinumab,,Infliximab has best safety data in pregnancy (due to experience),"System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+Use the following portion of a long document to see if any of the text is relevant to treatment of given patient profile using biological drugs.
+Return any relevant text verbatim.
+______________________
+context
+Human: Patient Profile: question","System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Given the following extracted information of a long document, return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+______________________
+summaries
+Human: question","System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Given the following extracted information of a long document, return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+______________________
+summaries
+Human: question","Based on the information provided, there is no specific information in the given text regarding the treatment of a pregnant woman with severe distal ulcerative colitis using biological drugs. It is important to consult with a healthcare provider who specializes in treating pregnant women with inflammatory bowel disease to determine the most appropriate treatment options.",,,,,,
+6,56 year old man with moderate to severe ulcerative colitis and ankylosing spondylitis,Infliximab,Adalimumab,,,Dual indications,"System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+Use the following portion of a long document to see if any of the text is relevant to treatment of given patient profile using biological drugs.
+Return any relevant text verbatim.
+______________________
+context
+Human: Patient Profile: question","System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Given the following extracted information of a long document, return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+______________________
+summaries
+Human: question","System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Given the following extracted information of a long document, return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+______________________
+summaries
+Human: question","Based on the information provided, the two top choices of biological drugs for the treatment of moderate to severe ulcerative colitis in a patient with ankylosing spondylitis are:
+
+1. Infliximab (IFX):
+   - Advantages:
+     - Ranked highest for the induction of clinical remission and endoscopic improvement in biologic-naïve patients with moderate to severe ulcerative colitis.
+     - Effective in treating both ulcerative colitis and ankylosing spondylitis.
+     - Can be used as a first-line therapy.
+   - Disadvantages:
+     - May have a higher risk of serious adverse events and infections compared to other biologics.
+     - Requires intravenous infusion, which may be inconvenient for some patients.
+
+2. Ustekinumab (UST):
+   - Advantages:
+     - Associated with a lower risk of serious adverse events and infections compared to other biologics.
+     - Can be used as a first-line therapy.
+     - Effective in treating both ulcerative colitis and ankylosing spondylitis.
+   - Disadvantages:
+     - Limited data on its efficacy in patients with prior exposure to TNF antagonists.
+     - Requires subcutaneous injections, which may be inconvenient for some patients.
+
+It is important to note that the choice of biological drug should be made in consultation with a gastroenterologist or rheumatologist, taking into consideration the patient's individual characteristics, medical history, and preferences.",Infliximab (IFX),Ranked highest for the induction of clinical remission and endoscopic improvement in biologic-naïve patients with moderate to severe ulcerative colitis. Effective in treating both ulcerative colitis and ankylosing spondylitis. Can be used as a first-line therapy.,"May have a higher risk of serious adverse events and infections compared to other biologics. Requires intravenous infusion, which may be inconvenient for some patients.",Ustekinumab (UST),Associated with a lower risk of serious adverse events and infections compared to other biologics. Can be used as a first-line therapy. Effective in treating both ulcerative colitis and ankylosing spondylitis.,"Limited data on its efficacy in patients with prior exposure to TNF antagonists. Requires subcutaneous injections, which may be inconvenient for some patients."
+7,38 year old man with severe ulcerative colitis and has lost response to vedolizumab,Tofacitinib or ,Ustekinumab,,,Biologic failure,"System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+Use the following portion of a long document to see if any of the text is relevant to treatment of given patient profile using biological drugs.
+Return any relevant text verbatim.
+______________________
+context
+Human: Patient Profile: question","System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Given the following extracted information of a long document, return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+______________________
+summaries
+Human: question","System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Given the following extracted information of a long document, return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+______________________
+summaries
+Human: question","Based on the information provided, the top two choices of biological drugs for the treatment of a 38-year-old man with severe ulcerative colitis who has lost response to vedolizumab are:
+
+1. Upadacitinib:
+- Advantages: Upadacitinib has shown superior efficacy in inducing clinical remission compared to other interventions, including vedolizumab. It has a high probability of being the most effective treatment option.
+- Disadvantages: Upadacitinib is associated with a higher risk of adverse events compared to vedolizumab. The increased risk of adverse events should be considered when choosing this treatment option.
+
+2. Tofacitinib:
+- Advantages: Tofacitinib has shown efficacy in inducing clinical remission in patients with moderate to severe ulcerative colitis. It may be a potential treatment option for patients who have lost response to vedolizumab.
+- Disadvantages: The specific disadvantages of tofacitinib in this patient profile are not mentioned in the provided information.
+
+It is important to note that the final decision on the choice of biological drug should be made in consultation with a gastroenterologist or healthcare provider, taking into consideration the patient's individual characteristics, preferences, and potential risks and benefits of each treatment option.",Upadacitinib,"Upadacitinib has shown superior efficacy in inducing clinical remission compared to other interventions, including vedolizumab. It has a high probability of being the most effective treatment option.",Upadacitinib is associated with a higher risk of adverse events compared to vedolizumab. The increased risk of adverse events should be considered when choosing this treatment option.,Tofacitinib,Tofacitinib has shown efficacy in inducing clinical remission in patients with moderate to severe ulcerative colitis. It may be a potential treatment option for patients who have lost response to vedolizumab.,The specific disadvantages of tofacitinib in this patient profile are not mentioned in the provided information.
+8,28 year old woman who has severe extensive ulcerative colitis and has a history of lymphoma which was treated 4 years ago,Vedolizumab,Ustekinumab,,,Anti-TNFs and JAK inhs have associations/concerns with malignancies,"System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+Use the following portion of a long document to see if any of the text is relevant to treatment of given patient profile using biological drugs.
+Return any relevant text verbatim.
+______________________
+context
+Human: Patient Profile: question","System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Given the following extracted information of a long document, return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+______________________
+summaries
+Human: question","System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Given the following extracted information of a long document, return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+______________________
+summaries
+Human: question","Based on the provided information, there is no specific guidance on the treatment of moderate to severe ulcerative colitis using biological drugs for a patient with a history of lymphoma. It is important to consult with a gastroenterologist or specialist in inflammatory bowel disease to determine the most appropriate treatment options for this specific patient profile, taking into consideration their medical history and individual circumstances.",,,,,,
+9,36 year old woman with moderate ulcerative colitis and multiple sclerosis,Ozanimod,Etrasimod,,,Dual indications,"System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+Use the following portion of a long document to see if any of the text is relevant to treatment of given patient profile using biological drugs.
+Return any relevant text verbatim.
+______________________
+context
+Human: Patient Profile: question","System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Given the following extracted information of a long document, return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+______________________
+summaries
+Human: question","System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Given the following extracted information of a long document, return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+______________________
+summaries
+Human: question","Based on the information provided, the patient is a 36-year-old woman with moderate ulcerative colitis and multiple sclerosis. Unfortunately, the given text does not provide any specific information about the treatment of ulcerative colitis in patients with multiple sclerosis using biological drugs. Therefore, it is not possible to provide a recommendation for the top choices of biological drugs for this patient profile. It is important to consult with a healthcare professional who can consider the patient's individual medical history, disease severity, and treatment goals to determine the most appropriate treatment options.",,,,,,

@@ -4,7 +4,7 @@
 from langchain.output_parsers import PydanticOutputParser
 from langchain.prompts import PromptTemplate
 
-from parsers import DrugOutput
+from custom_parsers import DrugOutput
 
 drug_parser = PydanticOutputParser(pydantic_object=DrugOutput)
 
