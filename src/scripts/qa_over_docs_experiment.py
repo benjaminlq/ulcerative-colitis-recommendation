@@ -69,7 +69,8 @@ def main():
             map_prompt=map_prompt,
             combine_prompt=combine_prompt,
             collapse_prompt=collapse_prompt,
-            gt=os.path.join(DATA_DIR, ground_truth) ** yaml_cfg,
+            gt=os.path.join(DATA_DIR, "queries", ground_truth),
+            **yaml_cfg,
         )
 
     elif chain_type == "refine":
@@ -84,7 +85,8 @@ def main():
         experiment = RefineQAOverDocsExperiment(
             initial_prompt=initial_prompt,
             refine_prompt=refine_prompt,
-            gt=os.path.join(DATA_DIR, ground_truth) ** yaml_cfg,
+            gt=os.path.join(DATA_DIR, "queries", ground_truth),
+            **yaml_cfg,
         )
 
     LOGGER.info(
