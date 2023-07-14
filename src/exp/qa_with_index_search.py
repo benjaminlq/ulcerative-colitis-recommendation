@@ -4,7 +4,7 @@ import json
 import os
 import os.path as osp
 import re
-from typing import Dict, List, Optional, Union
+from typing import Dict, List, Literal, Optional, Union
 
 import pandas as pd
 from langchain.chains import RetrievalQAWithSourcesChain
@@ -16,11 +16,13 @@ from langchain.prompts import ChatPromptTemplate, PromptTemplate
 from langchain.vectorstores import FAISS
 
 from config import LOGGER, MAIN_DIR
-from parsers import DrugOutput
+from custom_parsers import DrugOutput
 from utils import generate_vectorstore
 
+from .base import BaseExperiment
 
-class Experiment:
+
+class QuestionAnsweringWithIndexSearchExperiment(BaseExperiment):
     """Experiment Module"""
 
     def __init__(
@@ -34,6 +36,9 @@ class Experiment:
         max_tokens: int = 512,
         gt: Optional[str] = None,
         verbose: bool = False,
+        k: int = 4,
+        max_tokens_limit: int = 3375,
+        reduce_k_below_max_tokens: bool = True,
     ):
         """Initiate Instance for an experiment run
 
@@ -50,17 +55,13 @@ class Experiment:
             verbose (bool, optional): Verbose Setting. Defaults to False.
         """
 
-        self.llm_type = llm_type.lower()
-        self.temperature = temperature
-        self.max_tokens = max_tokens
-
-        with open(keys_json, "r") as f:
-            keys = json.load(f)
-
-        self.openai_key = (
-            keys["OPENAI_API_KEY_FOR_GPT4"]
-            if self.llm_type == "gpt-4"
-            else keys["OPENAI_API_KEY"]
+        super(QuestionAnsweringWithIndexSearchExperiment, self).__init__(
+            llm_type=llm_type,
+            keys_json=keys_json,
+            temperature=temperature,
+            max_tokens=max_tokens,
+            gt=gt,
+            verbose=verbose,
         )
 
         if isinstance(prompt_template, ChatPromptTemplate):
@@ -77,22 +78,23 @@ class Experiment:
                 max_tokens=self.max_tokens,
                 openai_api_key=self.openai_key,
             )
+
         self.embedder = OpenAIEmbeddings(model=emb, openai_api_key=self.openai_key)
         try:
             self.load_vectorstore(vector_store)
-        except ValueError:
+        except Exception:
             print(
                 "Vectorstore invalid. Please load valid vectorstore or create new vectorstore."
             )
 
+        self.k = k
+        self.max_tokens_limit = max_tokens_limit
+        self.reduce_k_below_max_tokens = reduce_k_below_max_tokens
         self.prompt_template = prompt_template
         self.questions = []
         self.answers = []
         self.sources = []
-        self.ground_truth = self.load_groundtruth(gt) if gt else None
         self.drug_parser = PydanticOutputParser(pydantic_object=DrugOutput)
-        self.chain = None
-        self.verbose = verbose
 
     def load_vectorstore(self, vectorstore_path: str):
         """Load Vectorstore from path
@@ -146,12 +148,17 @@ class Experiment:
         )
 
     def run_test_cases(
-        self, test_cases: Union[List[str], str], only_return_source: bool = False
+        self,
+        test_cases: Union[List[str], str],
+        only_return_source: bool = False,
+        chain_type: Literal["stuff", "refine", "map_reduce", "map_rerank"] = "stuff",
     ):
         """Run and save test cases to memory
 
         Args:
             test_cases (Union[List[str], str]): List of test queries.
+            docs (List[Document]): List of input documents
+            chain_type : Type of chain to apply on relevant documents. Defaults to "stuff".
         """
         if isinstance(test_cases, str):
             with open(test_cases, "r", encoding="utf-8-sig") as f:
@@ -159,7 +166,7 @@ class Experiment:
             test_cases = [test_case.rstrip() for test_case in test_cases]
 
         if not self.chain:
-            self._create_retriever_chain()
+            self._create_chain(chain_type=chain_type)
 
         if only_return_source:
             LOGGER.info("Perform Semantic Search for Source Documents only (No QA).")
@@ -179,6 +186,7 @@ class Experiment:
                 self.answers.append(output["answer"])
                 source_documents = output["source_documents"]
 
+            token_count = 0
             for document in source_documents:
                 sources.append(
                     {
@@ -188,26 +196,26 @@ class Experiment:
                         "text": document.page_content,
                     }
                 )
+                token_count += (
+                    self.chain.combine_document_chain.llm_chain.llm.get_num_tokens(
+                        document.page_content
+                    )
+                )
 
             self.sources.append(sources)
+            LOGGER.info(
+                f"{token_count} tokens were added to prompt from {len(source_documents)} documents"
+            )
 
-    @staticmethod
-    def convert_prompt_to_string(
-        prompt: Union[PromptTemplate, ChatPromptTemplate]
-    ) -> str:
-        """Convert Prompt Object to string format
-
-        Args:
-            prompt (Union[PromptTemplate, ChatPromptTemplate]): Prompt Template
-
-        Returns:
-            str: Prompt String Template
-        """
-        return prompt.format(**{v: v for v in prompt.input_variables})
+    def reset(self):
+        """Reset queries and answers"""
+        self.questions = []
+        self.answers = []
+        self.sources = []
 
     @staticmethod
     def process_source(source: Dict) -> str:
-        """_summary_
+        """Process Source document object
 
         Args:
             source (Dict): Source Document Information
@@ -224,7 +232,9 @@ class Experiment:
             output_path (str): Output Path to json file.
         """
         output_dict = {}
-        output_dict["prompt"] = Experiment.convert_prompt_to_string(
+        output_dict[
+            "prompt"
+        ] = QuestionAnsweringWithIndexSearchExperiment.convert_prompt_to_string(
             self.prompt_template
         )
         output_dict["test_cases"] = []
@@ -236,24 +246,6 @@ class Experiment:
 
         with open(output_path, "w") as f:
             json.dump(output_dict, f)
-
-    def load_groundtruth(self, gt_path: str) -> pd.DataFrame:
-        """Load Ground Truth information from .csv file
-
-        Args:
-            gt_path (str): Path to Ground Truth file
-
-        Returns:
-            pd.DataFrame: DataFrame containing Ground Truth data.
-        """
-        return pd.read_csv(gt_path, encoding="ISO-8859-1")
-
-    def reset(self):
-        """Reset queries and answers"""
-        self.questions = []
-        self.answers = []
-        self.sources = []
-        self.ground_truth = None
 
     def load_json(self, json_path: str, reset: bool = False):
         """Load Queries and Answers from Json file
@@ -270,8 +262,9 @@ class Experiment:
             self.questions.append(test_case["question"])
             self.answers.append(test_case["answer"])
             self.sources.append(test_case["sources"])
+        LOGGER.info("Json file loaded successfully into Experiment instance.")
 
-    def write_csv(self, output_csv: str):
+    def write_csv(self, output_csv: str, num_docs: int = 10):
         """Write questions and answers to .csv files
 
         Args:
@@ -281,7 +274,7 @@ class Experiment:
         pd_answers = [[], []]
         pd_pros = [[], []]
         pd_cons = [[], []]
-        pd_sources = [[], [], [], [], [], []]
+        pd_sources = [[] for _ in range(num_docs)]
 
         for answer, sources in zip(self.answers, self.sources):
             if answer:
@@ -304,7 +297,9 @@ class Experiment:
             pd_cons[1].append(drugs[1].disadvantages if len(drugs) > 1 else None)
 
             for idx, source in enumerate(sources):
-                pd_sources[idx].append(Experiment.process_source(source))
+                pd_sources[idx].append(
+                    QuestionAnsweringWithIndexSearchExperiment.process_source(source)
+                )
 
             if idx + 1 < len(pd_sources):
                 for i in range(idx + 1, len(pd_sources)):
@@ -320,7 +315,9 @@ class Experiment:
             info["gt_reason"] = self.ground_truth["Reasoning"].tolist()
 
         info["prompt"] = [
-            Experiment.convert_prompt_to_string(self.prompt_template)
+            QuestionAnsweringWithIndexSearchExperiment.convert_prompt_to_string(
+                self.prompt_template
+            )
         ] * len(self.questions)
         info["raw_answer"] = self.answers
         info["answer1"] = pd_answers[0]
@@ -329,37 +326,32 @@ class Experiment:
         info["answer2"] = pd_answers[1]
         info["pro2"] = pd_pros[1]
         info["cons2"] = pd_cons[1]
-        info["source1"] = pd_sources[0]
-        info["source2"] = pd_sources[1]
-        info["source3"] = pd_sources[2]
-        info["source4"] = pd_sources[3]
-        info["source5"] = pd_sources[4]
-        info["source6"] = pd_sources[5]
+
+        for idx, pd_source in enumerate(pd_sources):
+            info[f"source{idx+1}"] = pd_source
 
         panda_df = pd.DataFrame(info)
 
         panda_df.to_csv(output_csv, header=True)
 
-    def _create_retriever_chain(
+    def _create_chain(
         self,
-        chain_type: str = "stuff",
+        chain_type: Literal["stuff", "map_reduce", "map_rerank", "refine"] = "stuff",
         return_source_documents: bool = True,
-        reduce_k_below_max_tokens: bool = True,
     ):
         """Initiate QA from Source Chain
 
         Args:
             chain_type (str, optional): Chain Type. Can be stuff|map_reduce|refine|map_rerank. Defaults to "stuff".
             return_source_documents (bool, optional): Whether to return source documents along side answers. Defaults to True.
-            reduce_k_below_max_tokens (bool, optional): If True, automatically reduce the number of source documents to
-                ensure that total tokens below max_tokens limit. Defaults to True.
         """
         self.chain = RetrievalQAWithSourcesChain.from_chain_type(
             llm=self.llm,
             chain_type=chain_type,
-            retriever=self.docsearch.as_retriever(),
+            retriever=self.docsearch.as_retriever(search_kwargs={"k": self.k}),
             return_source_documents=return_source_documents,
             chain_type_kwargs={"prompt": self.prompt_template},
-            reduce_k_below_max_tokens=reduce_k_below_max_tokens,
+            max_tokens_limit=self.max_tokens_limit,
+            reduce_k_below_max_tokens=self.reduce_k_below_max_tokens,
             verbose=self.verbose,
         )

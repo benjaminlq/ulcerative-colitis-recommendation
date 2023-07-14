@@ -106,10 +106,6 @@ def main():
         LOGGER.info("Creating Vectorstore with Sentence Transformer Embeddings")
 
     if not emb_directory:
-        print(EMBSTORE_DIR)
-        print(project)
-        print(emb_store_type)
-        print(emb_model_name)
         parent_folder = os.path.join(
             EMBSTORE_DIR, project, emb_store_type, emb_model_name
         )

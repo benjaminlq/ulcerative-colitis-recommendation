@@ -1,0 +1,23 @@
+# Project Settings
+project: uc
+test_case: data/queries/uc.txt
+prompt: uc_qa_map_reduce_1.py
+description: gpt-3.5_Map_Reduce_Page_Stuff_5000_500
+verbose: False
+
+# Embedding Settings
+temperature: 0
+chain_type: map_reduce
+llm_type: gpt-3.5-turbo
+max_gen_tokens: 1024
+reduce_llm: gpt-3.5-turbo-16k
+combine_max_gen_tokens: 1024
+collapse_llm: gpt-3.5-turbo-16k
+collapse_max_gen_tokens: 1024
+
+document_level: page
+chunk_size: 5000
+chunk_overlap: 500
+additional_docs: data/additional_docs.json
+ground_truth: uc_gt.csv
+

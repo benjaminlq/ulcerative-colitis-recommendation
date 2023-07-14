@@ -1,4 +1,4 @@
-"""Scripts to run experiment
+"""Scripts to run QAWithDocSearch experiment
 """
 import argparse
 import os
@@ -10,7 +10,7 @@ from shutil import copyfile
 import yaml
 
 from config import ARTIFACT_DIR, DATA_DIR, EMBSTORE_DIR, LOGGER
-from exp import Experiment
+from exp import QuestionAnsweringWithIndexSearchExperiment
 
 
 def get_argument_parser():
@@ -99,6 +99,34 @@ def get_argument_parser():
         default=False,
         help="Only return source documents from semantic search",
     )
+    parser.add_argument(
+        "--max_tokens_limit",
+        "-mx",
+        type=int,
+        default=3375,
+        help="Maximum Number of Tokens combined for all documents",
+    )
+    parser.add_argument(
+        "--no_returned_docs",
+        "-k",
+        type=int,
+        default=4,
+        help="Number of documents to be returned from semantic search",
+    )
+    parser.add_argument(
+        "--reduce_k_below_max_tokens",
+        "-r",
+        action="store_true",
+        default=False,
+        help="Whether to limit number of document tokens to below ",
+    )
+    parser.add_argument(
+        "--chain_type",
+        "-c",
+        type=str,
+        default="stuff",
+        help="Type of chain to perform reduction operations",
+    )
     args = parser.parse_args()
     return args
 
@@ -111,38 +139,29 @@ def main():
         # Load yaml file
         with open(args.yaml_cfg, "r") as f:
             yaml_cfg = yaml.safe_load(f)
-        project = yaml_cfg["project"]
-        test_case_path = yaml_cfg["test_case"]
-        prompt = yaml_cfg["prompt"]
-        vectorstore = yaml_cfg["vectorstore"]
-        llm_type = yaml_cfg["llm_type"]
-        emb_type = yaml_cfg["emb_type"]
-        temperature = yaml_cfg["temperature"]
-        max_tokens = yaml_cfg["max_tokens"]
-        ground_truth = yaml_cfg["ground_truth"]
-        verbose = yaml_cfg["verbose"]
-        chunk_size = yaml_cfg["chunk_size"]
-        chunk_overlap = yaml_cfg["chunk_overlap"]
-        pinecone_index_name = yaml_cfg["pinecone_index_name"]
-        description = yaml_cfg["description"]
-        additional_docs = yaml_cfg["additional_docs"]
 
-    else:
-        project = args.project
-        test_case_path = args.test_case
-        prompt = args.prompt
-        vectorstore = args.vectorstore
-        llm_type = args.llm_type
-        emb_type = args.emb_type
-        temperature = args.temperature
-        max_tokens = args.max_tokens
-        ground_truth = args.ground_truth
-        verbose = args.verbose
-        chunk_size = args.chunk_size
-        chunk_overlap = args.chunk_overlap
-        pinecone_index_name = args.pinecone_index_name
-        description = args.description
-        additional_docs = args.additional_docs
+        for k, v in yaml_cfg.items():
+            setattr(args, k, v)
+
+    project = args.project
+    test_case_path = args.test_case
+    prompt = args.prompt
+    vectorstore = args.vectorstore
+    llm_type = args.llm_type
+    emb_type = args.emb_type
+    temperature = args.temperature
+    max_tokens = args.max_tokens
+    ground_truth = args.ground_truth
+    verbose = args.verbose
+    chunk_size = args.chunk_size
+    chunk_overlap = args.chunk_overlap
+    pinecone_index_name = args.pinecone_index_name
+    description = args.description
+    additional_docs = args.additional_docs
+    max_tokens_limit = args.max_tokens_limit
+    no_returned_docs = args.no_returned_docs
+    reduce_k_below_max_tokens = args.reduce_k_below_max_tokens
+    chain_type = args.chain_type
 
     assert project is not None, "Project not specified"
     assert test_case_path is not None, "Test Case Path is not specified"
@@ -185,7 +204,7 @@ def main():
         f"prompts.{project}.{os.path.splitext(prompt)[0]}"
     ).PROMPT_TEMPLATE
 
-    experiment = Experiment(
+    experiment = QuestionAnsweringWithIndexSearchExperiment(
         prompt_template=prompt,
         vector_store=vectorstore_path,
         llm_type=llm_type,
@@ -194,6 +213,9 @@ def main():
         max_tokens=max_tokens,
         gt=os.path.join(DATA_DIR, "queries", ground_truth) if ground_truth else None,
         verbose=verbose,
+        max_tokens_limit=max_tokens_limit,
+        k=no_returned_docs,
+        reduce_k_below_max_tokens=reduce_k_below_max_tokens,
     )
 
     LOGGER.info(
@@ -205,7 +227,11 @@ def main():
     with open(test_case_path, "r") as f:
         test_cases = f.readlines()
 
-    experiment.run_test_cases(test_cases, only_return_source=args.only_return_source)
+    # experiment.load_json(os.path.join(ARTIFACT_DIR,
+    #                                   "gpt-4_Chat_Tables_Chunk-size=1000_Overlap=200_Doc=10_Max-token=6500_Stuff_11-07-2023-21-48-04/result.json"))
+    experiment.run_test_cases(
+        test_cases, only_return_source=args.only_return_source, chain_type=chain_type
+    )
     LOGGER.info("Completed running all test cases.")
 
     save_path = os.path.join(
@@ -216,7 +242,9 @@ def main():
     )
     os.makedirs(save_path, exist_ok=True)
     experiment.save_json(os.path.join(save_path, "result.json"))
-    experiment.write_csv(os.path.join(save_path, "result.csv"))
+    experiment.write_csv(
+        os.path.join(save_path, "result.csv"), num_docs=no_returned_docs
+    )
     if args.yaml_cfg:
         copyfile(args.yaml_cfg, os.path.join(save_path, "settings.yaml"))
     else:
@@ -236,6 +264,10 @@ def main():
             "llm_type": llm_type,
             "temperature": temperature,
             "max_tokens": max_tokens,
+            "max_tokens_limit": max_tokens_limit,
+            "k": k,
+            "reduce_k_below_max_tokens": reduce_k_below_max_tokens,
+            "chain_type": chain_type,
         }
         with open(os.path.join(save_path, "settings.yaml"), "w") as f:
             yaml.dump(settings, f)
@@ -244,4 +276,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-# python3 ./src/scripts/qa_experiment.py --yaml_cfg exps/uc_1.yaml
+# python3 ./src/scripts/qa_with_docs_search_experiment.py --yaml_cfg exps/uc_1.yaml
