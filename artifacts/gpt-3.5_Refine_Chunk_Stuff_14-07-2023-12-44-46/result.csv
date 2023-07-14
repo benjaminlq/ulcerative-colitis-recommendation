@@ -1,0 +1,605 @@
+,question,gt_rec1,gt_rec2,gt_rec3,gt_avoid,gt_reason,initial_prompt,refine_prompt,raw_answer,answer1,pro1,cons1,answer2,pro2,cons2
+0,"40 year old male with newly diagnosed moderate UC and articular extraintestinal manifestations
+",Infliximab,Tofacitinib,,vedolizumab,IFX is ideal choice as biologically naïve with EIM.,"System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Given the below context information and no prior knowledge, return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+---------------------
+context_str
+---------------------
+
+Human: Patient Profile: question","System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+Human: Patient Profile: question
+AI: Existing answer: existing_answer
+Human:
+We have the opportunity to refine the existing answer (only if needed) with some more context below.
+
+---------------------
+context_str
+---------------------
+
+Given the new context, refine the original answer to better answer the question. If the context isn't useful, return the original answer.
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+","Refined answer: [
+  {
+    ""drug_name"": ""Vedolizumab"",
+    ""advantages"": [
+      ""Proven efficacy in treating moderate to severe UC."",
+      ""Higher safety profile compared to other biologics."",
+      ""Ranked highest for maintenance of clinical remission and endoscopic improvement."",
+      ""May be effective in treating articular extraintestinal manifestations.""
+    ],
+    ""disadvantages"": [
+      ""Requires regular monitoring and follow-up to assess response and manage potential side effects."",
+      ""Limited long-term safety and efficacy data available."",
+      ""Differences in study design and lack of information on safety stratified by prior TNFa antagonist exposure may bias safety results."",
+      ""Limited information on safety compared to other biologics.""
+    ]
+  },
+  {
+    ""drug_name"": ""Ustekinumab"",
+    ""advantages"": [
+      ""Proven efficacy in treating moderate to severe UC."",
+      ""May be effective in treating articular extraintestinal manifestations."",
+      ""Long-term safety and efficacy data available."",
+      ""Different mechanism of action compared to other biologics.""
+    ],
+    ""disadvantages"": [
+      ""Requires regular monitoring and follow-up to assess response and manage potential side effects."",
+      ""Potential for serious infections and malignancies."",
+      ""Limited head-to-head trial data compared to other biologics."",
+      ""Higher risk of serious adverse events compared to other biologics.""
+    ]
+  }
+]",Vedolizumab,Proven efficacy in treating moderate to severe UC. Higher safety profile compared to other biologics. Ranked highest for maintenance of clinical remission and endoscopic improvement. May be effective in treating articular extraintestinal manifestations.,Requires regular monitoring and follow-up to assess response and manage potential side effects. Limited long-term safety and efficacy data available. Differences in study design and lack of information on safety stratified by prior TNFa antagonist exposure may bias safety results. Limited information on safety compared to other biologics.,Ustekinumab,Proven efficacy in treating moderate to severe UC. May be effective in treating articular extraintestinal manifestations. Long-term safety and efficacy data available. Different mechanism of action compared to other biologics.,Requires regular monitoring and follow-up to assess response and manage potential side effects. Potential for serious infections and malignancies. Limited head-to-head trial data compared to other biologics. Higher risk of serious adverse events compared to other biologics.
+1,"70 year old female with newly diagnosed severe UC
+",Ustekinumab,Vedolizumab,,Infliximab,"Given advanced age, IFX not preferred as first choice","System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Given the below context information and no prior knowledge, return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+---------------------
+context_str
+---------------------
+
+Human: Patient Profile: question","System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+Human: Patient Profile: question
+AI: Existing answer: existing_answer
+Human:
+We have the opportunity to refine the existing answer (only if needed) with some more context below.
+
+---------------------
+context_str
+---------------------
+
+Given the new context, refine the original answer to better answer the question. If the context isn't useful, return the original answer.
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+","[
+  {
+    ""drug_name"": ""Vedolizumab"",
+    ""advantages"": [
+      ""Higher safety profile compared to other biological drugs"",
+      ""Proven efficacy in moderate to severe UC"",
+      ""May be effective regardless of prior biologic exposure"",
+      ""Specifically targets gut inflammation without suppressing the entire immune system""
+    ],
+    ""disadvantages"": [
+      ""Requires intravenous (IV) administration, which may be less convenient for elderly patients"",
+      ""Limited long-term data on safety and efficacy in elderly patients""
+    ]
+  },
+  {
+    ""drug_name"": ""Infliximab"",
+    ""advantages"": [
+      ""Proven efficacy in moderate to severe UC"",
+      ""Well-established safety profile"",
+      ""May be effective regardless of prior biologic exposure""
+    ],
+    ""disadvantages"": [
+      ""Requires intravenous (IV) administration, which may be less convenient for elderly patients"",
+      ""Possible risk of serious infections"",
+      ""Risk of immunogenicity leading to reduced effectiveness""
+    ]
+  }
+]",Vedolizumab,"Higher safety profile compared to other biological drugs, Proven efficacy in moderate to severe UC, May be effective regardless of prior biologic exposure, Specifically targets gut inflammation without suppressing the entire immune system","Requires intravenous (IV) administration, which may be less convenient for elderly patients, Limited long-term data on safety and efficacy in elderly patients",Infliximab,"Proven efficacy in moderate to severe UC, Well-established safety profile, May be effective regardless of prior biologic exposure","Requires intravenous (IV) administration, which may be less convenient for elderly patients, Possible risk of serious infections, Risk of immunogenicity leading to reduced effectiveness"
+2,"35 year old male with known moderate UC with prior exposure to infliximab but has worsening colitis on endoscopy despite compliance
+",Tofacitinib,Ustekinumab,,,Testing 2nd line treatment to patients previously exposed to anti-TNFa,"System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Given the below context information and no prior knowledge, return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+---------------------
+context_str
+---------------------
+
+Human: Patient Profile: question","System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+Human: Patient Profile: question
+AI: Existing answer: existing_answer
+Human:
+We have the opportunity to refine the existing answer (only if needed) with some more context below.
+
+---------------------
+context_str
+---------------------
+
+Given the new context, refine the original answer to better answer the question. If the context isn't useful, return the original answer.
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+","Refined answer: [
+  {
+    ""drug_name"": ""Vedolizumab"",
+    ""advantages"": [
+      ""Effective in inducing and maintaining clinical remission and endoscopic improvement in moderate to severe UC."",
+      ""Considered a viable option for patients with prior exposure to anti-TNF-α therapies."",
+      ""Ranked highest for safety in terms of risk of infections among active interventions."",
+      ""Limited long-term safety data, but rates of serious infections have been low.""
+    ],
+    ""disadvantages"": [
+      ""Limited long-term safety data for vedolizumab in UC."",
+      ""May increase the risk of other serious events such as malignancy, although this couldn't be thoroughly evaluated."",
+      ""Requires intravenous infusion.""
+    ]
+  },
+  {
+    ""drug_name"": ""Ustekinumab"",
+    ""advantages"": [
+      ""Effective in inducing and maintaining clinical remission and endoscopic improvement in moderate to severe UC."",
+      ""Considered a viable option for patients with substantial comorbidities or contraindications to TNF antagonists."",
+      ""May be a suitable alternative for patients with prior exposure to anti-TNF-α therapies."",
+      ""May be considered for patients with psoriasis or psoriatic arthritis as an additional consideration.""
+    ],
+    ""disadvantages"": [
+      ""Limited long-term safety data for ustekinumab in UC."",
+      ""May increase the risk of serious infections and malignancies."",
+      ""Requires subcutaneous injections.""
+    ]
+  }
+]",Vedolizumab,"Effective in inducing and maintaining clinical remission and endoscopic improvement in moderate to severe UC. Considered a viable option for patients with prior exposure to anti-TNF-α therapies. Ranked highest for safety in terms of risk of infections among active interventions. Limited long-term safety data, but rates of serious infections have been low.","Limited long-term safety data for vedolizumab in UC. May increase the risk of other serious events such as malignancy, although this couldn't be thoroughly evaluated. Requires intravenous infusion.",Ustekinumab,Effective in inducing and maintaining clinical remission and endoscopic improvement in moderate to severe UC. Considered a viable option for patients with substantial comorbidities or contraindications to TNF antagonists. May be a suitable alternative for patients with prior exposure to anti-TNF-α therapies. May be considered for patients with psoriasis or psoriatic arthritis as an additional consideration.,Limited long-term safety data for ustekinumab in UC. May increase the risk of serious infections and malignancies. Requires subcutaneous injections.
+3,"60 year old female with newly diagnosed moderate UC with a background of congestive cardiac failure
+",Ustekinumab,Vedolizumab,,Tofacitinib,Testing contraindications to first line IFX. TFC not recommended because of increased LDL-C and MACE risk,"System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Given the below context information and no prior knowledge, return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+---------------------
+context_str
+---------------------
+
+Human: Patient Profile: question","System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+Human: Patient Profile: question
+AI: Existing answer: existing_answer
+Human:
+We have the opportunity to refine the existing answer (only if needed) with some more context below.
+
+---------------------
+context_str
+---------------------
+
+Given the new context, refine the original answer to better answer the question. If the context isn't useful, return the original answer.
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+","Refined answer: [
+  {
+    ""drug_name"": ""Vedolizumab"",
+    ""advantages"": [
+      ""Vedolizumab has shown higher safety compared to other biological drugs, with low rates of serious infections."",
+      ""It is administered intravenously, allowing for precise dosing and monitoring."",
+      ""Vedolizumab has a favorable safety profile in patients with prior exposure to TNF antagonists."",
+      ""It can be used as both induction and maintenance therapy for UC.""
+    ],
+    ""disadvantages"": [
+      ""Regular monitoring of the patient's condition and response to treatment is necessary."",
+      ""The long-term safety of vedolizumab in the treatment of UC is still being evaluated."",
+      ""Vedolizumab may not be the most appropriate choice for patients with congestive cardiac failure, as its safety in this population is not well-established.""
+    ]
+  },
+  {
+    ""drug_name"": ""Ustekinumab"",
+    ""advantages"": [
+      ""Ustekinumab has shown efficacy in inducing and maintaining remission in moderate to severe UC."",
+      ""It is administered subcutaneously, allowing for convenient self-administration."",
+      ""Ustekinumab has a different mechanism of action compared to TNF antagonists, which may be beneficial for patients who have failed or are intolerant to TNF antagonists."",
+      ""It can be used as both induction and maintenance therapy for UC.""
+    ],
+    ""disadvantages"": [
+      ""Regular monitoring of the patient's condition and response to treatment is necessary."",
+      ""The long-term safety of ustekinumab in the treatment of UC is still being evaluated."",
+      ""Ustekinumab may not be the most appropriate choice for patients with congestive cardiac failure, as its safety in this population is not well-established.""
+    ]
+  }
+]",Vedolizumab,"Vedolizumab has shown higher safety compared to other biological drugs, with low rates of serious infections. It is administered intravenously, allowing for precise dosing and monitoring. Vedolizumab has a favorable safety profile in patients with prior exposure to TNF antagonists. It can be used as both induction and maintenance therapy for UC.","Regular monitoring of the patient's condition and response to treatment is necessary. The long-term safety of vedolizumab in the treatment of UC is still being evaluated. Vedolizumab may not be the most appropriate choice for patients with congestive cardiac failure, as its safety in this population is not well-established.",Ustekinumab,"Ustekinumab has shown efficacy in inducing and maintaining remission in moderate to severe UC. It is administered subcutaneously, allowing for convenient self-administration. Ustekinumab has a different mechanism of action compared to TNF antagonists, which may be beneficial for patients who have failed or are intolerant to TNF antagonists. It can be used as both induction and maintenance therapy for UC.","Regular monitoring of the patient's condition and response to treatment is necessary. The long-term safety of ustekinumab in the treatment of UC is still being evaluated. Ustekinumab may not be the most appropriate choice for patients with congestive cardiac failure, as its safety in this population is not well-established."
+4,"38 year old female with newly diagnosed moderate UC and psoriasis
+",Ustekinumab,,,,Test treatment of specific EIM and IBD,"System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Given the below context information and no prior knowledge, return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+---------------------
+context_str
+---------------------
+
+Human: Patient Profile: question","System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+Human: Patient Profile: question
+AI: Existing answer: existing_answer
+Human:
+We have the opportunity to refine the existing answer (only if needed) with some more context below.
+
+---------------------
+context_str
+---------------------
+
+Given the new context, refine the original answer to better answer the question. If the context isn't useful, return the original answer.
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+","Refined answer: [
+  {
+    ""drug_name"": ""Vedolizumab"",
+    ""advantages"": [
+      ""Effective in inducing and maintaining clinical remission in moderate to severe UC"",
+      ""Different mechanism of action compared to anti-TNF agents"",
+      ""May be beneficial for patients with concomitant psoriasis"",
+      ""Long-term safety data available"",
+      ""Ranked highest for maintenance of clinical remission and endoscopic improvement"",
+      ""Ranked safest in terms of risk of infections""
+    ],
+    ""disadvantages"": [
+      ""Limited head-to-head comparison data with other biological drugs"",
+      ""Higher healthcare costs associated with immunosuppressive therapies"",
+      ""Limited data on the impact of obesity and sarcopenia on response"",
+      ""Limited role in patients with articular manifestations of IBD"",
+      ""Safety data on malignancy is limited"",
+      ""Risk of natalizumab-associated progressive multifocal leukoencephalopathy (PML) (Bloomgren et al., 2012)""
+    ]
+  },
+  {
+    ""drug_name"": ""Ustekinumab"",
+    ""advantages"": [
+      ""Effective in inducing and maintaining clinical remission in moderate to severe UC"",
+      ""Different mechanism of action compared to anti-TNF agents"",
+      ""May be beneficial for patients with concomitant psoriasis or psoriatic arthritis"",
+      ""Long-term safety data available"",
+      ""Ranked highest for maintenance of clinical remission and endoscopic improvement"",
+      ""Ranked safest in terms of risk of infections""
+    ],
+    ""disadvantages"": [
+      ""Limited head-to-head comparison data with other biological drugs"",
+      ""Higher healthcare costs associated with immunosuppressive therapies"",
+      ""Limited data on the impact of obesity and sarcopenia on response"",
+      ""Limited role in patients with articular manifestations of IBD"",
+      ""Safety data on malignancy is limited"",
+      ""Risk of serious infections and malignancies""
+    ]
+  }
+]",Vedolizumab,"Effective in inducing and maintaining clinical remission in moderate to severe UC, Different mechanism of action compared to anti-TNF agents, May be beneficial for patients with concomitant psoriasis, Long-term safety data available, Ranked highest for maintenance of clinical remission and endoscopic improvement, Ranked safest in terms of risk of infections","Limited head-to-head comparison data with other biological drugs, Higher healthcare costs associated with immunosuppressive therapies, Limited data on the impact of obesity and sarcopenia on response, Limited role in patients with articular manifestations of IBD, Safety data on malignancy is limited, Risk of natalizumab-associated progressive multifocal leukoencephalopathy (PML) (Bloomgren et al., 2012)",Ustekinumab,"Effective in inducing and maintaining clinical remission in moderate to severe UC, Different mechanism of action compared to anti-TNF agents, May be beneficial for patients with concomitant psoriasis or psoriatic arthritis, Long-term safety data available, Ranked highest for maintenance of clinical remission and endoscopic improvement, Ranked safest in terms of risk of infections","Limited head-to-head comparison data with other biological drugs, Higher healthcare costs associated with immunosuppressive therapies, Limited data on the impact of obesity and sarcopenia on response, Limited role in patients with articular manifestations of IBD, Safety data on malignancy is limited, Risk of serious infections and malignancies"
+5,"25 year old pregnant woman with severe distal ulcerative colitis
+",Infliximab,Vedolizumab,Ustekinumab,,Infliximab has best safety data in pregnancy (due to experience),"System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Given the below context information and no prior knowledge, return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+---------------------
+context_str
+---------------------
+
+Human: Patient Profile: question","System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+Human: Patient Profile: question
+AI: Existing answer: existing_answer
+Human:
+We have the opportunity to refine the existing answer (only if needed) with some more context below.
+
+---------------------
+context_str
+---------------------
+
+Given the new context, refine the original answer to better answer the question. If the context isn't useful, return the original answer.
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+","Refined answer: [
+  {
+    ""drug_name"": ""Vedolizumab"",
+    ""advantages"": [
+      ""Ranked highest for induction of clinical remission and endoscopic improvement in patients with moderate-severe ulcerative colitis"",
+      ""Higher safety profile compared to other biologics"",
+      ""Low rates of serious infections"",
+      ""Convenient intravenous administration every 8 or 4 weeks""
+    ],
+    ""disadvantages"": [
+      ""Limited data on long-term safety during pregnancy"",
+      ""May not be the most appropriate biologic for patients with articular manifestations of IBD"",
+      ""Requires regular intravenous administration, which may be less convenient for some patients""
+    ]
+  },
+  {
+    ""drug_name"": ""Infliximab"",
+    ""advantages"": [
+      ""Proven efficacy in inducing and maintaining clinical remission in moderate-severe ulcerative colitis"",
+      ""Convenient intravenous administration every 8 weeks"",
+      ""May be a suitable option for a pregnant patient due to limited data on long-term safety during pregnancy""
+    ],
+    ""disadvantages"": [
+      ""Limited data on long-term safety during pregnancy"",
+      ""May increase the risk of infections compared to placebo"",
+      ""Requires regular intravenous administration, which may be less convenient for some patients"",
+      ""May not be the most appropriate biologic for patients with articular manifestations of IBD""
+    ]
+  }
+]",Vedolizumab,"Ranked highest for induction of clinical remission and endoscopic improvement in patients with moderate-severe ulcerative colitis, higher safety profile compared to other biologics, low rates of serious infections, convenient intravenous administration every 8 or 4 weeks","Limited data on long-term safety during pregnancy, may not be the most appropriate biologic for patients with articular manifestations of IBD, requires regular intravenous administration, which may be less convenient for some patients",Infliximab,"Proven efficacy in inducing and maintaining clinical remission in moderate-severe ulcerative colitis, convenient intravenous administration every 8 weeks, may be a suitable option for a pregnant patient due to limited data on long-term safety during pregnancy","Limited data on long-term safety during pregnancy, may increase the risk of infections compared to placebo, requires regular intravenous administration, which may be less convenient for some patients, may not be the most appropriate biologic for patients with articular manifestations of IBD"
+6,"56 year old man with moderate to severe ulcerative colitis and ankylosing spondylitis
+",Infliximab,Adalimumab,,,Dual indications,"System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Given the below context information and no prior knowledge, return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+---------------------
+context_str
+---------------------
+
+Human: Patient Profile: question","System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+Human: Patient Profile: question
+AI: Existing answer: existing_answer
+Human:
+We have the opportunity to refine the existing answer (only if needed) with some more context below.
+
+---------------------
+context_str
+---------------------
+
+Given the new context, refine the original answer to better answer the question. If the context isn't useful, return the original answer.
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+","[
+  {
+    ""drug_name"": ""Vedolizumab"",
+    ""advantages"": [
+      ""Proven efficacy in inducing and maintaining remission in moderate to severe ulcerative colitis"",
+      ""Higher safety profile compared to other biologics"",
+      ""Low rates of serious infections"",
+      ""May be suitable for patients with ankylosing spondylitis as it is also approved for this condition""
+    ],
+    ""disadvantages"": [
+      ""Limited long-term safety data"",
+      ""Requires intravenous (IV) administration""
+    ]
+  },
+  {
+    ""drug_name"": ""Ustekinumab"",
+    ""advantages"": [
+      ""Proven efficacy in inducing and maintaining remission in moderate to severe ulcerative colitis"",
+      ""May be suitable for patients with ankylosing spondylitis as it is also approved for this condition"",
+      ""Different mechanism of action compared to TNF inhibitors""
+    ],
+    ""disadvantages"": [
+      ""Limited long-term safety data"",
+      ""Requires subcutaneous (SC) administration"",
+      ""Higher risk of serious infections compared to some other biologics""
+    ]
+  }
+]",Vedolizumab,Proven efficacy in inducing and maintaining remission in moderate to severe ulcerative colitis. Higher safety profile compared to other biologics. Low rates of serious infections. May be suitable for patients with ankylosing spondylitis as it is also approved for this condition.,Limited long-term safety data. Requires intravenous (IV) administration.,Ustekinumab,Proven efficacy in inducing and maintaining remission in moderate to severe ulcerative colitis. May be suitable for patients with ankylosing spondylitis as it is also approved for this condition. Different mechanism of action compared to TNF inhibitors.,Limited long-term safety data. Requires subcutaneous (SC) administration. Higher risk of serious infections compared to some other biologics.
+7,"38 year old man with severe ulcerative colitis and has lost response to vedolizumab
+",Tofacitinib or ,Ustekinumab,,,Biologic failure,"System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Given the below context information and no prior knowledge, return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+---------------------
+context_str
+---------------------
+
+Human: Patient Profile: question","System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+Human: Patient Profile: question
+AI: Existing answer: existing_answer
+Human:
+We have the opportunity to refine the existing answer (only if needed) with some more context below.
+
+---------------------
+context_str
+---------------------
+
+Given the new context, refine the original answer to better answer the question. If the context isn't useful, return the original answer.
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+","Refined answer: [
+  {
+    ""drug_name"": ""Infliximab"",
+    ""advantages"": ""Infliximab is a suitable choice for a patient with severe ulcerative colitis who has lost response to vedolizumab. It has shown high efficacy in inducing remission and has a well-established safety profile. Infliximab is administered intravenously, allowing for rapid onset of action. It can be effective in patients who have failed other treatments."",
+    ""disadvantages"": ""Infliximab requires regular intravenous administration, which may be inconvenient for some patients. There is a risk of infusion reactions and the development of antibodies, which can reduce its effectiveness over time.""
+  },
+  {
+    ""drug_name"": ""Ustekinumab"",
+    ""advantages"": ""Ustekinumab is another option for a patient with severe ulcerative colitis who has lost response to vedolizumab. It is a subcutaneously administered drug, which may be more convenient for some patients. Ustekinumab has shown efficacy in inducing and maintaining remission in ulcerative colitis. It is particularly beneficial for patients with concomitant psoriasis or psoriatic arthritis."",
+    ""disadvantages"": ""Ustekinumab carries a risk of injection site reactions and other adverse effects. It may not be as effective as infliximab in patients who have failed other treatments.""
+  }
+]",,,,,,
+8,"28 year old woman who has severe extensive ulcerative colitis and has a history of lymphoma which was treated 4 years ago
+",Vedolizumab,Ustekinumab,,,Anti-TNFs and JAK inhs have associations/concerns with malignancies,"System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Given the below context information and no prior knowledge, return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+---------------------
+context_str
+---------------------
+
+Human: Patient Profile: question","System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+Human: Patient Profile: question
+AI: Existing answer: existing_answer
+Human:
+We have the opportunity to refine the existing answer (only if needed) with some more context below.
+
+---------------------
+context_str
+---------------------
+
+Given the new context, refine the original answer to better answer the question. If the context isn't useful, return the original answer.
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+","Refined answer: [
+  {
+    ""drug_name"": ""Vedolizumab"",
+    ""advantages"": [
+      ""Higher safety profile compared to other biological drugs."",
+      ""Low rates of serious infections."",
+      ""May be a suitable option as a first-line biologic treatment for the patient.""
+    ],
+    ""disadvantages"": [
+      ""Limited data on the use of vedolizumab in patients with a history of lymphoma, so caution is advised."",
+      ""Regular monitoring is required to assess for potential side effects and to optimize dosing."",
+      ""May require additional discussion with the patient regarding the potential risk of infections and the importance of medication adherence.""
+    ]
+  },
+  {
+    ""drug_name"": ""Ustekinumab"",
+    ""advantages"": [
+      ""May be a suitable option for patients with substantial comorbidities or contraindications to TNF antagonists."",
+      ""Has shown efficacy in inducing and maintaining clinical response, clinical remission, and endoscopic improvement in patients with UC."",
+      ""Different mechanism of action compared to TNF antagonists, which may be beneficial for patients who have failed or cannot tolerate TNF antagonists.""
+    ],
+    ""disadvantages"": [
+      ""Limited data on the use of ustekinumab in patients with a history of lymphoma, so caution is advised."",
+      ""Regular monitoring is required to assess for potential side effects and to optimize dosing."",
+      ""May require additional discussion with the patient regarding the potential risk of infections and the importance of medication adherence.""
+    ]
+  }
+]",Vedolizumab,Higher safety profile compared to other biological drugs. Low rates of serious infections. May be a suitable option as a first-line biologic treatment for the patient.,"Limited data on the use of vedolizumab in patients with a history of lymphoma, so caution is advised. Regular monitoring is required to assess for potential side effects and to optimize dosing. May require additional discussion with the patient regarding the potential risk of infections and the importance of medication adherence.",Ustekinumab,"May be a suitable option for patients with substantial comorbidities or contraindications to TNF antagonists. Has shown efficacy in inducing and maintaining clinical response, clinical remission, and endoscopic improvement in patients with UC. Different mechanism of action compared to TNF antagonists, which may be beneficial for patients who have failed or cannot tolerate TNF antagonists.","Limited data on the use of ustekinumab in patients with a history of lymphoma, so caution is advised. Regular monitoring is required to assess for potential side effects and to optimize dosing. May require additional discussion with the patient regarding the potential risk of infections and the importance of medication adherence."
+9,36 year old woman with moderate ulcerative colitis and multiple sclerosis,Ozanimod,Etrasimod,,,Dual indications,"System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Given the below context information and no prior knowledge, return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+---------------------
+context_str
+---------------------
+
+Human: Patient Profile: question","System: You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC) using biological drugs.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+
+Return up to 2 top choices of biological drugs given the patient profile.
+Explain the PROS and CONS of the 2 choices with respect to the patient profile.
+
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+Human: Patient Profile: question
+AI: Existing answer: existing_answer
+Human:
+We have the opportunity to refine the existing answer (only if needed) with some more context below.
+
+---------------------
+context_str
+---------------------
+
+Given the new context, refine the original answer to better answer the question. If the context isn't useful, return the original answer.
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+","Refined answer: [
+  {
+    ""drug_name"": ""Vedolizumab (Entyvio)"",
+    ""advantages"": [
+      ""Higher safety profile compared to other biological drugs"",
+      ""Effective for maintenance therapy in UC"",
+      ""Can be used in patients with multiple sclerosis""
+    ],
+    ""disadvantages"": [
+      ""Requires intravenous administration"",
+      ""Limited long-term safety data""
+    ]
+  },
+  {
+    ""drug_name"": ""Ustekinumab (Stelara)"",
+    ""advantages"": [
+      ""Ranked third best for fresh patients with no previous treatment"",
+      ""May be effective for maintenance therapy in UC"",
+      ""Can be used in patients with multiple sclerosis"",
+      ""Suitable for patients with psoriasis or psoriatic arthritis""
+    ],
+    ""disadvantages"": [
+      ""May increase the risk of serious adverse events and infections"",
+      ""Requires subcutaneous or intravenous administration""
+    ]
+  }
+]",Vedolizumab (Entyvio),"Higher safety profile compared to other biological drugs, Effective for maintenance therapy in UC, Can be used in patients with multiple sclerosis","Requires intravenous administration, Limited long-term safety data",Ustekinumab (Stelara),"Ranked third best for fresh patients with no previous treatment, May be effective for maintenance therapy in UC, Can be used in patients with multiple sclerosis, Suitable for patients with psoriasis or psoriatic arthritis","May increase the risk of serious adverse events and infections, Requires subcutaneous or intravenous administration"

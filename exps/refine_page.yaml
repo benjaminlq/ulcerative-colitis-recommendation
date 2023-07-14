@@ -1,19 +1,16 @@
 # Project Settings
 project: uc
 test_case: data/queries/uc.txt
-prompt: uc_qa_map_reduce_1.py
-description: gpt-3.5_Map_Reduce_Page_Stuff
-verbose: False
+prompt: uc_qa_refine_1.py
+description: gpt-3.5_Refine_Chunk_Stuff
+verbose: True
 
 # Embedding Settings
 temperature: 0
-chain_type: map_reduce
+chain_type: refine
 llm_type: gpt-3.5-turbo
 max_gen_tokens: 1024
-reduce_llm: gpt-3.5-turbo-16k
-combine_max_gen_tokens: 1024
-collapse_llm: gpt-3.5-turbo-16k
-collapse_max_gen_tokens: 1024
+refine_llm: gpt-3.5-turbo-16k
 
 document_level: page
 chunk_size: 5000
