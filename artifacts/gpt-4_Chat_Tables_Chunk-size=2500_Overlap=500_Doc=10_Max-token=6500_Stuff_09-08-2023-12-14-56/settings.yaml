@@ -1,0 +1,24 @@
+# General Settings
+project: uc
+test_case: data/queries/uc_2.txt
+prompt: uc_qa_source_chat_1.py
+ground_truth: uc2_gt.csv
+description: Chat_Tables_Chunk-size=2500_Overlap=500_Doc=10_Max-token=6500_Stuff
+verbose: True
+
+# Embedding Settings
+emb_type: text-embedding-ada-002
+vectorstore: faiss/text-embedding-ada-002/v8-add-tables_2500_500
+chunk_size: 2500
+chunk_overlap: 500
+additional_docs: data/additional_docs.json
+max_tokens_limit: 6500
+no_returned_docs: 10
+reduce_k_below_max_tokens: True
+chain_type: stuff
+pinecone_index_name:
+
+# LLM Settings
+llm_type: gpt-4
+temperature: 0
+max_tokens: 1024

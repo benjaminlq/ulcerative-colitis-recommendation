@@ -9,6 +9,7 @@ import pandas as pd
 from langchain.chains.combine_documents.base import BaseCombineDocumentsChain
 from langchain.chains.combine_documents.refine import RefineDocumentsChain
 from langchain.chains.combine_documents.stuff import StuffDocumentsChain
+from langchain.chains.combine_documents.map_reduce import MapReduceDocumentsChain
 from langchain.chains.llm import LLMChain
 from langchain.chat_models import ChatOpenAI
 from langchain.docstore.document import Document
@@ -17,7 +18,7 @@ from langchain.output_parsers import PydanticOutputParser
 from langchain.prompts import ChatPromptTemplate, PromptTemplate
 
 from config import LOGGER, MAIN_DIR
-from custom_chain import MapReduceDocumentsChainV2
+from custom_chain import ReduceDocumentsChainV2
 from custom_parsers import DrugOutput, DrugParser
 
 from .base import BaseExperiment
@@ -350,7 +351,7 @@ class MapReduceQAOverDocsExperiment(QuestionAnsweringOverDocsExperiment):
             llm=self.reduce_llm, prompt=self.combine_prompt, verbose=self.verbose
         )
 
-        combine_document_chain = StuffDocumentsChain(
+        combine_documents_chain = StuffDocumentsChain(
             llm_chain=reduce_chain,
             document_variable_name="summaries",
             verbose=self.verbose,
@@ -360,19 +361,23 @@ class MapReduceQAOverDocsExperiment(QuestionAnsweringOverDocsExperiment):
             llm=self.collapse_llm, prompt=self.collapse_prompt, verbose=self.verbose
         )
 
-        collapse_document_chain = StuffDocumentsChain(
+        collapse_documents_chain = StuffDocumentsChain(
             llm_chain=collapse_chain,
             document_variable_name="summaries",
             verbose=self.verbose,
         )
-
-        self.chain = MapReduceDocumentsChainV2(
-            llm_chain=map_chain,
-            combine_document_chain=combine_document_chain,
-            collapse_document_chain=collapse_document_chain,
-            document_variable_name="context",
+        
+        reduce_document_chain = ReduceDocumentsChainV2(
+            combine_documents_chain=combine_documents_chain,
+            collapse_documents_chain=collapse_documents_chain,
             combine_max_tokens=self.combine_max_doc_tokens,
-            collapse_max_tokens=self.collapse_max_doc_tokens,
+            collapse_max_tokens=self.collapse_max_doc_tokens
+        )
+
+        self.chain = MapReduceDocumentsChain(
+            llm_chain=map_chain,
+            reduce_documents_chain=reduce_document_chain,
+            document_variable_name="context",
             return_intermediate_steps=return_intermediate_steps,
             return_map_steps=return_intermediate_steps,
             verbose=self.verbose,

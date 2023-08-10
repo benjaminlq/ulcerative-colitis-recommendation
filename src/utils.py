@@ -8,7 +8,7 @@ from shutil import rmtree
 from typing import Callable, Dict, List, Optional
 
 import pinecone
-from chromadb.config import Settings
+# from chromadb.config import Settings
 from langchain.docstore.document import Document
 from langchain.document_loaders import (
     CSVLoader,
