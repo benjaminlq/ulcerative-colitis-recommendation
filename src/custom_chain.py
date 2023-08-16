@@ -1,17 +1,36 @@
 """Custom Chains
 """
-from typing import Any, Dict, List, Tuple, Optional
+from typing import Any, Dict, List, Tuple, Optional, Callable
 
 from langchain.callbacks.manager import Callbacks
-from langchain.chains.combine_documents.map_reduce import MapReduceDocumentsChain
 from langchain.chains.combine_documents.reduce import ReduceDocumentsChain
-from langchain.chains.combine_documents.reduce import _collapse_docs, _acollapse_docs, _split_list_of_docs
+from langchain.chains.combine_documents.reduce import _collapse_docs, _acollapse_docs
 from langchain.docstore.document import Document
 from pydantic import root_validator
 
+def _split_list_of_docs(
+    docs: List[Document], length_func: Callable, collapse_token_max: int, **kwargs: Any
+) -> List[List[Document]]:
+    new_result_doc_list = []
+    _sub_result_docs = []
+    for doc in docs:
+        _sub_result_docs.append(doc)
+        _num_tokens = length_func(_sub_result_docs, **kwargs)
+        if _num_tokens > collapse_token_max:
+            if len(_sub_result_docs) == 1:
+                raise ValueError(
+                    "A single document was longer than the context length,"
+                    " we cannot handle this."
+                )
+            new_result_doc_list.append(_sub_result_docs[:-1])
+            _sub_result_docs = _sub_result_docs[-1:]
+    new_result_doc_list.append(_sub_result_docs)
+    return new_result_doc_list
+
 class ReduceDocumentsChainV2(ReduceDocumentsChain):
     combine_max_tokens: Optional[int] = None
-    collapse_max_tokens: Optional[int] = None    
+    collapse_max_tokens: Optional[int] = None
+    
     @root_validator()
     def check_maximum_context_length(cls, values: Dict) -> Dict:
         values["combine_max_tokens"] = values.get("combine_max_tokens") or values["token_max"]
@@ -43,7 +62,7 @@ class ReduceDocumentsChainV2(ReduceDocumentsChain):
         if collapse_doc_llm_model in max_token_dict:
             if max_token_dict[collapse_doc_llm_model] < values["collapse_max_tokens"]:
                 values["collapse_max_tokens"] = max_token_dict[collapse_doc_llm_model]
-
+        
         return values
 
     def combine_docs(
@@ -70,7 +89,11 @@ class ReduceDocumentsChainV2(ReduceDocumentsChain):
             element returned is a dictionary of other keys to return.
         """
         result_docs, _ = self._collapse(
-            docs, combine_token_max=combine_token_max, collapse_token_max=collapse_token_max, callbacks=callbacks, **kwargs
+            docs=docs,
+            combine_token_max=combine_token_max,
+            collapse_token_max=collapse_token_max,
+            callbacks=callbacks,
+            **kwargs
         )
         return self.combine_documents_chain.combine_docs(
             docs=result_docs, callbacks=callbacks, **kwargs
@@ -125,9 +148,17 @@ class ReduceDocumentsChainV2(ReduceDocumentsChain):
 
         _combine_token_max = combine_token_max or self.combine_max_tokens
         _collapse_token_max = collapse_token_max or self.collapse_max_tokens
+        collapse_counter = 0
         while num_tokens is not None and num_tokens > _combine_token_max:
+            collapse_counter += 1
+            if collapse_counter > 1:
+                raise Exception("Document Collapse more than once!!!")
+                
             new_result_doc_list = _split_list_of_docs(
-                result_docs, length_func, _collapse_token_max, **kwargs
+                docs=result_docs,
+                length_func=length_func,
+                collapse_token_max=_collapse_token_max,
+                **kwargs
             )
             result_docs = []
             for docs in new_result_doc_list:
