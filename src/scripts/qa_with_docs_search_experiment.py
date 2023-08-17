@@ -223,6 +223,7 @@ def main():
             "\n".join([f"{k}:{v}" for k, v in yaml_cfg.items()])
         )
     )
+    print(f"Prompt:\n{experiment.convert_prompt_to_string(prompt)}")
 
     with open(test_case_path, "r") as f:
         test_cases = f.readlines()
