@@ -32,3 +32,8 @@ PROMPT_TEMPLATE = PromptTemplate(
     input_variables=["summaries", "question"],
     partial_variables={"format_instructions": drug_parser.get_format_instructions()},
 )
+
+if __name__ == "__main__":
+    from exp.base import BaseExperiment
+
+    print(BaseExperiment.convert_prompt_to_string(PROMPT_TEMPLATE))

@@ -36,3 +36,8 @@ messages = [
 CHAT_COMBINE_PROMPT = ChatPromptTemplate.from_messages(messages)
 
 CHAT_COLLAPSE_PROMPT = CHAT_COMBINE_PROMPT
+
+if __name__ == "__main__":
+    from exp.base import BaseExperiment
+
+    print(BaseExperiment.convert_prompt_to_string(CHAT_COMBINE_PROMPT))
