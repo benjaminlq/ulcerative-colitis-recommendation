@@ -54,13 +54,14 @@ REFERENCE TEXT:
 """
 
 # QUESTION PROMPT
-HUMAN_PROMPT = HumanMessagePromptTemplate.from_template("{question}\nLet's think step by step.")
+HUMAN_PROMPT = HumanMessagePromptTemplate.from_template(
+    "{question}\nLet's think step by step."
+)
 
 PROMPT_TEMPLATE = ChatPromptTemplate.from_messages(
     [
         SystemMessagePromptTemplate.from_template(
-            SYSTEM_PROMPT,
-            input_variables=["summaries"]
+            SYSTEM_PROMPT, input_variables=["summaries"]
         ),
         HUMAN_PROMPT,
     ]
@@ -68,5 +69,6 @@ PROMPT_TEMPLATE = ChatPromptTemplate.from_messages(
 
 if __name__ == "__main__":
     from exp.base import BaseExperiment
+
     print(PROMPT_TEMPLATE.input_variables)
     print(BaseExperiment.convert_prompt_to_string(PROMPT_TEMPLATE))
