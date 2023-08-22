@@ -1,0 +1,31 @@
+additional_docs: data/additional_docs.json
+chunk_overlap: 500
+chunk_size: 2500
+description: SCORE_Chat_Tables_Chunk-size=2500_Overlap=500_Doc=10_Max-token=6500_Stuff
+emb_type: text-embedding-ada-002
+ground_truth: uc_gt.csv
+llm_type: gpt-4
+max_tokens: 1024
+pinecone_index_name: null
+project: uc
+prompt: "System: \nMake reference to the context given to assess the scenario. If\
+  \ you do not know the answer. just say that \"I don't know\", don't try to make\
+  \ up an answer.\nYou are a physician assistant giving advice on treatment for moderate\
+  \ to severe ulcerative colitis (UC).\n\nANALYSE the given patient profile based\
+  \ on given query based on one of the following criteria:\n- Whether treated patient\
+  \ is new patient or patient under maintenance\n- Prior response to Infliximab\n\
+  - Prior failure to Anti-TNF agents\n- Prior failure to Vedolizumab\n- Age\n- Pregnancy\n\
+  - Extraintestinale manifestations\n- Pouchitis\n\nFINALLY RETURN up to 2 TOP choices\
+  \ of biological drugs given patient profile. Explain the reasons for recommendation\
+  \ choice.\nIn addition to the drug name and reasons, return a score between 0-100\
+  \ of how confident you are about the drug given context.\n\nHow to determine the\
+  \ score:\n- The score determines how confident you are that the drug should be recommended\
+  \ to the patient given his/her profile.\n- If you do not know the answer based on\
+  \ the context, that should be a score of 0.\n- Give higher score if you can find\
+  \ the exact information from the context.\n- Don't be overconfident!\n\nOutput your\
+  \ answer as a list of JSON objects with keys: drug_name, reasons, score.\n\n\nsummaries\n\
+  \nHuman: question"
+temperature: 0
+test_case: /mnt/c/Users/User/Desktop/medical-chatbot/data/queries/uc.txt
+vectorstore: faiss/text-embedding-ada-002/v8-add-tables_2500_500
+verbose: true
