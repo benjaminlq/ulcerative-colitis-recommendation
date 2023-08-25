@@ -1,0 +1,16 @@
+Question,Recommendation 1,Recommendation 2,Recommendation 3,Drug Avoid,Reasoning
+35 year old male with known moderate UC with prior exposure to infliximab but has worsening colitis on endoscopy despite compliance,Tofacitinib,Ustekinumab,,,Testing 2nd line treatment to patients previously exposed to anti-TNFa
+38 year old female with newly diagnosed moderate UC and psoriasis,Ustekinumab,,,,Test treatment of specific EIM and IBD
+25 year old pregnant woman with severe distal ulcerative colitis.,Infliximab,Vedolizumab,Ustekinumab,,Infliximab has best safety data in pregnancy (due to experience)
+38 year old man with severe ulcerative colitis and has lost response to vedolizumab,Tofacitinib or ,Ustekinumab,,,Biologic failure
+24 year-old man with moderate to severe extensive ulcerative colitis previously in clinical remission with infliximab develops loss of response due to antibody formation.,Adalimumab,Other anti-TNF,,,Immunogenic failure. Can consider changing to another anti-TNF class
+44 year-old woman with moderate to severe extensive ulcerative colitis and rheumatoid arthritis.,Infliximab,Adalimumab,Tofacitinib ,,Dual use
+55 year-old man with moderate to severe extensive ulcerative colitis who avlues convenience and limited time spent in hospital,Ustekinumab,Adalimumab,Tofacitinib ,,Subcutaneous and oral options
+"60 year-old woman with severe ulcerative colitis that has loss response to anti-TNF, vedolizumab and ustekinumab",Upadacitinib,Tofacitinib,Dual biologics,,Last line agents. Dual biologics use is possible.
+36 year-old man with moderate to severe extensive ulcerative colitis and spondylarthristis.,Infliximab,Tofacitinib,,,Dual indications
+42 year-old woman with moderate ulcerative colitis on azathioprine and not responding to therapy,Anti-TNF,,,,Combination therapy
+53 year-old man with moderate to severe extensive ulcerative colitis and low albumin levels,Tofacitinib,Vedolizumab,Ustekinumab,,Low serum albumin associated with poorer resonse to anti-TNFs (especially Infliximab)
+42 year-old woman with severe ulcerative colitis and rare fistulating disease,Infliximab,Adalimumab,,,No real data on ulcerative colitis - related fistula
+48 year-old woman with distal moderate to severe ulcerative colitis who prioritizes a rapid response to treatment.,Infliximab,Tofacitinib,,,Infliximab and Tofacitinib have the quickest response
+36 year-old woman with moderate to severe ulcerative colitis who has lost response to tofacitinib.,Infliximab,Ustekinumab,,,VDZ doesn’t do well as 2nd line
+58 year-old woman with moderate to severe distal ulcerative colitis and optic neuritis.,Vedolizumab,Ustekinumab,,,Anti-TNFs are contraindicated
