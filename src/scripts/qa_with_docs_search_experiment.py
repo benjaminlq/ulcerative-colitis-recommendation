@@ -71,7 +71,6 @@ def get_argument_parser():
         default=None,
         help="pinecone_index_name",
     )
-
     parser.add_argument(
         "--ground_truth",
         "-gt",
@@ -127,6 +126,13 @@ def get_argument_parser():
         default="stuff",
         help="Type of chain to perform reduction operations",
     )
+    parser.add_argument(
+        "--iters",
+        "-i",
+        type=int,
+        default=1,
+        help="Number of iterations to run"
+    )
     args = parser.parse_args()
     return args
 
@@ -162,6 +168,7 @@ def main():
     no_returned_docs = args.no_returned_docs
     reduce_k_below_max_tokens = args.reduce_k_below_max_tokens
     chain_type = args.chain_type
+    no_iters = args.iters
 
     assert project is not None, "Project not specified"
     assert test_case_path is not None, "Test Case Path is not specified"
@@ -230,11 +237,7 @@ def main():
 
     # experiment.load_json(os.path.join(ARTIFACT_DIR,
     #                                   "gpt-4_Chat_Tables_Chunk-size=1000_Overlap=200_Doc=10_Max-token=6500_Stuff_11-07-2023-21-48-04/result.json"))
-    experiment.run_test_cases(
-        test_cases, only_return_source=args.only_return_source, chain_type=chain_type
-    )
-    LOGGER.info("Completed running all test cases.")
-
+    
     save_path = os.path.join(
         ARTIFACT_DIR,
         "{}_{}_{}".format(
@@ -242,10 +245,19 @@ def main():
         ),
     )
     os.makedirs(save_path, exist_ok=True)
-    experiment.save_json(os.path.join(save_path, "result.json"))
-    experiment.write_csv(
-        os.path.join(save_path, "result.csv"), num_docs=no_returned_docs
-    )
+    
+    for idx in range(no_iters):
+        experiment.reset()
+        experiment.run_test_cases(
+            test_cases, only_return_source=args.only_return_source, chain_type=chain_type
+        )
+        LOGGER.info(f"Completed running all test cases for iteration {idx+1}.")
+
+        experiment.save_json(os.path.join(save_path, f"result{idx+1}.json"))
+        experiment.write_csv(
+            os.path.join(save_path, f"result{idx+1}.csv"), num_docs=no_returned_docs
+        )
+    
     if args.yaml_cfg:
         copyfile(args.yaml_cfg, os.path.join(save_path, "settings.yaml"))
     else:
