@@ -9,6 +9,7 @@ __pycache__/
 # Artifacts
 models/
 auth/
+log/
 
 # Distribution / packaging
 .Python
