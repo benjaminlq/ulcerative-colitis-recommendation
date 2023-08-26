@@ -1,4 +1,4 @@
-,question,gt_rec1,gt_rec2,gt_rec3,gt_avoid,gt_reason,agent_prompt,retrieval_qa_prompt,raw_answer,answer1,answer2,thought_sequence,Docsearch QA Tool,google_serper,General Knowledge,final_tool
+,question,gt_rec1,gt_rec2,gt_rec3,gt_avoid,gt_reason,agent_prompt,retrieval_qa_prompt,raw_answer,answer1,answer2,thought_sequence,Docsearch QA Tool,google_serper,General Knowledge,decision_tool
 0,40 year old male with newly diagnosed moderate UC and articular extraintestinal manifestations,Infliximab,Tofacitinib,,vedolizumab,IFX is ideal choice as biologically naïve with EIM.,"You are a helpful and honest physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
 If you do not know the answer, you will not make up an answer and instead ask further questions for clarifications
 
@@ -257,7 +257,7 @@ Final Answer: Based on the patient's profile and the information gathered, the t
 
 Ustekinumab Pros: It has been used successfully in combination with other biologics in refractory cases. It involves a one-time intravenous infusion followed by maintenance injections, which may be more convenient for some patients.
 
-Ustekinumab Cons: The specific risks associated with its",YES,YES,NO,google_serper
+Ustekinumab Cons: The specific risks associated with its",YES,YES,NO,Docsearch QA Tool
 3,60 year old female with newly diagnosed moderate UC with a background of congestive cardiac failure,Ustekinumab,Vedolizumab,,Tofacitinib,Testing contraindications to first line IFX. TFC not recommended because of increased LDL-C and MACE risk,"You are a helpful and honest physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
 If you do not know the answer, you will not make up an answer and instead ask further questions for clarifications
 
@@ -368,7 +368,7 @@ Azathioprine Pros: It is an oral medication, has been used for many years in the
 
 Infliximab Pros: It is a biologic agent that targets a specific part of the immune system, potentially offering more targeted treatment, and can be effective in inducing and maintaining remission. Cons: It is administered intravenously, can cause serious infections, there have been reports of heart failure in patients treated with it, and it can cause infusion reactions.
 
-The choice of treatment should be individualized, taking into account the patient's overall health, the severity of their UC, their cardiac condition, and their personal preferences.",YES,YES,YES,General Knowledge
+The choice of treatment should be individualized, taking into account the patient's overall health, the severity of their UC, their cardiac condition, and their personal preferences.",YES,YES,YES,Docsearch QA Tool
 4,38 year old female with newly diagnosed moderate UC and psoriasis,Ustekinumab,,,,Test treatment of specific EIM and IBD,"You are a helpful and honest physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
 If you do not know the answer, you will not make up an answer and instead ask further questions for clarifications
 
@@ -1642,7 +1642,7 @@ Golimumab Pros:
 3. Administered less frequently than Adalimumab, usually once a month.
 
 Golimumab Cons:
-1. Can cause serious side effects, including infections (such as tuberculosis), malignancies (such as lymphoma), and demyelinating disorders",YES,YES,YES,General Knowledge
+1. Can cause serious side effects, including infections (such as tuberculosis), malignancies (such as lymphoma), and demyelinating disorders",YES,YES,YES,google_serper
 17,42 year-old woman with moderate ulcerative colitis on azathioprine and not responding to therapy,Anti-TNF,,,,Combination therapy,"You are a helpful and honest physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
 If you do not know the answer, you will not make up an answer and instead ask further questions for clarifications
 
@@ -2020,7 +2020,7 @@ Ustekinumab Pros:
 1. It has been ranked highest for inducing clinical remission in patients with prior exposure to TNF antagonists.
 2. It has been shown to be superior to vedolizumab and adalimumab for induction of clinical remission in patients with prior exposure to TNF antagonists.
 
-Ustekinumab Cons:",YES,YES,NO,Docsearch QA Tool
+Ustekinumab Cons:",YES,YES,NO,google_serper
 21,25 year-old man with extensive moderate to severe ulcerative colitis and primary sclerosing cholangitis with decompensated cirrhosis.,Vedolizumab,Ustekinumab,,,Low/No evidence here,"You are a helpful and honest physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
 If you do not know the answer, you will not make up an answer and instead ask further questions for clarifications
 

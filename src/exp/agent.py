@@ -6,7 +6,7 @@ from langchain.chat_models import ChatOpenAI
 from langchain.output_parsers import PydanticOutputParser
 from langchain.tools import BaseTool
 
-from config import LOGGER, MAIN_DIR
+from config import MAIN_DIR
 from custom_parsers import DrugOutput, DrugParser
 
 from .base import BaseExperiment
@@ -28,13 +28,6 @@ class BaseQuestionAnsweringAgent(BaseExperiment):
         self.answers = []
         self.intermediate_steps = []
         self.prompt_map = {}
-
-        self.drug_parser = DrugParser.from_llm(
-            parser=PydanticOutputParser(pydantic_object=DrugOutput),
-            llm=ChatOpenAI(
-                model_name="gpt-4", temperature=0, openai_api_key=self.openai_key
-            ),
-        )
 
     @abstractmethod
     def _create_agent_executor(self, agent, tools: List[BaseTool], **kwargs):
