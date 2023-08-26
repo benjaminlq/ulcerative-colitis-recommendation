@@ -197,7 +197,7 @@ class QuestionAnsweringWithIndexSearchExperiment(BaseExperiment):
                     }
                 )
                 token_count += (
-                    self.chain.combine_document_chain.llm_chain.llm.get_num_tokens(
+                    self.chain.combine_documents_chain.llm_chain.llm.get_num_tokens(
                         document.page_content
                     )
                 )

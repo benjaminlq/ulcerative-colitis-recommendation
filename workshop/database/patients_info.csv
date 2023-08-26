@@ -1,0 +1,6 @@
+No,Name,Patient ID,NRIC,DOB,Gender,Ethnicity,Creatinine Serum,Unit
+1,Andy,17238471,G1234567,1/2/1950,Male,Black,111,umol/L
+2,Bobby,12374872,S2123871,8/3/1944,Male,Black,120,umol/L
+3,Charlie,23498474,S8718327,3/12/1960,Female,Asian,140,umol/L
+4,Emily,19238498,G8712837,13/2/1975,Female,White,80,umol/L
+5,George,12394889,S1928398,3/3/2000,Male,White,70,umol/L

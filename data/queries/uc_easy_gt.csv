@@ -1,0 +1,16 @@
+Question,Recommendation 1,Recommendation 2,Recommendation 3,Drug Avoid,Reasoning
+40 year old male with newly diagnosed moderate UC and articular extraintestinal manifestations,Infliximab,Tofacitinib,,vedolizumab,IFX is ideal choice as biologically naïve with EIM.
+70 year old female with newly diagnosed severe UC,Ustekinumab,Vedolizumab,,Infliximab,"Given advanced age, IFX not preferred as first choice"
+60 year old female with newly diagnosed moderate UC with a background of congestive cardiac failure,Ustekinumab,Vedolizumab,,Tofacitinib,Testing contraindications to first line IFX. TFC not recommended because of increased LDL-C and MACE risk
+56 year old man with moderatie to severe ulcerative colitis and ankylosing spondylitis,Infliximab,Adalimumab,,,Dual indications
+28 year old woman who has severe extensive ulcerative colitis and has a history of lymphoma which was treated 4 years ago,Vedolizumab,Ustekinumab,,,Anti-TNFs and JAK inhs have associations/concerns with malignancies
+36 year old woman with moderate ulcerative colitis and multiple sclerosis.,Ozanimod,Etrasimod,,,Dual indications
+39 year-old male with moderate to severe extensive ulcerative colitis who had malignant melanoma which was treated 3 years ago,Vedolizumab,Ustekinumab,,,Anti-TNFs and JAK inhs have associations/concerns with malignancies
+52 year-old woman with moderate to severe distal ulcerative colitis that had a successful induction with vedolizumab. What would be the maintenance therapy?,Vedolizumab,Any other biologic but not ideal,,,Some maintenance biologic as induction biologic
+68 year-old man with extensive moderate to severe ulcerative colitis who has prostate cancer which has been treated 5 years ago.,Vedolizumab,Ustekinumab,,,Anti-TNFs and JAK inhs have associations/concerns with malignancies
+25 year-old man with extensive moderate to severe ulcerative colitis and primary sclerosing cholangitis with decompensated cirrhosis.,Vedolizumab,Ustekinumab,,,Low/No evidence here
+18 year-old man with moderate to severe extensive ulcerative colitis and pyoderma gangrenosum.,Infliximab,Adalimumab,,,Dual indications
+55 year-old man with moderate to severe extensive ulcerative colitis and colonic polyps with high grade dysplasia found 2 years ago.,Vedolizumab,Ustekinumab,,,?? No idea
+27 year-old woman with moderate to severe extensive ulcerative colitis who prefers medication with oral formulation.,Tofacitinib,,,,Only oral formulation
+41 year-old man with moderate to severe distal ulcerative colitis and alocpecia areata.,Tofacitinib,,,,JAK inhibitors can be used for alopecia areata
+38 year-old woman with moderate to severe ulcerative colitis and pulmonary tuberculosis which was treated 2 years ago.,Vedolizumab,Ustekinumab,,,Anti-TNFs and JAK inhs have associations/concerns with infections

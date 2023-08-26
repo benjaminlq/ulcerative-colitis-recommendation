@@ -35,3 +35,8 @@ PROMPT_TEMPLATE = ChatPromptTemplate.from_messages(
         HumanMessagePromptTemplate.from_template(human_prompt),
     ]
 )
+
+if __name__ == "__main__":
+    from exp.base import BaseExperiment
+
+    print(BaseExperiment.convert_prompt_to_string(PROMPT_TEMPLATE))

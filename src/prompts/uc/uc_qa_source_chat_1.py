@@ -26,7 +26,6 @@ FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile. Ex
 Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
 
 {summaries}
-
 """
 
 PROMPT_TEMPLATE = ChatPromptTemplate.from_messages(
@@ -37,3 +36,8 @@ PROMPT_TEMPLATE = ChatPromptTemplate.from_messages(
         HumanMessagePromptTemplate.from_template("{question}"),
     ]
 )
+
+if __name__ == "__main__":
+    from exp.base import BaseExperiment
+
+    print(BaseExperiment.convert_prompt_to_string(PROMPT_TEMPLATE))

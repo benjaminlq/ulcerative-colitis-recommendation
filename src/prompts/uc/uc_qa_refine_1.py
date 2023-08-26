@@ -64,3 +64,8 @@ refine_messages = [
     HumanMessagePromptTemplate.from_template(refine_template),
 ]
 CHAT_REFINE_PROMPT = ChatPromptTemplate.from_messages(refine_messages)
+
+if __name__ == "__main__":
+    from exp.base import BaseExperiment
+
+    print(BaseExperiment.convert_prompt_to_string(CHAT_REFINE_PROMPT))

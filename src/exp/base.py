@@ -40,11 +40,7 @@ class BaseExperiment:
         with open(keys_json, "r") as f:
             keys = json.load(f)
 
-        self.openai_key = (
-            keys["OPENAI_API_KEY_FOR_GPT4"]
-            if self.llm_type == "gpt-4"
-            else keys["OPENAI_API_KEY"]
-        )
+        self.openai_key = keys["OPENAI_API_KEY"]
 
         self.ground_truth = self.load_groundtruth(gt) if gt else None
         self.chain = None
