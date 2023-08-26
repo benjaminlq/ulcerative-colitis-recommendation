@@ -9,9 +9,8 @@ class GoogleSerperTool(BaseTool):
 
     name = "google_serper"
     description = (
-        "A low-cost Google Search API."
-        "Useful for when you need to answer questions about current events."
-        "Input should be a search query."
+        "Useful for when you need to search the internet for recommendations on patients profile "
+        "which you don't know about. Input should be a search query."
     )
     serper_api_key: str
     

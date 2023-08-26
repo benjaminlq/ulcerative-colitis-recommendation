@@ -25,11 +25,15 @@ def _get_input() -> str:
 class HumanTool(BaseTool):
     """Tool that asks user for input."""
 
-    name = "human"
+    name = "Human"
     description = (
-        "You can ask a human for guidance when you think you "
-        "got stuck or you are not sure what to do next. "
-        "The input should be a question for the human."
+        "You can ask a human for additional information when you got stuck "
+        "or you are not sure about the treatment recommendation. "
+        "The input should be a question for the human to provide additional "
+        "information about the patient, such as age, gender, whether the patient "
+        "under treatment is a new patient or under maintenance, whether the patient "
+        "has any special response/failure to any drugs or other conditions such as "
+        "pregnancy, extraintestinale manifestations, etc"
     )
     prompt_func: Callable[[str], None] = Field(default_factory=lambda: _print_func)
     input_func: Callable = Field(default_factory=lambda: _get_input)

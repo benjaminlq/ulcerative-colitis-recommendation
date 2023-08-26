@@ -290,3 +290,21 @@ def convert_json_to_documents(json_info: Dict) -> List[Document]:
         List[Document]: List of Documents
     """
     return []
+
+def generate_agent_sequence(
+    result: Dict
+):
+    input = result["input"]
+    output = result["output"]
+    intermediate_steps = result["intermediate_steps"]
+    
+    thought_sequence = "Question: " + input + "\n\n"
+    for intermediate_step in intermediate_steps:
+        action, observation = intermediate_step
+        action_str = "Thought: " + action.log + "\n" + "Observation: " + observation + "\n\n" 
+        thought_sequence += action_str
+    
+    final_answer = "Final Answer: " + output
+    
+    thought_sequence += final_answer
+    return thought_sequence
