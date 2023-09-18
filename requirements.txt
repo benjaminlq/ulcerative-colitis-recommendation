@@ -19,4 +19,5 @@ pypandoc==1.11
 pymupdf==1.22.5
 transformers==4.32.0
 torch==2.0.1
+llama-index==0.8.26
 .
