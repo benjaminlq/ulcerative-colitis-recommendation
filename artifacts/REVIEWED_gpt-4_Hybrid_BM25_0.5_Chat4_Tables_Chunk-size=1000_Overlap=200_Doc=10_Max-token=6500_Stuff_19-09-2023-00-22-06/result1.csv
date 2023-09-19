@@ -848,7 +848,7 @@ Human: question","Based on the patient's profile, the top two choices of biologi
    - Advantages: Adalimumab is a TNF-alpha inhibitor that has been shown to be effective in treating moderate to severe UC. It is administered via subcutaneous injection, which can be done at home.
    - Disadvantages: Adalimumab can increase the risk of serious infections and may not be suitable for patients with a history of recurrent infections. It can also cause allergic reactions and other side effects like headache, rash, and nausea.
 
-It's important to note that the patient's congestive cardiac failure should be taken into consideration when choosing a treatment, as some medications may exacerbate this condition. The patient's overall health status and preferences should also be considered.",,,,,,,"title: Approach to the Management of Recently Diagnosed Inflammatory Bowel Disease Patients: A User's Guide for Adult and Pediatric Gastroenterologists
+It's important to note that the patient's congestive cardiac failure should be taken into consideration when choosing a treatment, as some medications may exacerbate this condition. The patient's overall health status and preferences should also be considered.",Vedolizumab,,,Adalimumab,,,"title: Approach to the Management of Recently Diagnosed Inflammatory Bowel Disease Patients: A User's Guide for Adult and Pediatric Gastroenterologists
 
 filename: agrawal.pdf
 
@@ -1113,7 +1113,7 @@ Human: question","Based on the patient's profile, the top two choices of biologi
    - Advantages: VDZ is an anti-integrin antibody that has shown efficacy in treating moderate to severe UC. It is generally well tolerated and has a good safety profile.
    - Disadvantages: While VDZ is effective for UC, it may not address the patient's psoriasis. Also, it may take longer to see the effects of VDZ compared to other treatments. Side effects can include headache, joint pain, nausea, and fever. There is also a risk of serious infections.
 
-Please note that the choice of treatment should be individualized based on the patient's overall health, lifestyle, and personal preferences. It is also important to monitor the patient's response to treatment and adjust as necessary.",,,,,,,"title: Approach to the Management of Recently Diagnosed Inflammatory Bowel Disease Patients: A User's Guide for Adult and Pediatric Gastroenterologists
+Please note that the choice of treatment should be individualized based on the patient's overall health, lifestyle, and personal preferences. It is also important to monitor the patient's response to treatment and adjust as necessary.",Ustekinumab,,,Vedolizumab,,,"title: Approach to the Management of Recently Diagnosed Inflammatory Bowel Disease Patients: A User's Guide for Adult and Pediatric Gastroenterologists
 
 filename: agrawal.pdf
 
@@ -1651,7 +1651,7 @@ Human: question","Based on the patient's profile, the top two choices of biologi
    - Advantages: Adalimumab is also effective in treating both ulcerative colitis and ankylosing spondylitis. It is administered via subcutaneous injection, which can be done at home, providing convenience for the patient.
    - Disadvantages: Adalimumab may take longer to work compared to infliximab. It can also cause side effects such as infections, allergic reactions, and liver damage. Similar to infliximab, there is a risk of developing antibodies against adalimumab, which can reduce its effectiveness.
 
-It's important to note that the choice between these two drugs should be individualized based on the patient's preferences, lifestyle, and overall health status. The patient should also be closely monitored for any side effects during the treatment.",,,,,,,"title:
+It's important to note that the choice between these two drugs should be individualized based on the patient's preferences, lifestyle, and overall health status. The patient should also be closely monitored for any side effects during the treatment.",Infliximab,,,Adalimumab,,,"title:
 
 filename: otad009.pdf
 
@@ -1928,7 +1928,7 @@ Human: question","[
 ""2"": ""Potential side effects may include infections, allergic reactions, and liver abnormalities.""
 }
 }
-]",,,,,,,"title:
+]",Upadacitinib,,,Ustekinumab,,,"title:
 
 filename: otad009.pdf
 
@@ -2193,7 +2193,7 @@ Human: question","Based on the patient's profile, the top two choices of biologi
    - Advantages: Ustekinumab is a biologic that targets interleukin-12 and interleukin-23, key cytokines involved in inflammatory and immune responses. It has been shown to be effective in treating moderate to severe ulcerative colitis. It is also a good option for patients with a history of malignancy as it has a lower risk of reactivating latent malignancies.
    - Disadvantages: Ustekinumab requires an initial intravenous infusion followed by subcutaneous injections, which can be inconvenient for some patients. It may also be less effective in patients who have previously failed anti-TNF therapy.
 
-Please note that the choice of therapy should be individualized based on the patient's specific circumstances and preferences, and in consultation with their healthcare provider.",,,,,,,"title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+Please note that the choice of therapy should be individualized based on the patient's specific circumstances and preferences, and in consultation with their healthcare provider.",Vedolizumab,,,Ustekinumab,,,"title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
 
 filename: 1-s2.0-S2468125321003770-main.pdf
 
@@ -2761,7 +2761,7 @@ Given this, two potential biological drugs that could be considered are:
    - Advantages: Vedolizumab is a gut-selective immunosuppressant, meaning it specifically targets inflammation in the gut, potentially causing fewer systemic side effects. It may be a suitable option for patients who have not responded to or cannot tolerate TNF inhibitors.
    - Disadvantages: Vedolizumab requires intravenous infusion, which can be less convenient than self-administered injections. The risk of infection is also a concern, although it may be lower than with TNF inhibitors.
 
-Please note that the choice of treatment should be individualized based on the patient's specific circumstances, including disease severity, comorbidities, lifestyle, and personal preferences. The patient should be closely monitored for any potential side effects, particularly given his history of malignant melanoma.",,,,,,,"title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+Please note that the choice of treatment should be individualized based on the patient's specific circumstances, including disease severity, comorbidities, lifestyle, and personal preferences. The patient should be closely monitored for any potential side effects, particularly given his history of malignant melanoma.",Adalimumab,,,Vedolizumab,,,"title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
 
 filename: 1-s2.0-S2468125321003770-main.pdf
 
@@ -3926,7 +3926,7 @@ Human: question","Based on the patient's profile, the top two choices of biologi
    - Advantages: Adalimumab is a TNF-alpha inhibitor that has been shown to be effective in treating moderate to severe ulcerative colitis. It can be self-administered as a subcutaneous injection, which may be more convenient for patients who prefer to avoid hospital visits.
    - Disadvantages: Some patients may experience injection site reactions. Additionally, as with all immunosuppressants, there is a risk of serious infections and potential for increased risk of malignancies.
 
-Please note that the choice of treatment should be individualized based on the patient's specific circumstances and preferences, and in consultation with their healthcare provider.",,,,,,,"title: Approach to the Management of Recently Diagnosed Inflammatory Bowel Disease Patients: A User's Guide for Adult and Pediatric Gastroenterologists
+Please note that the choice of treatment should be individualized based on the patient's specific circumstances and preferences, and in consultation with their healthcare provider.",Vedolizumab,,,Adalimumab,,,"title: Approach to the Management of Recently Diagnosed Inflammatory Bowel Disease Patients: A User's Guide for Adult and Pediatric Gastroenterologists
 
 filename: agrawal.pdf
 
@@ -4271,7 +4271,7 @@ Upadacitinib:
 - Advantages: Upadacitinib may be the most efficacious therapy for moderately to severely active ulcerative colitis based on ITT analyses, with similar safety across advanced therapies. It may be more efficacious than other advanced therapies at achieving clinical response, clinical remission, and endoscopic response over 1 year.
 - Disadvantages: The safety profile of upadacitinib is still being evaluated, and it may have potential side effects including serious infections, malignancies, and thrombosis. It also requires regular monitoring for changes in blood counts, liver enzymes, and cholesterol levels.
 
-Please note that the choice of therapy should be individualized based on the patient's specific circumstances, including their overall health, comorbidities, and preferences.",,,,,,,"title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+Please note that the choice of therapy should be individualized based on the patient's specific circumstances, including their overall health, comorbidities, and preferences.",Infliximab,,,Upadacitinib,,,"title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
 
 filename: PIIS1542356520300446.pdf
 
@@ -4549,7 +4549,7 @@ Human: question","[
 ""Adalimumab is another TNF-alpha inhibitor that can be used to treat both UC and spondylarthritis. It is administered via subcutaneous injection, which can be done at home, providing convenience for the patient. It has been shown to be effective in inducing and maintaining remission in UC."",
 ""disadvantages"": ""Adalimumab can also increase the risk of serious infections and cancers, including lymphoma. It can cause injection site reactions. Some patients may also develop antibodies to adalimumab, which can decrease its effectiveness.""
 }
-]",,,,,,,"title: Approach to the Management of Recently Diagnosed Inflammatory Bowel Disease Patients: A User's Guide for Adult and Pediatric Gastroenterologists
+]",Infliximab,,,Adalimumab,,,"title: Approach to the Management of Recently Diagnosed Inflammatory Bowel Disease Patients: A User's Guide for Adult and Pediatric Gastroenterologists
 
 filename: agrawal.pdf
 
@@ -4844,7 +4844,7 @@ Human: question","Based on the patient's profile, she is a patient under mainten
    - Advantages: Vedolizumab is a gut-selective immunosuppressant, meaning it specifically targets the gut and spares the rest of the body from immunosuppression. This can result in fewer side effects compared to other treatments.
    - Disadvantages: Vedolizumab may take longer to work compared to other treatments. It can also cause side effects such as headache, joint pain, nausea, and fever.
 
-It's important to note that the choice of treatment should be individualized based on the patient's specific circumstances and preferences. The patient should also be closely monitored for any side effects during the treatment.",,,,,,,"title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+It's important to note that the choice of treatment should be individualized based on the patient's specific circumstances and preferences. The patient should also be closely monitored for any side effects during the treatment.",Infliximab,,,Vedolizumab,,,"title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
 
 filename: 1-s2.0-S2468125321003770-main.pdf
 
@@ -5452,7 +5452,7 @@ Human: question","Based on the patient's profile, the top two choices of biologi
    - Advantages: Adalimumab is another anti-TNF agent that has been shown to be effective in treating moderate to severe ulcerative colitis. It is administered via subcutaneous injection, which some patients may find more convenient than the intravenous infusion required for infliximab.
    - Disadvantages: Like infliximab, adalimumab can cause serious side effects, including infections, heart failure, and potentially fatal lymphomas and other cancers. It can also cause injection site reactions.
 
-It's important to note that the choice of treatment should be individualized based on the patient's specific circumstances, including her overall health, the severity of her disease, her personal preferences, and her response to previous treatments.",,,,,,,"title: Approach to the Management of Recently Diagnosed Inflammatory Bowel Disease Patients: A User's Guide for Adult and Pediatric Gastroenterologists
+It's important to note that the choice of treatment should be individualized based on the patient's specific circumstances, including her overall health, the severity of her disease, her personal preferences, and her response to previous treatments.",Infliximab,,,Adalimumab,,,"title: Approach to the Management of Recently Diagnosed Inflammatory Bowel Disease Patients: A User's Guide for Adult and Pediatric Gastroenterologists
 
 filename: agrawal.pdf
 
@@ -5809,7 +5809,7 @@ Human: question","Based on the patient's profile, the top two choices of biologi
    - Advantages: Ustekinumab has been shown to be effective in treating moderate to severe ulcerative colitis. It can be administered subcutaneously after the initial intravenous dose, which can be more convenient for the patient.
    - Disadvantages: Ustekinumab may increase the risk of infections. It may also not be as effective in patients who have previously failed anti-TNF therapy.
 
-It's important to note that the patient's age and history of prostate cancer should be taken into consideration when choosing a treatment. Both Vedolizumab and Ustekinumab have been associated with a slight increase in the risk of infections, which could potentially be more serious in older patients or those with a history of cancer. The patient's overall health status and preferences should also be considered in the decision-making process.",,,,,,,"title: Efficacy of biological therapies and small molecules in moderate to severe ulcerative colitis: systematic review and network meta-analysis
+It's important to note that the patient's age and history of prostate cancer should be taken into consideration when choosing a treatment. Both Vedolizumab and Ustekinumab have been associated with a slight increase in the risk of infections, which could potentially be more serious in older patients or those with a history of cancer. The patient's overall health status and preferences should also be considered in the decision-making process.",Vedolizumab,,,Ustekinumab,,,"title: Efficacy of biological therapies and small molecules in moderate to severe ulcerative colitis: systematic review and network meta-analysis
 
 filename: gutjnl-2021-326390R2 CLEAN.pdf
 
@@ -6111,7 +6111,7 @@ Human: question","[
 ""2"": ""It may not be as effective in treating extraintestinal manifestations as other biological agents.""
 }
 }
-]",,,,,,,"title: Positioning biologics in the treatment of IBD: A practical guide - Which mechanism of action for whom?
+]",Vedolizumab,,,Ustekinumab,,,"title: Positioning biologics in the treatment of IBD: A practical guide - Which mechanism of action for whom?
 
 filename: juillerat 2022.pdf
 
@@ -6401,7 +6401,7 @@ Human: question","[
 ""2"": ""As with any medication, there is a risk of side effects. These can include headache, joint pain, nausea, and fever.""
 }
 }
-]",,,,,,,"title: Approach to the Management of Recently Diagnosed Inflammatory Bowel Disease Patients: A Users Guide for Adult and Pediatric Gastroenterologists
+]",Upadacitinib,,,Vedolizumab,,,"title: Approach to the Management of Recently Diagnosed Inflammatory Bowel Disease Patients: A Users Guide for Adult and Pediatric Gastroenterologists
 
 filename: agrawal.pdf
 
@@ -6682,7 +6682,7 @@ Human: question","[
 ""2"": ""Potential side effects include infections and injection site reactions.""
 }
 }
-]",,,,,,,"title:
+]",Upadacitinib,,,Ustekinumab,,,"title:
 
 filename: otad009.pdf
 
@@ -6925,7 +6925,7 @@ Human: question","[
 ""Adalimumab is another anti-TNF therapy that can be used for moderate to severe ulcerative colitis. It is administered subcutaneously, which may be more convenient for some patients compared to the intravenous administration of infliximab. It is also effective in treating dermatological extraintestinal manifestations like pyoderma gangrenosum."",
 ""disadvantages"": ""Adalimumab also carries a risk of serious infections and malignancies. Common side effects include injection site reactions, upper respiratory infections, and headaches. As with infliximab, some patients may develop antibodies to adalimumab, which can reduce its effectiveness.""
 }
-]",,,,,,,"title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+]",Infliximab,,,Adalimumab,,,"title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
 
 filename: 1-s2.0-S2468125321003770-main.pdf
 
@@ -7506,7 +7506,7 @@ Given the patient's profile, the top two choices of biological drugs could be In
    - Advantages: Vedolizumab is a gut-selective immunosuppressant, meaning it specifically targets the gut and has less systemic side effects. It has been shown to be effective in inducing and maintaining remission in ulcerative colitis.
    - Disadvantages: Vedolizumab may take longer to work compared to other biologics. It also carries the risk of common side effects such as headache, joint pain, nausea, and fever.
 
-Please note that the choice of treatment should be individualized based on the patient's specific condition, preferences, and potential for side effects. It is important to discuss these options with the patient.",,,,,,,"title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+Please note that the choice of treatment should be individualized based on the patient's specific condition, preferences, and potential for side effects. It is important to discuss these options with the patient.",Infliximab,,,Vedolizumab,,,"title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
 
 filename: 1-s2.0-S2468125321003770-main.pdf
 
@@ -8182,7 +8182,7 @@ Human: question","[
 ""3"": ""Tofacitinib can increase cholesterol levels, and patients should have their cholesterol levels checked after starting treatment.""
 }
 }
-]",,,,,,,"title: Efficacy of biological therapies and small molecules in moderate to severe ulcerative colitis: systematic review and network meta-analysis
+]",Ustekinumab,,,Tofacitinib,,,"title: Efficacy of biological therapies and small molecules in moderate to severe ulcerative colitis: systematic review and network meta-analysis
 
 filename: gutjnl-2021-326390R2 CLEAN.pdf
 
