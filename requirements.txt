@@ -20,4 +20,6 @@ pymupdf==1.22.5
 transformers==4.32.0
 torch==2.0.1
 llama-index==0.8.26
+pinecone-text==0.5.4
+git+https://github.com/naver/splade.git@3781228d5f07e7a6ae14a479e469a715de79e976
 .

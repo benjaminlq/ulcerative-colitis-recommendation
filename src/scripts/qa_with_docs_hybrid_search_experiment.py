@@ -2,15 +2,14 @@
 """
 import argparse
 import os
-import subprocess
 from datetime import datetime
 from importlib import import_module
 from shutil import copyfile
 
 import yaml
 
-from config import ARTIFACT_DIR, DATA_DIR, EMBSTORE_DIR, LOGGER
-from exp import QuestionAnsweringWithIndexSearchExperiment
+from config import ARTIFACT_DIR, DATA_DIR, EXCLUDE_DICT, LOGGER
+from exp import QAWithPineconeHybridSearchExperiment
 
 
 def get_argument_parser():
@@ -26,6 +25,8 @@ def get_argument_parser():
         "--test_case", "-t", type=str, default=None, help="path to test case file"
     )
     parser.add_argument("--prompt", "-p", type=str, default=None, help="path to prompt")
+    parser.add_argument("--sparse_model_path", "-sp", type=str, help="Path to sparse embedding model")
+    parser.add_argument("--sparse_type", "-spt", type=str, help="Type of Sparse Model. BM25 or Splade")
     parser.add_argument(
         "--description",
         "-d",
@@ -49,10 +50,7 @@ def get_argument_parser():
     )
 
     parser.add_argument(
-        "--vectorstore", "-v", type=str, default=None, help="path to vectorstore"
-    )
-    parser.add_argument(
-        "--emb_type",
+        "--dense_emb_type",
         "-e",
         type=str,
         default="text-embedding-ada-002",
@@ -87,7 +85,7 @@ def get_argument_parser():
     )
     parser.add_argument(
         "--additional_docs",
-        "-a",
+        "-add",
         type=str,
         default=None,
         help="Path to additional documents",
@@ -113,6 +111,13 @@ def get_argument_parser():
         help="Number of documents to be returned from semantic search",
     )
     parser.add_argument(
+        "--alpha",
+        "-a",
+        type=float,
+        default=0.5,
+        help="Weight factor to balance DENSE/SPARSE importance. Higher value means focusing more on DENSE contribution"
+    )
+    parser.add_argument(
         "--reduce_k_below_max_tokens",
         "-r",
         action="store_true",
@@ -133,6 +138,7 @@ def get_argument_parser():
         default=1,
         help="Number of iterations to run"
     )
+    parser.add_argument("--device", type=str, default="cpu", help="Use CPU or CUDA for embedding/LLM models")
     args = parser.parse_args()
     return args
 
@@ -151,10 +157,11 @@ def main():
 
     project = args.project
     test_case_path = args.test_case
+    sparse_model_path = args.sparse_model_path
+    sparse_type = args.sparse_type
     prompt = args.prompt
-    vectorstore = args.vectorstore
     llm_type = args.llm_type
-    emb_type = args.emb_type
+    dense_emb_type = args.dense_emb_type
     temperature = args.temperature
     max_tokens = args.max_tokens
     ground_truth = args.ground_truth
@@ -166,64 +173,48 @@ def main():
     additional_docs = args.additional_docs
     max_tokens_limit = args.max_tokens_limit
     no_returned_docs = args.no_returned_docs
+    alpha = args.alpha
     reduce_k_below_max_tokens = args.reduce_k_below_max_tokens
     chain_type = args.chain_type
     no_iters = args.iters
+    device = args.device
 
     assert project is not None, "Project not specified"
     assert test_case_path is not None, "Test Case Path is not specified"
     assert prompt is not None, "Prompt is not specified"
-    assert vectorstore is not None, "Vectorstore is not specified"
-
-    vectorstore_path = os.path.join(EMBSTORE_DIR, project, vectorstore)
-    if not os.path.exists(vectorstore_path):
-        p = subprocess.run(
-            [
-                "python3",
-                "ingest.py",
-                "--embed_store",
-                vectorstore.split("/")[0],
-                "--inputs",
-                os.path.join(DATA_DIR, "document_store", project),
-                "--outputs",
-                vectorstore_path,
-                "--project",
-                project,
-                "--model",
-                emb_type,
-                "--chunk_size",
-                str(chunk_size),
-                "--chunk_overlap",
-                str(chunk_overlap),
-                "--pinecone_index_name",
-                pinecone_index_name,
-                "--additional_docs",
-                additional_docs,
-            ]
-        )
-        LOGGER.info(
-            f"Process successfully executed with code {p.returncode}"
-            if p.returncode == 0
-            else f"Process unsuccessfully executed with code {p.returncode}"
-        )
 
     prompt = import_module(
         f"prompts.{project}.{os.path.splitext(prompt)[0]}"
     ).PROMPT_TEMPLATE
 
-    experiment = QuestionAnsweringWithIndexSearchExperiment(
+    experiment = QAWithPineconeHybridSearchExperiment(
         prompt_template=prompt,
-        vector_store=vectorstore_path,
+        sparse_model_path=sparse_model_path,
+        pinecone_idx_name=pinecone_index_name,
+        sparse_type=sparse_type,
         llm_type=llm_type,
-        emb=emb_type,
+        emb=dense_emb_type,
         temperature=temperature,
         max_tokens=max_tokens,
         gt=os.path.join(DATA_DIR, "queries", ground_truth) if ground_truth else None,
         verbose=verbose,
-        max_tokens_limit=max_tokens_limit,
         k=no_returned_docs,
+        alpha=alpha,
+        max_tokens_limit=max_tokens_limit,
         reduce_k_below_max_tokens=reduce_k_below_max_tokens,
+        device=device
     )
+
+    # Check that Pinecone Index is not empty
+    if experiment.index.describe_index_stats()["total_vector_count"] == 0:
+        experiment.generate_vectorstore(
+            source_directory=os.path.join(DATA_DIR, "document_store", project),
+            chunk_size=chunk_size,
+            chunk_overlap=chunk_overlap,
+            exclude_pages=EXCLUDE_DICT,
+            additional_docs=additional_docs
+        )
+        LOGGER.info("Successfully added new vectors to Pinecone Index. New number of vectors:",experiment.index.describe_index_stats()["total_vector_count"])
 
     LOGGER.info(
         "Successfully created experiment with settings:\n{}".format(
@@ -268,8 +259,9 @@ def main():
             "ground_truth": ground_truth,
             "description": description,
             "verbose": verbose,
-            "emb_type": emb_type,
-            "vectorstore": vectorstore,
+            "dense_emb_type": dense_emb_type,
+            "sparse_model_path": sparse_model_path,
+            "sparse_type": sparse_type,
             "chunk_size": chunk_size,
             "chunk_overlap": chunk_overlap,
             "additional_docs": additional_docs,
@@ -278,9 +270,11 @@ def main():
             "temperature": temperature,
             "max_tokens": max_tokens,
             "max_tokens_limit": max_tokens_limit,
-            "k": k,
+            "k": no_returned_docs,
+            "alpha": alpha,
             "reduce_k_below_max_tokens": reduce_k_below_max_tokens,
             "chain_type": chain_type,
+            "no_iters": no_iters
         }
         with open(os.path.join(save_path, "settings.yaml"), "w") as f:
             yaml.dump(settings, f)
@@ -289,4 +283,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-# python3 ./src/scripts/qa_with_docs_search_experiment.py --yaml_cfg exps/uc_1.yaml
+# python3 ./src/scripts/qa_with_docs_hybrid_search_experiment.py --yaml_cfg exps/uc_splade_0.5.yaml

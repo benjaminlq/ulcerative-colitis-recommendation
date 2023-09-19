@@ -4,10 +4,12 @@ from exp.divide_and_conquer import (
     RefineQAOverDocsExperiment,
 )
 from exp.qa_with_index_search import QuestionAnsweringWithIndexSearchExperiment
+from exp.qa_with_hybrid_search import QAWithPineconeHybridSearchExperiment
 
 __all__ = [
     "MapReduceQAOverDocsExperiment",
     "QuestionAnsweringWithIndexSearchExperiment",
     "RefineQAOverDocsExperiment",
     "BaseExperiment",
+    "QAWithPineconeHybridSearchExperiment"
 ]

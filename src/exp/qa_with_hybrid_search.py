@@ -9,26 +9,34 @@ from typing import Dict, List, Literal, Optional, Union
 import pandas as pd
 from langchain.chains import RetrievalQAWithSourcesChain
 from langchain.chat_models import ChatOpenAI
-from langchain.embeddings.openai import OpenAIEmbeddings
+from langchain.embeddings import OpenAIEmbeddings
+from langchain.embeddings.base import Embeddings
 from langchain.llms import OpenAI
 from langchain.output_parsers import PydanticOutputParser
 from langchain.prompts import ChatPromptTemplate, PromptTemplate
-from langchain.vectorstores import FAISS
+from langchain.retrievers import PineconeHybridSearchRetriever
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+
+import pinecone
+from pinecone_text.sparse import BM25Encoder
+from models.splade import SpladeEncoder
+
 
 from config import LOGGER, MAIN_DIR
 from custom_parsers import DrugOutput
-from utils import generate_vectorstore
+from utils import load_documents, convert_csv_to_documents
 
 from .base import BaseExperiment
 
 
 class QAWithPineconeHybridSearchExperiment(BaseExperiment):
-    """Experiment Module"""
 
     def __init__(
         self,
         prompt_template: Union[PromptTemplate, ChatPromptTemplate],
-        vector_store: str,
+        sparse_model_path: str,
+        pinecone_idx_name: str,
+        sparse_type: Literal["splade", "bm25"] = "splade",
         llm_type: str = "gpt-3.5-turbo",
         emb: str = "text-embedding-ada-002",
         keys_json: str = osp.join(MAIN_DIR, "auth", "api_keys.json"),
@@ -37,23 +45,11 @@ class QAWithPineconeHybridSearchExperiment(BaseExperiment):
         gt: Optional[str] = None,
         verbose: bool = False,
         k: int = 4,
+        alpha: float = 0.5,
         max_tokens_limit: int = 3375,
         reduce_k_below_max_tokens: bool = True,
+        device: str = "cpu"
     ):
-        """Initiate Instance for an experiment run
-
-        Args:
-            prompt_template (Union[PromptTemplate, ChatPromptTemplate]): Prompt to be feed to LLM
-            vector_store (str): Path to Vector Index Database
-            llm_type (str, optional): Type of LLM Model. Defaults to "gpt-3.5-turbo".
-            emb (str, optional): Type of Embedding Model. Defaults to "text-embedding-ada-002".
-            keys_json (str, optional): Path to API Keys. Defaults to osp.join(MAIN_DIR, "auth", "api_keys.json").
-            temperature (float, optional): Temperature Settings for LLM model. Lower temperature makes LLM more deterministic
-                while higher temperature makes LLM more random. Defaults to 0.
-            max_tokens (int, optional): Max_Tokens Settings for LLM model. Defaults to 512.
-            gt (Optional[str], optional): Path to Ground Truth file. Defaults to None.
-            verbose (bool, optional): Verbose Setting. Defaults to False.
-        """
 
         super(QAWithPineconeHybridSearchExperiment, self).__init__(
             llm_type=llm_type,
@@ -63,6 +59,24 @@ class QAWithPineconeHybridSearchExperiment(BaseExperiment):
             gt=gt,
             verbose=verbose,
         )
+        
+        ## Initialize Pinecone session
+        self.pinecone_idx_name = pinecone_idx_name
+        self.pinecone_api_key = self.keys[f"PINECONE_API_{sparse_type.upper()}"]["KEY"]
+        self.pinecone_env = self.keys[f"PINECONE_API_{sparse_type.upper()}"]["ENV"]
+        
+        pinecone.init(
+            api_key=self.pinecone_api_key,
+            environment=self.pinecone_env
+        )
+        
+        if pinecone_idx_name not in pinecone.list_indexes():
+            Warning("Index Name does not exist")
+            pinecone.create_index(
+                name=pinecone_idx_name, dimension=1536, metric="dotproduct", pod_type="s1", metadata_config={"indexed": []},
+            )
+        
+        self.index = pinecone.Index(pinecone_idx_name)
 
         if isinstance(prompt_template, ChatPromptTemplate):
             self.llm = ChatOpenAI(
@@ -71,6 +85,7 @@ class QAWithPineconeHybridSearchExperiment(BaseExperiment):
                 max_tokens=self.max_tokens,
                 openai_api_key=self.openai_key,
             )
+
         else:
             self.llm = OpenAI(
                 model_name=self.llm_type,
@@ -79,74 +94,105 @@ class QAWithPineconeHybridSearchExperiment(BaseExperiment):
                 openai_api_key=self.openai_key,
             )
 
-        self.embedder = OpenAIEmbeddings(model=emb, openai_api_key=self.openai_key)
-
-        try:
-            self.load_vectorstore(vector_store)
-        except Exception:
-            print(
-                "Vectorstore invalid. Please load valid vectorstore or create new vectorstore."
-            )
-
+        self.dense_embeddings = OpenAIEmbeddings(model=emb, openai_api_key=self.openai_key)
+        self.sparse_type = sparse_type
+        self.sparse_model_path = sparse_model_path            
+        self.device = device
         self.k = k
+        assert 0 <= alpha <= 1, "Invalid alpha"
+        self.alpha = alpha
         self.max_tokens_limit = max_tokens_limit
         self.reduce_k_below_max_tokens = reduce_k_below_max_tokens
         self.prompt_template = prompt_template
+        
+        try:
+            self.load_vectorstore(
+                sparse_model_path=self.sparse_model_path,
+                sparse_type=self.sparse_type,
+                embeddings=self.dense_embeddings
+            )
+        except Exception:
+            raise Exception(
+                "Vectorstore invalid. Please load valid vectorstore or create new vectorstore."
+            )
+
         self.questions = []
         self.answers = []
         self.sources = []
         self.drug_parser = PydanticOutputParser(pydantic_object=DrugOutput)
 
-    def load_vectorstore(self, vectorstore_path: str):
-        """Load Vectorstore from path
+    def load_vectorstore(
+        self, 
+        sparse_model_path: str,
+        sparse_type: Literal["splade", "bm25"],
+        embeddings: Embeddings,
+        ):
+        if sparse_type == "bm25":
+            sparse_model = BM25Encoder().load(sparse_model_path)
+            print("Using BM25 Sparse Model")
+        elif sparse_type == "splade":
+            sparse_model = SpladeEncoder(
+                model_path = sparse_model_path,
+                max_seq_length = 512,
+                agg = "max",
+                device = self.device
+                )
+            print("Using Term Expansion SPLADE Sparse Model")
+        else:
+            raise ValueError(f"Sparse Embedding of type {sparse_type} does not exist")
 
-        Args:
-            vectorstore_path (str): Path to vector database folder.
-        """
-        assert "index.faiss" in os.listdir(
-            vectorstore_path
-        ) and "index.pkl" in os.listdir(vectorstore_path), "Invalid Vectorstore"
-        self.docsearch = FAISS.load_local(vectorstore_path, self.embedder)
+        self.retriever = PineconeHybridSearchRetriever(
+            embeddings=embeddings,
+            sparse_encoder=sparse_model,
+            index = self.index,
+            top_k = self.k,
+            alpha = self.alpha
+            )
+
         LOGGER.info("Successfully loaded existing vectorstore from local storage")
 
     def generate_vectorstore(
         self,
-        data_directory: Optional[str] = None,
-        output_directory: str = "./vectorstore",
-        emb_store_type: str = "faiss",
+        source_directory: Optional[str] = None,
         chunk_size: int = 1000,
         chunk_overlap: int = 250,
         exclude_pages: Optional[Dict] = None,
-        pinecone_idx_name: Optional[str] = None,
         additional_docs: Optional[str] = None,
-        key_path: Optional[str] = os.path.join(MAIN_DIR, "auth", "api_keys.json"),
     ):
-        """Generate New vectorstore
 
-        Args:
-            data_directory (str): Directory contains source documents
-            output_directory (str, optional): Output directory of vector index database. Defaults to "./vectorstore".
-            emb_store_type (str, optional): Type of vector index database. Defaults to "faiss".
-            chunk_size (int, optional): Maximum size of text chunks (characters) after split. Defaults to 1000.
-            chunk_overlap (int, optional): Maximum overlapping window between text chunks. Defaults to 250.
-            exclude_pages (Optional[Dict], optional): Dictionary of pages to be excluded from documents. Defaults to None.
-            pinecone_idx_name (Optional[str], optional): Name of pinecone index to be created or loaded. Defaults to None.
-            additional_docs (Optional[str], optional): Additional Tables, Images or Json to be added to doc list. Defaults to None.
-            key_path (Optional[str], optional): Path to file containing API info.
-                Defaults to os.path.join(MAIN_DIR, "auth", "api_keys.json").
-        """
-        self.docsearch = generate_vectorstore(
-            data_directory=data_directory,
-            embedder=self.embedder,
-            output_directory=output_directory,
-            emb_store_type=emb_store_type,
-            chunk_size=chunk_size,
-            chunk_overlap=chunk_overlap,
-            exclude_pages=exclude_pages,
-            pinecone_idx_name=pinecone_idx_name,
-            additional_docs=additional_docs,
-            key_path=key_path,
-        )
+        if source_directory:
+            LOGGER.info(f"Loading documents from {source_directory}")
+
+            documents = load_documents(source_directory, exclude_pages=exclude_pages)
+            text_splitter = RecursiveCharacterTextSplitter(
+                chunk_size=chunk_size, chunk_overlap=chunk_overlap
+            )
+            texts = text_splitter.split_documents(documents)
+
+            LOGGER.info(f"Loaded {len(documents)} documents from {source_directory}")
+            LOGGER.info(
+                f"Split into {len(texts)} chunks of text (max. {chunk_size} characters each)"
+            )
+        else:
+            texts = []
+            
+        if additional_docs:
+            with open(additional_docs, "r") as f:
+                add_doc_infos = json.load(f)
+            for add_doc_info in add_doc_infos:
+                if add_doc_info["mode"] == "table":
+                    texts.extend(
+                        convert_csv_to_documents(add_doc_info)
+                    )
+                else:
+                    LOGGER.warning(
+                        "Invalid document type. No texts added to documents list"
+                    )
+                    
+        page_contents = [text.page_content for text in texts]
+        metadatas = [text.metadata for text in texts]
+        
+        self.retriever.add_texts(texts=page_contents, metadatas=metadatas)
 
     def run_test_cases(
         self,
@@ -154,13 +200,7 @@ class QAWithPineconeHybridSearchExperiment(BaseExperiment):
         only_return_source: bool = False,
         chain_type: Literal["stuff", "refine", "map_reduce", "map_rerank"] = "stuff",
     ):
-        """Run and save test cases to memory
 
-        Args:
-            test_cases (Union[List[str], str]): List of test queries.
-            docs (List[Document]): List of input documents
-            chain_type : Type of chain to apply on relevant documents. Defaults to "stuff".
-        """
         if isinstance(test_cases, str):
             with open(test_cases, "r", encoding="utf-8-sig") as f:
                 test_cases = f.readlines()
@@ -349,10 +389,11 @@ class QAWithPineconeHybridSearchExperiment(BaseExperiment):
         self.chain = RetrievalQAWithSourcesChain.from_chain_type(
             llm=self.llm,
             chain_type=chain_type,
-            retriever=self.docsearch.as_retriever(search_kwargs={"k": self.k}),
+            retriever=self.retriever,
             return_source_documents=return_source_documents,
             chain_type_kwargs={"prompt": self.prompt_template},
             max_tokens_limit=self.max_tokens_limit,
             reduce_k_below_max_tokens=self.reduce_k_below_max_tokens,
             verbose=self.verbose,
         )
+
