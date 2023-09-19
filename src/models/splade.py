@@ -1,8 +1,10 @@
+from typing import List, Literal, Optional, Union
+
+import torch
 from pinecone_text.sparse import SparseVector
 from pinecone_text.sparse.base_sparse_encoder import BaseSparseEncoder
-from typing import Optional, Literal, Union, List
-from transformers import AutoTokenizer, AutoModelForMaskedLM
-import torch
+from transformers import AutoModelForMaskedLM, AutoTokenizer
+
 
 class SpladeEncoder(BaseSparseEncoder):
 
@@ -11,8 +13,13 @@ class SpladeEncoder(BaseSparseEncoder):
     Currently only supports inference with  naver/splade-cocondenser-ensembledistil
     """
 
-    def __init__(self, model_path: Optional[str] = None, max_seq_length: int = 256,
-                 agg: Literal["max", "sum"] = "max", device: str = "cpu"):
+    def __init__(
+        self,
+        model_path: Optional[str] = None,
+        max_seq_length: int = 256,
+        agg: Literal["max", "sum"] = "max",
+        device: str = "cpu",
+    ):
         """
         Args:
             max_seq_length: Maximum sequence length for the model. Must be between 1 and 512.

@@ -11,5 +11,5 @@ __all__ = [
     "QuestionAnsweringWithIndexSearchExperiment",
     "RefineQAOverDocsExperiment",
     "BaseExperiment",
-    "QAWithPineconeHybridSearchExperiment"
+    "QAWithPineconeHybridSearchExperiment",
 ]

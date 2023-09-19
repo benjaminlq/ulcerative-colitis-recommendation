@@ -25,8 +25,12 @@ def get_argument_parser():
         "--test_case", "-t", type=str, default=None, help="path to test case file"
     )
     parser.add_argument("--prompt", "-p", type=str, default=None, help="path to prompt")
-    parser.add_argument("--sparse_model_path", "-sp", type=str, help="Path to sparse embedding model")
-    parser.add_argument("--sparse_type", "-spt", type=str, help="Type of Sparse Model. BM25 or Splade")
+    parser.add_argument(
+        "--sparse_model_path", "-sp", type=str, help="Path to sparse embedding model"
+    )
+    parser.add_argument(
+        "--sparse_type", "-spt", type=str, help="Type of Sparse Model. BM25 or Splade"
+    )
     parser.add_argument(
         "--description",
         "-d",
@@ -115,7 +119,7 @@ def get_argument_parser():
         "-a",
         type=float,
         default=0.5,
-        help="Weight factor to balance DENSE/SPARSE importance. Higher value means focusing more on DENSE contribution"
+        help="Weight factor to balance DENSE/SPARSE importance. Higher value means focusing more on DENSE contribution",
     )
     parser.add_argument(
         "--reduce_k_below_max_tokens",
@@ -132,13 +136,14 @@ def get_argument_parser():
         help="Type of chain to perform reduction operations",
     )
     parser.add_argument(
-        "--iters",
-        "-i",
-        type=int,
-        default=1,
-        help="Number of iterations to run"
+        "--iters", "-i", type=int, default=1, help="Number of iterations to run"
     )
-    parser.add_argument("--device", type=str, default="cpu", help="Use CPU or CUDA for embedding/LLM models")
+    parser.add_argument(
+        "--device",
+        type=str,
+        default="cpu",
+        help="Use CPU or CUDA for embedding/LLM models",
+    )
     args = parser.parse_args()
     return args
 
@@ -202,7 +207,7 @@ def main():
         alpha=alpha,
         max_tokens_limit=max_tokens_limit,
         reduce_k_below_max_tokens=reduce_k_below_max_tokens,
-        device=device
+        device=device,
     )
 
     # Check that Pinecone Index is not empty
@@ -212,9 +217,12 @@ def main():
             chunk_size=chunk_size,
             chunk_overlap=chunk_overlap,
             exclude_pages=EXCLUDE_DICT,
-            additional_docs=additional_docs
+            additional_docs=additional_docs,
         )
-        LOGGER.info("Successfully added new vectors to Pinecone Index. New number of vectors:",experiment.index.describe_index_stats()["total_vector_count"])
+        LOGGER.info(
+            "Successfully added new vectors to Pinecone Index. New number of vectors:",
+            experiment.index.describe_index_stats()["total_vector_count"],
+        )
 
     LOGGER.info(
         "Successfully created experiment with settings:\n{}".format(
@@ -228,7 +236,7 @@ def main():
 
     # experiment.load_json(os.path.join(ARTIFACT_DIR,
     #                                   "gpt-4_Chat_Tables_Chunk-size=1000_Overlap=200_Doc=10_Max-token=6500_Stuff_11-07-2023-21-48-04/result.json"))
-    
+
     save_path = os.path.join(
         ARTIFACT_DIR,
         "{}_{}_{}".format(
@@ -236,11 +244,13 @@ def main():
         ),
     )
     os.makedirs(save_path, exist_ok=True)
-    
+
     for idx in range(no_iters):
         experiment.reset()
         experiment.run_test_cases(
-            test_cases, only_return_source=args.only_return_source, chain_type=chain_type
+            test_cases,
+            only_return_source=args.only_return_source,
+            chain_type=chain_type,
         )
         LOGGER.info(f"Completed running all test cases for iteration {idx+1}.")
 
@@ -248,7 +258,7 @@ def main():
         experiment.write_csv(
             os.path.join(save_path, f"result{idx+1}.csv"), num_docs=no_returned_docs
         )
-    
+
     if args.yaml_cfg:
         copyfile(args.yaml_cfg, os.path.join(save_path, "settings.yaml"))
     else:
@@ -274,7 +284,7 @@ def main():
             "alpha": alpha,
             "reduce_k_below_max_tokens": reduce_k_below_max_tokens,
             "chain_type": chain_type,
-            "no_iters": no_iters
+            "no_iters": no_iters,
         }
         with open(os.path.join(save_path, "settings.yaml"), "w") as f:
             yaml.dump(settings, f)

@@ -7,6 +7,7 @@ import re
 from typing import Dict, List, Literal, Optional, Union
 
 import pandas as pd
+import pinecone
 from langchain.chains import RetrievalQAWithSourcesChain
 from langchain.chat_models import ChatOpenAI
 from langchain.embeddings import OpenAIEmbeddings
@@ -16,21 +17,17 @@ from langchain.output_parsers import PydanticOutputParser
 from langchain.prompts import ChatPromptTemplate, PromptTemplate
 from langchain.retrievers import PineconeHybridSearchRetriever
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-
-import pinecone
 from pinecone_text.sparse import BM25Encoder
-from models.splade import SpladeEncoder
-
 
 from config import LOGGER, MAIN_DIR
 from custom_parsers import DrugOutput
-from utils import load_documents, convert_csv_to_documents
+from models.splade import SpladeEncoder
+from utils import convert_csv_to_documents, load_documents
 
 from .base import BaseExperiment
 
 
 class QAWithPineconeHybridSearchExperiment(BaseExperiment):
-
     def __init__(
         self,
         prompt_template: Union[PromptTemplate, ChatPromptTemplate],
@@ -48,7 +45,7 @@ class QAWithPineconeHybridSearchExperiment(BaseExperiment):
         alpha: float = 0.5,
         max_tokens_limit: int = 3375,
         reduce_k_below_max_tokens: bool = True,
-        device: str = "cpu"
+        device: str = "cpu",
     ):
 
         super(QAWithPineconeHybridSearchExperiment, self).__init__(
@@ -59,23 +56,24 @@ class QAWithPineconeHybridSearchExperiment(BaseExperiment):
             gt=gt,
             verbose=verbose,
         )
-        
+
         ## Initialize Pinecone session
         self.pinecone_idx_name = pinecone_idx_name
         self.pinecone_api_key = self.keys[f"PINECONE_API_{sparse_type.upper()}"]["KEY"]
         self.pinecone_env = self.keys[f"PINECONE_API_{sparse_type.upper()}"]["ENV"]
-        
-        pinecone.init(
-            api_key=self.pinecone_api_key,
-            environment=self.pinecone_env
-        )
-        
+
+        pinecone.init(api_key=self.pinecone_api_key, environment=self.pinecone_env)
+
         if pinecone_idx_name not in pinecone.list_indexes():
             Warning("Index Name does not exist")
             pinecone.create_index(
-                name=pinecone_idx_name, dimension=1536, metric="dotproduct", pod_type="s1", metadata_config={"indexed": []},
+                name=pinecone_idx_name,
+                dimension=1536,
+                metric="dotproduct",
+                pod_type="s1",
+                metadata_config={"indexed": []},
             )
-        
+
         self.index = pinecone.Index(pinecone_idx_name)
 
         if isinstance(prompt_template, ChatPromptTemplate):
@@ -94,9 +92,11 @@ class QAWithPineconeHybridSearchExperiment(BaseExperiment):
                 openai_api_key=self.openai_key,
             )
 
-        self.dense_embeddings = OpenAIEmbeddings(model=emb, openai_api_key=self.openai_key)
+        self.dense_embeddings = OpenAIEmbeddings(
+            model=emb, openai_api_key=self.openai_key
+        )
         self.sparse_type = sparse_type
-        self.sparse_model_path = sparse_model_path            
+        self.sparse_model_path = sparse_model_path
         self.device = device
         self.k = k
         assert 0 <= alpha <= 1, "Invalid alpha"
@@ -104,12 +104,12 @@ class QAWithPineconeHybridSearchExperiment(BaseExperiment):
         self.max_tokens_limit = max_tokens_limit
         self.reduce_k_below_max_tokens = reduce_k_below_max_tokens
         self.prompt_template = prompt_template
-        
+
         try:
             self.load_vectorstore(
                 sparse_model_path=self.sparse_model_path,
                 sparse_type=self.sparse_type,
-                embeddings=self.dense_embeddings
+                embeddings=self.dense_embeddings,
             )
         except Exception:
             raise Exception(
@@ -122,21 +122,21 @@ class QAWithPineconeHybridSearchExperiment(BaseExperiment):
         self.drug_parser = PydanticOutputParser(pydantic_object=DrugOutput)
 
     def load_vectorstore(
-        self, 
+        self,
         sparse_model_path: str,
         sparse_type: Literal["splade", "bm25"],
         embeddings: Embeddings,
-        ):
+    ):
         if sparse_type == "bm25":
             sparse_model = BM25Encoder().load(sparse_model_path)
             print("Using BM25 Sparse Model")
         elif sparse_type == "splade":
             sparse_model = SpladeEncoder(
-                model_path = sparse_model_path,
-                max_seq_length = 512,
-                agg = "max",
-                device = self.device
-                )
+                model_path=sparse_model_path,
+                max_seq_length=512,
+                agg="max",
+                device=self.device,
+            )
             print("Using Term Expansion SPLADE Sparse Model")
         else:
             raise ValueError(f"Sparse Embedding of type {sparse_type} does not exist")
@@ -144,10 +144,10 @@ class QAWithPineconeHybridSearchExperiment(BaseExperiment):
         self.retriever = PineconeHybridSearchRetriever(
             embeddings=embeddings,
             sparse_encoder=sparse_model,
-            index = self.index,
-            top_k = self.k,
-            alpha = self.alpha
-            )
+            index=self.index,
+            top_k=self.k,
+            alpha=self.alpha,
+        )
 
         LOGGER.info("Successfully loaded existing vectorstore from local storage")
 
@@ -175,23 +175,21 @@ class QAWithPineconeHybridSearchExperiment(BaseExperiment):
             )
         else:
             texts = []
-            
+
         if additional_docs:
             with open(additional_docs, "r") as f:
                 add_doc_infos = json.load(f)
             for add_doc_info in add_doc_infos:
                 if add_doc_info["mode"] == "table":
-                    texts.extend(
-                        convert_csv_to_documents(add_doc_info)
-                    )
+                    texts.extend(convert_csv_to_documents(add_doc_info))
                 else:
                     LOGGER.warning(
                         "Invalid document type. No texts added to documents list"
                     )
-                    
+
         page_contents = [text.page_content for text in texts]
         metadatas = [text.metadata for text in texts]
-        
+
         self.retriever.add_texts(texts=page_contents, metadatas=metadatas)
 
     def run_test_cases(
@@ -396,4 +394,3 @@ class QAWithPineconeHybridSearchExperiment(BaseExperiment):
             reduce_k_below_max_tokens=self.reduce_k_below_max_tokens,
             verbose=self.verbose,
         )
-

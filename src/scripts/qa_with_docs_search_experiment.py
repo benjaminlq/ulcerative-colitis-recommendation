@@ -127,11 +127,7 @@ def get_argument_parser():
         help="Type of chain to perform reduction operations",
     )
     parser.add_argument(
-        "--iters",
-        "-i",
-        type=int,
-        default=1,
-        help="Number of iterations to run"
+        "--iters", "-i", type=int, default=1, help="Number of iterations to run"
     )
     args = parser.parse_args()
     return args
@@ -237,7 +233,7 @@ def main():
 
     # experiment.load_json(os.path.join(ARTIFACT_DIR,
     #                                   "gpt-4_Chat_Tables_Chunk-size=1000_Overlap=200_Doc=10_Max-token=6500_Stuff_11-07-2023-21-48-04/result.json"))
-    
+
     save_path = os.path.join(
         ARTIFACT_DIR,
         "{}_{}_{}".format(
@@ -245,11 +241,13 @@ def main():
         ),
     )
     os.makedirs(save_path, exist_ok=True)
-    
+
     for idx in range(no_iters):
         experiment.reset()
         experiment.run_test_cases(
-            test_cases, only_return_source=args.only_return_source, chain_type=chain_type
+            test_cases,
+            only_return_source=args.only_return_source,
+            chain_type=chain_type,
         )
         LOGGER.info(f"Completed running all test cases for iteration {idx+1}.")
 
@@ -257,7 +255,7 @@ def main():
         experiment.write_csv(
             os.path.join(save_path, f"result{idx+1}.csv"), num_docs=no_returned_docs
         )
-    
+
     if args.yaml_cfg:
         copyfile(args.yaml_cfg, os.path.join(save_path, "settings.yaml"))
     else:
