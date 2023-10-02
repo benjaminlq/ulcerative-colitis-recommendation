@@ -17,6 +17,7 @@ pandoc==2.3
 pinecone-client
 pypandoc==1.11
 pymupdf==1.22.5
+pypdf==3.16.2
 transformers==4.32.0
 torch==2.0.1
 llama-index==0.8.26
