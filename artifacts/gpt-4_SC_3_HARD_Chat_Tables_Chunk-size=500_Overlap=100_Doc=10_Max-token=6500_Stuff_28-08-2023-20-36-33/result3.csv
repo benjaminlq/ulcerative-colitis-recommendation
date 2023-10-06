@@ -1,0 +1,2798 @@
+,question,gt_rec1,gt_rec2,gt_rec3,gt_avoid,gt_reason,prompt,raw_answer,answer1,pro1,cons1,answer2,pro2,cons2,source1,source2,source3,source4,source5,source6,source7,source8,source9,source10
+0,"35 year old male with known moderate UC with prior exposure to infliximab but has worsening colitis on endoscopy despite compliance
+",Tofacitinib,Ustekinumab,,,Testing 2nd line treatment to patients previously exposed to anti-TNFa,"System:
+Make reference to the context given to assess the scenario. If you do not know the answer. just say that ""I don't know"", don't try to make up an answer.
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+
+ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile. Explain the PROS and CONS of the 2 choices.
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+summaries
+
+Human: question","[{
+""drug_name"": ""Vedolizumab"",
+""advantages"": ""Vedolizumab is a good choice for patients with prior exposure to TNF antagonists like infliximab. The drug targets the gut specifically and has been shown to be effective in inducing and maintaining remission in moderate to severe ulcerative colitis. It may be effective in cases where TNF antagonists have failed or are not well tolerated."",
+""disadvantages"": ""Potential side effects of vedolizumab include headache, joint pain, nausea, and fever. In rare cases, it can lead to serious infections. It may take some time before the full benefits of the drug are experienced.""
+},
+{
+""drug_name"": ""Ustekinumab"",
+""advantages"": ""Ustekinumab is another suitable choice for patients who have had prior exposure to TNF antagonists. It works by inhibiting interleukin-12 and interleukin-23, which play a key role in inflammatory and immune responses. It is generally well tolerated with a good safety profile."",
+""disadvantages"": ""Potential side effects include upper respiratory infections, headache, and fatigue. Rare but serious side effects can include serious infections, cancers, or heart problems. As with vedolizumab, it may take some time to see the full effects of the drug.""
+}]",Vedolizumab,Vedolizumab is a good choice for patients with prior exposure to TNF antagonists like infliximab. The drug targets the gut specifically and has been shown to be effective in inducing and maintaining remission in moderate to severe ulcerative colitis. It may be effective in cases where TNF antagonists have failed or are not well tolerated.,"Potential side effects of vedolizumab include headache, joint pain, nausea, and fever. In rare cases, it can lead to serious infections. It may take some time before the full benefits of the drug are experienced.",Ustekinumab,"Ustekinumab is another suitable choice for patients who have had prior exposure to TNF antagonists. It works by inhibiting interleukin-12 and interleukin-23, which play a key role in inflammatory and immune responses. It is generally well tolerated with a good safety profile.","Potential side effects include upper respiratory infections, headache, and fatigue. Rare but serious side effects can include serious infections, cancers, or heart problems. As with vedolizumab, it may take some time to see the full effects of the drug.","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 1
+
+text: trials (RCTs) that met the following inclusion criteria:
+(1) patients: adults (age, >18 y) with moderate to
+severe ulcerative colitis (Mayo Clinic score of 6–12,
+with an endoscopic subscore of 2 or 3) who were
+either
+treatment-naïve
+(ﬁrst-line)
+or
+previously
+exposed to TNFa antagonists (second-line); (2) inter-
+vention: biologic therapy with inﬂiximab, adalimumab,
+golimumab, vedolizumab, tofacitinib, or ustekinumab,
+with a minimum duration of therapy of 14 days; (3)","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 6
+
+text: with moderate to severely
+active ulcerative colitis. (B)
+Relative
+efﬁcacy
+of
+different interventions for
+induction of clinical remis-
+sion
+and
+endoscopic
+improvement
+in
+patients
+with moderate to severely
+active
+ulcerative
+colitis
+with prior exposure to tu-
+mor necrosis factor (TNF)⍺
+antagonists. SUCRA, sur-
+face under the cumulative
+ranking.
+September 2020
+Management of Moderate–Severe UC 2185","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 1
+
+text: needed to inform clinical decision-making with
+greater conﬁdence.
+Implications for patient care
+Patients with moderate to severely active ulcerative
+colitis should receive inﬂiximab or vedolizumab as
+ﬁrst-line therapy, or ustekinumab or tofacitinib if
+they have prior exposure to TNF antagonists.
+2180 Singh et al
+Clinical Gastroenterology and Hepatology Vol. 18, No. 10","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 0
+
+text: third and fifth decades of life, and is associated with an
+impaired health-related quality of life and considerable
+economic burden.2,3
+Nearly 20 years ago, the advent of anti-tumour necrosis
+factor biologics (eg, infliximab, adalimumab, and
+golimumab) revolutionised therapeutics for ulcerative
+colitis, enabling better disease control in terms of
+increasing the rates of mucosal healing, deep remission,
+and corticosteroid-free remission, and improving quality","title:
+
+filename: otad009.pdf
+
+page: 14
+
+text: 30 mg maintenance may be overall highest performing ad-
+vanced treatment at inducing and maintaining clinical re-
+sponse, clinical remission, and endoscopic improvement in
+patients with moderately to severely active UC, regardless
+of prior biologic exposure. It also suggests that the safety
+profiles of currently approved advanced treatments, to the
+extent that they can be indirectly assessed with NMA, are
+generally consistent. As with any indirect comparison, the","title: Efficacy of biological therapies and small molecules in moderate to severe ulcerative colitis: systematic review and network meta-analysis
+
+filename: gutjnl-2021-326390R2 CLEAN.pdf
+
+page: 5
+
+text: Burr et al.
+
+5 of 45
+STUDY HIGHLIGHTS
+
+What is already known about this subject
+• Ulcerative colitis (UC) follows a relapsing and remitting course, with intermittent
+flares of disease activity, some of which may be moderate to severe.
+• These are usually treated with corticosteroids, which have potentially serious adverse
+effects, so biological therapies and small molecules have been developed and licensed
+for this indication.","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 7
+
+text: mumab-, golimumab-, vedolizumab-, tofacitinib-, and
+ustekinumab-treated patients, respectively, would ach-
+ieve induction of endoscopic improvement.
+Second-line
+pharmacotherapy
+for
+moderate–severe
+ulcerative colitis. Overall, 7 RCTs including 1580 pa-
+tients with moderate–severe ulcerative colitis with prior
+exposure to TNFa antagonists were identiﬁed. These
+included subgroup analyses of trials of adalimumab,21
+vedolizumab,24,25
+tofacitinib,26
+and
+ustekinumab.7","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 4
+
+text: jIncludes patients with prior exposure to TNF antagonist with or without vedolizumab (13%–18% had prior exposure to vedolizumab).
+September 2020
+Management of Moderate–Severe UC 2183","title: Approach to the Management of Recently Diagnosed Inflammatory Bowel Disease Patients: A User's Guide for Adult and Pediatric Gastroenterologists
+
+filename: agrawal.pdf
+
+page: 8
+
+text: therapy in UC and it can be stopped in patients escalating to
+biologics.110 Some patients may present with acute severe
+UC
+where
+TNFi,
+cyclosporine,
+or
+subtotal
+colectomy
+followed by ileal pouch anal anastomosis can be a good
+initial strategy; discussion of management of acute severe
+UC is beyond the scope of this article.
+Taking Extraintestinal Manifestation Into
+Consideration
+EIMs are common in IBD, estimated to affect 30%–40% of
+patients.111,112 In a Swiss cohort study, symptoms of EIMs","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 0
+
+text: course with signiﬁcant morbidity, with frequent ﬂares
+and
+hospitalizations
+requiring
+immunosuppressive
+therapies and corticosteroids, and impose a signiﬁcant
+direct and indirect economic burden in population-
+based cohorts.2,3 Several treatment options now are
+available
+for
+the
+management
+of
+moderate–severe
+ulcerative colitis, with variable efﬁcacy and safety pro-
+ﬁles, and positioning different agents in the treatment
+course as ﬁrst-line (in biologic-naïve patients) and"
+1,"38 year old female with newly diagnosed moderate UC and psoriasis
+",Ustekinumab,,,,Test treatment of specific EIM and IBD,"System:
+Make reference to the context given to assess the scenario. If you do not know the answer. just say that ""I don't know"", don't try to make up an answer.
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+
+ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile. Explain the PROS and CONS of the 2 choices.
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+summaries
+
+Human: question",I don't know,,,,,,,"title: Efficacy of biological therapies and small molecules in moderate to severe ulcerative colitis: systematic review and network meta-analysis
+
+filename: gutjnl-2021-326390R2 CLEAN.pdf
+
+page: 27
+
+text: Burr et al.
+
+27 of 45
+DISCUSSION
+We conducted a contemporaneous systematic review and network meta-analysis of
+biological therapies and small molecules for moderate to severely active UC. This has
+incorporated data from 28 RCTs and over 12,500 patients. Overall, in terms of clinical
+remission and clinical response at 6 to 14 weeks, upadacitinib 45mg o.d. ranked first in all
+patients, in patients previously exposed to anti-TNF-α therapies, and in patients naïve to these","title: Efficacy of biological therapies and small molecules in moderate to severe ulcerative colitis: systematic review and network meta-analysis
+
+filename: gutjnl-2021-326390R2 CLEAN.pdf
+
+page: 29
+
+text: our results provide hope that some novel drugs, which are likely to come to market soon, are
+potentially more efficacious for moderate to severely active UC than existing licensed
+therapies.
+Our results confirm that all available drugs, other than adalimumab 160/160mg,
+adalimumab 80/40mg, and filgotinib 100mg o.d. were more efficacious than placebo for the
+treatment of moderate to severe UC, across all endpoints studied at 6 to 14 weeks. All drugs","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 0
+
+text: third and fifth decades of life, and is associated with an
+impaired health-related quality of life and considerable
+economic burden.2,3
+Nearly 20 years ago, the advent of anti-tumour necrosis
+factor biologics (eg, infliximab, adalimumab, and
+golimumab) revolutionised therapeutics for ulcerative
+colitis, enabling better disease control in terms of
+increasing the rates of mucosal healing, deep remission,
+and corticosteroid-free remission, and improving quality","title: Efficacy of biological therapies and small molecules in moderate to severe ulcerative colitis: systematic review and network meta-analysis
+
+filename: gutjnl-2021-326390R2 CLEAN.pdf
+
+page: 8
+
+text: Burr et al.
+
+8 of 45
+In the last 10 years small molecules, which can be administered orally and on a daily
+basis, have also been evaluated in moderate to severe UC. These include janus kinase
+inhibitors, such as tofacitinib,[20] and the sphingosine-1-phosphate receptor modulator,
+ozanimod.[21] The comparative efficacy and safety of all these drugs has been assessed in
+prior network meta-analyses.[22, 23] These demonstrated that infliximab was ranked highest","title:
+
+filename: otad009.pdf
+
+page: 1
+
+text: 2
+Efficacy and Safety of Advanced Therapies
+incidence ranges from 9 to 20 cases per 100 000 per year with
+higher incidence in North America and Northern Europe.1
+The advanced therapeutic armamentarium for adults
+with moderately to severely active UC is rapidly evolving.
+For over 20 years, biologics targeting specific inflamma-
+tory pathways have been the mainstay, beginning with those
+targeting tumor necrosis alpha (TNFi; eg, infliximab [INF],","title: Approach to the Management of Recently Diagnosed Inflammatory Bowel Disease Patients: A User's Guide for Adult and Pediatric Gastroenterologists
+
+filename: agrawal.pdf
+
+page: 2
+
+text: with an increased risk (odds ratio [OR], 2.1; 95% CI, 1.3–
+3.6) of disabling disease 5 years after diagnosis, including
+higher rates of surgery, hospitalization, steroid dependence,
+and disease recurrence.42,43 In UC, younger age at diagnosis
+is linked to more frequent relapses, colectomy, and colo-
+rectal cancer.44,45 There are conﬂicting data on the disease
+course in the very-early-onset IBD population of patients
+diagnosed before age 6 years, with studies reporting both
+similar
+and
+worse","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 4
+
+text: jIncludes patients with prior exposure to TNF antagonist with or without vedolizumab (13%–18% had prior exposure to vedolizumab).
+September 2020
+Management of Moderate–Severe UC 2183","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 1
+
+text: trials (RCTs) that met the following inclusion criteria:
+(1) patients: adults (age, >18 y) with moderate to
+severe ulcerative colitis (Mayo Clinic score of 6–12,
+with an endoscopic subscore of 2 or 3) who were
+either
+treatment-naïve
+(ﬁrst-line)
+or
+previously
+exposed to TNFa antagonists (second-line); (2) inter-
+vention: biologic therapy with inﬂiximab, adalimumab,
+golimumab, vedolizumab, tofacitinib, or ustekinumab,
+with a minimum duration of therapy of 14 days; (3)","title: Efficacy of biological therapies and small molecules in moderate to severe ulcerative colitis: systematic review and network meta-analysis
+
+filename: gutjnl-2021-326390R2 CLEAN.pdf
+
+page: 5
+
+text: Burr et al.
+
+5 of 45
+STUDY HIGHLIGHTS
+
+What is already known about this subject
+• Ulcerative colitis (UC) follows a relapsing and remitting course, with intermittent
+flares of disease activity, some of which may be moderate to severe.
+• These are usually treated with corticosteroids, which have potentially serious adverse
+effects, so biological therapies and small molecules have been developed and licensed
+for this indication.","title: Efficacy of biological therapies and small molecules in moderate to severe ulcerative colitis: systematic review and network meta-analysis
+
+filename: gutjnl-2021-326390R2 CLEAN.pdf
+
+page: 29
+
+text: treatment of moderate to severe UC, across all endpoints studied at 6 to 14 weeks. All drugs
+were safe and well-tolerated, with no significant increase in serious adverse events or adverse
+events leading to withdrawal over the rates seen in the placebo arms, although the RR of"
+2,"25 year old pregnant woman with severe distal ulcerative colitis
+",Infliximab,Vedolizumab,Ustekinumab,,Infliximab has best safety data in pregnancy (due to experience),"System:
+Make reference to the context given to assess the scenario. If you do not know the answer. just say that ""I don't know"", don't try to make up an answer.
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+
+ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile. Explain the PROS and CONS of the 2 choices.
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+summaries
+
+Human: question",I don't know,,,,,,,"title:
+
+filename: otad009.pdf
+
+page: 0
+
+text: Introduction
+Ulcerative colitis (UC) is a chronic inflammatory bowel dis-
+ease that affects the colorectum and is clinically characterized
+by bloody diarrhea, urgency, tenesmus, abdominal pain, ma-
+laise, weight loss, and fever. Disease onset commonly occurs
+between the ages of 15 and 30 years and the annual global
+© The Author(s) 2023. Published by Oxford University Press on behalf of Crohn's & Colitis Foundation.","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 0
+
+text: published literature, our results might help clinicians to position drugs in treatment algorithms.
+Funding None.
+Copyright © 2021 Elsevier Ltd. All rights reserved.
+Introduction
+Ulcerative colitis is a chronic, idiopathic, potentially
+disabling condition that is clinically characterised
+by bloody diarrhoea, abdominal pain, and tenesmus.1
+Ulcerative colitis most commonly presents during the
+third and fifth decades of life, and is associated with an","title: Approach to the Management of Recently Diagnosed Inflammatory Bowel Disease Patients: A User's Guide for Adult and Pediatric Gastroenterologists
+
+filename: agrawal.pdf
+
+page: 12
+
+text: ulcerative colitis. Gastroenterology 2004;126:451–459.
+18. Gupta N, Liu C, King E, et al. Continued statural growth
+in older adolescents and young adults with Crohn’s
+disease and ulcerative colitis beyond the time of ex-
+pected growth plate closure. Inﬂamm Bowel Dis 2020;
+26:1880–1889.
+19. Pariente B, Torres J, Burisch J, et al. SA1895 Validation
+of the Lémman index in Crohn’s disease. Gastroenter-
+ology 2020;158:S-469.
+20. Cellier C, Sahmoud T, Froguel E, et al; Correlations be-","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 0
+
+text: third and fifth decades of life, and is associated with an
+impaired health-related quality of life and considerable
+economic burden.2,3
+Nearly 20 years ago, the advent of anti-tumour necrosis
+factor biologics (eg, infliximab, adalimumab, and
+golimumab) revolutionised therapeutics for ulcerative
+colitis, enabling better disease control in terms of
+increasing the rates of mucosal healing, deep remission,
+and corticosteroid-free remission, and improving quality","title: Efficacy of biological therapies and small molecules in moderate to severe ulcerative colitis: systematic review and network meta-analysis
+
+filename: gutjnl-2021-326390R2 CLEAN.pdf
+
+page: 7
+
+text: Burr et al.
+
+7 of 45
+INTRODUCTION
+  Ulcerative colitis (UC) is a chronic inflammatory disorder of the bowel that causes
+continuous mucosal inflammation commencing in the rectum and extending proximally for a
+variable extent.[1] It is estimated that UC affects 2.5 million people in Europe,[2] and the
+disease follows a relapsing and remitting course, with intermittent flares of disease activity,
+some of which may be moderate to severe. Management of these is medical, for the most","title: Approach to the Management of Recently Diagnosed Inflammatory Bowel Disease Patients: A User's Guide for Adult and Pediatric Gastroenterologists
+
+filename: agrawal.pdf
+
+page: 2
+
+text: with an increased risk (odds ratio [OR], 2.1; 95% CI, 1.3–
+3.6) of disabling disease 5 years after diagnosis, including
+higher rates of surgery, hospitalization, steroid dependence,
+and disease recurrence.42,43 In UC, younger age at diagnosis
+is linked to more frequent relapses, colectomy, and colo-
+rectal cancer.44,45 There are conﬂicting data on the disease
+course in the very-early-onset IBD population of patients
+diagnosed before age 6 years, with studies reporting both
+similar
+and
+worse","title: Approach to the Management of Recently Diagnosed Inflammatory Bowel Disease Patients: A User's Guide for Adult and Pediatric Gastroenterologists
+
+filename: agrawal.pdf
+
+page: 0
+
+text: cerative Colitis; Early Diagnosis; Early Therapy; Personalized
+Therapy; Adult; Pediatric.
+I
+nﬂammatory bowel diseases (IBDs), including the
+main subtypes Crohn’s disease (CD) and ulcerative
+colitis (UC), are chronic, progressive, immune-mediated
+diseases of the intestinal tract that have no cure.1,2 IBDs
+are associated with signiﬁcant morbidity, disability, and risk
+of complications.3,4 Although they can occur at any age, IBDs
+are most common among adolescents and young adults. In","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 11
+
+text: induction of clinical remission in moderately to severely active
+ulcerative colitis: results of a randomised controlled trial. Gut
+2011;60:780–787.
+2190 Singh et al
+Clinical Gastroenterology and Hepatology Vol. 18, No. 10","title: Approach to the Management of Recently Diagnosed Inflammatory Bowel Disease Patients: A User's Guide for Adult and Pediatric Gastroenterologists
+
+filename: agrawal.pdf
+
+page: 3
+
+text: factor for asymptomatic perianal ﬁstulas.63
+In UC, corresponding predictors of aggressive disease
+advised by the International Organization for the Study of
+Inﬂammatory Bowel Disease include active colonic ulcers
+and prior use of biologics.59 Extensive colitis, deep ulcers,
+need for corticosteroids, hospitalization, Clostridium difﬁcile,
+and cytomegalovirus infection also indicate higher colec-
+tomy risk.64 Of note, disease extension from limited disease
+to
+extensive
+or
+pancolitis
+is
+associated","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 0
+
+text: course with signiﬁcant morbidity, with frequent ﬂares
+and
+hospitalizations
+requiring
+immunosuppressive
+therapies and corticosteroids, and impose a signiﬁcant
+direct and indirect economic burden in population-
+based cohorts.2,3 Several treatment options now are
+available
+for
+the
+management
+of
+moderate–severe
+ulcerative colitis, with variable efﬁcacy and safety pro-
+ﬁles, and positioning different agents in the treatment
+course as ﬁrst-line (in biologic-naïve patients) and"
+3,"38 year old man with severe ulcerative colitis and has lost response to vedolizumab
+",Tofacitinib or ,Ustekinumab,,,Biologic failure,"System:
+Make reference to the context given to assess the scenario. If you do not know the answer. just say that ""I don't know"", don't try to make up an answer.
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+
+ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile. Explain the PROS and CONS of the 2 choices.
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+summaries
+
+Human: question","[
+{
+""drug_name"": ""Infliximab"",
+""advantages"": ""Infliximab has been suggested as a first-line therapy for moderate to severe ulcerative colitis. It has been associated with better disease control, increasing rates of mucosal healing, deep remission, and corticosteroid-free remission, thus improving the quality of life."",
+""disadvantages"": ""The limitations of infliximab include limited efficacy in some patients, primary non-response, secondary loss of response, and immunogenicity. It might not be as effective if the patient has had prior exposure to TNF antagonists.""
+},
+{
+""drug_name"": ""Ustekinumab"",
+""advantages"": ""Ustekinumab is an alternative therapy for patients with moderate to severely active ulcerative colitis, especially those who have had prior exposure to TNF antagonists or have failed to respond to other treatments such as vedolizumab. It's also recommended for patients with substantial comorbidities or contraindications to TNF antagonists."",
+""disadvantages"": ""Possible side effects of ustekinumab include infections, allergic reactions, and potentially an increased risk of certain types of cancer. It may also be less effective in inducing remission compared to other drugs.""
+}
+]",Infliximab,"Infliximab has been suggested as a first-line therapy for moderate to severe ulcerative colitis. It has been associated with better disease control, increasing rates of mucosal healing, deep remission, and corticosteroid-free remission, thus improving the quality of life.","The limitations of infliximab include limited efficacy in some patients, primary non-response, secondary loss of response, and immunogenicity. It might not be as effective if the patient has had prior exposure to TNF antagonists.",Ustekinumab,"Ustekinumab is an alternative therapy for patients with moderate to severely active ulcerative colitis, especially those who have had prior exposure to TNF antagonists or have failed to respond to other treatments such as vedolizumab. It's also recommended for patients with substantial comorbidities or contraindications to TNF antagonists.","Possible side effects of ustekinumab include infections, allergic reactions, and potentially an increased risk of certain types of cancer. It may also be less effective in inducing remission compared to other drugs.","title: Positioning biologics in the treatment of IBD: A practical guide - Which mechanism of action for whom?
+
+filename: juillerat 2022.pdf
+
+page: 5
+
+text: tumor necrosis factor antagonists in older patients with ulcerative colitis: patient-
+level pooled analysis of data from randomized trials. Clin. Gastroenterol. Hepatol. 19
+(5), 939–946.
+Christensen, B., Micic, D., Gibson, P.R., Yarur, A., Bellaguarda, E., Corsello, P.,
+Gaetano, J.N., Kinnucan, J., Rao, V.L., Reddy, S., Singh, S., Pekow, J., Rubin, D.T.,
+2018. Vedolizumab in patients with concurrent primary sclerosing cholangitis and","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 1
+
+text: needed to inform clinical decision-making with
+greater conﬁdence.
+Implications for patient care
+Patients with moderate to severely active ulcerative
+colitis should receive inﬂiximab or vedolizumab as
+ﬁrst-line therapy, or ustekinumab or tofacitinib if
+they have prior exposure to TNF antagonists.
+2180 Singh et al
+Clinical Gastroenterology and Hepatology Vol. 18, No. 10","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 0
+
+text: third and fifth decades of life, and is associated with an
+impaired health-related quality of life and considerable
+economic burden.2,3
+Nearly 20 years ago, the advent of anti-tumour necrosis
+factor biologics (eg, infliximab, adalimumab, and
+golimumab) revolutionised therapeutics for ulcerative
+colitis, enabling better disease control in terms of
+increasing the rates of mucosal healing, deep remission,
+and corticosteroid-free remission, and improving quality","title: Positioning therapies for the management of inflammatory bowel disease
+
+filename: positioning therapies for IBD mx (Singh S, Nat Rev G&H 2023).pdf
+
+page: 0
+
+text: moderate-to-severe ulcerative colitis. Integrating data from the VAR-
+SITY trial comparing vedolizumab versus adalimumab (Supplementary
+Table 1) with data from phase II and III trials of approved therapies,
+network meta-analyses suggest that upadacitinib, infliximab and ved-
+olizumab are probably the most efficacious therapies for induction
+of remission in patients who are biologic-naive, and are substantially
+more effective than adalimumab5. In patients with prior exposure to","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 0
+
+text: and corticosteroid-free remission, and improving quality
+of life. Biologics with other targets were later approved
+for the treatment of moderate-to-severe ulcerative colitis,
+namely vedolizumab and, more recently, usteki numab.
+However,
+treatment
+with
+biologics
+has
+several
+limit ations, including limited efficacy, primary non-
+response, secondary loss of response, immunogenicity,","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 1
+
+text: trials (RCTs) that met the following inclusion criteria:
+(1) patients: adults (age, >18 y) with moderate to
+severe ulcerative colitis (Mayo Clinic score of 6–12,
+with an endoscopic subscore of 2 or 3) who were
+either
+treatment-naïve
+(ﬁrst-line)
+or
+previously
+exposed to TNFa antagonists (second-line); (2) inter-
+vention: biologic therapy with inﬂiximab, adalimumab,
+golimumab, vedolizumab, tofacitinib, or ustekinumab,
+with a minimum duration of therapy of 14 days; (3)","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 0
+
+text: (prior exposure to tumor necrosis factor [TNF] antagonists) agents for treatment of moder-
+ate to severely active ulcerative colitis in a systematic review and network meta-analysis.
+METHODS:
+We searched publication databases through September 30, 2019, for randomized trials of
+adults with moderate to severe ulcerative colitis treated with TNF antagonists, vedolizumab,
+tofacitinib, or ustekinumab, as ﬁrst-line or second-line agents, compared with placebo or","title: Positioning therapies for the management of inflammatory bowel disease
+
+filename: positioning therapies for IBD mx (Singh S, Nat Rev G&H 2023).pdf
+
+page: 1
+
+text: preferably in combination with
+
+
+ immunomodulators
+• Risankizumab or ustekinumab (for patients
+ with substantial comorbidities or
+
+
+ contraindications to TNF antagonists)
+First-line therapy
+• Vedolizumab
+• Ustekinumab
+First-line therapy
+• Risankizumab or ustekinumab
+• Vedolizumab
+Moderate-to-severely active
+ulcerative colitis
+Moderate-to-severely active
+ulcerative colitis
+Moderate-to-severely active
+Crohn's disease
+Moderate-to-severely active
+Crohn's disease
+Second-line therapy","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 4
+
+text: jIncludes patients with prior exposure to TNF antagonist with or without vedolizumab (13%–18% had prior exposure to vedolizumab).
+September 2020
+Management of Moderate–Severe UC 2183","title:
+
+filename: otad009.pdf
+
+page: 6
+
+text: 4.3i
+58% (27%–84%)
+65%
+Vedolizumab
+300 mg Q4W
+3.4i
+65% (33%–88%)
+59%
+3.9i
+50% (20%–79%)
+69%
+4.6i
+60% (28%–85%)
+68%
+Ustekinumab
+90 mg Q8W
+3.1i
+64% (31%–88%)
+55%
+2.2
+36% (12%–69%)
+42%
+2.5
+45% (18%–76%)
+39%
+Downloaded from https://academic.oup.com/crohnscolitis360/article/5/2/otad009/7066911 by National University of Singapore user on 23 May 2023"
+4,"24 year-old man with moderate to severe extensive ulcerative colitis previously in clinical remission with infliximab develops loss of response due to antibody formation.
+",Adalimumab,Other anti-TNF,,,Immunogenic failure. Can consider changing to another anti-TNF class,"System:
+Make reference to the context given to assess the scenario. If you do not know the answer. just say that ""I don't know"", don't try to make up an answer.
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+
+ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile. Explain the PROS and CONS of the 2 choices.
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+summaries
+
+Human: question","Based on the given patient profile, the patient is not new to treatment and has lost response to Infliximab due to antibody formation. Given the age and condition, two top choices of biological drugs that could be considered are Vedolizumab and Ustekinumab.
+
+[
+{
+""drug_name"": ""Vedolizumab"",
+""advantages"": ""Vedolizumab is a gut-selective immunosuppressant, reducing potential systemic side effects. It is considered a suitable therapy for patients who have had prior exposure to TNF antagonists like Infliximab."",
+""disadvantages"": ""Some patients may not respond to Vedolizumab. Side effects may include headache, joint pain, nausea, or common cold symptoms.""
+},
+
+{
+""drug_name"": ""Ustekinumab"",
+""advantages"": ""Ustekinumab has been proven effective in inducing and maintaining remission in patients with moderate to severe ulcerative colitis. It's particularly recommended for patients with prior exposure to TNF antagonists."",
+""disadvantages"": ""Possible side effects include upper respiratory infections, headache, and fatigue. There may also be an increased risk of serious infections, cancer, and allergic reactions.""
+}
+]",Vedolizumab,"Vedolizumab is a gut-selective immunosuppressant, reducing potential systemic side effects. It is considered a suitable therapy for patients who have had prior exposure to TNF antagonists like Infliximab.","Some patients may not respond to Vedolizumab. Side effects may include headache, joint pain, nausea, or common cold symptoms.",Ustekinumab,Ustekinumab has been proven effective in inducing and maintaining remission in patients with moderate to severe ulcerative colitis. It's particularly recommended for patients with prior exposure to TNF antagonists.,"Possible side effects include upper respiratory infections, headache, and fatigue. There may also be an increased risk of serious infections, cancer, and allergic reactions.","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 0
+
+text: third and fifth decades of life, and is associated with an
+impaired health-related quality of life and considerable
+economic burden.2,3
+Nearly 20 years ago, the advent of anti-tumour necrosis
+factor biologics (eg, infliximab, adalimumab, and
+golimumab) revolutionised therapeutics for ulcerative
+colitis, enabling better disease control in terms of
+increasing the rates of mucosal healing, deep remission,
+and corticosteroid-free remission, and improving quality","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 1
+
+text: needed to inform clinical decision-making with
+greater conﬁdence.
+Implications for patient care
+Patients with moderate to severely active ulcerative
+colitis should receive inﬂiximab or vedolizumab as
+ﬁrst-line therapy, or ustekinumab or tofacitinib if
+they have prior exposure to TNF antagonists.
+2180 Singh et al
+Clinical Gastroenterology and Hepatology Vol. 18, No. 10","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 5
+
+text: exposure to TNFa antagonists) (Ulcerative colitis Long-
+Term Remission and maintenance with Adalimumab 2,21
+GEMINI I,24 Motoya et al,25 VARSITY,6 OCTAVE 1 and
+2,26 UNIFI7) in patients with moderate–severe ulcerative
+colitis. Trials of inﬂiximab (Active Ulcerative Colitis Trials
+1 and 2,17 Jiang et al,18 NCT0155129019), adalimumab
+(Ulcerative colitis Long-Term Remission and maintenance
+with Adalimumab 2,20,21 Suzuki et al22), vedolizumab
+(GEMINI I,24 Motoya et al,25 VARSITY6) and ustekinumab","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 0
+
+text: and corticosteroid-free remission, and improving quality
+of life. Biologics with other targets were later approved
+for the treatment of moderate-to-severe ulcerative colitis,
+namely vedolizumab and, more recently, usteki numab.
+However,
+treatment
+with
+biologics
+has
+several
+limit ations, including limited efficacy, primary non-
+response, secondary loss of response, immunogenicity,","title: Positioning therapies for the management of inflammatory bowel disease
+
+filename: positioning therapies for IBD mx (Singh S, Nat Rev G&H 2023).pdf
+
+page: 0
+
+text: moderate-to-severe ulcerative colitis. Integrating data from the VAR-
+SITY trial comparing vedolizumab versus adalimumab (Supplementary
+Table 1) with data from phase II and III trials of approved therapies,
+network meta-analyses suggest that upadacitinib, infliximab and ved-
+olizumab are probably the most efficacious therapies for induction
+of remission in patients who are biologic-naive, and are substantially
+more effective than adalimumab5. In patients with prior exposure to","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 1
+
+text: trials (RCTs) that met the following inclusion criteria:
+(1) patients: adults (age, >18 y) with moderate to
+severe ulcerative colitis (Mayo Clinic score of 6–12,
+with an endoscopic subscore of 2 or 3) who were
+either
+treatment-naïve
+(ﬁrst-line)
+or
+previously
+exposed to TNFa antagonists (second-line); (2) inter-
+vention: biologic therapy with inﬂiximab, adalimumab,
+golimumab, vedolizumab, tofacitinib, or ustekinumab,
+with a minimum duration of therapy of 14 days; (3)","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 0
+
+text: (prior exposure to tumor necrosis factor [TNF] antagonists) agents for treatment of moder-
+ate to severely active ulcerative colitis in a systematic review and network meta-analysis.
+METHODS:
+We searched publication databases through September 30, 2019, for randomized trials of
+adults with moderate to severe ulcerative colitis treated with TNF antagonists, vedolizumab,
+tofacitinib, or ustekinumab, as ﬁrst-line or second-line agents, compared with placebo or","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 7
+
+text: patients with prior exposure to TNFa antagonists. Overall,
+ustekinumab (SUCRA, 0.87) and tofacitinib (SUCRA, 0.87)
+were ranked highest for inducing clinical remission in
+patients with moderate–severe ulcerative colitis with
+prior exposure to TNFa antagonists (Figure 2B). With an
+estimated placebo rate of achieving clinical remission of
+3% in included trials, we estimated that 3.2%, 5.6%,
+26.9%, and 26.3% of adalimumab-, vedolizumab-, tofaci-","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 8
+
+text: U-ACCOMPLISH study. J Crohn’s Colitis 2021; 15 (suppl 1): S021–22.
+9
+Thorlund K, Druyts E, Mills EJ, Fedorak RN, Marshall JK.
+Adalimumab versus infliximab for the treatment of moderate to
+severe ulcerative colitis in adult patients naïve to anti-TNF therapy:
+an indirect treatment comparison meta-analysis. J Crohn’s Colitis
+2014; 8: 571–81.
+10
+Danese S, Fiorino G, Peyrin-Biroulet L, et al. Biological agents for
+moderately to severely active ulcerative colitis: a systematic review","title: Positioning biologics in the treatment of IBD: A practical guide - Which mechanism of action for whom?
+
+filename: juillerat 2022.pdf
+
+page: 5
+
+text: Assche, G., Rutgeerts, P., Lemann, M., Colombel, J.F., 2010. The efﬁcacy and safety of
+a third anti-tnf monoclonal antibody in crohn's disease after failure of two other anti-
+tnf antibodies. Aliment. Pharmacol. Ther. 31 (1), 92–101.
+Alsoud, D., Verstockt, B., Fiocchi, C., Vermeire, S., 2021. Breaking the therapeutic ceiling
+in drug development in ulcerative colitis. Lancet Gastroenterol Hepatol 6 (7),
+589–595."
+5,"44 year-old woman with moderate to severe extensive ulcerative colitis and rheumatoid arthritis.
+",Infliximab,Adalimumab,Tofacitinib ,,Dual use,"System:
+Make reference to the context given to assess the scenario. If you do not know the answer. just say that ""I don't know"", don't try to make up an answer.
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+
+ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile. Explain the PROS and CONS of the 2 choices.
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+summaries
+
+Human: question","[
+{
+""drug_name"": ""Infliximab"",
+""advantages"": ""Infliximab has been shown to be effective in treating both ulcerative colitis and rheumatoid arthritis, potentially controlling both conditions with a single medication. It has been revolutionary in enabling better disease control, increasing rates of mucosal healing, deep remission, and corticosteroid-free remission, improving quality of life."",
+""disadvantages"": ""Infliximab is an immunosuppressant, which can make patients more susceptible to infections. It also cannot be used in patients with tuberculosis or other severe infections. In rare cases, it can cause serious side effects such as heart failure, liver problems, or serious infections.""
+},
+{
+""drug_name"": ""Adalimumab"",
+""advantages"": ""Adalimumab is another biologic therapy that has been shown to be effective for both ulcerative colitis and rheumatoid arthritis. It can help reduce symptoms and achieve remission in many patients."",
+""disadvantages"": ""Like Infliximab, Adalimumab is an immunosuppressant and can increase the risk of serious infections. It also carries a risk of potential side effects including headaches, rash, nausea, and in rare cases, serious side effects such as heart failure, liver problems, or serious infections.""
+}
+]",Infliximab,"Infliximab has been shown to be effective in treating both ulcerative colitis and rheumatoid arthritis, potentially controlling both conditions with a single medication. It has been revolutionary in enabling better disease control, increasing rates of mucosal healing, deep remission, and corticosteroid-free remission, improving quality of life.","Infliximab is an immunosuppressant, which can make patients more susceptible to infections. It also cannot be used in patients with tuberculosis or other severe infections. In rare cases, it can cause serious side effects such as heart failure, liver problems, or serious infections.",Adalimumab,Adalimumab is another biologic therapy that has been shown to be effective for both ulcerative colitis and rheumatoid arthritis. It can help reduce symptoms and achieve remission in many patients.,"Like Infliximab, Adalimumab is an immunosuppressant and can increase the risk of serious infections. It also carries a risk of potential side effects including headaches, rash, nausea, and in rare cases, serious side effects such as heart failure, liver problems, or serious infections.","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 1
+
+text: trials (RCTs) that met the following inclusion criteria:
+(1) patients: adults (age, >18 y) with moderate to
+severe ulcerative colitis (Mayo Clinic score of 6–12,
+with an endoscopic subscore of 2 or 3) who were
+either
+treatment-naïve
+(ﬁrst-line)
+or
+previously
+exposed to TNFa antagonists (second-line); (2) inter-
+vention: biologic therapy with inﬂiximab, adalimumab,
+golimumab, vedolizumab, tofacitinib, or ustekinumab,
+with a minimum duration of therapy of 14 days; (3)","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 0
+
+text: third and fifth decades of life, and is associated with an
+impaired health-related quality of life and considerable
+economic burden.2,3
+Nearly 20 years ago, the advent of anti-tumour necrosis
+factor biologics (eg, infliximab, adalimumab, and
+golimumab) revolutionised therapeutics for ulcerative
+colitis, enabling better disease control in terms of
+increasing the rates of mucosal healing, deep remission,
+and corticosteroid-free remission, and improving quality","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 8
+
+text: moderately to severely active ulcerative colitis: a systematic review
+and network meta-analysis. Ann Intern Med 2014; 160: 704–11.
+11
+Singh S, Fumery M, Sandborn WJ, Murad MH. Systematic review
+with network meta-analysis: first- and second-line pharmacotherapy
+for moderate-severe ulcerative colitis. Aliment Pharmacol Ther 2018;
+47: 162–75.
+12
+Bonovas S, Lytras T, Nikolopoulos G, Peyrin-Biroulet L, Danese S.
+Systematic review with network meta-analysis: comparative","title: Efficacy of biological therapies and small molecules in moderate to severe ulcerative colitis: systematic review and network meta-analysis
+
+filename: gutjnl-2021-326390R2 CLEAN.pdf
+
+page: 5
+
+text: Burr et al.
+
+5 of 45
+STUDY HIGHLIGHTS
+
+What is already known about this subject
+• Ulcerative colitis (UC) follows a relapsing and remitting course, with intermittent
+flares of disease activity, some of which may be moderate to severe.
+• These are usually treated with corticosteroids, which have potentially serious adverse
+effects, so biological therapies and small molecules have been developed and licensed
+for this indication.","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 6
+
+text: with moderate to severely
+active ulcerative colitis. (B)
+Relative
+efﬁcacy
+of
+different interventions for
+induction of clinical remis-
+sion
+and
+endoscopic
+improvement
+in
+patients
+with moderate to severely
+active
+ulcerative
+colitis
+with prior exposure to tu-
+mor necrosis factor (TNF)⍺
+antagonists. SUCRA, sur-
+face under the cumulative
+ranking.
+September 2020
+Management of Moderate–Severe UC 2185","title:
+
+filename: otad009.pdf
+
+page: 0
+
+text: Introduction
+Ulcerative colitis (UC) is a chronic inflammatory bowel dis-
+ease that affects the colorectum and is clinically characterized
+by bloody diarrhea, urgency, tenesmus, abdominal pain, ma-
+laise, weight loss, and fever. Disease onset commonly occurs
+between the ages of 15 and 30 years and the annual global
+© The Author(s) 2023. Published by Oxford University Press on behalf of Crohn's & Colitis Foundation.","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 11
+
+text: induction of clinical remission in moderately to severely active
+ulcerative colitis: results of a randomised controlled trial. Gut
+2011;60:780–787.
+2190 Singh et al
+Clinical Gastroenterology and Hepatology Vol. 18, No. 10","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 8
+
+text: U-ACCOMPLISH study. J Crohn’s Colitis 2021; 15 (suppl 1): S021–22.
+9
+Thorlund K, Druyts E, Mills EJ, Fedorak RN, Marshall JK.
+Adalimumab versus infliximab for the treatment of moderate to
+severe ulcerative colitis in adult patients naïve to anti-TNF therapy:
+an indirect treatment comparison meta-analysis. J Crohn’s Colitis
+2014; 8: 571–81.
+10
+Danese S, Fiorino G, Peyrin-Biroulet L, et al. Biological agents for
+moderately to severely active ulcerative colitis: a systematic review","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 0
+
+text: course with signiﬁcant morbidity, with frequent ﬂares
+and
+hospitalizations
+requiring
+immunosuppressive
+therapies and corticosteroids, and impose a signiﬁcant
+direct and indirect economic burden in population-
+based cohorts.2,3 Several treatment options now are
+available
+for
+the
+management
+of
+moderate–severe
+ulcerative colitis, with variable efﬁcacy and safety pro-
+ﬁles, and positioning different agents in the treatment
+course as ﬁrst-line (in biologic-naïve patients) and","title: Efficacy of biological therapies and small molecules in moderate to severe ulcerative colitis: systematic review and network meta-analysis
+
+filename: gutjnl-2021-326390R2 CLEAN.pdf
+
+page: 7
+
+text: Burr et al.
+
+7 of 45
+INTRODUCTION
+  Ulcerative colitis (UC) is a chronic inflammatory disorder of the bowel that causes
+continuous mucosal inflammation commencing in the rectum and extending proximally for a
+variable extent.[1] It is estimated that UC affects 2.5 million people in Europe,[2] and the
+disease follows a relapsing and remitting course, with intermittent flares of disease activity,
+some of which may be moderate to severe. Management of these is medical, for the most"
+6,"55 year-old man with moderate to severe extensive ulcerative colitis who avlues convenience and limited time spent in hospital
+",Ustekinumab,Adalimumab,Tofacitinib ,,Subcutaneous and oral options,"System:
+Make reference to the context given to assess the scenario. If you do not know the answer. just say that ""I don't know"", don't try to make up an answer.
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+
+ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile. Explain the PROS and CONS of the 2 choices.
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+summaries
+
+Human: question",I don't know,,,,,,,"title:
+
+filename: otad009.pdf
+
+page: 0
+
+text: Introduction
+Ulcerative colitis (UC) is a chronic inflammatory bowel dis-
+ease that affects the colorectum and is clinically characterized
+by bloody diarrhea, urgency, tenesmus, abdominal pain, ma-
+laise, weight loss, and fever. Disease onset commonly occurs
+between the ages of 15 and 30 years and the annual global
+© The Author(s) 2023. Published by Oxford University Press on behalf of Crohn's & Colitis Foundation.","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 0
+
+text: course with signiﬁcant morbidity, with frequent ﬂares
+and
+hospitalizations
+requiring
+immunosuppressive
+therapies and corticosteroids, and impose a signiﬁcant
+direct and indirect economic burden in population-
+based cohorts.2,3 Several treatment options now are
+available
+for
+the
+management
+of
+moderate–severe
+ulcerative colitis, with variable efﬁcacy and safety pro-
+ﬁles, and positioning different agents in the treatment
+course as ﬁrst-line (in biologic-naïve patients) and","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 0
+
+text: third and fifth decades of life, and is associated with an
+impaired health-related quality of life and considerable
+economic burden.2,3
+Nearly 20 years ago, the advent of anti-tumour necrosis
+factor biologics (eg, infliximab, adalimumab, and
+golimumab) revolutionised therapeutics for ulcerative
+colitis, enabling better disease control in terms of
+increasing the rates of mucosal healing, deep remission,
+and corticosteroid-free remission, and improving quality","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 11
+
+text: induction of clinical remission in moderately to severely active
+ulcerative colitis: results of a randomised controlled trial. Gut
+2011;60:780–787.
+2190 Singh et al
+Clinical Gastroenterology and Hepatology Vol. 18, No. 10","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 1
+
+text: trials (RCTs) that met the following inclusion criteria:
+(1) patients: adults (age, >18 y) with moderate to
+severe ulcerative colitis (Mayo Clinic score of 6–12,
+with an endoscopic subscore of 2 or 3) who were
+either
+treatment-naïve
+(ﬁrst-line)
+or
+previously
+exposed to TNFa antagonists (second-line); (2) inter-
+vention: biologic therapy with inﬂiximab, adalimumab,
+golimumab, vedolizumab, tofacitinib, or ustekinumab,
+with a minimum duration of therapy of 14 days; (3)","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 0
+
+text: published literature, our results might help clinicians to position drugs in treatment algorithms.
+Funding None.
+Copyright © 2021 Elsevier Ltd. All rights reserved.
+Introduction
+Ulcerative colitis is a chronic, idiopathic, potentially
+disabling condition that is clinically characterised
+by bloody diarrhoea, abdominal pain, and tenesmus.1
+Ulcerative colitis most commonly presents during the
+third and fifth decades of life, and is associated with an","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 8
+
+text: moderately to severely active ulcerative colitis: a systematic review
+and network meta-analysis. Ann Intern Med 2014; 160: 704–11.
+11
+Singh S, Fumery M, Sandborn WJ, Murad MH. Systematic review
+with network meta-analysis: first- and second-line pharmacotherapy
+for moderate-severe ulcerative colitis. Aliment Pharmacol Ther 2018;
+47: 162–75.
+12
+Bonovas S, Lytras T, Nikolopoulos G, Peyrin-Biroulet L, Danese S.
+Systematic review with network meta-analysis: comparative","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 6
+
+text: with moderate to severely
+active ulcerative colitis. (B)
+Relative
+efﬁcacy
+of
+different interventions for
+induction of clinical remis-
+sion
+and
+endoscopic
+improvement
+in
+patients
+with moderate to severely
+active
+ulcerative
+colitis
+with prior exposure to tu-
+mor necrosis factor (TNF)⍺
+antagonists. SUCRA, sur-
+face under the cumulative
+ranking.
+September 2020
+Management of Moderate–Severe UC 2185","title: Approach to the Management of Recently Diagnosed Inflammatory Bowel Disease Patients: A User's Guide for Adult and Pediatric Gastroenterologists
+
+filename: agrawal.pdf
+
+page: 2
+
+text: with an increased risk (odds ratio [OR], 2.1; 95% CI, 1.3–
+3.6) of disabling disease 5 years after diagnosis, including
+higher rates of surgery, hospitalization, steroid dependence,
+and disease recurrence.42,43 In UC, younger age at diagnosis
+is linked to more frequent relapses, colectomy, and colo-
+rectal cancer.44,45 There are conﬂicting data on the disease
+course in the very-early-onset IBD population of patients
+diagnosed before age 6 years, with studies reporting both
+similar
+and
+worse","title: Efficacy of biological therapies and small molecules in moderate to severe ulcerative colitis: systematic review and network meta-analysis
+
+filename: gutjnl-2021-326390R2 CLEAN.pdf
+
+page: 7
+
+text: Burr et al.
+
+7 of 45
+INTRODUCTION
+  Ulcerative colitis (UC) is a chronic inflammatory disorder of the bowel that causes
+continuous mucosal inflammation commencing in the rectum and extending proximally for a
+variable extent.[1] It is estimated that UC affects 2.5 million people in Europe,[2] and the
+disease follows a relapsing and remitting course, with intermittent flares of disease activity,
+some of which may be moderate to severe. Management of these is medical, for the most"
+7,"60 year-old woman with severe ulcerative colitis that has loss response to anti-TNF, vedolizumab and ustekinumab
+",Upadacitinib,Tofacitinib,Dual biologics,,Last line agents. Dual biologics use is possible.,"System:
+Make reference to the context given to assess the scenario. If you do not know the answer. just say that ""I don't know"", don't try to make up an answer.
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+
+ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile. Explain the PROS and CONS of the 2 choices.
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+summaries
+
+Human: question","[{
+""drug_name"": ""Infliximab"",
+""advantages"": ""Infliximab is a first-line therapy for moderate to severe ulcerative colitis and has revolutionised therapeutics for the disease by increasing the rates of mucosal healing, deep remission, and corticosteroid-free remission, and improving quality of life."",
+""disadvantages"": ""Infliximab has several limitations, including limited efficacy, primary non-response, secondary loss of response, and immunogenicity. Also, the patient may have already been exposed to this drug and it is not clear if a rechallenge would be successful.""
+},
+{
+""drug_name"": ""Tofacitinib"",
+""advantages"": ""Tofacitinib is indicated for patients with moderate to severe ulcerative colitis who have had prior exposure to TNF antagonists. The drug has demonstrated efficacy in inducing endoscopic improvement and clinical remission in this patient population."",
+""disadvantages"": ""Tofacitinib is a second-line agent and is typically used in patients who have not responded to first-line therapies. Its efficacy may be limited in patients who have previously failed multiple biologic therapies.""
+}]",Infliximab,"Infliximab is a first-line therapy for moderate to severe ulcerative colitis and has revolutionised therapeutics for the disease by increasing the rates of mucosal healing, deep remission, and corticosteroid-free remission, and improving quality of life.","Infliximab has several limitations, including limited efficacy, primary non-response, secondary loss of response, and immunogenicity. Also, the patient may have already been exposed to this drug and it is not clear if a rechallenge would be successful.",Tofacitinib,Tofacitinib is indicated for patients with moderate to severe ulcerative colitis who have had prior exposure to TNF antagonists. The drug has demonstrated efficacy in inducing endoscopic improvement and clinical remission in this patient population.,Tofacitinib is a second-line agent and is typically used in patients who have not responded to first-line therapies. Its efficacy may be limited in patients who have previously failed multiple biologic therapies.,"title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 1
+
+text: needed to inform clinical decision-making with
+greater conﬁdence.
+Implications for patient care
+Patients with moderate to severely active ulcerative
+colitis should receive inﬂiximab or vedolizumab as
+ﬁrst-line therapy, or ustekinumab or tofacitinib if
+they have prior exposure to TNF antagonists.
+2180 Singh et al
+Clinical Gastroenterology and Hepatology Vol. 18, No. 10","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 0
+
+text: third and fifth decades of life, and is associated with an
+impaired health-related quality of life and considerable
+economic burden.2,3
+Nearly 20 years ago, the advent of anti-tumour necrosis
+factor biologics (eg, infliximab, adalimumab, and
+golimumab) revolutionised therapeutics for ulcerative
+colitis, enabling better disease control in terms of
+increasing the rates of mucosal healing, deep remission,
+and corticosteroid-free remission, and improving quality","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 0
+
+text: (prior exposure to tumor necrosis factor [TNF] antagonists) agents for treatment of moder-
+ate to severely active ulcerative colitis in a systematic review and network meta-analysis.
+METHODS:
+We searched publication databases through September 30, 2019, for randomized trials of
+adults with moderate to severe ulcerative colitis treated with TNF antagonists, vedolizumab,
+tofacitinib, or ustekinumab, as ﬁrst-line or second-line agents, compared with placebo or","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 7
+
+text: mumab-, golimumab-, vedolizumab-, tofacitinib-, and
+ustekinumab-treated patients, respectively, would ach-
+ieve induction of endoscopic improvement.
+Second-line
+pharmacotherapy
+for
+moderate–severe
+ulcerative colitis. Overall, 7 RCTs including 1580 pa-
+tients with moderate–severe ulcerative colitis with prior
+exposure to TNFa antagonists were identiﬁed. These
+included subgroup analyses of trials of adalimumab,21
+vedolizumab,24,25
+tofacitinib,26
+and
+ustekinumab.7","title: Positioning biologics in the treatment of IBD: A practical guide - Which mechanism of action for whom?
+
+filename: juillerat 2022.pdf
+
+page: 5
+
+text: tumor necrosis factor antagonists in older patients with ulcerative colitis: patient-
+level pooled analysis of data from randomized trials. Clin. Gastroenterol. Hepatol. 19
+(5), 939–946.
+Christensen, B., Micic, D., Gibson, P.R., Yarur, A., Bellaguarda, E., Corsello, P.,
+Gaetano, J.N., Kinnucan, J., Rao, V.L., Reddy, S., Singh, S., Pekow, J., Rubin, D.T.,
+2018. Vedolizumab in patients with concurrent primary sclerosing cholangitis and","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 0
+
+text: and corticosteroid-free remission, and improving quality
+of life. Biologics with other targets were later approved
+for the treatment of moderate-to-severe ulcerative colitis,
+namely vedolizumab and, more recently, usteki numab.
+However,
+treatment
+with
+biologics
+has
+several
+limit ations, including limited efficacy, primary non-
+response, secondary loss of response, immunogenicity,","title: Positioning therapies for the management of inflammatory bowel disease
+
+filename: positioning therapies for IBD mx (Singh S, Nat Rev G&H 2023).pdf
+
+page: 1
+
+text: preferably in combination with
+
+
+ immunomodulators
+• Risankizumab or ustekinumab (for patients
+ with substantial comorbidities or
+
+
+ contraindications to TNF antagonists)
+First-line therapy
+• Vedolizumab
+• Ustekinumab
+First-line therapy
+• Risankizumab or ustekinumab
+• Vedolizumab
+Moderate-to-severely active
+ulcerative colitis
+Moderate-to-severely active
+ulcerative colitis
+Moderate-to-severely active
+Crohn's disease
+Moderate-to-severely active
+Crohn's disease
+Second-line therapy","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 1
+
+text: trials (RCTs) that met the following inclusion criteria:
+(1) patients: adults (age, >18 y) with moderate to
+severe ulcerative colitis (Mayo Clinic score of 6–12,
+with an endoscopic subscore of 2 or 3) who were
+either
+treatment-naïve
+(ﬁrst-line)
+or
+previously
+exposed to TNFa antagonists (second-line); (2) inter-
+vention: biologic therapy with inﬂiximab, adalimumab,
+golimumab, vedolizumab, tofacitinib, or ustekinumab,
+with a minimum duration of therapy of 14 days; (3)","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 7
+
+text: Patients With Moderate–Severe Ulcerative Colitis With Prior Exposure to Tumor Necrosis Factor-a Antagonists Using
+Network Meta-Analysis
+Induction of clinical remission
+Induction of endoscopic
+improvement
+Ustekinumab 6 mg/kg
+0.97 (0.11–8.72)
+5.99 (1.13–31.76)
+10.71 (2.01–57.20)
+11.51 (2.65–49.96)
+0.77 (0.28–2.18)
+Tofacitinib 10 mg b.d.
+6.18 (1.00–38.00)
+11.05 (1.79–68.41)
+11.88 (2.32–60.89)
+2.98 (1.20–7.41)
+3.85 (1.51–9.80)
+Vedolizumab
+1.79 (0.86–3.70)
+1.92 (0.87–4.25)
+3.32 (1.29–8.58)","title: Positioning therapies for the management of inflammatory bowel disease
+
+filename: positioning therapies for IBD mx (Singh S, Nat Rev G&H 2023).pdf
+
+page: 0
+
+text: moderate-to-severe ulcerative colitis. Integrating data from the VAR-
+SITY trial comparing vedolizumab versus adalimumab (Supplementary
+Table 1) with data from phase II and III trials of approved therapies,
+network meta-analyses suggest that upadacitinib, infliximab and ved-
+olizumab are probably the most efficacious therapies for induction
+of remission in patients who are biologic-naive, and are substantially
+more effective than adalimumab5. In patients with prior exposure to"
+8,"36 year-old man with moderate to severe extensive ulcerative colitis and spondylarthristis.
+",Infliximab,Tofacitinib,,,Dual indications,"System:
+Make reference to the context given to assess the scenario. If you do not know the answer. just say that ""I don't know"", don't try to make up an answer.
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+
+ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile. Explain the PROS and CONS of the 2 choices.
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+summaries
+
+Human: question",I don't know,,,,,,,"title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 0
+
+text: third and fifth decades of life, and is associated with an
+impaired health-related quality of life and considerable
+economic burden.2,3
+Nearly 20 years ago, the advent of anti-tumour necrosis
+factor biologics (eg, infliximab, adalimumab, and
+golimumab) revolutionised therapeutics for ulcerative
+colitis, enabling better disease control in terms of
+increasing the rates of mucosal healing, deep remission,
+and corticosteroid-free remission, and improving quality","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 8
+
+text: moderately to severely active ulcerative colitis: a systematic review
+and network meta-analysis. Ann Intern Med 2014; 160: 704–11.
+11
+Singh S, Fumery M, Sandborn WJ, Murad MH. Systematic review
+with network meta-analysis: first- and second-line pharmacotherapy
+for moderate-severe ulcerative colitis. Aliment Pharmacol Ther 2018;
+47: 162–75.
+12
+Bonovas S, Lytras T, Nikolopoulos G, Peyrin-Biroulet L, Danese S.
+Systematic review with network meta-analysis: comparative","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 0
+
+text: course with signiﬁcant morbidity, with frequent ﬂares
+and
+hospitalizations
+requiring
+immunosuppressive
+therapies and corticosteroids, and impose a signiﬁcant
+direct and indirect economic burden in population-
+based cohorts.2,3 Several treatment options now are
+available
+for
+the
+management
+of
+moderate–severe
+ulcerative colitis, with variable efﬁcacy and safety pro-
+ﬁles, and positioning different agents in the treatment
+course as ﬁrst-line (in biologic-naïve patients) and","title: Approach to the Management of Recently Diagnosed Inflammatory Bowel Disease Patients: A User's Guide for Adult and Pediatric Gastroenterologists
+
+filename: agrawal.pdf
+
+page: 12
+
+text: ulcerative colitis. Gastroenterology 2004;126:451–459.
+18. Gupta N, Liu C, King E, et al. Continued statural growth
+in older adolescents and young adults with Crohn’s
+disease and ulcerative colitis beyond the time of ex-
+pected growth plate closure. Inﬂamm Bowel Dis 2020;
+26:1880–1889.
+19. Pariente B, Torres J, Burisch J, et al. SA1895 Validation
+of the Lémman index in Crohn’s disease. Gastroenter-
+ology 2020;158:S-469.
+20. Cellier C, Sahmoud T, Froguel E, et al; Correlations be-","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 1
+
+text: trials (RCTs) that met the following inclusion criteria:
+(1) patients: adults (age, >18 y) with moderate to
+severe ulcerative colitis (Mayo Clinic score of 6–12,
+with an endoscopic subscore of 2 or 3) who were
+either
+treatment-naïve
+(ﬁrst-line)
+or
+previously
+exposed to TNFa antagonists (second-line); (2) inter-
+vention: biologic therapy with inﬂiximab, adalimumab,
+golimumab, vedolizumab, tofacitinib, or ustekinumab,
+with a minimum duration of therapy of 14 days; (3)","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 6
+
+text: with moderate to severely
+active ulcerative colitis. (B)
+Relative
+efﬁcacy
+of
+different interventions for
+induction of clinical remis-
+sion
+and
+endoscopic
+improvement
+in
+patients
+with moderate to severely
+active
+ulcerative
+colitis
+with prior exposure to tu-
+mor necrosis factor (TNF)⍺
+antagonists. SUCRA, sur-
+face under the cumulative
+ranking.
+September 2020
+Management of Moderate–Severe UC 2185","title: Efficacy of biological therapies and small molecules in moderate to severe ulcerative colitis: systematic review and network meta-analysis
+
+filename: gutjnl-2021-326390R2 CLEAN.pdf
+
+page: 5
+
+text: Burr et al.
+
+5 of 45
+STUDY HIGHLIGHTS
+
+What is already known about this subject
+• Ulcerative colitis (UC) follows a relapsing and remitting course, with intermittent
+flares of disease activity, some of which may be moderate to severe.
+• These are usually treated with corticosteroids, which have potentially serious adverse
+effects, so biological therapies and small molecules have been developed and licensed
+for this indication.","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 11
+
+text: induction of clinical remission in moderately to severely active
+ulcerative colitis: results of a randomised controlled trial. Gut
+2011;60:780–787.
+2190 Singh et al
+Clinical Gastroenterology and Hepatology Vol. 18, No. 10","title:
+
+filename: otad009.pdf
+
+page: 0
+
+text: Introduction
+Ulcerative colitis (UC) is a chronic inflammatory bowel dis-
+ease that affects the colorectum and is clinically characterized
+by bloody diarrhea, urgency, tenesmus, abdominal pain, ma-
+laise, weight loss, and fever. Disease onset commonly occurs
+between the ages of 15 and 30 years and the annual global
+© The Author(s) 2023. Published by Oxford University Press on behalf of Crohn's & Colitis Foundation.","title: Approach to the Management of Recently Diagnosed Inflammatory Bowel Disease Patients: A User's Guide for Adult and Pediatric Gastroenterologists
+
+filename: agrawal.pdf
+
+page: 2
+
+text: with an increased risk (odds ratio [OR], 2.1; 95% CI, 1.3–
+3.6) of disabling disease 5 years after diagnosis, including
+higher rates of surgery, hospitalization, steroid dependence,
+and disease recurrence.42,43 In UC, younger age at diagnosis
+is linked to more frequent relapses, colectomy, and colo-
+rectal cancer.44,45 There are conﬂicting data on the disease
+course in the very-early-onset IBD population of patients
+diagnosed before age 6 years, with studies reporting both
+similar
+and
+worse"
+9,"42 year-old woman with moderate ulcerative colitis on azathioprine and not responding to therapy
+",Anti-TNF,,,,Combination therapy,"System:
+Make reference to the context given to assess the scenario. If you do not know the answer. just say that ""I don't know"", don't try to make up an answer.
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+
+ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile. Explain the PROS and CONS of the 2 choices.
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+summaries
+
+Human: question","[
+  {
+    ""drug_name"": ""Infliximab"",
+    ""advantages"": ""Infliximab has been shown in studies to provide a clinical response in 70% of patients with 5-ASA refractory ulcerative proctitis. It can lead to mucosal healing, deep remission, and corticosteroid-free remission, thereby improving quality of life."",
+    ""disadvantages"": ""Infliximab, as a TNF-alpha inhibitor, comes with risks such as reactivation of latent tuberculosis, increased susceptibility to infections, and potential for infusion reactions or development of antibodies against the drug.""
+  },
+  {
+    ""drug_name"": ""Vedolizumab"",
+    ""advantages"": ""Vedolizumab is also recommended as a first-line therapy for moderate to severely active ulcerative colitis. It has a gut-selective mechanism of action, which may reduce systemic side effects."",
+    ""disadvantages"": ""Vedolizumab may be associated with a risk of infusion reactions, and while it generally has a good safety profile, there may be an increased risk of infections. The onset of action may also be slower compared to other agents.""
+  }
+]",Infliximab,"Infliximab has been shown in studies to provide a clinical response in 70% of patients with 5-ASA refractory ulcerative proctitis. It can lead to mucosal healing, deep remission, and corticosteroid-free remission, thereby improving quality of life.","Infliximab, as a TNF-alpha inhibitor, comes with risks such as reactivation of latent tuberculosis, increased susceptibility to infections, and potential for infusion reactions or development of antibodies against the drug.",Vedolizumab,"Vedolizumab is also recommended as a first-line therapy for moderate to severely active ulcerative colitis. It has a gut-selective mechanism of action, which may reduce systemic side effects.","Vedolizumab may be associated with a risk of infusion reactions, and while it generally has a good safety profile, there may be an increased risk of infections. The onset of action may also be slower compared to other agents.","title: Positioning biologics in the treatment of IBD: A practical guide - Which mechanism of action for whom?
+
+filename: juillerat 2022.pdf
+
+page: 4
+
+text: biological agents. In a national retrospective study in France, half of 104
+patients with ulcerative proctitis achieved remission with various anti-TNF
+therapies and 60% achieved mucosal healing (Pineton de Chambrun et al.,
+2020). In a large retrospective single center cohort, clinical response to
+biological therapy (mostly inﬂiximab) was obtained in 70% of 118 5-ASA
+refractory ulcerative proctitis patients, as compared to 11% with azathio-
+prine (Dubois et al., 2020).","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 1
+
+text: trials (RCTs) that met the following inclusion criteria:
+(1) patients: adults (age, >18 y) with moderate to
+severe ulcerative colitis (Mayo Clinic score of 6–12,
+with an endoscopic subscore of 2 or 3) who were
+either
+treatment-naïve
+(ﬁrst-line)
+or
+previously
+exposed to TNFa antagonists (second-line); (2) inter-
+vention: biologic therapy with inﬂiximab, adalimumab,
+golimumab, vedolizumab, tofacitinib, or ustekinumab,
+with a minimum duration of therapy of 14 days; (3)","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 0
+
+text: third and fifth decades of life, and is associated with an
+impaired health-related quality of life and considerable
+economic burden.2,3
+Nearly 20 years ago, the advent of anti-tumour necrosis
+factor biologics (eg, infliximab, adalimumab, and
+golimumab) revolutionised therapeutics for ulcerative
+colitis, enabling better disease control in terms of
+increasing the rates of mucosal healing, deep remission,
+and corticosteroid-free remission, and improving quality","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 8
+
+text: moderately to severely active ulcerative colitis: a systematic review
+and network meta-analysis. Ann Intern Med 2014; 160: 704–11.
+11
+Singh S, Fumery M, Sandborn WJ, Murad MH. Systematic review
+with network meta-analysis: first- and second-line pharmacotherapy
+for moderate-severe ulcerative colitis. Aliment Pharmacol Ther 2018;
+47: 162–75.
+12
+Bonovas S, Lytras T, Nikolopoulos G, Peyrin-Biroulet L, Danese S.
+Systematic review with network meta-analysis: comparative","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 11
+
+text: induction of clinical remission in moderately to severely active
+ulcerative colitis: results of a randomised controlled trial. Gut
+2011;60:780–787.
+2190 Singh et al
+Clinical Gastroenterology and Hepatology Vol. 18, No. 10","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 0
+
+text: course with signiﬁcant morbidity, with frequent ﬂares
+and
+hospitalizations
+requiring
+immunosuppressive
+therapies and corticosteroids, and impose a signiﬁcant
+direct and indirect economic burden in population-
+based cohorts.2,3 Several treatment options now are
+available
+for
+the
+management
+of
+moderate–severe
+ulcerative colitis, with variable efﬁcacy and safety pro-
+ﬁles, and positioning different agents in the treatment
+course as ﬁrst-line (in biologic-naïve patients) and","title: Efficacy of biological therapies and small molecules in moderate to severe ulcerative colitis: systematic review and network meta-analysis
+
+filename: gutjnl-2021-326390R2 CLEAN.pdf
+
+page: 5
+
+text: Burr et al.
+
+5 of 45
+STUDY HIGHLIGHTS
+
+What is already known about this subject
+• Ulcerative colitis (UC) follows a relapsing and remitting course, with intermittent
+flares of disease activity, some of which may be moderate to severe.
+• These are usually treated with corticosteroids, which have potentially serious adverse
+effects, so biological therapies and small molecules have been developed and licensed
+for this indication.","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 1
+
+text: needed to inform clinical decision-making with
+greater conﬁdence.
+Implications for patient care
+Patients with moderate to severely active ulcerative
+colitis should receive inﬂiximab or vedolizumab as
+ﬁrst-line therapy, or ustekinumab or tofacitinib if
+they have prior exposure to TNF antagonists.
+2180 Singh et al
+Clinical Gastroenterology and Hepatology Vol. 18, No. 10","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 1
+
+text: patients with moderate-to-severe ulcerative colitis.5
+Ozanimod became the second small molecule drug to
+receive approval. Other compounds, including filgotinib
+and upadacitinib, have been efficacious for the treatment
+of ulcerative colitis in phase 3 randomised clinical trials
+(RCTs)6–8 and will probably become available in the clinic
+in the near future. With a growing therapeutic
+armamentarium, and a paucity of direct comparisons,","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 8
+
+text: U-ACCOMPLISH study. J Crohn’s Colitis 2021; 15 (suppl 1): S021–22.
+9
+Thorlund K, Druyts E, Mills EJ, Fedorak RN, Marshall JK.
+Adalimumab versus infliximab for the treatment of moderate to
+severe ulcerative colitis in adult patients naïve to anti-TNF therapy:
+an indirect treatment comparison meta-analysis. J Crohn’s Colitis
+2014; 8: 571–81.
+10
+Danese S, Fiorino G, Peyrin-Biroulet L, et al. Biological agents for
+moderately to severely active ulcerative colitis: a systematic review"
+10,"53 year-old man with moderate to severe extensive ulcerative colitis and low albumin levels
+",Tofacitinib,Vedolizumab,Ustekinumab,,Low serum albumin associated with poorer resonse to anti-TNFs (especially Infliximab),"System:
+Make reference to the context given to assess the scenario. If you do not know the answer. just say that ""I don't know"", don't try to make up an answer.
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+
+ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile. Explain the PROS and CONS of the 2 choices.
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+summaries
+
+Human: question",I don't know,,,,,,,"title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 0
+
+text: third and fifth decades of life, and is associated with an
+impaired health-related quality of life and considerable
+economic burden.2,3
+Nearly 20 years ago, the advent of anti-tumour necrosis
+factor biologics (eg, infliximab, adalimumab, and
+golimumab) revolutionised therapeutics for ulcerative
+colitis, enabling better disease control in terms of
+increasing the rates of mucosal healing, deep remission,
+and corticosteroid-free remission, and improving quality","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 8
+
+text: moderately to severely active ulcerative colitis: a systematic review
+and network meta-analysis. Ann Intern Med 2014; 160: 704–11.
+11
+Singh S, Fumery M, Sandborn WJ, Murad MH. Systematic review
+with network meta-analysis: first- and second-line pharmacotherapy
+for moderate-severe ulcerative colitis. Aliment Pharmacol Ther 2018;
+47: 162–75.
+12
+Bonovas S, Lytras T, Nikolopoulos G, Peyrin-Biroulet L, Danese S.
+Systematic review with network meta-analysis: comparative","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 0
+
+text: course with signiﬁcant morbidity, with frequent ﬂares
+and
+hospitalizations
+requiring
+immunosuppressive
+therapies and corticosteroids, and impose a signiﬁcant
+direct and indirect economic burden in population-
+based cohorts.2,3 Several treatment options now are
+available
+for
+the
+management
+of
+moderate–severe
+ulcerative colitis, with variable efﬁcacy and safety pro-
+ﬁles, and positioning different agents in the treatment
+course as ﬁrst-line (in biologic-naïve patients) and","title:
+
+filename: otad009.pdf
+
+page: 0
+
+text: Introduction
+Ulcerative colitis (UC) is a chronic inflammatory bowel dis-
+ease that affects the colorectum and is clinically characterized
+by bloody diarrhea, urgency, tenesmus, abdominal pain, ma-
+laise, weight loss, and fever. Disease onset commonly occurs
+between the ages of 15 and 30 years and the annual global
+© The Author(s) 2023. Published by Oxford University Press on behalf of Crohn's & Colitis Foundation.","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 6
+
+text: with moderate to severely
+active ulcerative colitis. (B)
+Relative
+efﬁcacy
+of
+different interventions for
+induction of clinical remis-
+sion
+and
+endoscopic
+improvement
+in
+patients
+with moderate to severely
+active
+ulcerative
+colitis
+with prior exposure to tu-
+mor necrosis factor (TNF)⍺
+antagonists. SUCRA, sur-
+face under the cumulative
+ranking.
+September 2020
+Management of Moderate–Severe UC 2185","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 1
+
+text: trials (RCTs) that met the following inclusion criteria:
+(1) patients: adults (age, >18 y) with moderate to
+severe ulcerative colitis (Mayo Clinic score of 6–12,
+with an endoscopic subscore of 2 or 3) who were
+either
+treatment-naïve
+(ﬁrst-line)
+or
+previously
+exposed to TNFa antagonists (second-line); (2) inter-
+vention: biologic therapy with inﬂiximab, adalimumab,
+golimumab, vedolizumab, tofacitinib, or ustekinumab,
+with a minimum duration of therapy of 14 days; (3)","title: Approach to the Management of Recently Diagnosed Inflammatory Bowel Disease Patients: A User's Guide for Adult and Pediatric Gastroenterologists
+
+filename: agrawal.pdf
+
+page: 2
+
+text: with an increased risk (odds ratio [OR], 2.1; 95% CI, 1.3–
+3.6) of disabling disease 5 years after diagnosis, including
+higher rates of surgery, hospitalization, steroid dependence,
+and disease recurrence.42,43 In UC, younger age at diagnosis
+is linked to more frequent relapses, colectomy, and colo-
+rectal cancer.44,45 There are conﬂicting data on the disease
+course in the very-early-onset IBD population of patients
+diagnosed before age 6 years, with studies reporting both
+similar
+and
+worse","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 0
+
+text: published literature, our results might help clinicians to position drugs in treatment algorithms.
+Funding None.
+Copyright © 2021 Elsevier Ltd. All rights reserved.
+Introduction
+Ulcerative colitis is a chronic, idiopathic, potentially
+disabling condition that is clinically characterised
+by bloody diarrhoea, abdominal pain, and tenesmus.1
+Ulcerative colitis most commonly presents during the
+third and fifth decades of life, and is associated with an","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 2
+
+text: Articles
+www.thelancet.com/gastrohep   Vol 7   February 2022
+163
+“safety” OR “adverse events”]. Additionally, experts in the
+field were contacted for any unpublished data.
+We included phase 3 RCTs that met the inclusion criteria:
+(1) studies including adult (≥18 years) patients with
+moderate-to-severe ulcerative colitis (defined as a Mayo
+Score of 6–12, with an endoscopic sub-score of 2–3) who
+were either biologic-naive or had previously been exposed","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 8
+
+text: U-ACCOMPLISH study. J Crohn’s Colitis 2021; 15 (suppl 1): S021–22.
+9
+Thorlund K, Druyts E, Mills EJ, Fedorak RN, Marshall JK.
+Adalimumab versus infliximab for the treatment of moderate to
+severe ulcerative colitis in adult patients naïve to anti-TNF therapy:
+an indirect treatment comparison meta-analysis. J Crohn’s Colitis
+2014; 8: 571–81.
+10
+Danese S, Fiorino G, Peyrin-Biroulet L, et al. Biological agents for
+moderately to severely active ulcerative colitis: a systematic review"
+11,"42 year-old woman with severe ulcerative colitis and rare fistulating disease
+",Infliximab,Adalimumab,,,No real data on ulcerative colitis - related fistula,"System:
+Make reference to the context given to assess the scenario. If you do not know the answer. just say that ""I don't know"", don't try to make up an answer.
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+
+ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile. Explain the PROS and CONS of the 2 choices.
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+summaries
+
+Human: question",I don't know,,,,,,,"title:
+
+filename: otad009.pdf
+
+page: 0
+
+text: Introduction
+Ulcerative colitis (UC) is a chronic inflammatory bowel dis-
+ease that affects the colorectum and is clinically characterized
+by bloody diarrhea, urgency, tenesmus, abdominal pain, ma-
+laise, weight loss, and fever. Disease onset commonly occurs
+between the ages of 15 and 30 years and the annual global
+© The Author(s) 2023. Published by Oxford University Press on behalf of Crohn's & Colitis Foundation.","title: Approach to the Management of Recently Diagnosed Inflammatory Bowel Disease Patients: A User's Guide for Adult and Pediatric Gastroenterologists
+
+filename: agrawal.pdf
+
+page: 12
+
+text: ulcerative colitis. Gastroenterology 2004;126:451–459.
+18. Gupta N, Liu C, King E, et al. Continued statural growth
+in older adolescents and young adults with Crohn’s
+disease and ulcerative colitis beyond the time of ex-
+pected growth plate closure. Inﬂamm Bowel Dis 2020;
+26:1880–1889.
+19. Pariente B, Torres J, Burisch J, et al. SA1895 Validation
+of the Lémman index in Crohn’s disease. Gastroenter-
+ology 2020;158:S-469.
+20. Cellier C, Sahmoud T, Froguel E, et al; Correlations be-","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 0
+
+text: third and fifth decades of life, and is associated with an
+impaired health-related quality of life and considerable
+economic burden.2,3
+Nearly 20 years ago, the advent of anti-tumour necrosis
+factor biologics (eg, infliximab, adalimumab, and
+golimumab) revolutionised therapeutics for ulcerative
+colitis, enabling better disease control in terms of
+increasing the rates of mucosal healing, deep remission,
+and corticosteroid-free remission, and improving quality","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 0
+
+text: published literature, our results might help clinicians to position drugs in treatment algorithms.
+Funding None.
+Copyright © 2021 Elsevier Ltd. All rights reserved.
+Introduction
+Ulcerative colitis is a chronic, idiopathic, potentially
+disabling condition that is clinically characterised
+by bloody diarrhoea, abdominal pain, and tenesmus.1
+Ulcerative colitis most commonly presents during the
+third and fifth decades of life, and is associated with an","title: Efficacy of biological therapies and small molecules in moderate to severe ulcerative colitis: systematic review and network meta-analysis
+
+filename: gutjnl-2021-326390R2 CLEAN.pdf
+
+page: 7
+
+text: Burr et al.
+
+7 of 45
+INTRODUCTION
+  Ulcerative colitis (UC) is a chronic inflammatory disorder of the bowel that causes
+continuous mucosal inflammation commencing in the rectum and extending proximally for a
+variable extent.[1] It is estimated that UC affects 2.5 million people in Europe,[2] and the
+disease follows a relapsing and remitting course, with intermittent flares of disease activity,
+some of which may be moderate to severe. Management of these is medical, for the most","title: Approach to the Management of Recently Diagnosed Inflammatory Bowel Disease Patients: A User's Guide for Adult and Pediatric Gastroenterologists
+
+filename: agrawal.pdf
+
+page: 3
+
+text: factor for asymptomatic perianal ﬁstulas.63
+In UC, corresponding predictors of aggressive disease
+advised by the International Organization for the Study of
+Inﬂammatory Bowel Disease include active colonic ulcers
+and prior use of biologics.59 Extensive colitis, deep ulcers,
+need for corticosteroids, hospitalization, Clostridium difﬁcile,
+and cytomegalovirus infection also indicate higher colec-
+tomy risk.64 Of note, disease extension from limited disease
+to
+extensive
+or
+pancolitis
+is
+associated","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 11
+
+text: induction of clinical remission in moderately to severely active
+ulcerative colitis: results of a randomised controlled trial. Gut
+2011;60:780–787.
+2190 Singh et al
+Clinical Gastroenterology and Hepatology Vol. 18, No. 10","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 1
+
+text: trials (RCTs) that met the following inclusion criteria:
+(1) patients: adults (age, >18 y) with moderate to
+severe ulcerative colitis (Mayo Clinic score of 6–12,
+with an endoscopic subscore of 2 or 3) who were
+either
+treatment-naïve
+(ﬁrst-line)
+or
+previously
+exposed to TNFa antagonists (second-line); (2) inter-
+vention: biologic therapy with inﬂiximab, adalimumab,
+golimumab, vedolizumab, tofacitinib, or ustekinumab,
+with a minimum duration of therapy of 14 days; (3)","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 0
+
+text: course with signiﬁcant morbidity, with frequent ﬂares
+and
+hospitalizations
+requiring
+immunosuppressive
+therapies and corticosteroids, and impose a signiﬁcant
+direct and indirect economic burden in population-
+based cohorts.2,3 Several treatment options now are
+available
+for
+the
+management
+of
+moderate–severe
+ulcerative colitis, with variable efﬁcacy and safety pro-
+ﬁles, and positioning different agents in the treatment
+course as ﬁrst-line (in biologic-naïve patients) and","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 8
+
+text: moderately to severely active ulcerative colitis: a systematic review
+and network meta-analysis. Ann Intern Med 2014; 160: 704–11.
+11
+Singh S, Fumery M, Sandborn WJ, Murad MH. Systematic review
+with network meta-analysis: first- and second-line pharmacotherapy
+for moderate-severe ulcerative colitis. Aliment Pharmacol Ther 2018;
+47: 162–75.
+12
+Bonovas S, Lytras T, Nikolopoulos G, Peyrin-Biroulet L, Danese S.
+Systematic review with network meta-analysis: comparative"
+12,"48 year-old woman with distal moderate to severe ulcerative colitis who prioritizes a rapid response to treatment.
+",Infliximab,Tofacitinib,,,Infliximab and Tofacitinib have the quickest response,"System:
+Make reference to the context given to assess the scenario. If you do not know the answer. just say that ""I don't know"", don't try to make up an answer.
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+
+ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile. Explain the PROS and CONS of the 2 choices.
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+summaries
+
+Human: question",I don't know,,,,,,,"title:
+
+filename: otad009.pdf
+
+page: 0
+
+text: Introduction
+Ulcerative colitis (UC) is a chronic inflammatory bowel dis-
+ease that affects the colorectum and is clinically characterized
+by bloody diarrhea, urgency, tenesmus, abdominal pain, ma-
+laise, weight loss, and fever. Disease onset commonly occurs
+between the ages of 15 and 30 years and the annual global
+© The Author(s) 2023. Published by Oxford University Press on behalf of Crohn's & Colitis Foundation.","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 1
+
+text: trials (RCTs) that met the following inclusion criteria:
+(1) patients: adults (age, >18 y) with moderate to
+severe ulcerative colitis (Mayo Clinic score of 6–12,
+with an endoscopic subscore of 2 or 3) who were
+either
+treatment-naïve
+(ﬁrst-line)
+or
+previously
+exposed to TNFa antagonists (second-line); (2) inter-
+vention: biologic therapy with inﬂiximab, adalimumab,
+golimumab, vedolizumab, tofacitinib, or ustekinumab,
+with a minimum duration of therapy of 14 days; (3)","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 8
+
+text: moderately to severely active ulcerative colitis: a systematic review
+and network meta-analysis. Ann Intern Med 2014; 160: 704–11.
+11
+Singh S, Fumery M, Sandborn WJ, Murad MH. Systematic review
+with network meta-analysis: first- and second-line pharmacotherapy
+for moderate-severe ulcerative colitis. Aliment Pharmacol Ther 2018;
+47: 162–75.
+12
+Bonovas S, Lytras T, Nikolopoulos G, Peyrin-Biroulet L, Danese S.
+Systematic review with network meta-analysis: comparative","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 6
+
+text: with moderate to severely
+active ulcerative colitis. (B)
+Relative
+efﬁcacy
+of
+different interventions for
+induction of clinical remis-
+sion
+and
+endoscopic
+improvement
+in
+patients
+with moderate to severely
+active
+ulcerative
+colitis
+with prior exposure to tu-
+mor necrosis factor (TNF)⍺
+antagonists. SUCRA, sur-
+face under the cumulative
+ranking.
+September 2020
+Management of Moderate–Severe UC 2185","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 0
+
+text: course with signiﬁcant morbidity, with frequent ﬂares
+and
+hospitalizations
+requiring
+immunosuppressive
+therapies and corticosteroids, and impose a signiﬁcant
+direct and indirect economic burden in population-
+based cohorts.2,3 Several treatment options now are
+available
+for
+the
+management
+of
+moderate–severe
+ulcerative colitis, with variable efﬁcacy and safety pro-
+ﬁles, and positioning different agents in the treatment
+course as ﬁrst-line (in biologic-naïve patients) and","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 11
+
+text: induction of clinical remission in moderately to severely active
+ulcerative colitis: results of a randomised controlled trial. Gut
+2011;60:780–787.
+2190 Singh et al
+Clinical Gastroenterology and Hepatology Vol. 18, No. 10","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 0
+
+text: third and fifth decades of life, and is associated with an
+impaired health-related quality of life and considerable
+economic burden.2,3
+Nearly 20 years ago, the advent of anti-tumour necrosis
+factor biologics (eg, infliximab, adalimumab, and
+golimumab) revolutionised therapeutics for ulcerative
+colitis, enabling better disease control in terms of
+increasing the rates of mucosal healing, deep remission,
+and corticosteroid-free remission, and improving quality","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 1
+
+text: needed to inform clinical decision-making with
+greater conﬁdence.
+Implications for patient care
+Patients with moderate to severely active ulcerative
+colitis should receive inﬂiximab or vedolizumab as
+ﬁrst-line therapy, or ustekinumab or tofacitinib if
+they have prior exposure to TNF antagonists.
+2180 Singh et al
+Clinical Gastroenterology and Hepatology Vol. 18, No. 10","title: Efficacy of biological therapies and small molecules in moderate to severe ulcerative colitis: systematic review and network meta-analysis
+
+filename: gutjnl-2021-326390R2 CLEAN.pdf
+
+page: 5
+
+text: Burr et al.
+
+5 of 45
+STUDY HIGHLIGHTS
+
+What is already known about this subject
+• Ulcerative colitis (UC) follows a relapsing and remitting course, with intermittent
+flares of disease activity, some of which may be moderate to severe.
+• These are usually treated with corticosteroids, which have potentially serious adverse
+effects, so biological therapies and small molecules have been developed and licensed
+for this indication.","title: Approach to the Management of Recently Diagnosed Inflammatory Bowel Disease Patients: A User's Guide for Adult and Pediatric Gastroenterologists
+
+filename: agrawal.pdf
+
+page: 0
+
+text: cerative Colitis; Early Diagnosis; Early Therapy; Personalized
+Therapy; Adult; Pediatric.
+I
+nﬂammatory bowel diseases (IBDs), including the
+main subtypes Crohn’s disease (CD) and ulcerative
+colitis (UC), are chronic, progressive, immune-mediated
+diseases of the intestinal tract that have no cure.1,2 IBDs
+are associated with signiﬁcant morbidity, disability, and risk
+of complications.3,4 Although they can occur at any age, IBDs
+are most common among adolescents and young adults. In"
+13,"36 year-old woman with moderate to severe ulcerative colitis who has lost response to tofacitinib.
+",Infliximab,Ustekinumab,,,VDZ doesnt do well as 2nd line,"System:
+Make reference to the context given to assess the scenario. If you do not know the answer. just say that ""I don't know"", don't try to make up an answer.
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+
+ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile. Explain the PROS and CONS of the 2 choices.
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+summaries
+
+Human: question","Based on the patient profile, the patient is not new but rather under maintenance, as she has previously been treated with tofacitinib. Given her loss of response to tofacitinib, it can be inferred that she had a prior failure to Anti-TNF agents.
+
+Considering her age and gender, there's no mention of pregnancy, so it can't be factored in the decision. There are no mentions of any extraintestinal manifestations or pouchitis.
+
+Given the patient's prior exposure to tofacitinib, she should be considered for a different class of drug. The top two choices would be Infliximab and Vedolizumab.
+
+Here are the pros and cons of the two choices:
+
+[{""drug_name"": ""Infliximab"", ""advantages"": ""Infliximab has been proven effective for patients with moderate to severe UC. It can induce and maintain remission, promote mucosal healing, and improve quality of life."", ""disadvantages"": ""Side effects can include infusion reactions and increased risk of infections. It can also cause drug-induced lupus and there's the possibility of developing antibodies against it, leading to loss of response.""},
+
+{""drug_name"": ""Vedolizumab"", ""advantages"": ""Vedolizumab specifically targets the gut, reducing systemic side effects. It's effective in inducing and maintaining remission in patients with moderate to severe UC."", ""disadvantages"": ""Side effects can include headache, joint pain, nausea, or common cold-like symptoms. Its infusion may cause allergic reactions. Additionally, response to vedolizumab may take longer time.""}]",Infliximab,"Infliximab has been proven effective for patients with moderate to severe UC. It can induce and maintain remission, promote mucosal healing, and improve quality of life.","Side effects can include infusion reactions and increased risk of infections. It can also cause drug-induced lupus and there's the possibility of developing antibodies against it, leading to loss of response.",Vedolizumab,"Vedolizumab specifically targets the gut, reducing systemic side effects. It's effective in inducing and maintaining remission in patients with moderate to severe UC.","Side effects can include headache, joint pain, nausea, or common cold-like symptoms. Its infusion may cause allergic reactions. Additionally, response to vedolizumab may take longer time.","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 1
+
+text: trials (RCTs) that met the following inclusion criteria:
+(1) patients: adults (age, >18 y) with moderate to
+severe ulcerative colitis (Mayo Clinic score of 6–12,
+with an endoscopic subscore of 2 or 3) who were
+either
+treatment-naïve
+(ﬁrst-line)
+or
+previously
+exposed to TNFa antagonists (second-line); (2) inter-
+vention: biologic therapy with inﬂiximab, adalimumab,
+golimumab, vedolizumab, tofacitinib, or ustekinumab,
+with a minimum duration of therapy of 14 days; (3)","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 7
+
+text: mumab-, golimumab-, vedolizumab-, tofacitinib-, and
+ustekinumab-treated patients, respectively, would ach-
+ieve induction of endoscopic improvement.
+Second-line
+pharmacotherapy
+for
+moderate–severe
+ulcerative colitis. Overall, 7 RCTs including 1580 pa-
+tients with moderate–severe ulcerative colitis with prior
+exposure to TNFa antagonists were identiﬁed. These
+included subgroup analyses of trials of adalimumab,21
+vedolizumab,24,25
+tofacitinib,26
+and
+ustekinumab.7","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 1
+
+text: needed to inform clinical decision-making with
+greater conﬁdence.
+Implications for patient care
+Patients with moderate to severely active ulcerative
+colitis should receive inﬂiximab or vedolizumab as
+ﬁrst-line therapy, or ustekinumab or tofacitinib if
+they have prior exposure to TNF antagonists.
+2180 Singh et al
+Clinical Gastroenterology and Hepatology Vol. 18, No. 10","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 0
+
+text: (prior exposure to tumor necrosis factor [TNF] antagonists) agents for treatment of moder-
+ate to severely active ulcerative colitis in a systematic review and network meta-analysis.
+METHODS:
+We searched publication databases through September 30, 2019, for randomized trials of
+adults with moderate to severe ulcerative colitis treated with TNF antagonists, vedolizumab,
+tofacitinib, or ustekinumab, as ﬁrst-line or second-line agents, compared with placebo or","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 1
+
+text: patients with moderate-to-severe ulcerative colitis.5
+Ozanimod became the second small molecule drug to
+receive approval. Other compounds, including filgotinib
+and upadacitinib, have been efficacious for the treatment
+of ulcerative colitis in phase 3 randomised clinical trials
+(RCTs)6–8 and will probably become available in the clinic
+in the near future. With a growing therapeutic
+armamentarium, and a paucity of direct comparisons,","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 8
+
+text: Systematic review with network meta-analysis: comparative
+assessment of tofacitinib and biological therapies for moderate-to-
+severe ulcerative colitis. Aliment Pharmacol Ther 2018; 47: 454–65.
+13
+Singh S, Murad MH, Fumery M, Dulai PS, Sandborn WJ. First- and
+second-line pharmacotherapies for patients with moderate to
+severely active ulcerative colitis: an updated network meta-analysis.
+Clin Gastroenterol Hepatol 2020; 18: 2179–91.e6.
+14","title:
+
+filename: otad009.pdf
+
+page: 0
+
+text: across advanced therapies.
+Lay Summary
+Indirect evidence suggests upadacitinib may be more efficacious than other advanced therapies at achieving clinical response, clinical remis-
+sion, and endoscopic response over 1 year for moderately to severely active ulcerative colitis patients, with similar safety assessments across
+advanced therapies.
+Key Words: ulcerative colitis, clinical trials, advanced therapies, network meta-analysis
+Introduction","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 6
+
+text: with moderate to severely
+active ulcerative colitis. (B)
+Relative
+efﬁcacy
+of
+different interventions for
+induction of clinical remis-
+sion
+and
+endoscopic
+improvement
+in
+patients
+with moderate to severely
+active
+ulcerative
+colitis
+with prior exposure to tu-
+mor necrosis factor (TNF)⍺
+antagonists. SUCRA, sur-
+face under the cumulative
+ranking.
+September 2020
+Management of Moderate–Severe UC 2185","title: Positioning biologics in the treatment of IBD: A practical guide - Which mechanism of action for whom?
+
+filename: juillerat 2022.pdf
+
+page: 5
+
+text: Clin. Gastroenterol. Hepatol. 14 (10), 1385–1397.
+Bonovas, S., Lytras, T., Nikolopoulos, G., Peyrin-Biroulet, L., Danese, S., 2018. Systematic
+review with network meta-analysis: comparative assessment of tofacitinib and
+biological therapies for moderate-to-severe ulcerative colitis. Aliment. Pharmacol.
+Ther. 47 (4), 454–465.
+Bouhnik, Y., Carbonnel, F., Laharie, D., Stefanescu, C., Hebuterne, X., Abitbol, V.,
+Nachury, M., Brixi, H., Bourreille, A., Picon, L., Bourrier, A., Allez, M., Peyrin-","title: Positioning therapies for the management of inflammatory bowel disease
+
+filename: positioning therapies for IBD mx (Singh S, Nat Rev G&H 2023).pdf
+
+page: 1
+
+text: Crohn's disease
+Moderate-to-severely active
+Crohn's disease
+Second-line therapy
+• Upadacitinib (or tofacitinib) (for patients with
+ prior failure of infliximab)
+• Infliximab or ustekinumab (for patients with
+ prior exposure to vedolizumab)
+• Vedolizumab (moderate disease, for patients
+ who discontinued first-line biologic agent
+ for intolerance)
+Second-line therapy (in patients with prior
+exposure to infliximab or adalimumab)
+• Risankizumab or ustekinumab"
+14,58 year-old woman with moderate to severe distal ulcerative colitis and optic neuritis.,Vedolizumab,Ustekinumab,,,Anti-TNFs are contraindicated,"System:
+Make reference to the context given to assess the scenario. If you do not know the answer. just say that ""I don't know"", don't try to make up an answer.
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+
+ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile. Explain the PROS and CONS of the 2 choices.
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+
+summaries
+
+Human: question","[
+{
+""drug_name"": ""Vedolizumab"",
+""advantages"": ""Vedolizumab is a gut-selective integrin antagonist, making it a good choice for ulcerative colitis as it targets inflammation in the gut specifically. It also has a favorable safety profile with fewer systemic side effects."",
+""disadvantages"": ""Vedolizumab may not be as effective in patients who have had prior failure to anti-TNF agents. Also, it usually takes longer to start working compared to other drugs like Infliximab, so it may not be ideal for patients needing immediate relief.""
+},
+{
+""drug_name"": ""Ustekinumab"",
+""advantages"": ""Ustekinumab is an interleukin antagonist and could be a viable option for this patient given her previous exposure to TNF antagonists. It is also less likely to cause side effects related to the nervous system, such as optic neuritis."",
+""disadvantages"": ""Ustekinumab may not be as effective as infliximab or vedolizumab in inducing remission in ulcerative colitis. It is also more expensive and requires regular subcutaneous injections.""
+}
+]",Vedolizumab,"Vedolizumab is a gut-selective integrin antagonist, making it a good choice for ulcerative colitis as it targets inflammation in the gut specifically. It also has a favorable safety profile with fewer systemic side effects.","Vedolizumab may not be as effective in patients who have had prior failure to anti-TNF agents. Also, it usually takes longer to start working compared to other drugs like Infliximab, so it may not be ideal for patients needing immediate relief.",Ustekinumab,"Ustekinumab is an interleukin antagonist and could be a viable option for this patient given her previous exposure to TNF antagonists. It is also less likely to cause side effects related to the nervous system, such as optic neuritis.",Ustekinumab may not be as effective as infliximab or vedolizumab in inducing remission in ulcerative colitis. It is also more expensive and requires regular subcutaneous injections.,"title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 0
+
+text: third and fifth decades of life, and is associated with an
+impaired health-related quality of life and considerable
+economic burden.2,3
+Nearly 20 years ago, the advent of anti-tumour necrosis
+factor biologics (eg, infliximab, adalimumab, and
+golimumab) revolutionised therapeutics for ulcerative
+colitis, enabling better disease control in terms of
+increasing the rates of mucosal healing, deep remission,
+and corticosteroid-free remission, and improving quality","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 1
+
+text: trials (RCTs) that met the following inclusion criteria:
+(1) patients: adults (age, >18 y) with moderate to
+severe ulcerative colitis (Mayo Clinic score of 6–12,
+with an endoscopic subscore of 2 or 3) who were
+either
+treatment-naïve
+(ﬁrst-line)
+or
+previously
+exposed to TNFa antagonists (second-line); (2) inter-
+vention: biologic therapy with inﬂiximab, adalimumab,
+golimumab, vedolizumab, tofacitinib, or ustekinumab,
+with a minimum duration of therapy of 14 days; (3)","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 0
+
+text: course with signiﬁcant morbidity, with frequent ﬂares
+and
+hospitalizations
+requiring
+immunosuppressive
+therapies and corticosteroids, and impose a signiﬁcant
+direct and indirect economic burden in population-
+based cohorts.2,3 Several treatment options now are
+available
+for
+the
+management
+of
+moderate–severe
+ulcerative colitis, with variable efﬁcacy and safety pro-
+ﬁles, and positioning different agents in the treatment
+course as ﬁrst-line (in biologic-naïve patients) and","title: Efficacy and safety of biologics and small molecule drugs for patients with moderate-to-severe ulcerative colitis: a systematic review and network meta-analysis
+
+filename: 1-s2.0-S2468125321003770-main.pdf
+
+page: 8
+
+text: moderately to severely active ulcerative colitis: a systematic review
+and network meta-analysis. Ann Intern Med 2014; 160: 704–11.
+11
+Singh S, Fumery M, Sandborn WJ, Murad MH. Systematic review
+with network meta-analysis: first- and second-line pharmacotherapy
+for moderate-severe ulcerative colitis. Aliment Pharmacol Ther 2018;
+47: 162–75.
+12
+Bonovas S, Lytras T, Nikolopoulos G, Peyrin-Biroulet L, Danese S.
+Systematic review with network meta-analysis: comparative","title: Efficacy of biological therapies and small molecules in moderate to severe ulcerative colitis: systematic review and network meta-analysis
+
+filename: gutjnl-2021-326390R2 CLEAN.pdf
+
+page: 5
+
+text: Burr et al.
+
+5 of 45
+STUDY HIGHLIGHTS
+
+What is already known about this subject
+• Ulcerative colitis (UC) follows a relapsing and remitting course, with intermittent
+flares of disease activity, some of which may be moderate to severe.
+• These are usually treated with corticosteroids, which have potentially serious adverse
+effects, so biological therapies and small molecules have been developed and licensed
+for this indication.","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 6
+
+text: with moderate to severely
+active ulcerative colitis. (B)
+Relative
+efﬁcacy
+of
+different interventions for
+induction of clinical remis-
+sion
+and
+endoscopic
+improvement
+in
+patients
+with moderate to severely
+active
+ulcerative
+colitis
+with prior exposure to tu-
+mor necrosis factor (TNF)⍺
+antagonists. SUCRA, sur-
+face under the cumulative
+ranking.
+September 2020
+Management of Moderate–Severe UC 2185","title:
+
+filename: otad009.pdf
+
+page: 0
+
+text: Introduction
+Ulcerative colitis (UC) is a chronic inflammatory bowel dis-
+ease that affects the colorectum and is clinically characterized
+by bloody diarrhea, urgency, tenesmus, abdominal pain, ma-
+laise, weight loss, and fever. Disease onset commonly occurs
+between the ages of 15 and 30 years and the annual global
+© The Author(s) 2023. Published by Oxford University Press on behalf of Crohn's & Colitis Foundation.","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 5
+
+text: disease duration was 6.7 years (interquartile range,
+6.0–7.8 y), and 49% (interquartile range, 46%–55%) of
+patients had extensive colitis. A median of 40% (inter-
+quartile range, 30%–50%) of patients were treated with
+concomitant immunomodulators, and 51% (interquartile
+range, 45%–57%) were on corticosteroids at baseline.
+Patients across all trials and treatment arms were com-
+parable in terms of baseline prognostic variables, inclu-
+sion/exclusion
+criteria,
+and
+co-interventions.
+All","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 1
+
+text: needed to inform clinical decision-making with
+greater conﬁdence.
+Implications for patient care
+Patients with moderate to severely active ulcerative
+colitis should receive inﬂiximab or vedolizumab as
+ﬁrst-line therapy, or ustekinumab or tofacitinib if
+they have prior exposure to TNF antagonists.
+2180 Singh et al
+Clinical Gastroenterology and Hepatology Vol. 18, No. 10","title: First- and Second-Line Pharmacotherapies for Patients With Moderate to Severely Active Ulcerative Colitis: An Updated Network Meta-Analysis
+
+filename: PIIS1542356520300446.pdf
+
+page: 11
+
+text: induction of clinical remission in moderately to severely active
+ulcerative colitis: results of a randomised controlled trial. Gut
+2011;60:780–787.
+2190 Singh et al
+Clinical Gastroenterology and Hepatology Vol. 18, No. 10"

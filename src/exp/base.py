@@ -38,9 +38,9 @@ class BaseExperiment:
         self.max_tokens = max_tokens
 
         with open(keys_json, "r") as f:
-            keys = json.load(f)
+            self.keys = json.load(f)
 
-        self.openai_key = keys["OPENAI_API_KEY"]
+        self.openai_key = self.keys["OPENAI_API_KEY"]
 
         self.ground_truth = self.load_groundtruth(gt) if gt else None
         self.chain = None

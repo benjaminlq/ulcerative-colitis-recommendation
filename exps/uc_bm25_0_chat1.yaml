@@ -1,0 +1,28 @@
+# General Settings
+project: uc
+test_case: data/queries/uc_all.txt
+prompt: uc_qa_source_chat_1.py
+ground_truth: uc_all_gt.csv
+description: Hybrid_BM25_0_Chat1_Tables_Chunk-size=1000_Overlap=200_Doc=10_Max-token=6500_Stuff
+verbose: True
+
+# Embedding Settings
+dense_emb_type: text-embedding-ada-002
+pinecone_index_name: uc-hybrid-search-bm25
+sparse_model_path: ./pretrained/bm25_values.json
+sparse_type: bm25
+alpha: 0
+chunk_size: 1000
+chunk_overlap: 200
+additional_docs: data/additional_docs.json
+max_tokens_limit: 6500
+no_returned_docs: 10
+reduce_k_below_max_tokens: True
+chain_type: stuff
+device: cpu
+
+# LLM Settings
+llm_type: gpt-4
+temperature: 0
+max_tokens: 1024
+iters: 1

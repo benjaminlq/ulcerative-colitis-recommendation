@@ -1,0 +1,42 @@
+,question,750_average_score,750_min_score,750_max_score,1000_average_score,1000_min_score,1000_max_score,1500_average_score,1500_min_score,1500_max_score,2500_average_score,2500_min_score,2500_max_score
+1,40 year old male with newly diagnosed moderate UC and articular extraintestinal manifestations,0.319,0.304,0.330,0.320,0.309,0.332,0.323,0.310,0.336,0.332,0.308,0.343
+2,70 year old female with newly diagnosed severe UC,0.326,0.303,0.338,0.329,0.301,0.344,0.336,0.317,0.349,0.345,0.331,0.355
+3,"35 year old male with known moderate UC with prior exposure to infliximab but has worsening colitis on endoscopy despite compliance
+",0.282,0.265,0.296,0.284,0.267,0.294,0.282,0.260,0.297,0.292,0.260,0.303
+4,60 year old female with newly diagnosed moderate UC with a background of congestive cardiac failure,0.350,0.331,0.365,0.360,0.338,0.370,0.362,0.345,0.375,0.372,0.352,0.381
+5,38 year old female with newly diagnosed moderate UC and psoriasis,0.344,0.328,0.352,0.345,0.331,0.357,0.347,0.332,0.357,0.346,0.320,0.357
+6,25 year old pregnant woman with severe distal ulcerative colitis,0.335,0.276,0.349,0.336,0.306,0.352,0.339,0.315,0.356,0.356,0.323,0.370
+7,56 year old man with moderate to severe ulcerative colitis and ankylosing spondylitis,0.317,0.306,0.325,0.318,0.281,0.332,0.318,0.291,0.331,0.328,0.298,0.342
+8,38 year old man with severe ulcerative colitis and has lost response to vedolizumab,0.299,0.272,0.316,0.307,0.292,0.317,0.312,0.293,0.320,0.320,0.305,0.333
+9,28 year old woman who has severe extensive ulcerative colitis and has a history of lymphoma which was treated 4 years ago,0.324,0.301,0.335,0.327,0.302,0.339,0.326,0.299,0.341,0.339,0.310,0.351
+10,36 year old woman with moderate ulcerative colitis and multiple sclerosis,0.318,0.284,0.328,0.321,0.281,0.334,0.321,0.297,0.338,0.332,0.302,0.347
+11,"39 year-old male with moderate to severe extensive ulcerative colitis who had malignant melanoma which was treated 3 years ago
+",0.310,0.301,0.321,0.312,0.292,0.326,0.314,0.294,0.327,0.329,0.306,0.346
+12,"52 year-old woman with moderate to severe distal ulcerative colitis that had a successful induction with vedolizumab. What would be the maintenance therapy?
+",0.248,0.238,0.255,0.243,0.222,0.255,0.242,0.219,0.262,0.261,0.243,0.272
+13,"24 year-old man with moderate to severe extensive ulcerative colitis previously in clinical remission with infliximab develops loss of response due to antibody formation.
+",0.275,0.246,0.294,0.280,0.257,0.290,0.283,0.255,0.291,0.286,0.273,0.303
+14,44 year-old woman with moderate to severe extensive ulcerative colitis and rheumatoid arthritis.,0.309,0.294,0.320,0.314,0.275,0.333,0.316,0.288,0.335,0.324,0.290,0.342
+15,"55 year-old man with moderate to severe extensive ulcerative colitis who avlues convenience and limited time spent in hospital
+",0.293,0.263,0.309,0.295,0.264,0.311,0.297,0.262,0.316,0.317,0.288,0.331
+16,"60 year-old woman with severe ulcerative colitis that has loss response to anti-TNF, vedolizumab and ustekinumab
+",0.249,0.212,0.261,0.246,0.234,0.259,0.258,0.234,0.264,0.265,0.248,0.281
+17,36 year-old man with moderate to severe extensive ulcerative colitis and spondylarthristis.,0.316,0.306,0.322,0.319,0.281,0.330,0.318,0.291,0.333,0.326,0.295,0.343
+18,42 year-old woman with moderate ulcerative colitis on azathioprine and not responding to therapy,0.303,0.295,0.311,0.302,0.284,0.313,0.303,0.283,0.319,0.314,0.278,0.328
+19,53 year-old man with moderate to severe extensive ulcerative colitis and low albumin levels,0.305,0.290,0.316,0.312,0.293,0.326,0.311,0.293,0.328,0.324,0.295,0.340
+20,42 year-old woman with severe ulcerative colitis and rare fistulating disease,0.308,0.261,0.318,0.310,0.280,0.325,0.313,0.286,0.332,0.330,0.299,0.343
+21,"68 year-old man with extensive moderate to severe ulcerative colitis who has prostate cancer which has been treated 5 years ago.
+",0.303,0.280,0.311,0.304,0.268,0.323,0.306,0.276,0.329,0.325,0.284,0.341
+22,"25 year-old man with extensive moderate to severe ulcerative colitis and primary sclerosing cholangitis with decompensated cirrhosis.
+",0.340,0.317,0.348,0.346,0.323,0.353,0.344,0.332,0.357,0.355,0.339,0.367
+23,"48 year-old woman with distal moderate to severe ulcerative colitis who prioritizes a rapid response to treatment.
+",0.300,0.274,0.313,0.300,0.280,0.314,0.305,0.263,0.318,0.321,0.295,0.336
+24,36 year-old woman with moderate to severe ulcerative colitis who has lost response to tofacitinib.,0.289,0.275,0.297,0.291,0.276,0.300,0.296,0.281,0.305,0.298,0.281,0.305
+25,18 year-old man with moderate to severe extensive ulcerative colitis and pyoderma gangrenosum.,0.317,0.288,0.326,0.315,0.292,0.334,0.317,0.300,0.340,0.333,0.307,0.345
+26,58 year-old woman with moderate to severe distal ulcerative colitis and optic neuritis.,0.308,0.291,0.318,0.312,0.283,0.326,0.313,0.290,0.331,0.324,0.296,0.340
+27,"55 year-old man with moderate to severe extensive ulcerative colitis and colonic polyps with high grade dysplasia found 2 years ago.
+",0.316,0.291,0.328,0.313,0.292,0.334,0.319,0.295,0.336,0.338,0.316,0.350
+28,"27 year-old woman with moderate to severe extensive ulcerative colitis who prefers medication with oral formulation.
+",0.277,0.259,0.291,0.279,0.258,0.294,0.283,0.262,0.301,0.297,0.262,0.310
+29,41 year-old man with moderate to severe distal ulcerative colitis and alocpecia areata.,0.322,0.303,0.333,0.321,0.280,0.336,0.323,0.293,0.343,0.332,0.297,0.353
+30,38 year-old woman with moderate to severe ulcerative colitis and pulmonary tuberculosis which was treated 2 years ago.,0.334,0.320,0.349,0.337,0.311,0.352,0.342,0.318,0.354,0.351,0.320,0.367
