@@ -20,7 +20,12 @@ pymupdf==1.22.5
 pypdf==3.16.2
 transformers==4.32.0
 torch==2.0.1
-llama-index==0.8.26
+llama-index==0.8.47
 pinecone-text==0.5.4
+nebula3-python==3.4.0
+ipython-ngql==0.7.5
+ghostscript==0.7
+opencv-python==4.8.1.78
+sqlalchemy==2.0.21
 git+https://github.com/naver/splade.git@3781228d5f07e7a6ae14a479e469a715de79e976
 .
