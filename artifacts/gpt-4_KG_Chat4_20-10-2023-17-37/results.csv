@@ -1,0 +1,1150 @@
+,question,gt_rec1,gt_rec2,gt_rec3,gt_avoid,gt_reason,prompt,raw_answer,answer1,answer2
+0,"40 year old male with newly diagnosed moderate UC and articular extraintestinal manifestations
+",Infliximab,Tofacitinib,,vedolizumab,IFX is ideal choice as biologically naïve with EIM.,"system: 
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+Make reference to the CONTEXT given to assess the scenario.
+If the answer cannot be inferred from CONTEXT, return ""NO ANSWER"", don't try to make up an answer.
+=================================
+TASK: ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile and context. Explain the PROS and CONS of the 2 choices.
+If answer cannot be derived from context, RETURN ""NO ANSWER"" and explain reason.
+=================================
+OUTPUT INSTRUCTIONS:
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+=================================
+CONTEXT:
+context_str
+=================================
+
+user: PATIENT PROFILE: query_str
+assistant: ","Based on the patient's profile, the top two choices of biological drugs would be Vedolizumab and Adalimumab.
+
+1. Vedolizumab:
+   - Advantages: Vedolizumab is a gut-selective immunosuppressant, which means it specifically targets the gut and has fewer systemic side effects. It has been shown to be effective for both induction and maintenance therapy in moderate to severe UC. It also has a good safety profile, ranking low for serious adverse events.
+   - Disadvantages: While Vedolizumab is effective for UC, it may not be as effective for managing extraintestinal manifestations of IBD, such as articular manifestations, due to its gut-selective action. 
+
+2. Adalimumab:
+   - Advantages: Adalimumab is a TNF-alpha inhibitor that works systemically, so it can help manage both the UC and the articular extraintestinal manifestations. It has been shown to be effective in inducing and maintaining remission in moderate to severe UC.
+   - Disadvantages: Adalimumab, being a systemic treatment, may have more potential for systemic side effects compared to gut-selective treatments. It also requires subcutaneous administration, which some patients may find inconvenient or uncomfortable.
+
+It's important to discuss these options with the patient, considering their personal preferences, lifestyle, and willingness to self-administer injections if considering Adalimumab.",Vedolizumab,Adalimumab
+1,"70 year old female with newly diagnosed severe UC
+",Ustekinumab,Vedolizumab,,Infliximab,"Given advanced age, IFX not preferred as first choice","system: 
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+Make reference to the CONTEXT given to assess the scenario.
+If the answer cannot be inferred from CONTEXT, return ""NO ANSWER"", don't try to make up an answer.
+=================================
+TASK: ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile and context. Explain the PROS and CONS of the 2 choices.
+If answer cannot be derived from context, RETURN ""NO ANSWER"" and explain reason.
+=================================
+OUTPUT INSTRUCTIONS:
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+=================================
+CONTEXT:
+context_str
+=================================
+
+user: PATIENT PROFILE: query_str
+assistant: ","Based on the given context, the patient is a new patient with severe ulcerative colitis (UC). However, the context does not provide information on the patient's prior response to Infliximab, prior failure to Anti-TNF agents, prior failure to Vedolizumab, pregnancy status, extraintestinal manifestations, or pouchitis. 
+
+Given the patient's age and severity of UC, the top two choices of biological drugs could be Vedolizumab (VDZ) and Infliximab (IFX). 
+
+1. Vedolizumab:
+   - Advantages: VDZ has been shown to be superior to Adalimumab in achieving clinical remission and endoscopic improvement in moderate to severe UC. It has a good safety profile and is a gut-selective medication, which means it specifically targets the gut and spares other systems.
+   - Disadvantages: VDZ is associated with an increased risk of new or worsening extraintestinal manifestations. It may not be feasible due to payer preference.
+
+2. Infliximab:
+   - Advantages: IFX is an effective option with a good safety profile. It is the preferred biologic for induction and maintenance of remission in patients with severe UC requiring hospitalization.
+   - Disadvantages: There is a potential for the colon to act as a “sink” for drugs, which means that drug concentrations should be checked early to ensure proper dosing and to detect immunogenicity early. 
+
+Please note that the choice of treatment should be individualized based on the patient's overall health, comorbidities, and preferences. 
+
+[{""drug_name"": ""Vedolizumab"", ""advantages"": ""Superior to Adalimumab in achieving clinical remission and endoscopic improvement in moderate to severe UC. Good safety profile. Gut-selective medication."", ""disadvantages"": ""Associated with an increased risk of new or worsening extraintestinal manifestations. May not be feasible due to payer preference.""}, {""drug_name"": ""Infliximab"", ""advantages"": ""Effective option with a good safety profile. Preferred biologic for induction and maintenance of remission in patients with severe UC requiring hospitalization."", ""disadvantages"": ""Potential for the colon to act as a “sink” for drugs, requiring early checking of drug concentrations.""}]",Vedolizumab,Infliximab
+2,"35 year old male with known moderate UC with prior exposure to infliximab but has worsening colitis on endoscopy despite compliance
+",Tofacitinib,Ustekinumab,,,Testing 2nd line treatment to patients previously exposed to anti-TNFa,"system: 
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+Make reference to the CONTEXT given to assess the scenario.
+If the answer cannot be inferred from CONTEXT, return ""NO ANSWER"", don't try to make up an answer.
+=================================
+TASK: ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile and context. Explain the PROS and CONS of the 2 choices.
+If answer cannot be derived from context, RETURN ""NO ANSWER"" and explain reason.
+=================================
+OUTPUT INSTRUCTIONS:
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+=================================
+CONTEXT:
+context_str
+=================================
+
+user: PATIENT PROFILE: query_str
+assistant: ","Based on the patient's profile, the top two choices of biological drugs would be Ustekinumab and Vedolizumab. 
+
+1. Ustekinumab:
+   - Advantages: Ustekinumab has been shown to be significantly superior to both vedolizumab and adalimumab for the induction of endoscopic improvement. It is also ranked highly for the maintenance of steroid-free remission. 
+   - Disadvantages: The main disadvantage of Ustekinumab is that it may not be as effective as other drugs in inducing clinical remission. 
+
+2. Vedolizumab:
+   - Advantages: Vedolizumab is ranked as the safest drug in terms of adverse events and serious adverse events. It is also effective in inducing endoscopic improvement.
+   - Disadvantages: Vedolizumab may not be as effective as other drugs in inducing clinical remission. It is also not as effective as Ustekinumab in maintaining steroid-free remission.
+
+These choices are based on the patient's prior exposure to Infliximab and the need for a drug that can effectively induce endoscopic improvement and maintain steroid-free remission. However, the final decision should be made in consultation with the patient, taking into account his preferences, lifestyle, and potential side effects of the drugs.",Ustekinumab,Vedolizumab
+3,"60 year old female with newly diagnosed moderate UC with a background of congestive cardiac failure
+",Ustekinumab,Vedolizumab,,Tofacitinib,Testing contraindications to first line IFX. TFC not recommended because of increased LDL-C and MACE risk,"system: 
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+Make reference to the CONTEXT given to assess the scenario.
+If the answer cannot be inferred from CONTEXT, return ""NO ANSWER"", don't try to make up an answer.
+=================================
+TASK: ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile and context. Explain the PROS and CONS of the 2 choices.
+If answer cannot be derived from context, RETURN ""NO ANSWER"" and explain reason.
+=================================
+OUTPUT INSTRUCTIONS:
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+=================================
+CONTEXT:
+context_str
+=================================
+
+user: PATIENT PROFILE: query_str
+assistant: ","Based on the patient's profile, the top two choices of biological drugs would be Vedolizumab and Ustekinumab. 
+
+1. Vedolizumab:
+   - Advantages: Vedolizumab is a gut-selective immunosuppressant, which means it specifically targets the gut and spares the rest of the body from unnecessary immunosuppression. This makes it a safer option for patients with other comorbidities like congestive cardiac failure. It has been shown to be effective in inducing and maintaining remission in moderate to severe UC.
+   - Disadvantages: Vedolizumab may take longer to show effects compared to other biologics. It also requires intravenous administration, which might not be convenient for all patients.
+
+2. Ustekinumab:
+   - Advantages: Ustekinumab has a different mechanism of action compared to other biologics, targeting interleukin-12 and -23. This can be beneficial for patients who might not respond to other treatments. It can be administered subcutaneously after the initial intravenous dose.
+   - Disadvantages: Ustekinumab might not be as effective as other biologics in some patients. It is also one of the newer drugs, so long-term safety data is not as robust as for other treatments. 
+
+It's important to note that the choice of treatment should be individualized, taking into account the patient's overall health, lifestyle, and preferences.",Vedolizumab,Ustekinumab
+4,"38 year old female with newly diagnosed moderate UC and psoriasis
+",Ustekinumab,,,,Test treatment of specific EIM and IBD,"system: 
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+Make reference to the CONTEXT given to assess the scenario.
+If the answer cannot be inferred from CONTEXT, return ""NO ANSWER"", don't try to make up an answer.
+=================================
+TASK: ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile and context. Explain the PROS and CONS of the 2 choices.
+If answer cannot be derived from context, RETURN ""NO ANSWER"" and explain reason.
+=================================
+OUTPUT INSTRUCTIONS:
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+=================================
+CONTEXT:
+context_str
+=================================
+
+user: PATIENT PROFILE: query_str
+assistant: ","Based on the patient's profile, the top two choices of biological drugs would be:
+
+1. Infliximab (IFX)
+   - Advantages: IFX is a TNF-alpha antagonist that has shown effectiveness in inducing and maintaining remission in moderate to severe UC. It is also effective in treating psoriasis, which is an extraintestinal manifestation in this patient.
+   - Disadvantages: IFX is administered intravenously, which may not be convenient for some patients. It may also cause side effects such as increased risk of infections and potential for infusion reactions.
+
+2. Ustekinumab (UST)
+   - Advantages: UST is effective in treating moderate to severe UC and is also approved for the treatment of psoriasis. It is administered subcutaneously, which may be more convenient for some patients.
+   - Disadvantages: UST may not be as effective as TNF-alpha antagonists in some patients. It may also cause side effects such as upper respiratory infections and headache.
+
+It's important to note that the choice of treatment should be individualized, taking into account the patient's preferences, lifestyle, and overall health status.",Infliximab,Ustekinumab
+5,"25 year old pregnant woman with severe distal ulcerative colitis
+",Infliximab,Vedolizumab,Ustekinumab,,Infliximab has best safety data in pregnancy (due to experience),"system: 
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+Make reference to the CONTEXT given to assess the scenario.
+If the answer cannot be inferred from CONTEXT, return ""NO ANSWER"", don't try to make up an answer.
+=================================
+TASK: ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile and context. Explain the PROS and CONS of the 2 choices.
+If answer cannot be derived from context, RETURN ""NO ANSWER"" and explain reason.
+=================================
+OUTPUT INSTRUCTIONS:
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+=================================
+CONTEXT:
+context_str
+=================================
+
+user: PATIENT PROFILE: query_str
+assistant: ","Based on the patient's profile, the top two choices of biological drugs would be Infliximab and Adalimumab. 
+
+1. Infliximab:
+   - Advantages: Infliximab is a potent anti-TNF agent that has been shown to be effective in inducing and maintaining remission in patients with moderate to severe ulcerative colitis. It is also known to be safe during pregnancy.
+   - Disadvantages: Infliximab can cause serious infections and other side effects such as infusion reactions and delayed hypersensitivity reactions. It also requires intravenous administration, which can be inconvenient for some patients.
+
+2. Adalimumab:
+   - Advantages: Adalimumab is another anti-TNF agent that is effective in treating moderate to severe ulcerative colitis. It is administered subcutaneously, which can be more convenient than intravenous administration. It is also considered safe during pregnancy.
+   - Disadvantages: Adalimumab can cause serious infections and other side effects such as injection site reactions. Some patients may also develop antibodies to adalimumab, which can reduce its effectiveness.
+
+It's important to note that the choice of treatment should be individualized based on the patient's condition, preferences, and potential risks and benefits. The patient should be closely monitored during treatment for any adverse effects and for the effectiveness of the treatment.",Infliximab,Adalimumab
+6,"56 year old man with moderate to severe ulcerative colitis and ankylosing spondylitis
+",Infliximab,Adalimumab,,,Dual indications,"system: 
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+Make reference to the CONTEXT given to assess the scenario.
+If the answer cannot be inferred from CONTEXT, return ""NO ANSWER"", don't try to make up an answer.
+=================================
+TASK: ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile and context. Explain the PROS and CONS of the 2 choices.
+If answer cannot be derived from context, RETURN ""NO ANSWER"" and explain reason.
+=================================
+OUTPUT INSTRUCTIONS:
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+=================================
+CONTEXT:
+context_str
+=================================
+
+user: PATIENT PROFILE: query_str
+assistant: ","Based on the patient's profile, the top two choices of biological drugs would be Infliximab and Vedolizumab. 
+
+1. Infliximab:
+   - Advantages: Infliximab has been shown to be effective in inducing remission in patients with moderate to severe ulcerative colitis. It is also beneficial for patients with extraintestinal manifestations such as ankylosing spondylitis, which the patient has.
+   - Disadvantages: Infliximab can cause serious side effects including infections, heart failure, liver damage, and allergic reactions. It also has the potential for primary non-response or secondary loss of response.
+
+2. Vedolizumab:
+   - Advantages: Vedolizumab is effective in treating moderate to severe ulcerative colitis and has a good safety profile with a lower risk of serious infections compared to TNF antagonists. It is also a gut-specific agent with a lesser degree of systemic immunosuppression potential.
+   - Disadvantages: Vedolizumab may not be as effective in controlling extraintestinal manifestations such as ankylosing spondylitis. It also has a slower onset of action compared to other biologics.
+
+Please note that the choice of treatment should be individualized based on the patient's specific condition, preferences, and potential for side effects. Regular follow-ups and monitoring are necessary to assess the effectiveness and tolerability of the treatment.",Infliximab,Vedolizumab
+7,"38 year old man with severe ulcerative colitis and has lost response to vedolizumab
+",Tofacitinib or ,Ustekinumab,,,Biologic failure,"system: 
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+Make reference to the CONTEXT given to assess the scenario.
+If the answer cannot be inferred from CONTEXT, return ""NO ANSWER"", don't try to make up an answer.
+=================================
+TASK: ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile and context. Explain the PROS and CONS of the 2 choices.
+If answer cannot be derived from context, RETURN ""NO ANSWER"" and explain reason.
+=================================
+OUTPUT INSTRUCTIONS:
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+=================================
+CONTEXT:
+context_str
+=================================
+
+user: PATIENT PROFILE: query_str
+assistant: ","Based on the patient's profile, the top two choices of biological drugs would be Infliximab and Ustekinumab. 
+
+1. Infliximab:
+   - Advantages: Infliximab has been shown to be highly efficacious for both induction and maintenance of remission in moderate to severe ulcerative colitis. It is particularly effective in patients who have lost response to other treatments, such as vedolizumab. 
+   - Disadvantages: Infliximab has been associated with a higher risk of serious infections compared to other biologics. It also requires intravenous administration, which may not be preferred by some patients.
+
+2. Ustekinumab:
+   - Advantages: Ustekinumab has a superior safety profile, making it an attractive option for patients who have failed other treatments. It is also effective in patients who have been exposed to TNF antagonists. 
+   - Disadvantages: The efficacy of Ustekinumab in ulcerative colitis is not as well established as Infliximab. It may also be less effective than Infliximab in inducing remission.
+
+Please note that the choice of treatment should also consider the patient's preferences, comorbid conditions, and the risk-benefit profile of each drug.
+
+[{""drug_name"": ""Infliximab"", ""advantages"": ""Highly efficacious for both induction and maintenance of remission in moderate to severe ulcerative colitis. Particularly effective in patients who have lost response to other treatments."", ""disadvantages"": ""Higher risk of serious infections compared to other biologics. Requires intravenous administration.""}, {""drug_name"": ""Ustekinumab"", ""advantages"": ""Superior safety profile. Effective in patients who have been exposed to TNF antagonists."", ""disadvantages"": ""Efficacy in ulcerative colitis is not as well established as Infliximab. May be less effective than Infliximab in inducing remission.""}]",Infliximab,Ustekinumab
+8,"28 year old woman who has severe extensive ulcerative colitis and has a history of lymphoma which was treated 4 years ago
+",Vedolizumab,Ustekinumab,,,Anti-TNFs and JAK inhs have associations/concerns with malignancies,"system: 
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+Make reference to the CONTEXT given to assess the scenario.
+If the answer cannot be inferred from CONTEXT, return ""NO ANSWER"", don't try to make up an answer.
+=================================
+TASK: ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile and context. Explain the PROS and CONS of the 2 choices.
+If answer cannot be derived from context, RETURN ""NO ANSWER"" and explain reason.
+=================================
+OUTPUT INSTRUCTIONS:
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+=================================
+CONTEXT:
+context_str
+=================================
+
+user: PATIENT PROFILE: query_str
+assistant: ","Based on the patient's profile, the top two choices of biological drugs would be Vedolizumab and Ustekinumab. 
+
+1. Vedolizumab:
+   - Advantages: Vedolizumab is a gut-selective immunosuppressant, meaning it specifically targets the gut and spares other systems. This could be beneficial for this patient who has a history of lymphoma, as it may reduce the risk of reactivating the lymphoma compared to systemic immunosuppressants.
+   - Disadvantages: The main disadvantage of Vedolizumab is that it may take longer to work compared to other treatments. It also requires intravenous administration, which may be less convenient for some patients.
+
+2. Ustekinumab:
+   - Advantages: Ustekinumab has been shown to be effective in treating moderate to severe ulcerative colitis. It is also administered subcutaneously, which may be more convenient for some patients.
+   - Disadvantages: Ustekinumab may increase the risk of infections. Given the patient's history of lymphoma, there may also be a potential risk of cancer recurrence, although this risk is thought to be low.
+
+It's important to note that the choice of treatment should be individualized based on the patient's specific circumstances, including their disease severity, comorbidities, lifestyle, and personal preferences. The patient should also be closely monitored for any potential side effects or complications of treatment.",Vedolizumab,Ustekinumab
+9,"36 year old woman with moderate ulcerative colitis and multiple sclerosis
+",Ozanimod,Etrasimod,,,Dual indications,"system: 
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+Make reference to the CONTEXT given to assess the scenario.
+If the answer cannot be inferred from CONTEXT, return ""NO ANSWER"", don't try to make up an answer.
+=================================
+TASK: ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile and context. Explain the PROS and CONS of the 2 choices.
+If answer cannot be derived from context, RETURN ""NO ANSWER"" and explain reason.
+=================================
+OUTPUT INSTRUCTIONS:
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+=================================
+CONTEXT:
+context_str
+=================================
+
+user: PATIENT PROFILE: query_str
+assistant: ","Based on the patient's profile, the top two choices of biological drugs for her moderate ulcerative colitis would be Vedolizumab and Ustekinumab. 
+
+1. Vedolizumab:
+   - Advantages: Vedolizumab is a gut-selective immunosuppressant, meaning it specifically targets the gut and has less systemic side effects. This could be beneficial for a patient with multiple sclerosis, as it reduces the risk of exacerbating her neurological condition. 
+   - Disadvantages: The efficacy of Vedolizumab in inducing clinical remission and endoscopic improvement is lower compared to some other agents like Infliximab. 
+
+2. Ustekinumab:
+   - Advantages: Ustekinumab is approved for the treatment of moderate to severe ulcerative colitis. It is also used in the treatment of multiple sclerosis, which could potentially provide dual benefits for this patient. 
+   - Disadvantages: The efficacy of Ustekinumab in inducing clinical remission and endoscopic improvement in ulcerative colitis is not as high as some other agents. 
+
+It's important to note that the choice of treatment should be individualized based on the patient's overall health status, preferences, and potential side effects. The patient should also be closely monitored for any adverse effects or signs of disease progression.",Vedolizumab,Ustekinumab
+10,"39 year-old male with moderate to severe extensive ulcerative colitis who had malignant melanoma which was treated 3 years ago
+",Vedolizumab,Ustekinumab,,,Anti-TNFs and JAK inhs have associations/concerns with malignancies,"system: 
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+Make reference to the CONTEXT given to assess the scenario.
+If the answer cannot be inferred from CONTEXT, return ""NO ANSWER"", don't try to make up an answer.
+=================================
+TASK: ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile and context. Explain the PROS and CONS of the 2 choices.
+If answer cannot be derived from context, RETURN ""NO ANSWER"" and explain reason.
+=================================
+OUTPUT INSTRUCTIONS:
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+=================================
+CONTEXT:
+context_str
+=================================
+
+user: PATIENT PROFILE: query_str
+assistant: ","Based on the patient's profile, the patient is not new and has a history of malignant melanoma. However, the context does not provide information on the patient's prior response to Infliximab, prior failure to Anti-TNF agents, prior failure to Vedolizumab, pregnancy status, extraintestinal manifestations, or pouchitis. 
+
+Given the patient's history of malignant melanoma, it is important to consider the potential risks associated with biological drugs, as some may increase the risk of certain types of cancer. 
+
+However, without more specific information from the context, it is not possible to provide the top 2 choices of biological drugs for this patient. Therefore, the answer is ""NO ANSWER"".",,
+11,"52 year-old woman with moderate to severe distal ulcerative colitis that had a successful induction with vedolizumab. What would be the maintenance therapy?
+",Vedolizumab,Any other biologic but not ideal,,,Some maintenance biologic as induction biologic,"system: 
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+Make reference to the CONTEXT given to assess the scenario.
+If the answer cannot be inferred from CONTEXT, return ""NO ANSWER"", don't try to make up an answer.
+=================================
+TASK: ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile and context. Explain the PROS and CONS of the 2 choices.
+If answer cannot be derived from context, RETURN ""NO ANSWER"" and explain reason.
+=================================
+OUTPUT INSTRUCTIONS:
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+=================================
+CONTEXT:
+context_str
+=================================
+
+user: PATIENT PROFILE: query_str
+assistant: ","Based on the given context, the patient has already had a successful induction with vedolizumab. Therefore, the maintenance therapy would likely continue with vedolizumab. 
+
+Here are the top two choices of biological drugs for this patient:
+
+1. Vedolizumab
+   - Advantages: As the patient has already responded well to vedolizumab during the induction phase, it is likely that she will continue to respond well during the maintenance phase. Vedolizumab is a gut-specific agent with a lesser degree of systemic immunosuppression potential, which may reduce the risk of serious infections.
+   - Disadvantages: The efficacy of vedolizumab in achieving disease control is lower compared to TNF antagonists. This might require close monitoring of the patient's condition during the maintenance phase.
+
+2. Infliximab
+   - Advantages: Infliximab is one of the most efficacious therapies for induction of remission in patients who are biologic-naive. If the patient's condition worsens, infliximab could be a potential alternative.
+   - Disadvantages: Infliximab is associated with a higher risk of serious infections compared to vedolizumab. It also requires intravenous administration, which might not be as convenient as the subcutaneous administration of other drugs.
+
+Please note that the choice of maintenance therapy should be personalized based on the patient's response to induction therapy, her preferences, and potential side effects of the drugs. Regular follow-ups and monitoring are essential to assess the effectiveness and adjust the treatment plan as necessary.",Vedolizumab,Infliximab
+12,"24 year-old man with moderate to severe extensive ulcerative colitis previously in clinical remission with infliximab develops loss of response due to antibody formation.
+",Adalimumab,Other anti-TNF,,,Immunogenic failure. Can consider changing to another anti-TNF class,"system: 
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+Make reference to the CONTEXT given to assess the scenario.
+If the answer cannot be inferred from CONTEXT, return ""NO ANSWER"", don't try to make up an answer.
+=================================
+TASK: ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile and context. Explain the PROS and CONS of the 2 choices.
+If answer cannot be derived from context, RETURN ""NO ANSWER"" and explain reason.
+=================================
+OUTPUT INSTRUCTIONS:
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+=================================
+CONTEXT:
+context_str
+=================================
+
+user: PATIENT PROFILE: query_str
+assistant: ","Based on the patient's profile, the patient has moderate to severe ulcerative colitis and has developed a loss of response to Infliximab due to antibody formation. This suggests that the patient has had prior exposure to Anti-TNF agents and has failed to respond to Infliximab.
+
+Given this context, the top two choices of biological drugs for this patient would be Ustekinumab and Vedolizumab.
+
+1. Ustekinumab:
+   - Advantages: Ustekinumab has been ranked highest in patients with prior exposure to TNF antagonists for induction of remission and endoscopic improvement. It has a different mechanism of action, targeting interleukin (IL) p40 subunit common to IL12/23, which might be beneficial for patients who have developed antibodies to Anti-TNF agents.
+   - Disadvantages: The long-term safety profile of Ustekinumab is not as well established as that of Anti-TNF agents. There may also be a higher cost associated with this drug compared to others.
+
+2. Vedolizumab:
+   - Advantages: Vedolizumab is another option for patients who have had prior exposure to TNF antagonists. It works by blocking the interaction of the surface homing molecules of activated immune cells with the endothelium to reduce diapedesis. It has a good safety profile and is generally well tolerated.
+   - Disadvantages: The response to Vedolizumab is lower among TNFi exposed patients. It may also take longer to see a response with Vedolizumab compared to other treatments.
+
+Please note that the choice of treatment should be individualized based on the patient's specific circumstances, preferences, and potential side effects of the drugs. It is also important to consider the cost and availability of these drugs. 
+
+[{""drug_name"": ""Ustekinumab"", ""advantages"": ""Ranked highest in patients with prior exposure to TNF antagonists for induction of remission and endoscopic improvement. Different mechanism of action might be beneficial for patients who have developed antibodies to Anti-TNF agents."", ""disadvantages"": ""Long-term safety profile is not as well established as that of Anti-TNF agents. Higher cost compared to other drugs.""}, {""drug_name"": ""Vedolizumab"", ""advantages"": ""Another option for patients who have had prior exposure to TNF antagonists. Good safety profile and generally well tolerated."", ""disadv",Ustekinumab,Vedolizumab
+13,"44 year-old woman with moderate to severe extensive ulcerative colitis and rheumatoid arthritis.
+",Infliximab,Adalimumab,Tofacitinib ,,Dual use,"system: 
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+Make reference to the CONTEXT given to assess the scenario.
+If the answer cannot be inferred from CONTEXT, return ""NO ANSWER"", don't try to make up an answer.
+=================================
+TASK: ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile and context. Explain the PROS and CONS of the 2 choices.
+If answer cannot be derived from context, RETURN ""NO ANSWER"" and explain reason.
+=================================
+OUTPUT INSTRUCTIONS:
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+=================================
+CONTEXT:
+context_str
+=================================
+
+user: PATIENT PROFILE: query_str
+assistant: ","Based on the patient's profile, the top two choices of biological drugs would be Infliximab and Ustekinumab.
+
+1. Infliximab:
+   - Advantages: Infliximab was the first drug developed for UC that targets the pro-inflammatory cytokine tumour necrosis factor- α (TNF -α), demonstrating efficacy in clinical trials in moderate to severe UC. It is also effective in treating extraintestinal manifestations, including rheumatological manifestations, which is relevant for this patient with rheumatoid arthritis.
+   - Disadvantages: Infliximab is administered either intravenously or subcutaneously, which may be inconvenient for some patients. There may also be risks associated with its use, including potentially serious adverse effects. Some patients may develop antibodies against Infliximab, reducing its effectiveness.
+
+2. Ustekinumab:
+   - Advantages: Ustekinumab has been tested and shown efficacy in the treatment of UC. It is also indicated in rheumatoid arthritis, making it a suitable choice for this patient. It acts against other pro-inflammatory cytokines implicated in the pathogenesis of UC.
+   - Disadvantages: The exact efficacy range of Ustekinumab varies, and it may not work in all patients. As with Infliximab, Ustekinumab is administered either intravenously or subcutaneously, which may be inconvenient for some patients. 
+
+Please note that the choice of treatment should be individualized, considering the patient's specific condition, preferences, and potential risks. Regular follow-ups and monitoring are necessary to assess the effectiveness and potential side effects of the treatment. 
+
+[{""drug_name"": ""Infliximab"", ""advantages"": ""Effective in treating moderate to severe UC and rheumatological manifestations in UC patients."", ""disadvantages"": ""Potential serious adverse effects, inconvenience of administration, and risk of developing antibodies reducing its effectiveness.""}, {""drug_name"": ""Ustekinumab"", ""advantages"": ""Effective in treating UC and indicated in rheumatoid arthritis."", ""disadvantages"": ""Variable efficacy, potential inconvenience of administration.""}]",Infliximab,Ustekinumab
+14,"55 year-old man with moderate to severe extensive ulcerative colitis who avlues convenience and limited time spent in hospital
+",Ustekinumab,Adalimumab,Tofacitinib ,,Subcutaneous and oral options,"system: 
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+Make reference to the CONTEXT given to assess the scenario.
+If the answer cannot be inferred from CONTEXT, return ""NO ANSWER"", don't try to make up an answer.
+=================================
+TASK: ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile and context. Explain the PROS and CONS of the 2 choices.
+If answer cannot be derived from context, RETURN ""NO ANSWER"" and explain reason.
+=================================
+OUTPUT INSTRUCTIONS:
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+=================================
+CONTEXT:
+context_str
+=================================
+
+user: PATIENT PROFILE: query_str
+assistant: ","Based on the patient's profile, the top two choices of biological drugs would be Infliximab and Vedolizumab.
+
+1. Infliximab:
+   - Advantages: Infliximab has been shown to be effective in treating moderate to severe ulcerative colitis. It targets the pro-inflammatory cytokine tumour necrosis factor- α (TNF -α), which is involved in the inflammation process in ulcerative colitis. It has been ranked highest for induction of remission and endoscopic improvement in biologic-naive patients.
+   - Disadvantages: Infliximab is administered intravenously, which may not be convenient for a patient who values limited time spent in the hospital. There may also be risks associated with its use, including the potential for serious infections.
+
+2. Vedolizumab:
+   - Advantages: Vedolizumab is another effective treatment for moderate to severe ulcerative colitis. It targets α or β integrins, which are involved in the migration of immune cells to inflamed intestinal mucosa. It has been recommended as a first-line therapy for patients with moderate to severely active ulcerative colitis.
+   - Disadvantages: Like Infliximab, Vedolizumab is also administered intravenously, which may not be convenient for the patient. There may also be risks associated with its use, including the potential for serious infections.
+
+It's important to note that the choice of treatment should be individualized based on the patient's specific needs and preferences, and the potential risks and benefits of each treatment option should be thoroughly discussed with the patient.",Infliximab,Vedolizumab
+15,"60 year-old woman with severe ulcerative colitis that has loss response to anti-TNF, vedolizumab and ustekinumab
+",Upadacitinib,Tofacitinib,Dual biologics,,Last line agents. Dual biologics use is possible.,"system: 
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+Make reference to the CONTEXT given to assess the scenario.
+If the answer cannot be inferred from CONTEXT, return ""NO ANSWER"", don't try to make up an answer.
+=================================
+TASK: ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile and context. Explain the PROS and CONS of the 2 choices.
+If answer cannot be derived from context, RETURN ""NO ANSWER"" and explain reason.
+=================================
+OUTPUT INSTRUCTIONS:
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+=================================
+CONTEXT:
+context_str
+=================================
+
+user: PATIENT PROFILE: query_str
+assistant: ","Based on the patient's profile, the patient has severe ulcerative colitis and has had prior failure to Anti-TNF agents, Vedolizumab, and Ustekinumab. The patient's age is also a factor to consider in the treatment plan. 
+
+Given the patient's history of non-response to multiple biologic therapies, the options are limited. However, considering the available data, the top two choices could be:
+
+1. Tofacitinib
+Advantages: Tofacitinib is a small molecule inhibitor of Janus kinases, which are involved in the inflammatory process of ulcerative colitis. It has shown efficacy in inducing and maintaining remission in moderate to severe ulcerative colitis. It can be taken orally, which may be more convenient for some patients.
+Disadvantages: Tofacitinib has been associated with an increased risk of herpes zoster infection. It may also increase the risk of cardiovascular events and malignancies, particularly in older patients and those with additional risk factors.
+
+2. Filgotinib
+Advantages: Filgotinib is a selective inhibitor of Janus kinase 1 (JAK1), which plays a role in the inflammatory process of ulcerative colitis. It has shown efficacy in clinical trials for moderate to severe ulcerative colitis.
+Disadvantages: As a newer drug, long-term safety data for Filgotinib is not as robust as for some other treatments. It may also have potential side effects similar to other JAK inhibitors, including increased risk of infections and potential impact on lipid levels and cardiovascular health.
+
+Please note that these choices are based on the limited context provided and the actual choice of treatment should be individualized based on a comprehensive evaluation of the patient's overall health status, comorbidities, and preferences. 
+
+[{""drug_name"": ""Tofacitinib"", ""advantages"": ""Tofacitinib has shown efficacy in inducing and maintaining remission in moderate to severe ulcerative colitis. It can be taken orally."", ""disadvantages"": ""Tofacitinib has been associated with an increased risk of herpes zoster infection. It may also increase the risk of cardiovascular events and malignancies, particularly in older patients and those with additional risk factors.""}, {""drug_name"": ""Filgotinib"", ""advantages"": ""Filgotinib is a selective inhibitor of Janus kinase 1 (JAK1), which plays a role in the inflammatory process of ulcerative colitis.",Tofacitinib,Filgotinib
+16,"36 year-old man with moderate to severe extensive ulcerative colitis and spondylarthristis.
+",Infliximab,Tofacitinib,,,Dual indications,"system: 
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+Make reference to the CONTEXT given to assess the scenario.
+If the answer cannot be inferred from CONTEXT, return ""NO ANSWER"", don't try to make up an answer.
+=================================
+TASK: ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile and context. Explain the PROS and CONS of the 2 choices.
+If answer cannot be derived from context, RETURN ""NO ANSWER"" and explain reason.
+=================================
+OUTPUT INSTRUCTIONS:
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+=================================
+CONTEXT:
+context_str
+=================================
+
+user: PATIENT PROFILE: query_str
+assistant: ","Based on the patient's profile, the top two choices of biological drugs would be Infliximab and Adalimumab. 
+
+1. Infliximab:
+   - Advantages: Infliximab has been shown to be effective in treating moderate to severe ulcerative colitis. It targets the pro-inflammatory cytokine tumour necrosis factor- α (TNF -α), which is involved in the inflammation process in UC. It has also been shown to be effective in treating spondylarthristis, which the patient also has.
+   - Disadvantages: Infliximab may not work in all patients and there may be risks associated with its use, such as serious infections. It is also administered either intravenously, which may be inconvenient for some patients.
+
+2. Adalimumab:
+   - Advantages: Adalimumab is another drug that targets TNF-α and has been tested for use in moderate to severe UC. It is also effective in treating spondylarthristis. Unlike infliximab, adalimumab is administered subcutaneously, which some patients may find more convenient.
+   - Disadvantages: As with infliximab, adalimumab may not work in all patients and there may be risks associated with its use. Some patients may also find the subcutaneous administration inconvenient.",Infliximab,Adalimumab
+17,"42 year-old woman with moderate ulcerative colitis on azathioprine and not responding to therapy
+",Anti-TNF,,,,Combination therapy,"system: 
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+Make reference to the CONTEXT given to assess the scenario.
+If the answer cannot be inferred from CONTEXT, return ""NO ANSWER"", don't try to make up an answer.
+=================================
+TASK: ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile and context. Explain the PROS and CONS of the 2 choices.
+If answer cannot be derived from context, RETURN ""NO ANSWER"" and explain reason.
+=================================
+OUTPUT INSTRUCTIONS:
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+=================================
+CONTEXT:
+context_str
+=================================
+
+user: PATIENT PROFILE: query_str
+assistant: ","Based on the patient's profile, she has moderate ulcerative colitis and is not responding to azathioprine therapy. However, the context does not provide information on her prior response to Infliximab, prior failure to Anti-TNF agents, prior failure to Vedolizumab, pregnancy status, extraintestinal manifestations, or pouchitis. 
+
+Given the lack of specific information, I would suggest considering the following two biological drugs:
+
+1. Infliximab
+Advantages: Infliximab is a TNF-alpha inhibitor that has been shown to be effective in inducing and maintaining remission in moderate to severe ulcerative colitis. It can be used in patients who have not responded to conventional therapy.
+Disadvantages: Infliximab can cause serious infections and has been associated with a slight increase in the risk of lymphoma. It requires intravenous administration, which can be inconvenient for some patients.
+
+2. Vedolizumab
+Advantages: Vedolizumab is a gut-selective integrin blocker that has been shown to be effective in inducing and maintaining remission in moderate to severe ulcerative colitis. It may be a good option for patients who have not responded to or cannot tolerate TNF-alpha inhibitors.
+Disadvantages: Vedolizumab can cause serious infections. It also requires intravenous administration, which can be inconvenient for some patients.
+
+Please note that the choice of therapy should be individualized based on the patient's specific characteristics and preferences. It is also important to monitor the patient's response to therapy and adjust the treatment plan as needed.",Infliximab,Vedolizumab
+18,"53 year-old man with moderate to severe extensive ulcerative colitis and low albumin levels
+",Tofacitinib,Vedolizumab,Ustekinumab,,Low serum albumin associated with poorer resonse to anti-TNFs (especially Infliximab),"system: 
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+Make reference to the CONTEXT given to assess the scenario.
+If the answer cannot be inferred from CONTEXT, return ""NO ANSWER"", don't try to make up an answer.
+=================================
+TASK: ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile and context. Explain the PROS and CONS of the 2 choices.
+If answer cannot be derived from context, RETURN ""NO ANSWER"" and explain reason.
+=================================
+OUTPUT INSTRUCTIONS:
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+=================================
+CONTEXT:
+context_str
+=================================
+
+user: PATIENT PROFILE: query_str
+assistant: ","Based on the given patient profile, the patient is an older individual with moderate to severe ulcerative colitis. However, the context does not provide information on whether the patient is new or under maintenance, their prior response to Infliximab, prior failure to Anti-TNF agents or Vedolizumab, pregnancy status, extraintestinal manifestations, or pouchitis. 
+
+Given the lack of specific information, it's challenging to provide the top 2 choices of biological drugs for this patient. However, considering the patient's age and severity of the disease, Infliximab and Vedolizumab could be potential options. 
+
+Infliximab has shown efficacy in clinical trials in moderate to severe UC and targets the pro-inflammatory cytokine tumour necrosis factor- α (TNF -α). However, it may not work in all patients and there may be risks associated with its use. It is also administered either intravenously or subcutaneously, which may be inconvenient for some patients.
+
+Vedolizumab is a newer biological therapy that targets α or β integrins, which are involved in the migration of immune cells to inflamed intestinal mucosa. It has shown efficacy in inducing clinical remission and endoscopic improvement in patients with moderate to severe UC. However, like Infliximab, it may not work in all patients and there may be risks associated with its use.
+
+Please note that the choice of treatment should be individualized based on the patient's specific condition, preferences, and potential risks and benefits.
+
+[{""drug_name"": ""Infliximab"", ""advantages"": ""Proven efficacy in clinical trials for moderate to severe UC, targets pro-inflammatory cytokine TNF-α"", ""disadvantages"": ""May not work in all patients, potential risks associated with use, administration may be inconvenient""}, {""drug_name"": ""Vedolizumab"", ""advantages"": ""Targets α or β integrins, shown efficacy in inducing clinical remission and endoscopic improvement"", ""disadvantages"": ""May not work in all patients, potential risks associated with use""}]",Infliximab,Vedolizumab
+19,"42 year-old woman with severe ulcerative colitis and rare fistulating disease
+",Infliximab,Adalimumab,,,No real data on ulcerative colitis - related fistula,"system: 
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+Make reference to the CONTEXT given to assess the scenario.
+If the answer cannot be inferred from CONTEXT, return ""NO ANSWER"", don't try to make up an answer.
+=================================
+TASK: ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile and context. Explain the PROS and CONS of the 2 choices.
+If answer cannot be derived from context, RETURN ""NO ANSWER"" and explain reason.
+=================================
+OUTPUT INSTRUCTIONS:
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+=================================
+CONTEXT:
+context_str
+=================================
+
+user: PATIENT PROFILE: query_str
+assistant: ","[
+{
+""drug_name"": ""Infliximab"",
+""advantages"": ""Infliximab has been shown to be highly effective in inducing clinical remission and endoscopic improvement in patients with moderate to severe ulcerative colitis. It is also beneficial for patients with fistulating disease, which is a rare complication of ulcerative colitis."",
+""disadvantages"": ""Infliximab is associated with a risk of immunogenicity, which can lead to the development of anti-drug antibodies and reduce the drug's effectiveness. It may also increase the risk of infections and other serious side effects.""
+},
+{
+""drug_name"": ""Adalimumab"",
+""advantages"": ""Adalimumab is another option for the treatment of moderate to severe ulcerative colitis. It has been shown to be effective in inducing clinical remission and endoscopic improvement."",
+""disadvantages"": ""Like infliximab, adalimumab is associated with a risk of immunogenicity and may increase the risk of infections and other serious side effects. It may not be as effective as infliximab in treating fistulating disease.""
+}
+]",Infliximab,Adalimumab
+20,"68 year-old man with extensive moderate to severe ulcerative colitis who has prostate cancer which has been treated 5 years ago.
+",Vedolizumab,Ustekinumab,,,Anti-TNFs and JAK inhs have associations/concerns with malignancies,"system: 
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+Make reference to the CONTEXT given to assess the scenario.
+If the answer cannot be inferred from CONTEXT, return ""NO ANSWER"", don't try to make up an answer.
+=================================
+TASK: ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile and context. Explain the PROS and CONS of the 2 choices.
+If answer cannot be derived from context, RETURN ""NO ANSWER"" and explain reason.
+=================================
+OUTPUT INSTRUCTIONS:
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+=================================
+CONTEXT:
+context_str
+=================================
+
+user: PATIENT PROFILE: query_str
+assistant: ","Based on the patient's profile, the patient is an older adult with moderate to severe ulcerative colitis and a history of prostate cancer. However, the context does not provide information on whether the patient is new or under maintenance, his prior response to Infliximab, prior failure to Anti-TNF agents or Vedolizumab, pregnancy status, extraintestinal manifestations, or pouchitis. 
+
+Given the patient's age and history of cancer, careful consideration should be given to the choice of biological drugs due to potential side effects and interactions. However, without more specific information from the context, it is not possible to provide the top 2 choices of biological drugs for this patient. 
+
+Therefore, the answer is ""NO ANSWER"" due to insufficient information from the context to make a recommendation.",,
+21,"25 year-old man with extensive moderate to severe ulcerative colitis and primary sclerosing cholangitis with decompensated cirrhosis.
+",Vedolizumab,Ustekinumab,,,Low/No evidence here,"system: 
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+Make reference to the CONTEXT given to assess the scenario.
+If the answer cannot be inferred from CONTEXT, return ""NO ANSWER"", don't try to make up an answer.
+=================================
+TASK: ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile and context. Explain the PROS and CONS of the 2 choices.
+If answer cannot be derived from context, RETURN ""NO ANSWER"" and explain reason.
+=================================
+OUTPUT INSTRUCTIONS:
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+=================================
+CONTEXT:
+context_str
+=================================
+
+user: PATIENT PROFILE: query_str
+assistant: ","Based on the patient's profile, the top two choices of biological drugs would be Vedolizumab and Infliximab. 
+
+1. Vedolizumab:
+   - Advantages: Vedolizumab is a gut-specific agent with a lesser degree of systemic immunosuppression potential, which could be beneficial for a patient with decompensated cirrhosis. It has been shown to be effective in inducing clinical remission in patients with moderate-to-severe ulcerative colitis. It also has a lower risk of serious infections compared to TNF antagonists.
+   - Disadvantages: Vedolizumab may not be the most appropriate biologic in the presence of extraintestinal manifestations such as primary sclerosing cholangitis. It may also have a slower onset of action compared to other biologics.
+
+2. Infliximab:
+   - Advantages: Infliximab has been shown to be effective in the treatment of moderate-to-severe ulcerative colitis. It has been associated with increasing rates of mucosal healing, deep remission, and corticosteroid-free remission, and improving quality of life.
+   - Disadvantages: Infliximab is a TNF antagonist and may carry a higher risk of serious infections compared to Vedolizumab. It may also have potential for immunogenicity, leading to primary non-response or secondary loss of response. 
+
+Please note that the choice of therapy should be individualized based on the patient's specific clinical circumstances, and the potential benefits and risks of each treatment option should be discussed with the patient.",Vedolizumab,Infliximab
+22,"48 year-old woman with distal moderate to severe ulcerative colitis who prioritizes a rapid response to treatment.
+",Infliximab,Tofacitinib,,,Infliximab and Tofacitinib have the quickest response,"system: 
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+Make reference to the CONTEXT given to assess the scenario.
+If the answer cannot be inferred from CONTEXT, return ""NO ANSWER"", don't try to make up an answer.
+=================================
+TASK: ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile and context. Explain the PROS and CONS of the 2 choices.
+If answer cannot be derived from context, RETURN ""NO ANSWER"" and explain reason.
+=================================
+OUTPUT INSTRUCTIONS:
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+=================================
+CONTEXT:
+context_str
+=================================
+
+user: PATIENT PROFILE: query_str
+assistant: ","Based on the patient's profile and the provided context, the top two choices of biological drugs for a 48-year-old woman with distal moderate to severe ulcerative colitis who prioritizes a rapid response to treatment would be Infliximab and Upadacitinib.
+
+1. Infliximab:
+- Advantages: Infliximab has been shown to be superior to other therapies for moderate ulcerative colitis (SUCRA 0.93). It is particularly effective in the management of early moderate to severe ulcerative colitis and remains the first choice in cases of severe disease or when high-risk features are present. Infliximab is also associated with a rapid response to treatment, which aligns with the patient's priority.
+- Disadvantages: Infliximab, like other TNF inhibitors, can have side effects including risk of serious infections, lymphoma, and other malignancies. Patients may also develop antibodies to Infliximab, which can reduce its effectiveness over time.
+
+2. Upadacitinib:
+- Advantages: Upadacitinib has been shown to be significantly superior to all other interventions for the induction of clinical remission in patients with moderate-to-severe ulcerative colitis. It ranked highest for the induction of clinical remission (SUCRA 0.996), indicating its high efficacy.
+- Disadvantages: Upadacitinib was the worst performing agent in terms of adverse events in patients with moderate-to-severe ulcerative colitis. The safety profile of Upadacitinib needs to be considered, as it was associated with a higher rate of adverse events compared to other treatments.
+
+Please note that the choice of treatment should be individualized based on the patient's specific condition, preferences, and potential risks and benefits of the therapy. Regular follow-ups and monitoring are necessary to assess the effectiveness and tolerability of the treatment.
+
+[{""drug_name"": ""Infliximab"", ""advantages"": ""Effective in the management of early moderate to severe ulcerative colitis, rapid response to treatment"", ""disadvantages"": ""Risk of serious infections, lymphoma, and other malignancies, potential development of antibodies reducing its effectiveness over time""}, {""drug_name"": ""Upadacitinib"", ""advantages"": ""High efficacy in inducing clinical remission in moderate-to-severe ulcerative colitis"", ""disadvantages"": ""Higher rate of adverse events compared to other treatments""}]",Infliximab,Upadacitinib
+23,"36 year-old woman with moderate to severe ulcerative colitis who has lost response to tofacitinib.
+",Infliximab,Ustekinumab,,,VDZ doesnt do well as 2nd line,"system: 
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+Make reference to the CONTEXT given to assess the scenario.
+If the answer cannot be inferred from CONTEXT, return ""NO ANSWER"", don't try to make up an answer.
+=================================
+TASK: ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile and context. Explain the PROS and CONS of the 2 choices.
+If answer cannot be derived from context, RETURN ""NO ANSWER"" and explain reason.
+=================================
+OUTPUT INSTRUCTIONS:
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+=================================
+CONTEXT:
+context_str
+=================================
+
+user: PATIENT PROFILE: query_str
+assistant: ","Based on the given patient profile and context, the top two choices of biological drugs would be Ustekinumab and Infliximab.
+
+1. Ustekinumab:
+   - Advantages: Ustekinumab has been shown to be effective in inducing clinical remission in patients with prior exposure to TNF antagonists. It is also associated with a lower risk of serious adverse events and infections, which may be a consideration for patients concerned about safety.
+   - Disadvantages: The efficacy of Ustekinumab may be lower compared to other biological therapies such as Infliximab. Additionally, the cost of Ustekinumab may be higher compared to other options.
+
+2. Infliximab:
+   - Advantages: Infliximab has been shown to be highly effective in inducing clinical remission in biologic-naïve patients with moderate to severe ulcerative colitis. It is also ranked highest for inducing clinical remission in biologic-naïve patients.
+   - Disadvantages: Infliximab may not be as effective in patients who have had prior exposure to TNF antagonists. Additionally, it may have a higher risk of adverse events compared to other biological therapies such as Ustekinumab.
+
+It's important to note that the choice of treatment should be individualized based on the patient's specific circumstances, including their disease severity, prior treatment history, and personal preferences.",Ustekinumab,Infliximab
+24,"18 year-old man with moderate to severe extensive ulcerative colitis and pyoderma gangrenosum.
+",Infliximab,Adalimumab,,,Dual indications,"system: 
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+Make reference to the CONTEXT given to assess the scenario.
+If the answer cannot be inferred from CONTEXT, return ""NO ANSWER"", don't try to make up an answer.
+=================================
+TASK: ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile and context. Explain the PROS and CONS of the 2 choices.
+If answer cannot be derived from context, RETURN ""NO ANSWER"" and explain reason.
+=================================
+OUTPUT INSTRUCTIONS:
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+=================================
+CONTEXT:
+context_str
+=================================
+
+user: PATIENT PROFILE: query_str
+assistant: ","Based on the patient's profile, the top two choices of biological drugs would be Infliximab and Adalimumab. 
+
+1. Infliximab:
+   - Advantages: Infliximab has been shown to be effective in inducing and maintaining remission in moderate to severe ulcerative colitis. It is also beneficial for patients with extraintestinal manifestations like pyoderma gangrenosum. 
+   - Disadvantages: Infliximab can lead to the development of antibodies against the drug, reducing its effectiveness over time. It is also associated with a risk of serious infections and other side effects like headache, nausea, and abdominal pain.
+
+2. Adalimumab:
+   - Advantages: Adalimumab is also effective in treating moderate to severe ulcerative colitis and has been shown to be beneficial in treating extraintestinal manifestations. It can be self-administered, providing convenience for the patient.
+   - Disadvantages: Similar to Infliximab, patients can develop antibodies against Adalimumab, reducing its effectiveness. It also carries a risk of serious infections and other side effects like rash, nausea, and headache.
+
+It's important to note that the choice of treatment should be individualized, taking into account the patient's specific condition, preferences, and potential risks.",Infliximab,Adalimumab
+25,"58 year-old woman with moderate to severe distal ulcerative colitis and optic neuritis.
+",Vedolizumab,Ustekinumab,,,Anti-TNFs are contraindicated,"system: 
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+Make reference to the CONTEXT given to assess the scenario.
+If the answer cannot be inferred from CONTEXT, return ""NO ANSWER"", don't try to make up an answer.
+=================================
+TASK: ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile and context. Explain the PROS and CONS of the 2 choices.
+If answer cannot be derived from context, RETURN ""NO ANSWER"" and explain reason.
+=================================
+OUTPUT INSTRUCTIONS:
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+=================================
+CONTEXT:
+context_str
+=================================
+
+user: PATIENT PROFILE: query_str
+assistant: ","Based on the patient's profile, the top two choices of biological drugs would be Vedolizumab and Ustekinumab.
+
+1. Vedolizumab:
+   - Advantages: Vedolizumab is a gut-selective immunosuppressant, meaning it specifically targets the gut and has less systemic side effects. It has been shown to be effective in inducing and maintaining remission in moderate to severe ulcerative colitis.
+   - Disadvantages: Vedolizumab is administered intravenously, which may be inconvenient for some patients. It may also take longer to see the effects of this medication compared to other treatments.
+
+2. Ustekinumab:
+   - Advantages: Ustekinumab is effective in treating moderate to severe ulcerative colitis and can be administered subcutaneously. It also has a different mechanism of action compared to TNF-alpha inhibitors, which may be beneficial if the patient has previously failed or had adverse reactions to these medications.
+   - Disadvantages: Ustekinumab may increase the risk of infections, including serious infections. It may also not be as effective as other treatments in inducing remission.
+
+It's important to note that the patient's optic neuritis should be taken into consideration when choosing a treatment, as some medications may exacerbate this condition. Both Vedolizumab and Ustekinumab have been associated with cases of new or worsening neurological conditions, although these are rare. The patient should be closely monitored for any changes in her vision or other neurological symptoms.",Vedolizumab,Ustekinumab
+26,"55 year-old man with moderate to severe extensive ulcerative colitis and colonic polyps with high grade dysplasia found 2 years ago.
+",Vedolizumab,Ustekinumab,,,?? No idea,"system: 
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+Make reference to the CONTEXT given to assess the scenario.
+If the answer cannot be inferred from CONTEXT, return ""NO ANSWER"", don't try to make up an answer.
+=================================
+TASK: ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile and context. Explain the PROS and CONS of the 2 choices.
+If answer cannot be derived from context, RETURN ""NO ANSWER"" and explain reason.
+=================================
+OUTPUT INSTRUCTIONS:
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+=================================
+CONTEXT:
+context_str
+=================================
+
+user: PATIENT PROFILE: query_str
+assistant: ","Based on the patient's profile, the top two choices of biological drugs would be Infliximab and Vedolizumab.
+
+1. Infliximab:
+   - Advantages: Infliximab is a TNF-α inhibitor that has demonstrated efficacy in clinical trials for moderate to severe UC. It is often recommended as a first-line therapy for patients with moderate to severely active ulcerative colitis. It can help reduce inflammation and achieve remission.
+   - Disadvantages: Infliximab may not work in all patients and there may be risks associated with its use, such as serious infections. It is administered either intravenously, which may be inconvenient for some patients. There is also a risk of developing anti-drug antibodies to Infliximab, which can reduce its effectiveness.
+
+2. Vedolizumab:
+   - Advantages: Vedolizumab is a biological therapy that targets α or β integrins, which are involved in the migration of immune cells to inflamed intestinal mucosa. It has been tested and shown to be effective in treating moderate to severe UC. It is also a good option for patients who have had prior exposure to TNF antagonists.
+   - Disadvantages: As with Infliximab, Vedolizumab is administered intravenously, which may be inconvenient for some patients. There may also be risks associated with its use, such as serious infections. 
+
+It is important to note that the choice of treatment should be individualized based on the patient's specific condition, preferences, and potential for side effects. The patient should also be closely monitored while on these medications for any adverse effects.",Infliximab,Vedolizumab
+27,"27 year-old woman with moderate to severe extensive ulcerative colitis who prefers medication with oral formulation.
+",Tofacitinib,,,,Only oral formulation,"system: 
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+Make reference to the CONTEXT given to assess the scenario.
+If the answer cannot be inferred from CONTEXT, return ""NO ANSWER"", don't try to make up an answer.
+=================================
+TASK: ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile and context. Explain the PROS and CONS of the 2 choices.
+If answer cannot be derived from context, RETURN ""NO ANSWER"" and explain reason.
+=================================
+OUTPUT INSTRUCTIONS:
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+=================================
+CONTEXT:
+context_str
+=================================
+
+user: PATIENT PROFILE: query_str
+assistant: ","Based on the patient's profile and preference for oral medication, the top two choices of biological drugs would be Tofacitinib and Ustekinumab.
+
+1. Tofacitinib:
+   - Advantages: Tofacitinib is an oral medication, which aligns with the patient's preference. It has been shown to be effective in treating moderate to severe ulcerative colitis.
+   - Disadvantages: The safety profile of Tofacitinib has been a concern, with potential risks including serious infections, malignancies, and thrombosis. It may also have potential interactions with other drugs.
+
+2. Ustekinumab:
+   - Advantages: Ustekinumab has been shown to be effective in treating moderate to severe ulcerative colitis. It is also available in an oral formulation.
+   - Disadvantages: Ustekinumab may have potential side effects including serious infections, malignancies, and reversible posterior leukoencephalopathy syndrome. It may also have potential interactions with other drugs.
+
+It's important to note that the choice of medication should be individualized, taking into account the patient's disease characteristics, comorbidities, lifestyle, and preferences. The patient should be informed about the potential risks and benefits of each treatment option to make an informed decision.",Tofacitinib,Ustekinumab
+28,"41 year-old man with moderate to severe distal ulcerative colitis and alocpecia areata.
+",Tofacitinib,,,,JAK inhibitors can be used for alopecia areata,"system: 
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+Make reference to the CONTEXT given to assess the scenario.
+If the answer cannot be inferred from CONTEXT, return ""NO ANSWER"", don't try to make up an answer.
+=================================
+TASK: ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile and context. Explain the PROS and CONS of the 2 choices.
+If answer cannot be derived from context, RETURN ""NO ANSWER"" and explain reason.
+=================================
+OUTPUT INSTRUCTIONS:
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+=================================
+CONTEXT:
+context_str
+=================================
+
+user: PATIENT PROFILE: query_str
+assistant: ","Based on the provided context, the patient's profile can be analyzed as follows:
+
+- The patient is not new and is under maintenance therapy.
+- There is no information provided about the patient's prior response to Infliximab.
+- There is no information provided about the patient's prior failure to Anti-TNF agents.
+- The patient has been treated with Vedolizumab.
+- The patient's age is 41.
+- The patient is not pregnant.
+- There are no extraintestinal manifestations mentioned other than alopecia areata.
+- There is no information provided about Pouchitis.
+
+Given the patient's profile, the top two choices of biological drugs could be Vedolizumab and Tofacitinib. However, the context does not provide enough information to explain the pros and cons of these two choices. Therefore, the output is ""NO ANSWER"".",,
+29,38 year-old woman with moderate to severe ulcerative colitis and pulmonary tuberculosis which was treated 2 years ago.,Vedolizumab,Ustekinumab,,,Anti-TNFs and JAK inhs have associations/concerns with infections,"system: 
+You are a physician assistant giving advice on treatment for moderate to severe ulcerative colitis (UC).
+Make reference to the CONTEXT given to assess the scenario.
+If the answer cannot be inferred from CONTEXT, return ""NO ANSWER"", don't try to make up an answer.
+=================================
+TASK: ANALYSE the given patient profile based on given query based on one of the following criteria:
+- Whether treated patient is new patient or patient under maintenance
+- Prior response to Infliximab
+- Prior failure to Anti-TNF agents
+- Prior failure to Vedolizumab
+- Age
+- Pregnancy
+- Extraintestinale manifestations
+- Pouchitis
+
+FINALLY RETURN up to 2 TOP choices of biological drugs given patient profile and context. Explain the PROS and CONS of the 2 choices.
+If answer cannot be derived from context, RETURN ""NO ANSWER"" and explain reason.
+=================================
+OUTPUT INSTRUCTIONS:
+Output your answer as a list of JSON objects with keys: drug_name, advantages, disadvantages.
+=================================
+CONTEXT:
+context_str
+=================================
+
+user: PATIENT PROFILE: query_str
+assistant: ","Based on the patient's profile, the top two choices of biological drugs would be Vedolizumab and Ustekinumab. 
+
+1. Vedolizumab:
+   - Advantages: Vedolizumab is a gut-selective immunosuppressant, meaning it specifically targets the gut and has less systemic side effects. It has been shown to be effective in inducing and maintaining remission in moderate to severe ulcerative colitis. It is also less likely to reactivate latent tuberculosis due to its gut-selective action.
+   - Disadvantages: Vedolizumab may take longer to show effects compared to other biologics. It also requires intravenous administration which might not be convenient for all patients.
+
+2. Ustekinumab:
+   - Advantages: Ustekinumab has been shown to be effective in patients with moderate to severe ulcerative colitis. It is administered subcutaneously, which may be more convenient for some patients. It has a low risk of reactivating tuberculosis.
+   - Disadvantages: Ustekinumab may not be as effective as other biologics in some patients. It also requires initial intravenous induction.
+
+It's important to note that the choice of therapy should be individualized based on the patient's specific circumstances and preferences, and should be made in consultation with the patient's healthcare provider.",Vedolizumab,Ustekinumab
